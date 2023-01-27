@@ -1,24 +1,36 @@
-import Container from '@mui/material/Container';
-import Grid from '@mui/material/Grid'; // Grid version 1
-import Button from '@mui/material/Button';
-
+import Button from 'react-bootstrap/Button';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
 function dashboard() {
     return (
-      <Container maxwidth="lg">
-        <h1>This is Container</h1>
-        <Grid container spacing={3}>
-          <Grid xs>
-          <Button variant="outlined">Overview</Button>
-          </Grid>
-          <Grid xs>
-          <Button variant="outlined">Map</Button>
-          </Grid>
-          <Grid xs>
-          <Button variant="outlined">Heatmap</Button>
-          </Grid>
-        </Grid>
-      </Container>
+      <Container>
+        <Row md={3}>
+          <Col>
+          <div className="mb-1">
+            <Button variant="primary" size="lg">
+              Large button
+            </Button>{' '}
+          </div>
+      </Col>
+      <Col>
+          <div className="mb-1">
+            <Button variant="primary" size="lg">
+              Large button
+            </Button>{' '}
+          </div>
+      </Col>
+      <Col>
+          <div className="mb-1">
+            <Button variant="primary" size="lg">
+              Large button
+            </Button>{' '}
+          </div>
+      </Col>
+        </Row>
+    </Container>
     );
   }
   
