@@ -3,10 +3,12 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-
+import MySidebar from './cssFramework/sidebar/mySideBar';
 function dashboard() {
     return (
+      
       <Container>
+        <MySidebar/>
         <Row md={3}>
           <Col>
           <div className="mb-1">
