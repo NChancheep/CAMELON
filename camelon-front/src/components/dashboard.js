@@ -3,10 +3,10 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import Navbar from 'react-bootstrap/Navbar';
-import MySidebar from './cssFramework/sidebar/mySideBar';
+import SidebarMenu from 'react-bootstrap-sidebar-menu';
 function dashboard() {
     return (
+      
       <Container fluid>
         <Row>
         <Col>
@@ -29,29 +29,3 @@ function dashboard() {
   export default dashboard;
 
 
-  // <Container>
-        
-  //       <Row md={3}>
-  //         <Col>
-  //         <div className="mb-1">
-  //           <Button variant="primary" size="lg">
-  //             Large button
-  //           </Button>{' '}
-  //         </div>
-  //     </Col>
-  //     <Col>
-  //         <div className="mb-1">
-  //           <Button variant="primary" size="lg">
-  //             Large button
-  //           </Button>{' '}
-  //         </div>
-  //     </Col>
-  //     <Col>
-  //         <div className="mb-1">
-  //           <Button variant="primary" size="lg">
-  //             Large button
-  //           </Button>{' '}
-  //         </div>
-  //     </Col>
-  //       </Row>
-  //   </Container>
