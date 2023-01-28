@@ -14,10 +14,10 @@ function home() {
           <Navbar/>
         </Row>
         <Row>
-          {/* <Col>1 of 3</Col>
+          <Col>1 of 3</Col>
           <Col><Button variant="outline-primary" href="#">Overview</Button></Col>
           <Col><Button variant="outline-primary" href="/crimemap">Map</Button></Col>
-          <Col><Button variant="outline-primary" href="#">Heat Map</Button></Col> */}
+          <Col><Button variant="outline-primary" href="#">About us</Button></Col>
         </Row>
       </Container>
      
