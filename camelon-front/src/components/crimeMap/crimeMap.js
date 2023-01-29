@@ -10,13 +10,18 @@ import Container from 'react-bootstrap/Container';
 import Navbar from '../cssFramework/sidebar/mySideBar';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 const CrimeMap = () => {
 
     return(
         <> 
-            <Container>
-            <Navbar/>
-            <Card>
+            <Container fluid>
+            <Row>
+          <Navbar/>
+        </Row>
+        <Row>
+        <Card>
             <Card.Body>
            <MapContainer center={[13.751, 100.492]} zoom={13}> 
                 <TileLayer
@@ -44,6 +49,9 @@ const CrimeMap = () => {
            <Button variant="primary">sth</Button>
            </Card.Body>
            </Card>
+        </Row>
+            
+            
            </Container>
         </>
 
