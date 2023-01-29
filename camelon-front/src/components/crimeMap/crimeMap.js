@@ -1,18 +1,23 @@
 import React, { useState, useEffect } from "react";
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
-
 import { locations } from "./test_data";
-
 import 'leaflet/dist/leaflet.css';
 import './crimeMap.css';
-
 import markerIconPng from "leaflet/dist/images/marker-icon.png"
 import {Icon} from 'leaflet'
-
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Container from 'react-bootstrap/Container';
+import Navbar from '../cssFramework/sidebar/mySideBar';
+import Card from 'react-bootstrap/Card';
+import Button from 'react-bootstrap/Button';
 const CrimeMap = () => {
 
     return(
         <> 
+            <Container>
+            <Navbar/>
+            <Card>
+            <Card.Body>
            <MapContainer center={[13.751, 100.492]} zoom={13}> 
                 <TileLayer
                      attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
@@ -34,6 +39,12 @@ const CrimeMap = () => {
                     </Marker>
                 ))}
            </MapContainer>
+           <Button variant="primary">sth</Button>
+           <Button variant="primary">sth</Button>
+           <Button variant="primary">sth</Button>
+           </Card.Body>
+           </Card>
+           </Container>
         </>
 
     );
