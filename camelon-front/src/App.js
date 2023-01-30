@@ -1,19 +1,14 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Home from './components/home/home';
-import Aboutus from './components/aboutus';
-import CrimeMap from './components/crimeMap/crimeMap';
+
+import Sidebar from './components/Sidebar';
+import MenuController from './components/MenuController';
+
 function App() {
- return (
-  <BrowserRouter>
-  <div>
-    <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/aboutus" element={<Aboutus />} />
-        <Route path="/crimemap" element={<CrimeMap />} />
-      </Routes>
-  </div>
-  </BrowserRouter>
- );
+  return (
+    <main> 
+      <Sidebar />
+      <MenuController />
+    </main>
+  );
 }
 
 export default App;
