@@ -4,7 +4,7 @@ import Display from "./Display";
 
 export default function MenuController() {
 
- const [state, setState] = useState({mode:"pin_map"})
+ const [state, setState] = useState({mode:"aboutus"})
   
   return (
     <>
