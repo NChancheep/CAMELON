@@ -1,7 +1,6 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 
 export default function Sidebar() {
-  
   return (
     <>
       <button
@@ -36,7 +35,9 @@ export default function Sidebar() {
           <ul class="space-y-5">
             <li>
               <select name="cars" id="cars" class="w-full">
-               <option value="" disabled selected>ภูมิภาค</option>
+                <option value="" disabled selected>
+                  ภูมิภาค
+                </option>
                 <option value="volvo">กลาง</option>
                 <option value="saab">เหนือ</option>
                 <option value="mercedes">ใต้</option>
@@ -51,9 +52,7 @@ export default function Sidebar() {
                 <option value="audi">Audi</option>
               </select>
             </li>
-            <li>
-              
-            </li>
+            <li></li>
           </ul>
         </div>
       </aside>

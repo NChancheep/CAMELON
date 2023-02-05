@@ -1,11 +1,18 @@
+import MenuController from "./components/MenuController";
+import React from "react";
+import "./css/Sidebar.css";
+import Sidebar2 from "./components/Sidebar2";
 
-import Sidebar from './components/Sidebar';
-import MenuController from './components/MenuController';
-
+// ...
 function App() {
   return (
-    <main> 
-      <Sidebar />
+    <main>
+      <div className="App" id="outer-container">
+        <Sidebar2
+          pageWrapId={"page-wrap"}
+          outerContainerId={"outer-container"}
+        />
+      </div>
       <MenuController />
     </main>
   );
