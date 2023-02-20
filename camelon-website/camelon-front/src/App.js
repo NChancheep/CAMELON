@@ -1,19 +1,31 @@
-import MenuController from "./components/MenuController";
-import React from "react";
-import "./css/Sidebar.css";
-import Sidebar2 from "./components/Sidebar2";
+import "./App.css";
+// importing components from react-router-dom package
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect,
+} from "react-router-dom";
+
+// import Home component
+import Home from "./components/Home";
+// import About component
+import Emergency from "./components/Emergency";
+// import ContactUs component
+import ContactUs from "./components/About";
 
 function App() {
   return (
-    <main>
-      <div id="outer-container">
-        <Sidebar2
-          pageWrapId={"page-wrap"}
-          outerContainerId={"outer-container"}
-        />
-      </div>
-      <MenuController />
-    </main>
+    <>
+      <Router>
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route path="/Emergency" component={Emergency} />
+          <Route path="/contactus" component={ContactUs} />
+          <Redirect to="/" />
+        </Switch>
+      </Router>
+    </>
   );
 }
 
