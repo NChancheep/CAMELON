@@ -1,9 +1,9 @@
-import MenuController from "./components/MenuController";
+import MenuController from "./MenuController";
 import React from "react";
-import "./css/Sidebar.css";
-import Sidebar2 from "./components/Sidebar2";
+import "../css/Sidebar.css";
+import Sidebar2 from "./Sidebar2";
 
-function App() {
+function Home() {
   return (
     <main>
       <div id="outer-container">
@@ -17,4 +17,4 @@ function App() {
   );
 }
 
-export default App;
+export default Home;

@@ -1,12 +1,9 @@
-import React, { useState, useEffect } from "react";
-import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
-
+import { MapContainer, TileLayer} from "react-leaflet";
 import L from "leaflet";
 import icon from "leaflet/dist/images/marker-icon.png";
 import iconShadow from "leaflet/dist/images/marker-shadow.png";
-
 import 'leaflet/dist/leaflet.css';
-import './Pinmap.css'
+import '../../css/Pinmap.css'
 
 let DefaultIcon = L.icon({
   iconUrl: icon,
