@@ -1,5 +1,5 @@
 import React from "react";
-import Gambling from "./cards/Gambling";
+import Gambling from "./Modes/Gambling";
 // import  from ;
 // import  from ;
 // import  from ;
