@@ -1,29 +1,32 @@
 import React from "react";
-import Gambling from "./cards/Gambling";
-// import  from ;
-// import  from ;
-// import  from ;
+import Gambling from "./Modes/Gambling";
+import Murder from "./Modes/Murder";
+import SexualAbuse from "./Modes/SexualAbuse";
+import TheftBurglary from "./Modes/TheftBurglary";
+import BatteryAssault from "./Modes/BatteryAssault";
+import Drug from "./Modes/Drug";
+import Accident from "./Modes/Accident";
 
 export default function NavbarEmer(props) {
   if (props.data === "Gambling") {
     return <Gambling/>;
   } 
   else if (props.data === "Murder") {
-    return <props />;
+    return <Murder />;
   } 
   else if (props.data === "SexualAbuse") {
-    return <props />;
+    return <SexualAbuse />;
   } 
   else if (props.data === "TheftBurglary") {
-    return < props/>;
+    return <TheftBurglary />;
   }
   else if (props.data === "BatteryAssault") {
-    return < props/>;
+    return <BatteryAssault />;
   }
   else if (props.data === "Drug") {
-    return <props />;
+    return <Drug />;
   }
   else if (props.data === "Accident") {
-    return < props/>;
+    return <Accident />;
   }
 }
