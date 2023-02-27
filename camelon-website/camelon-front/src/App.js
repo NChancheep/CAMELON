@@ -7,6 +7,9 @@ import {
   Redirect,
 } from "react-router-dom";
 
+import { Provider } from "react-redux";
+import Store from "./store/Store";
+
 // import Home component
 import Home from "./components/Home";
 // import About component
@@ -14,9 +17,11 @@ import Emergency from "./components/Emergency";
 // import ContactUs component
 import ContactUs from "./components/About";
 
+
 function App() {
   return (
     <>
+      <Provider store={Store}>
       <Router>
         <Switch>
           <Route exact path="/" component={Home} />
@@ -25,6 +30,7 @@ function App() {
           <Redirect to="/" />
         </Switch>
       </Router>
+      </Provider>
     </>
   );
 }

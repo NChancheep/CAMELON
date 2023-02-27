@@ -1,21 +1,45 @@
-import React from "react";
-import { MapContainer, TileLayer } from "react-leaflet";
+import React, { useState, useEffect } from "react";
+import { MapContainer, TileLayer, useMap } from "react-leaflet";
 
-import L from "leaflet";
 import icon from "leaflet/dist/images/marker-icon.png";
 import iconShadow from "leaflet/dist/images/marker-shadow.png";
 
 import "leaflet/dist/leaflet.css";
-import '../../css/Pinmap.css'
+import "../../css/Pinmap.css";
 
-let DefaultIcon = L.icon({
-  iconUrl: icon,
-  shadowUrl: iconShadow,
-});
-
-L.Marker.prototype.options.icon = DefaultIcon;
+import L from "leaflet";
+import "leaflet.heat";
+import { useSelector } from "react-redux";
 
 export default function Heatmap() {
+  const { locations } = useSelector((state) => state.data);
+  const { user_current_location } = useSelector((state) => state.data);
+
+  function SetView({ coords }) {
+    const map = useMap();
+    map.setView(coords, map.getZoom());
+    // var newMarker = new L.circle(coords).addTo(map);
+    // var marker = L.circle(coords, 1609.34, {
+    //   color: "blue",
+    //   fillColor: "blue",
+    // }).addTo(map);
+    return null;
+  }
+
+  const HeatMap = () => {
+    const map = useMap();
+
+    useEffect(() => {
+      const points = locations
+        ? locations.map((location) => {
+            return [location.latitude, location.longitude, 15];
+          })
+        : [];
+
+      L.heatLayer(points, { radius: 14 }).addTo(map);
+    }, []);
+  };
+
   return (
     <>
       <div class="sm" style={{ marginTop: 16 }}>
@@ -24,6 +48,13 @@ export default function Heatmap() {
             <TileLayer
               attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
               url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+            />
+            <HeatMap />
+            <SetView
+              coords={[
+                user_current_location.latitude,
+                user_current_location.longitude,
+              ]}
             />
           </MapContainer>
         </div>

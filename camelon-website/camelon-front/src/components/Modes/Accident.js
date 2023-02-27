@@ -1,7 +1,7 @@
 function Accident() {
     return (
       <main>
-          accindent
+          accident
       </main>
     );
   }
