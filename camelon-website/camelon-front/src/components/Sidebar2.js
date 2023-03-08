@@ -4,6 +4,8 @@ import images from "../assets/logo1.png";
 import { AiFillHome } from "react-icons/ai";
 import { AiFillInfoCircle } from "react-icons/ai";
 import { Link } from "react-router-dom";
+
+
 export default function Sidebar2() {
   return (
     <Menu>
