@@ -2,7 +2,7 @@ import MenuController from "./MenuController";
 import React from "react";
 import "../css/Sidebar.css";
 import Sidebar2 from "./Sidebar2";
-
+import "../css/setfont.css"
 function Home() {
   return (
     <main>
