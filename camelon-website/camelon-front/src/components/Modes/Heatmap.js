@@ -36,7 +36,7 @@ export default function Heatmap() {
           })
         : [];
 
-      L.heatLayer(points, { radius: 14 }).addTo(map);
+      L.heatLayer(points, { radius: 25, blur: 15 }).addTo(map);
     }, []);
   };
 
