@@ -16,7 +16,7 @@ import Home from "./components/Home";
 import Emergency from "./components/Emergency";
 // import ContactUs component
 import ContactUs from "./components/About";
-
+import "@fontsource/kanit";
 
 function App() {
   return (
