@@ -4,9 +4,9 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 export default function Heading() {
   return (
-    <Row style={{marginTop:"2%"}}>
+    <Row >
       <Col className="d-flex flex-row-reverse">
-        <div>
+        <div style={{marginTop:"2%"}}>
           <h1 style={{ display: "inline" }}>Overview |</h1>
           <img
             src={images}
