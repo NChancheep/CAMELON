@@ -13,16 +13,11 @@ export default function MenuController() {
   return (
     <>
       <Container>
-        <Row>
-          <Col sm={9}></Col>
-          <Col sm={3} style={{ marginTop: 46 }}>
-            <Heading></Heading>
-          </Col>
-        </Row>
-        <Row xs style={{ marginBottom: "2%", height: 100 }}>
+        <Heading></Heading>
+        <Row xs style={{ marginBottom: "2%", height: "100%" }}>
           <Col sm>
             <button
-              style={{ marginTop: "2%", height: "100%", width: "100%" }}
+              style={{ marginTop: "2%", height: "6em", width: "100%" }}
               onClick={() => setState({ mode: "overview" })}
               class="flex items-center justify-center bg-white text-black hover:bg-black hover:text-white font-bold py-2 px-4 border border-black rounded h-24"
             >
@@ -31,7 +26,7 @@ export default function MenuController() {
           </Col>
           <Col sm>
             <button
-              style={{ marginTop: "2%", height: "100%", width: "100%" }}
+              style={{ marginTop: "2%", height: "6em", width: "100%" }}
               onClick={() => setState({ mode: "pin_map" })}
               class="flex items-center justify-center bg-white text-black hover:bg-black hover:text-white font-bold py-2 px-4 border border-black rounded h-24"
             >
@@ -40,7 +35,7 @@ export default function MenuController() {
           </Col>
           <Col sm>
             <button
-              style={{ marginTop: "2%", height: "100%", width: "100%" }}
+              style={{ marginTop: "2%", height: "6em", width: "100%" }}
               onClick={() => setState({ mode: "heat_map" })}
               class="flex items-center justify-center bg-white text-black hover:bg-black hover:text-white font-bold py-2 px-4 border border-black rounded h-24"
             >
@@ -49,7 +44,7 @@ export default function MenuController() {
           </Col>
           <Col sm>
             <button
-              style={{ marginTop: "2%", height: "100%", width: "100%" }}
+              style={{ marginTop: "2%", height: "6em", width: "100%" }}
               onClick={() => setState({ mode: "heat_map" })}
               class="flex items-center justify-center bg-white text-black hover:bg-black hover:text-white font-bold py-2 px-4 border border-black rounded h-24"
             >
@@ -57,11 +52,10 @@ export default function MenuController() {
             </button>
           </Col>
         </Row>
-        
+
         <Row xs>
           <Col>
             <Card>
-              
               <Filtter></Filtter>
             </Card>
           </Col>

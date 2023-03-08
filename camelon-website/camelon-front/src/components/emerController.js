@@ -1,10 +1,8 @@
 import React, { useState } from "react";
 import Container from "react-bootstrap/esm/Container";
-import Display from "./Display";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
-import Filtter from "./Filtter";
-import Heading from "./Heading";
+
 import NavbarEmer from "./navbarEmer";
 
 export default function EmerController() {
