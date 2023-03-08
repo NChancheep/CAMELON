@@ -15,7 +15,7 @@ const EmerContact = [
     name: "แจ้งเพลิงไหม้ดับเพลิง",
     callNum: "199",
     image:
-      "https://github.com/NChancheep/CAMELON/blob/Cheep/camelon-website/camelon-front/picture/pic199.png",
+      "https://github.com/NChancheep/CAMELON/blob/main/camelon-website/camelon-front/picture/pic199.png",
   },
   {
     id: "3",
