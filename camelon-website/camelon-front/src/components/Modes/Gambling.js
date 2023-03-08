@@ -1,5 +1,8 @@
 import React from "react";
 import EmergencyBanner from "../cards/emerContact";
+import Container from "react-bootstrap/Container";
+import Col from "react-bootstrap/Col";
+import Row from "react-bootstrap/Row";
 const EmerContact = [
   {
     id: "1",
@@ -61,17 +64,17 @@ const EmerContact = [
 function Gambling() {
   return (
     <main>
-      <ul>
+      <Row>
         {EmerContact.map((data) => (
-          <li key={data.id}>
+          <Col sm={4} key={data.id}>
             <EmergencyBanner
               images={data.image}
               Name={data.name}
               callNum={data.callNum}
             />
-          </li>
+          </Col>
         ))}
-      </ul>
+      </Row>
     </main>
   );
 }
