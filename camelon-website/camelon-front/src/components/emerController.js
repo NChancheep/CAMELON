@@ -12,8 +12,16 @@ export default function EmerController() {
   return (
     <>
       <Container className={`nav-bar-select-locati`} style={{ height: 55 }}>
-        <Heading></Heading>
+        <Heading
+          mainName="Emergency Contact"
+          subName={state.mode ? state.mode : "Overview"}
+        />
         <Row className="rectangle-1378">
+        <Col className="text-0">
+            <button onClick={() => setState({ mode: "Oveview" })}>
+              <div>Overview</div>
+            </button>
+          </Col>
           <Col className="text-0">
             <button onClick={() => setState({ mode: "Gambling" })}>
               <div>Gambling</div>

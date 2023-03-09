@@ -6,9 +6,13 @@ import TheftBurglary from "./Modes/TheftBurglary";
 import BatteryAssault from "./Modes/BatteryAssault";
 import Drug from "./Modes/Drug";
 import Accident from "./Modes/Accident";
+import Overview from "./Modes/EmeOverview";
 
 export default function NavbarEmer(props) {
-  if (props.data === "Gambling") {
+  if (props.data === "Overview") {
+    return <Overview/>;
+  } 
+  else if (props.data === "Gambling") {
     return <Gambling/>;
   } 
   else if (props.data === "Murder") {
