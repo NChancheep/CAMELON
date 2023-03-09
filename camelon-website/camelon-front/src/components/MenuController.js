@@ -46,7 +46,7 @@ export default function MenuController() {
           <Col sm>
             <button
               style={{ marginTop: "2%", height: "6em", width: "100%" }}
-              onClick={() => setState({ mode: "heat_map" })}
+              onClick={() => setState({ mode: "choropleth_map" })}
               class="flex items-center justify-center bg-white text-black hover:bg-black hover:text-white font-bold py-2 px-4 border border-black rounded h-24"
             >
               <div class="text-xl">Choropleth map</div>
