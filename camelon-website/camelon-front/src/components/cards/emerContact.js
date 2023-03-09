@@ -8,7 +8,7 @@ function EmergencyBanner(props) {
   return (
     <Card
       className="justify-content-center align-items-center"
-      style={{ width: "405px", marginTop:30 }}
+      style={{ width: "100%", marginTop:30, height:"80%" ,}}
     >
       <Container style={{ margin: 10 }}>
         <Row>
@@ -24,7 +24,7 @@ function EmergencyBanner(props) {
             sm={6}
             className="justify-content-center d-flex align-items-center"
           >
-            <h5 style={{ fontSize: 20 }}>{props.Name}</h5>
+            <h5 style={{ fontSize: 20, textAlign:"center"  }}>{props.Name}</h5>
           </Col>
           <Col
             sm={2}

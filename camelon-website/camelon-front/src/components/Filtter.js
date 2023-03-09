@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import "../css/Filtter.css";
-import Card from "react-bootstrap/Card";
 
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
