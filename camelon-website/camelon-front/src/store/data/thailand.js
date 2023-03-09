@@ -597,7 +597,7 @@ export const thailandGeoJson = [{
           "ISO": "THA",
           "NAME_0": "Thailand",
           "ID_1": 3,
-          "NAME_1": "Bangkok Metropolis",
+          "NAME_1": "Bangkok",
           "TYPE_1": "Changwat",
           "ENGTYPE_1": "Province",
           "NL_NAME_1": "จังหวัดกรุงเทพมหานคร",
