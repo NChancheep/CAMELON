@@ -34,44 +34,6 @@ export default function Pinmap() {
     satellite: false,
     dark: false,
   });
-  
-  const layerGroups = {};
-
-  // Group markers based on their crime types
-  locations.forEach((location) => {
-    const news = news_info.find((news) => news.info_id === location.info_id);
-    const crimeType = news.crime_type;
-
-    if (!layerGroups[crimeType]) {
-      layerGroups[crimeType] = [];
-    }
-
-    layerGroups[crimeType].push(
-      <Marker position={[location.latitude, location.longitude]}>
-        <Popup>
-          <div> Criminal: {news.criminal} </div>
-          <div> Action: {news.action} </div>
-          <div> Victim: {news.victim} </div>
-          <div> Address: {location.formatted_address} </div>
-          <div className="popup-action">
-            <button onClick={() => console.log("hello")}> Read more... </button>
-          </div>
-        </Popup>
-      </Marker>
-    );
-  });
-
-  const crimeTypeLayers = Object.keys(layerGroups).map((crimeType) => (
-    <LayersControl.Overlay name={crimeType} key={crimeType} checked={true}>
-      <MarkerClusterGroup chunkedLoading>{layerGroups[crimeType]}</MarkerClusterGroup>
-    </LayersControl.Overlay>
-  ));
-
-  const [mapLayers, setMapLayers] = useState({
-    street: true,
-    satellite: false,
-    dark: false,
-  });
 
   const layerGroups = {};
 
@@ -108,27 +70,14 @@ export default function Pinmap() {
   ));
 
   return (
-    <div className="mt-2">
-      <MapContainer center={[13.751, 100.492]} zoom={13} scrollWheelZoom={true}>
-        <LayersControl position="topright">
-          <LayersControl.BaseLayer checked={mapLayers.street} name="Street">
-            <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
-          </LayersControl.BaseLayer>
-          <LayersControl.BaseLayer checked={mapLayers.satellite} name="Satellite">
-            <TileLayer url="https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}" />
-          </LayersControl.BaseLayer>
-          <LayersControl.BaseLayer checked={mapLayers.dark} name="Dark">
-            <TileLayer
-              attribution="Map tiles by Carto, under CC BY 3.0. Data by OpenStreetMap, under ODbL."
-              url="https://cartodb-basemaps-{s}.global.ssl.fastly.net/dark_all/{z}/{x}/{y}.png"
-            />
-            <SetView
-              coords={[
-                user_current_location.latitude,
-                user_current_location.longitude,
-              ]}
-            />
-
+    <>
+      <div class="sm" style={{ marginTop: 16 }}>
+        <div class="p-1 border-2 border-gray-200 border rounded dark:border-gray-700">
+          <MapContainer
+            center={[13.751, 100.492]}
+            zoom={13}
+            scrollWheelZoom={true}
+          >
             <LayersControl position="topright">
               <LayersControl.BaseLayer checked={mapLayers.street} name="Street">
                 <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
