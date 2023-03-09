@@ -4,6 +4,7 @@ import icon from "leaflet/dist/images/marker-icon.png";
 import iconShadow from "leaflet/dist/images/marker-shadow.png";
 import "leaflet/dist/leaflet.css";
 import "../../css/Pinmap.css";
+import testIcon from './test-icon.jpg';
 
 import {
   MapContainer,
@@ -23,11 +24,24 @@ let DefaultIcon = L.icon({
   shadowUrl: iconShadow,
 });
 
-L.Marker.prototype.options.icon = DefaultIcon;
+// L.Marker.prototype.options.icon = DefaultIcon;
 
 export default function Pinmap() {
   const { locations } = useSelector((state) => state.data);
   const { news_info } = useSelector((state) => state.data);
+  const { user_current_location } = useSelector((state) => state.data);
+
+  function SetView({ coords }) {
+    const map = useMap();
+    map.setView(coords, map.getZoom());
+    // var newMarker = new L.circle(coords).addTo(map);
+    // var marker = L.circle(coords, 1609.34, {
+    //   color: "blue",
+    //   fillColor: "blue",
+    // }).addTo(map);
+    return null;
+  }
+
 
   const [mapLayers, setMapLayers] = useState({
     street: true,
@@ -41,7 +55,11 @@ export default function Pinmap() {
   locations.forEach((location) => {
     const news = news_info.find((news) => news.info_id === location.info_id);
     const crimeType = news.crime_type;
-
+    
+    L.Marker.prototype.options.icon = L.icon({
+      iconUrl: testIcon,
+      shadowUrl: iconShadow,
+    })
     if (!layerGroups[crimeType]) {
       layerGroups[crimeType] = [];
     }
@@ -78,6 +96,12 @@ export default function Pinmap() {
             zoom={13}
             scrollWheelZoom={true}
           >
+            <SetView
+              coords={[
+                user_current_location.latitude,
+                user_current_location.longitude,
+              ]}
+            />
             <LayersControl position="topright">
               <LayersControl.BaseLayer checked={mapLayers.street} name="Street">
                 <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
