@@ -18,33 +18,6 @@ export const subdistricts = [
     "district_id": 2101
   },
   {
-    "id": 2,
-    "code": 210114,
-    "name_in_thai": "ต. มาบตาพุด",
-    "name_in_english": "Maptaphut",
-    "latitude": 12.645,
-    "longitude": 101.17,
-    "district_id": 2101
-  },
-  {
-    "id": 3,
-    "code": 210114,
-    "name_in_thai": "ต. มาบตาพุด",
-    "name_in_english": "Maptaphut",
-    "latitude": 12.649,
-    "longitude": 101.174,
-    "district_id": 2101
-  },
-  {
-    "id": 4,
-    "code": 210114,
-    "name_in_thai": "ต. มาบตาพุด",
-    "name_in_english": "Maptaphut",
-    "latitude": 12.644,
-    "longitude": 101.169,
-    "district_id": 2101
-  },
-  {
     "id": 5,
     "code": 860116,
     "name_in_thai": "ต. หาดทรายรี",
@@ -81,24 +54,6 @@ export const subdistricts = [
     "district_id": 8404
   },
   {
-    "id": 9,
-    "code": 840401,
-    "name_in_thai": "ต. อ่างทอง",
-    "name_in_english": "Ang Thong",
-    "latitude": 9.796,
-    "longitude": 99.713,
-    "district_id": 8404
-  },
-  {
-    "id": 10,
-    "code": 840401,
-    "name_in_thai": "ต. อ่างทอง",
-    "name_in_english": "Ang Thong",
-    "latitude": 9.677,
-    "longitude": 99.659,
-    "district_id": 8404
-  },
-  {
     "id": 11,
     "code": 200901,
     "name_in_thai": "ต. สัตหีบ",
@@ -115,15 +70,6 @@ export const subdistricts = [
     "latitude": 7.033,
     "longitude": 99.449,
     "district_id": 9210
-  },
-  {
-    "id": 13,
-    "code": 860116,
-    "name_in_thai": "ต. หาดทรายรี",
-    "name_in_english": "Hat Sai Ri",
-    "latitude": 10.477,
-    "longitude": 99.369,
-    "district_id": 8601
   },
   {
     "id": 14,
@@ -144,105 +90,6 @@ export const subdistricts = [
     "district_id": 8608
   },
   {
-    "id": 16,
-    "code": 860306,
-    "name_in_thai": "ต. ปากคลอง",
-    "name_in_english": "Pak Khlong",
-    "latitude": 10.8,
-    "longitude": 99.538,
-    "district_id": 8603
-  },
-  {
-    "id": 17,
-    "code": 910106,
-    "name_in_thai": "ต. เกาะสาหร่าย",
-    "name_in_english": "Ko Sarai",
-    "latitude": 6.672,
-    "longitude": 99.844,
-    "district_id": 9101
-  },
-  {
-    "id": 18,
-    "code": 840401,
-    "name_in_thai": "ต. อ่างทอง",
-    "name_in_english": "Ang Thong",
-    "latitude": 9.767,
-    "longitude": 99.668,
-    "district_id": 8404
-  },
-  {
-    "id": 19,
-    "code": 860116,
-    "name_in_thai": "ต. หาดทรายรี",
-    "name_in_english": "Hat Sai Ri",
-    "latitude": 10.466,
-    "longitude": 99.359,
-    "district_id": 8601
-  },
-  {
-    "id": 20,
-    "code": 860801,
-    "name_in_thai": "ต. ปากตะโก",
-    "name_in_english": "Pak Tako",
-    "latitude": 10.131,
-    "longitude": 99.165,
-    "district_id": 8608
-  },
-  {
-    "id": 21,
-    "code": 910106,
-    "name_in_thai": "ต. เกาะสาหร่าย",
-    "name_in_english": "Ko Sarai",
-    "latitude": 6.705,
-    "longitude": 99.799,
-    "district_id": 9101
-  },
-  {
-    "id": 22,
-    "code": 921003,
-    "name_in_thai": "ต. ตะเสะ",
-    "name_in_english": "Tase",
-    "latitude": 6.984,
-    "longitude": 99.473,
-    "district_id": 9210
-  },
-  {
-    "id": 23,
-    "code": 860706,
-    "name_in_thai": "ต. ด่านสวี",
-    "name_in_english": "Dan Sawi",
-    "latitude": 10.197,
-    "longitude": 99.221,
-    "district_id": 8607
-  },
-  {
-    "id": 24,
-    "code": 860801,
-    "name_in_thai": "ต. ปากตะโก",
-    "name_in_english": "Pak Tako",
-    "latitude": 10.118,
-    "longitude": 99.216,
-    "district_id": 8608
-  },
-  {
-    "id": 25,
-    "code": 921003,
-    "name_in_thai": "ต. ตะเสะ",
-    "name_in_english": "Tase",
-    "latitude": 7.067,
-    "longitude": 99.398,
-    "district_id": 9210
-  },
-  {
-    "id": 26,
-    "code": 860306,
-    "name_in_thai": "ต. ปากคลอง",
-    "name_in_english": "Pak Khlong",
-    "latitude": 10.782,
-    "longitude": 99.53,
-    "district_id": 8603
-  },
-  {
     "id": 27,
     "code": 220607,
     "name_in_thai": "ต. บางกะไชย",
@@ -250,42 +97,6 @@ export const subdistricts = [
     "latitude": 12.465,
     "longitude": 102.066,
     "district_id": 2206
-  },
-  {
-    "id": 28,
-    "code": 921003,
-    "name_in_thai": "ต. ตะเสะ",
-    "name_in_english": "Tase",
-    "latitude": 7.016,
-    "longitude": 99.445,
-    "district_id": 9210
-  },
-  {
-    "id": 29,
-    "code": 860306,
-    "name_in_thai": "ต. ปากคลอง",
-    "name_in_english": "Pak Khlong",
-    "latitude": 10.84,
-    "longitude": 99.497,
-    "district_id": 8603
-  },
-  {
-    "id": 30,
-    "code": 910106,
-    "name_in_thai": "ต. เกาะสาหร่าย",
-    "name_in_english": "Ko Sarai",
-    "latitude": 6.71,
-    "longitude": 99.794,
-    "district_id": 9101
-  },
-  {
-    "id": 31,
-    "code": 840401,
-    "name_in_thai": "ต. อ่างทอง",
-    "name_in_english": "Ang Thong",
-    "latitude": 9.707,
-    "longitude": 99.676,
-    "district_id": 8404
   },
   {
     "id": 32,
@@ -306,15 +117,6 @@ export const subdistricts = [
     "district_id": 2009
   },
   {
-    "id": 34,
-    "code": 921003,
-    "name_in_thai": "ต. ตะเสะ",
-    "name_in_english": "Tase",
-    "latitude": 7.075,
-    "longitude": 99.451,
-    "district_id": 9210
-  },
-  {
     "id": 35,
     "code": 230601,
     "name_in_thai": "ต. เกาะหมาก",
@@ -322,69 +124,6 @@ export const subdistricts = [
     "latitude": 11.817,
     "longitude": 102.397,
     "district_id": 2306
-  },
-  {
-    "id": 36,
-    "code": 840401,
-    "name_in_thai": "ต. อ่างทอง",
-    "name_in_english": "Ang Thong",
-    "latitude": 9.551,
-    "longitude": 99.694,
-    "district_id": 8404
-  },
-  {
-    "id": 37,
-    "code": 910106,
-    "name_in_thai": "ต. เกาะสาหร่าย",
-    "name_in_english": "Ko Sarai",
-    "latitude": 6.582,
-    "longitude": 99.719,
-    "district_id": 9101
-  },
-  {
-    "id": 38,
-    "code": 820603,
-    "name_in_thai": "ต. เกาะพระทอง",
-    "name_in_english": "Ko Phra Thong",
-    "latitude": 9.495,
-    "longitude": 97.874,
-    "district_id": 8206
-  },
-  {
-    "id": 39,
-    "code": 910106,
-    "name_in_thai": "ต. เกาะสาหร่าย",
-    "name_in_english": "Ko Sarai",
-    "latitude": 6.551,
-    "longitude": 99.35,
-    "district_id": 9101
-  },
-  {
-    "id": 40,
-    "code": 230601,
-    "name_in_thai": "ต. เกาะหมาก",
-    "name_in_english": "Ko Mak",
-    "latitude": 11.805,
-    "longitude": 102.376,
-    "district_id": 2306
-  },
-  {
-    "id": 41,
-    "code": 230601,
-    "name_in_thai": "ต. เกาะหมาก",
-    "name_in_english": "Ko Mak",
-    "latitude": 11.857,
-    "longitude": 102.525,
-    "district_id": 2306
-  },
-  {
-    "id": 42,
-    "code": 840401,
-    "name_in_thai": "ต. อ่างทอง",
-    "name_in_english": "Ang Thong",
-    "latitude": 9.681,
-    "longitude": 99.677,
-    "district_id": 8404
   },
   {
     "id": 43,
@@ -414,87 +153,6 @@ export const subdistricts = [
     "district_id": 8403
   },
   {
-    "id": 46,
-    "code": 860706,
-    "name_in_thai": "ต. ด่านสวี",
-    "name_in_english": "Dan Sawi",
-    "latitude": 10.247,
-    "longitude": 99.249,
-    "district_id": 8607
-  },
-  {
-    "id": 47,
-    "code": 840401,
-    "name_in_thai": "ต. อ่างทอง",
-    "name_in_english": "Ang Thong",
-    "latitude": 9.699,
-    "longitude": 99.68,
-    "district_id": 8404
-  },
-  {
-    "id": 48,
-    "code": 910106,
-    "name_in_thai": "ต. เกาะสาหร่าย",
-    "name_in_english": "Ko Sarai",
-    "latitude": 6.675,
-    "longitude": 99.833,
-    "district_id": 9101
-  },
-  {
-    "id": 49,
-    "code": 840401,
-    "name_in_thai": "ต. อ่างทอง",
-    "name_in_english": "Ang Thong",
-    "latitude": 9.709,
-    "longitude": 99.676,
-    "district_id": 8404
-  },
-  {
-    "id": 50,
-    "code": 230601,
-    "name_in_thai": "ต. เกาะหมาก",
-    "name_in_english": "Ko Mak",
-    "latitude": 11.815,
-    "longitude": 102.398,
-    "district_id": 2306
-  },
-  {
-    "id": 51,
-    "code": 230601,
-    "name_in_thai": "ต. เกาะหมาก",
-    "name_in_english": "Ko Mak",
-    "latitude": 11.819,
-    "longitude": 102.402,
-    "district_id": 2306
-  },
-  {
-    "id": 52,
-    "code": 840401,
-    "name_in_thai": "ต. อ่างทอง",
-    "name_in_english": "Ang Thong",
-    "latitude": 9.696,
-    "longitude": 99.662,
-    "district_id": 8404
-  },
-  {
-    "id": 53,
-    "code": 910106,
-    "name_in_thai": "ต. เกาะสาหร่าย",
-    "name_in_english": "Ko Sarai",
-    "latitude": 6.542,
-    "longitude": 99.164,
-    "district_id": 9101
-  },
-  {
-    "id": 54,
-    "code": 230601,
-    "name_in_thai": "ต. เกาะหมาก",
-    "name_in_english": "Ko Mak",
-    "latitude": 11.858,
-    "longitude": 102.523,
-    "district_id": 2306
-  },
-  {
     "id": 55,
     "code": 920213,
     "name_in_thai": "ต. เกาะลิบง",
@@ -511,96 +169,6 @@ export const subdistricts = [
     "latitude": 7.924,
     "longitude": 98.455,
     "district_id": 8301
-  },
-  {
-    "id": 57,
-    "code": 860706,
-    "name_in_thai": "ต. ด่านสวี",
-    "name_in_english": "Dan Sawi",
-    "latitude": 10.222,
-    "longitude": 99.243,
-    "district_id": 8607
-  },
-  {
-    "id": 58,
-    "code": 910106,
-    "name_in_thai": "ต. เกาะสาหร่าย",
-    "name_in_english": "Ko Sarai",
-    "latitude": 6.524,
-    "longitude": 99.269,
-    "district_id": 9101
-  },
-  {
-    "id": 59,
-    "code": 840401,
-    "name_in_thai": "ต. อ่างทอง",
-    "name_in_english": "Ang Thong",
-    "latitude": 9.706,
-    "longitude": 99.675,
-    "district_id": 8404
-  },
-  {
-    "id": 60,
-    "code": 840401,
-    "name_in_thai": "ต. อ่างทอง",
-    "name_in_english": "Ang Thong",
-    "latitude": 9.661,
-    "longitude": 99.659,
-    "district_id": 8404
-  },
-  {
-    "id": 61,
-    "code": 820603,
-    "name_in_thai": "ต. เกาะพระทอง",
-    "name_in_english": "Ko Phra Thong",
-    "latitude": 9.472,
-    "longitude": 97.876,
-    "district_id": 8206
-  },
-  {
-    "id": 62,
-    "code": 860116,
-    "name_in_thai": "ต. หาดทรายรี",
-    "name_in_english": "Hat Sai Ri",
-    "latitude": 10.486,
-    "longitude": 99.418,
-    "district_id": 8601
-  },
-  {
-    "id": 63,
-    "code": 850502,
-    "name_in_thai": "ต. กำพวน",
-    "name_in_english": "Kamphuan",
-    "latitude": 9.5,
-    "longitude": 98.374,
-    "district_id": 8505
-  },
-  {
-    "id": 64,
-    "code": 230601,
-    "name_in_thai": "ต. เกาะหมาก",
-    "name_in_english": "Ko Mak",
-    "latitude": 11.808,
-    "longitude": 102.378,
-    "district_id": 2306
-  },
-  {
-    "id": 65,
-    "code": 910106,
-    "name_in_thai": "ต. เกาะสาหร่าย",
-    "name_in_english": "Ko Sarai",
-    "latitude": 6.515,
-    "longitude": 99.174,
-    "district_id": 9101
-  },
-  {
-    "id": 66,
-    "code": 860116,
-    "name_in_thai": "ต. หาดทรายรี",
-    "name_in_english": "Hat Sai Ri",
-    "latitude": 10.506,
-    "longitude": 99.425,
-    "district_id": 8601
   },
   {
     "id": 67,
@@ -621,24 +189,6 @@ export const subdistricts = [
     "district_id": 2007
   },
   {
-    "id": 69,
-    "code": 840401,
-    "name_in_thai": "ต. อ่างทอง",
-    "name_in_english": "Ang Thong",
-    "latitude": 9.681,
-    "longitude": 99.667,
-    "district_id": 8404
-  },
-  {
-    "id": 70,
-    "code": 860116,
-    "name_in_thai": "ต. หาดทรายรี",
-    "name_in_english": "Hat Sai Ri",
-    "latitude": 10.349,
-    "longitude": 99.295,
-    "district_id": 8601
-  },
-  {
     "id": 71,
     "code": 810106,
     "name_in_thai": "ต. เขาทอง",
@@ -646,60 +196,6 @@ export const subdistricts = [
     "latitude": 8.049,
     "longitude": 98.676,
     "district_id": 8101
-  },
-  {
-    "id": 72,
-    "code": 910106,
-    "name_in_thai": "ต. เกาะสาหร่าย",
-    "name_in_english": "Ko Sarai",
-    "latitude": 6.485,
-    "longitude": 99.366,
-    "district_id": 9101
-  },
-  {
-    "id": 73,
-    "code": 910106,
-    "name_in_thai": "ต. เกาะสาหร่าย",
-    "name_in_english": "Ko Sarai",
-    "latitude": 6.655,
-    "longitude": 99.876,
-    "district_id": 9101
-  },
-  {
-    "id": 74,
-    "code": 840401,
-    "name_in_thai": "ต. อ่างทอง",
-    "name_in_english": "Ang Thong",
-    "latitude": 9.676,
-    "longitude": 99.664,
-    "district_id": 8404
-  },
-  {
-    "id": 75,
-    "code": 860706,
-    "name_in_thai": "ต. ด่านสวี",
-    "name_in_english": "Dan Sawi",
-    "latitude": 10.208,
-    "longitude": 99.249,
-    "district_id": 8607
-  },
-  {
-    "id": 76,
-    "code": 840301,
-    "name_in_thai": "ต. ดอนสัก",
-    "name_in_english": "Don Sak",
-    "latitude": 9.351,
-    "longitude": 99.72,
-    "district_id": 8403
-  },
-  {
-    "id": 77,
-    "code": 910106,
-    "name_in_thai": "ต. เกาะสาหร่าย",
-    "name_in_english": "Ko Sarai",
-    "latitude": 6.704,
-    "longitude": 99.871,
-    "district_id": 9101
   },
   {
     "id": 78,
@@ -711,78 +207,6 @@ export const subdistricts = [
     "district_id": 8601
   },
   {
-    "id": 79,
-    "code": 921003,
-    "name_in_thai": "ต. ตะเสะ",
-    "name_in_english": "Tase",
-    "latitude": 7.144,
-    "longitude": 99.639,
-    "district_id": 9210
-  },
-  {
-    "id": 80,
-    "code": 230601,
-    "name_in_thai": "ต. เกาะหมาก",
-    "name_in_english": "Ko Mak",
-    "latitude": 11.81,
-    "longitude": 102.376,
-    "district_id": 2306
-  },
-  {
-    "id": 81,
-    "code": 860801,
-    "name_in_thai": "ต. ปากตะโก",
-    "name_in_english": "Pak Tako",
-    "latitude": 10.132,
-    "longitude": 99.163,
-    "district_id": 8608
-  },
-  {
-    "id": 82,
-    "code": 840401,
-    "name_in_thai": "ต. อ่างทอง",
-    "name_in_english": "Ang Thong",
-    "latitude": 9.702,
-    "longitude": 99.664,
-    "district_id": 8404
-  },
-  {
-    "id": 83,
-    "code": 860706,
-    "name_in_thai": "ต. ด่านสวี",
-    "name_in_english": "Dan Sawi",
-    "latitude": 10.296,
-    "longitude": 99.247,
-    "district_id": 8607
-  },
-  {
-    "id": 84,
-    "code": 910106,
-    "name_in_thai": "ต. เกาะสาหร่าย",
-    "name_in_english": "Ko Sarai",
-    "latitude": 6.514,
-    "longitude": 99.173,
-    "district_id": 9101
-  },
-  {
-    "id": 85,
-    "code": 910106,
-    "name_in_thai": "ต. เกาะสาหร่าย",
-    "name_in_english": "Ko Sarai",
-    "latitude": 6.504,
-    "longitude": 99.182,
-    "district_id": 9101
-  },
-  {
-    "id": 86,
-    "code": 840401,
-    "name_in_thai": "ต. อ่างทอง",
-    "name_in_english": "Ang Thong",
-    "latitude": 9.664,
-    "longitude": 99.677,
-    "district_id": 8404
-  },
-  {
     "id": 87,
     "code": 830108,
     "name_in_thai": "ต. กะรน",
@@ -790,51 +214,6 @@ export const subdistricts = [
     "latitude": 7.821,
     "longitude": 98.285,
     "district_id": 8301
-  },
-  {
-    "id": 88,
-    "code": 840401,
-    "name_in_thai": "ต. อ่างทอง",
-    "name_in_english": "Ang Thong",
-    "latitude": 9.687,
-    "longitude": 99.675,
-    "district_id": 8404
-  },
-  {
-    "id": 89,
-    "code": 921003,
-    "name_in_thai": "ต. ตะเสะ",
-    "name_in_english": "Tase",
-    "latitude": 7.144,
-    "longitude": 99.631,
-    "district_id": 9210
-  },
-  {
-    "id": 90,
-    "code": 210114,
-    "name_in_thai": "ต. มาบตาพุด",
-    "name_in_english": "Maptaphut",
-    "latitude": 12.648,
-    "longitude": 101.17,
-    "district_id": 2101
-  },
-  {
-    "id": 91,
-    "code": 860306,
-    "name_in_thai": "ต. ปากคลอง",
-    "name_in_english": "Pak Khlong",
-    "latitude": 10.865,
-    "longitude": 99.489,
-    "district_id": 8603
-  },
-  {
-    "id": 92,
-    "code": 910106,
-    "name_in_thai": "ต. เกาะสาหร่าย",
-    "name_in_english": "Ko Sarai",
-    "latitude": 6.508,
-    "longitude": 99.173,
-    "district_id": 9101
   },
   {
     "id": 93,
@@ -855,174 +234,12 @@ export const subdistricts = [
     "district_id": 9205
   },
   {
-    "id": 95,
-    "code": 840401,
-    "name_in_thai": "ต. อ่างทอง",
-    "name_in_english": "Ang Thong",
-    "latitude": 9.77,
-    "longitude": 99.668,
-    "district_id": 8404
-  },
-  {
-    "id": 96,
-    "code": 840401,
-    "name_in_thai": "ต. อ่างทอง",
-    "name_in_english": "Ang Thong",
-    "latitude": 9.521,
-    "longitude": 99.711,
-    "district_id": 8404
-  },
-  {
-    "id": 97,
-    "code": 840401,
-    "name_in_thai": "ต. อ่างทอง",
-    "name_in_english": "Ang Thong",
-    "latitude": 9.8,
-    "longitude": 99.713,
-    "district_id": 8404
-  },
-  {
-    "id": 98,
-    "code": 860116,
-    "name_in_thai": "ต. หาดทรายรี",
-    "name_in_english": "Hat Sai Ri",
-    "latitude": 10.426,
-    "longitude": 99.316,
-    "district_id": 8601
-  },
-  {
-    "id": 99,
-    "code": 840401,
-    "name_in_thai": "ต. อ่างทอง",
-    "name_in_english": "Ang Thong",
-    "latitude": 9.603,
-    "longitude": 99.715,
-    "district_id": 8404
-  },
-  {
-    "id": 100,
-    "code": 910106,
-    "name_in_thai": "ต. เกาะสาหร่าย",
-    "name_in_english": "Ko Sarai",
-    "latitude": 6.499,
-    "longitude": 99.318,
-    "district_id": 9101
-  },
-  {
-    "id": 101,
-    "code": 910106,
-    "name_in_thai": "ต. เกาะสาหร่าย",
-    "name_in_english": "Ko Sarai",
-    "latitude": 6.652,
-    "longitude": 99.692,
-    "district_id": 9101
-  },
-  {
-    "id": 102,
-    "code": 200901,
-    "name_in_thai": "ต. สัตหีบ",
-    "name_in_english": "Sattahip",
-    "latitude": 12.646,
-    "longitude": 100.897,
-    "district_id": 2009
-  },
-  {
     "id": 103,
     "code": 810505,
     "name_in_thai": "ต. อ่าวลึกน้อย",
     "name_in_english": "Ao Luek Noi",
     "latitude": 8.211,
     "longitude": 98.687,
-    "district_id": 8105
-  },
-  {
-    "id": 104,
-    "code": 850502,
-    "name_in_thai": "ต. กำพวน",
-    "name_in_english": "Kamphuan",
-    "latitude": 9.5,
-    "longitude": 98.368,
-    "district_id": 8505
-  },
-  {
-    "id": 105,
-    "code": 840301,
-    "name_in_thai": "ต. ดอนสัก",
-    "name_in_english": "Don Sak",
-    "latitude": 9.315,
-    "longitude": 99.66,
-    "district_id": 8403
-  },
-  {
-    "id": 106,
-    "code": 860706,
-    "name_in_thai": "ต. ด่านสวี",
-    "name_in_english": "Dan Sawi",
-    "latitude": 10.257,
-    "longitude": 99.227,
-    "district_id": 8607
-  },
-  {
-    "id": 107,
-    "code": 840401,
-    "name_in_thai": "ต. อ่างทอง",
-    "name_in_english": "Ang Thong",
-    "latitude": 9.672,
-    "longitude": 99.681,
-    "district_id": 8404
-  },
-  {
-    "id": 108,
-    "code": 910106,
-    "name_in_thai": "ต. เกาะสาหร่าย",
-    "name_in_english": "Ko Sarai",
-    "latitude": 6.514,
-    "longitude": 99.262,
-    "district_id": 9101
-  },
-  {
-    "id": 109,
-    "code": 860706,
-    "name_in_thai": "ต. ด่านสวี",
-    "name_in_english": "Dan Sawi",
-    "latitude": 10.2,
-    "longitude": 99.249,
-    "district_id": 8607
-  },
-  {
-    "id": 110,
-    "code": 840401,
-    "name_in_thai": "ต. อ่างทอง",
-    "name_in_english": "Ang Thong",
-    "latitude": 9.542,
-    "longitude": 99.673,
-    "district_id": 8404
-  },
-  {
-    "id": 111,
-    "code": 810505,
-    "name_in_thai": "ต. อ่าวลึกน้อย",
-    "name_in_english": "Ao Luek Noi",
-    "latitude": 8.208,
-    "longitude": 98.691,
-    "district_id": 8105
-  },
-  {
-    "id": 112,
-    "code": 860801,
-    "name_in_thai": "ต. ปากตะโก",
-    "name_in_english": "Pak Tako",
-    "latitude": 10.151,
-    "longitude": 99.204,
-    "district_id": 8608
-  },
-  {
-    "id": 113,
-    "code": 810505,
-    "name_in_thai": "ต. อ่าวลึกน้อย",
-    "name_in_english": "Ao Luek Noi",
-    "latitude": 8.302,
-    "longitude": 98.698,
     "district_id": 8105
   },
   {
@@ -1033,24 +250,6 @@ export const subdistricts = [
     "latitude": 9.877,
     "longitude": 98.442,
     "district_id": 8501
-  },
-  {
-    "id": 115,
-    "code": 810505,
-    "name_in_thai": "ต. อ่าวลึกน้อย",
-    "name_in_english": "Ao Luek Noi",
-    "latitude": 8.204,
-    "longitude": 98.69,
-    "district_id": 8105
-  },
-  {
-    "id": 116,
-    "code": 840401,
-    "name_in_thai": "ต. อ่างทอง",
-    "name_in_english": "Ang Thong",
-    "latitude": 9.671,
-    "longitude": 99.678,
-    "district_id": 8404
   },
   {
     "id": 117,
@@ -1071,51 +270,6 @@ export const subdistricts = [
     "district_id": 8303
   },
   {
-    "id": 119,
-    "code": 850109,
-    "name_in_thai": "ต. เกาะพยาม",
-    "name_in_english": "Ko Phayam",
-    "latitude": 9.779,
-    "longitude": 98.477,
-    "district_id": 8501
-  },
-  {
-    "id": 120,
-    "code": 840401,
-    "name_in_thai": "ต. อ่างทอง",
-    "name_in_english": "Ang Thong",
-    "latitude": 9.771,
-    "longitude": 99.671,
-    "district_id": 8404
-  },
-  {
-    "id": 121,
-    "code": 850105,
-    "name_in_thai": "ต. ปากน้ำ",
-    "name_in_english": "Pak Nam",
-    "latitude": 9.926,
-    "longitude": 98.514,
-    "district_id": 8501
-  },
-  {
-    "id": 122,
-    "code": 810106,
-    "name_in_thai": "ต. เขาทอง",
-    "name_in_english": "Khao Thong",
-    "latitude": 8.144,
-    "longitude": 98.717,
-    "district_id": 8101
-  },
-  {
-    "id": 123,
-    "code": 200905,
-    "name_in_thai": "ต. แสมสาร",
-    "name_in_english": "Samae San",
-    "latitude": 12.549,
-    "longitude": 100.971,
-    "district_id": 2009
-  },
-  {
     "id": 124,
     "code": 810502,
     "name_in_thai": "ต. แหลมสัก",
@@ -1123,15 +277,6 @@ export const subdistricts = [
     "latitude": 8.292,
     "longitude": 98.616,
     "district_id": 8105
-  },
-  {
-    "id": 125,
-    "code": 840401,
-    "name_in_thai": "ต. อ่างทอง",
-    "name_in_english": "Ang Thong",
-    "latitude": 9.673,
-    "longitude": 99.669,
-    "district_id": 8404
   },
   {
     "id": 126,
@@ -1143,15 +288,6 @@ export const subdistricts = [
     "district_id": 8101
   },
   {
-    "id": 127,
-    "code": 830103,
-    "name_in_thai": "ต. เกาะแก้ว",
-    "name_in_english": "Ko Kaeo",
-    "latitude": 7.965,
-    "longitude": 98.451,
-    "district_id": 8301
-  },
-  {
     "id": 128,
     "code": 220602,
     "name_in_thai": "ต. เกาะเปริด",
@@ -1159,42 +295,6 @@ export const subdistricts = [
     "latitude": 12.424,
     "longitude": 102.109,
     "district_id": 2206
-  },
-  {
-    "id": 129,
-    "code": 910106,
-    "name_in_thai": "ต. เกาะสาหร่าย",
-    "name_in_english": "Ko Sarai",
-    "latitude": 6.548,
-    "longitude": 99.705,
-    "district_id": 9101
-  },
-  {
-    "id": 130,
-    "code": 860306,
-    "name_in_thai": "ต. ปากคลอง",
-    "name_in_english": "Pak Khlong",
-    "latitude": 10.823,
-    "longitude": 99.492,
-    "district_id": 8603
-  },
-  {
-    "id": 131,
-    "code": 860801,
-    "name_in_thai": "ต. ปากตะโก",
-    "name_in_english": "Pak Tako",
-    "latitude": 10.155,
-    "longitude": 99.218,
-    "district_id": 8608
-  },
-  {
-    "id": 132,
-    "code": 910106,
-    "name_in_thai": "ต. เกาะสาหร่าย",
-    "name_in_english": "Ko Sarai",
-    "latitude": 6.488,
-    "longitude": 99.334,
-    "district_id": 9101
   },
   {
     "id": 133,
@@ -1206,42 +306,6 @@ export const subdistricts = [
     "district_id": 2004
   },
   {
-    "id": 134,
-    "code": 230601,
-    "name_in_thai": "ต. เกาะหมาก",
-    "name_in_english": "Ko Mak",
-    "latitude": 11.823,
-    "longitude": 102.385,
-    "district_id": 2306
-  },
-  {
-    "id": 135,
-    "code": 840401,
-    "name_in_thai": "ต. อ่างทอง",
-    "name_in_english": "Ang Thong",
-    "latitude": 9.482,
-    "longitude": 99.696,
-    "district_id": 8404
-  },
-  {
-    "id": 136,
-    "code": 840401,
-    "name_in_thai": "ต. อ่างทอง",
-    "name_in_english": "Ang Thong",
-    "latitude": 9.676,
-    "longitude": 99.677,
-    "district_id": 8404
-  },
-  {
-    "id": 137,
-    "code": 840401,
-    "name_in_thai": "ต. อ่างทอง",
-    "name_in_english": "Ang Thong",
-    "latitude": 9.776,
-    "longitude": 99.672,
-    "district_id": 8404
-  },
-  {
     "id": 138,
     "code": 210305,
     "name_in_thai": "ต. กร่ำ",
@@ -1249,78 +313,6 @@ export const subdistricts = [
     "latitude": 12.584,
     "longitude": 101.51,
     "district_id": 2103
-  },
-  {
-    "id": 139,
-    "code": 860706,
-    "name_in_thai": "ต. ด่านสวี",
-    "name_in_english": "Dan Sawi",
-    "latitude": 10.272,
-    "longitude": 99.233,
-    "district_id": 8607
-  },
-  {
-    "id": 140,
-    "code": 840401,
-    "name_in_thai": "ต. อ่างทอง",
-    "name_in_english": "Ang Thong",
-    "latitude": 9.556,
-    "longitude": 99.685,
-    "district_id": 8404
-  },
-  {
-    "id": 141,
-    "code": 810505,
-    "name_in_thai": "ต. อ่าวลึกน้อย",
-    "name_in_english": "Ao Luek Noi",
-    "latitude": 8.238,
-    "longitude": 98.708,
-    "district_id": 8105
-  },
-  {
-    "id": 142,
-    "code": 810106,
-    "name_in_thai": "ต. เขาทอง",
-    "name_in_english": "Khao Thong",
-    "latitude": 8.176,
-    "longitude": 98.735,
-    "district_id": 8101
-  },
-  {
-    "id": 143,
-    "code": 921003,
-    "name_in_thai": "ต. ตะเสะ",
-    "name_in_english": "Tase",
-    "latitude": 7.075,
-    "longitude": 99.394,
-    "district_id": 9210
-  },
-  {
-    "id": 144,
-    "code": 910106,
-    "name_in_thai": "ต. เกาะสาหร่าย",
-    "name_in_english": "Ko Sarai",
-    "latitude": 6.643,
-    "longitude": 99.694,
-    "district_id": 9101
-  },
-  {
-    "id": 145,
-    "code": 810106,
-    "name_in_thai": "ต. เขาทอง",
-    "name_in_english": "Khao Thong",
-    "latitude": 8.104,
-    "longitude": 98.682,
-    "district_id": 8101
-  },
-  {
-    "id": 146,
-    "code": 860801,
-    "name_in_thai": "ต. ปากตะโก",
-    "name_in_english": "Pak Tako",
-    "latitude": 10.071,
-    "longitude": 99.185,
-    "district_id": 8608
   },
   {
     "id": 147,
@@ -1332,120 +324,12 @@ export const subdistricts = [
     "district_id": 8503
   },
   {
-    "id": 148,
-    "code": 910106,
-    "name_in_thai": "ต. เกาะสาหร่าย",
-    "name_in_english": "Ko Sarai",
-    "latitude": 6.653,
-    "longitude": 99.833,
-    "district_id": 9101
-  },
-  {
-    "id": 149,
-    "code": 860116,
-    "name_in_thai": "ต. หาดทรายรี",
-    "name_in_english": "Hat Sai Ri",
-    "latitude": 10.319,
-    "longitude": 99.3,
-    "district_id": 8601
-  },
-  {
-    "id": 150,
-    "code": 200905,
-    "name_in_thai": "ต. แสมสาร",
-    "name_in_english": "Samae San",
-    "latitude": 12.603,
-    "longitude": 100.917,
-    "district_id": 2009
-  },
-  {
-    "id": 151,
-    "code": 860116,
-    "name_in_thai": "ต. หาดทรายรี",
-    "name_in_english": "Hat Sai Ri",
-    "latitude": 10.363,
-    "longitude": 99.31,
-    "district_id": 8601
-  },
-  {
-    "id": 152,
-    "code": 860706,
-    "name_in_thai": "ต. ด่านสวี",
-    "name_in_english": "Dan Sawi",
-    "latitude": 10.249,
-    "longitude": 99.224,
-    "district_id": 8607
-  },
-  {
-    "id": 153,
-    "code": 910106,
-    "name_in_thai": "ต. เกาะสาหร่าย",
-    "name_in_english": "Ko Sarai",
-    "latitude": 6.611,
-    "longitude": 99.7,
-    "district_id": 9101
-  },
-  {
     "id": 154,
     "code": 830107,
     "name_in_thai": "ต. ราไวย์",
     "name_in_english": "Rawai",
     "latitude": 7.767,
     "longitude": 98.3,
-    "district_id": 8301
-  },
-  {
-    "id": 155,
-    "code": 840401,
-    "name_in_thai": "ต. อ่างทอง",
-    "name_in_english": "Ang Thong",
-    "latitude": 9.51,
-    "longitude": 99.705,
-    "district_id": 8404
-  },
-  {
-    "id": 156,
-    "code": 910106,
-    "name_in_thai": "ต. เกาะสาหร่าย",
-    "name_in_english": "Ko Sarai",
-    "latitude": 6.686,
-    "longitude": 99.905,
-    "district_id": 9101
-  },
-  {
-    "id": 157,
-    "code": 910106,
-    "name_in_thai": "ต. เกาะสาหร่าย",
-    "name_in_english": "Ko Sarai",
-    "latitude": 6.505,
-    "longitude": 99.177,
-    "district_id": 9101
-  },
-  {
-    "id": 158,
-    "code": 810106,
-    "name_in_thai": "ต. เขาทอง",
-    "name_in_english": "Khao Thong",
-    "latitude": 8.129,
-    "longitude": 98.685,
-    "district_id": 8101
-  },
-  {
-    "id": 159,
-    "code": 210305,
-    "name_in_thai": "ต. กร่ำ",
-    "name_in_english": "Kram",
-    "latitude": 12.557,
-    "longitude": 101.569,
-    "district_id": 2103
-  },
-  {
-    "id": 160,
-    "code": 830107,
-    "name_in_thai": "ต. ราไวย์",
-    "name_in_english": "Rawai",
-    "latitude": 7.736,
-    "longitude": 98.296,
     "district_id": 8301
   },
   {
@@ -1458,96 +342,6 @@ export const subdistricts = [
     "district_id": 8103
   },
   {
-    "id": 162,
-    "code": 840301,
-    "name_in_thai": "ต. ดอนสัก",
-    "name_in_english": "Don Sak",
-    "latitude": 9.331,
-    "longitude": 99.703,
-    "district_id": 8403
-  },
-  {
-    "id": 163,
-    "code": 200901,
-    "name_in_thai": "ต. สัตหีบ",
-    "name_in_english": "Sattahip",
-    "latitude": 12.727,
-    "longitude": 100.798,
-    "district_id": 2009
-  },
-  {
-    "id": 164,
-    "code": 810505,
-    "name_in_thai": "ต. อ่าวลึกน้อย",
-    "name_in_english": "Ao Luek Noi",
-    "latitude": 8.246,
-    "longitude": 98.704,
-    "district_id": 8105
-  },
-  {
-    "id": 165,
-    "code": 840401,
-    "name_in_thai": "ต. อ่างทอง",
-    "name_in_english": "Ang Thong",
-    "latitude": 9.594,
-    "longitude": 99.721,
-    "district_id": 8404
-  },
-  {
-    "id": 166,
-    "code": 820603,
-    "name_in_thai": "ต. เกาะพระทอง",
-    "name_in_english": "Ko Phra Thong",
-    "latitude": 9.396,
-    "longitude": 97.895,
-    "district_id": 8206
-  },
-  {
-    "id": 167,
-    "code": 860116,
-    "name_in_thai": "ต. หาดทรายรี",
-    "name_in_english": "Hat Sai Ri",
-    "latitude": 10.39,
-    "longitude": 99.293,
-    "district_id": 8601
-  },
-  {
-    "id": 168,
-    "code": 850502,
-    "name_in_thai": "ต. กำพวน",
-    "name_in_english": "Kamphuan",
-    "latitude": 9.457,
-    "longitude": 98.328,
-    "district_id": 8505
-  },
-  {
-    "id": 169,
-    "code": 200408,
-    "name_in_thai": "ต. นาเกลือ",
-    "name_in_english": "Na Kluea",
-    "latitude": 12.942,
-    "longitude": 100.793,
-    "district_id": 2004
-  },
-  {
-    "id": 170,
-    "code": 200901,
-    "name_in_thai": "ต. สัตหีบ",
-    "name_in_english": "Sattahip",
-    "latitude": 12.612,
-    "longitude": 100.876,
-    "district_id": 2009
-  },
-  {
-    "id": 171,
-    "code": 200901,
-    "name_in_thai": "ต. สัตหีบ",
-    "name_in_english": "Sattahip",
-    "latitude": 12.624,
-    "longitude": 100.901,
-    "district_id": 2009
-  },
-  {
     "id": 172,
     "code": 810116,
     "name_in_thai": "ต. อ่าวนาง",
@@ -1555,24 +349,6 @@ export const subdistricts = [
     "latitude": 7.616,
     "longitude": 98.863,
     "district_id": 8101
-  },
-  {
-    "id": 173,
-    "code": 840401,
-    "name_in_thai": "ต. อ่างทอง",
-    "name_in_english": "Ang Thong",
-    "latitude": 9.641,
-    "longitude": 99.675,
-    "district_id": 8404
-  },
-  {
-    "id": 174,
-    "code": 921003,
-    "name_in_thai": "ต. ตะเสะ",
-    "name_in_english": "Tase",
-    "latitude": 7.133,
-    "longitude": 99.583,
-    "district_id": 9210
   },
   {
     "id": 175,
@@ -1584,15 +360,6 @@ export const subdistricts = [
     "district_id": 8405
   },
   {
-    "id": 176,
-    "code": 230601,
-    "name_in_thai": "ต. เกาะหมาก",
-    "name_in_english": "Ko Mak",
-    "latitude": 11.835,
-    "longitude": 102.46,
-    "district_id": 2306
-  },
-  {
     "id": 177,
     "code": 220205,
     "name_in_thai": "ต. บางชัน",
@@ -1600,24 +367,6 @@ export const subdistricts = [
     "latitude": 12.288,
     "longitude": 102.251,
     "district_id": 2202
-  },
-  {
-    "id": 178,
-    "code": 810106,
-    "name_in_thai": "ต. เขาทอง",
-    "name_in_english": "Khao Thong",
-    "latitude": 8.113,
-    "longitude": 98.707,
-    "district_id": 8101
-  },
-  {
-    "id": 179,
-    "code": 920213,
-    "name_in_thai": "ต. เกาะลิบง",
-    "name_in_english": "Ko Libong",
-    "latitude": 7.314,
-    "longitude": 99.408,
-    "district_id": 9202
   },
   {
     "id": 180,
@@ -1629,123 +378,6 @@ export const subdistricts = [
     "district_id": 8601
   },
   {
-    "id": 181,
-    "code": 810302,
-    "name_in_thai": "ต. เกาะลันตาน้อย",
-    "name_in_english": "Ko Lanta Noi",
-    "latitude": 7.561,
-    "longitude": 99.144,
-    "district_id": 8103
-  },
-  {
-    "id": 182,
-    "code": 910106,
-    "name_in_thai": "ต. เกาะสาหร่าย",
-    "name_in_english": "Ko Sarai",
-    "latitude": 6.709,
-    "longitude": 99.671,
-    "district_id": 9101
-  },
-  {
-    "id": 183,
-    "code": 910106,
-    "name_in_thai": "ต. เกาะสาหร่าย",
-    "name_in_english": "Ko Sarai",
-    "latitude": 6.619,
-    "longitude": 99.689,
-    "district_id": 9101
-  },
-  {
-    "id": 184,
-    "code": 810106,
-    "name_in_thai": "ต. เขาทอง",
-    "name_in_english": "Khao Thong",
-    "latitude": 8.124,
-    "longitude": 98.669,
-    "district_id": 8101
-  },
-  {
-    "id": 185,
-    "code": 810106,
-    "name_in_thai": "ต. เขาทอง",
-    "name_in_english": "Khao Thong",
-    "latitude": 8.107,
-    "longitude": 98.688,
-    "district_id": 8101
-  },
-  {
-    "id": 186,
-    "code": 220602,
-    "name_in_thai": "ต. เกาะเปริด",
-    "name_in_english": "Ko Proet",
-    "latitude": 12.396,
-    "longitude": 102.133,
-    "district_id": 2206
-  },
-  {
-    "id": 187,
-    "code": 910106,
-    "name_in_thai": "ต. เกาะสาหร่าย",
-    "name_in_english": "Ko Sarai",
-    "latitude": 6.665,
-    "longitude": 99.691,
-    "district_id": 9101
-  },
-  {
-    "id": 188,
-    "code": 921003,
-    "name_in_thai": "ต. ตะเสะ",
-    "name_in_english": "Tase",
-    "latitude": 6.975,
-    "longitude": 99.475,
-    "district_id": 9210
-  },
-  {
-    "id": 189,
-    "code": 860116,
-    "name_in_thai": "ต. หาดทรายรี",
-    "name_in_english": "Hat Sai Ri",
-    "latitude": 10.496,
-    "longitude": 99.421,
-    "district_id": 8601
-  },
-  {
-    "id": 190,
-    "code": 850105,
-    "name_in_thai": "ต. ปากน้ำ",
-    "name_in_english": "Pak Nam",
-    "latitude": 9.92,
-    "longitude": 98.535,
-    "district_id": 8501
-  },
-  {
-    "id": 191,
-    "code": 910106,
-    "name_in_thai": "ต. เกาะสาหร่าย",
-    "name_in_english": "Ko Sarai",
-    "latitude": 6.729,
-    "longitude": 99.66,
-    "district_id": 9101
-  },
-  {
-    "id": 192,
-    "code": 230601,
-    "name_in_thai": "ต. เกาะหมาก",
-    "name_in_english": "Ko Mak",
-    "latitude": 11.808,
-    "longitude": 102.455,
-    "district_id": 2306
-  },
-  {
-    "id": 193,
-    "code": 840301,
-    "name_in_thai": "ต. ดอนสัก",
-    "name_in_english": "Don Sak",
-    "latitude": 9.352,
-    "longitude": 99.683,
-    "district_id": 8403
-  },
-  {
     "id": 194,
     "code": 830105,
     "name_in_thai": "ต. รัษฎา",
@@ -1753,42 +385,6 @@ export const subdistricts = [
     "latitude": 7.834,
     "longitude": 98.423,
     "district_id": 8301
-  },
-  {
-    "id": 195,
-    "code": 210305,
-    "name_in_thai": "ต. กร่ำ",
-    "name_in_english": "Kram",
-    "latitude": 12.599,
-    "longitude": 101.691,
-    "district_id": 2103
-  },
-  {
-    "id": 196,
-    "code": 920501,
-    "name_in_thai": "ต. บ่อหิน",
-    "name_in_english": "Bo Hin",
-    "latitude": 7.559,
-    "longitude": 99.288,
-    "district_id": 9205
-  },
-  {
-    "id": 197,
-    "code": 920213,
-    "name_in_thai": "ต. เกาะลิบง",
-    "name_in_english": "Ko Libong",
-    "latitude": 7.38,
-    "longitude": 99.248,
-    "district_id": 9202
-  },
-  {
-    "id": 198,
-    "code": 910106,
-    "name_in_thai": "ต. เกาะสาหร่าย",
-    "name_in_english": "Ko Sarai",
-    "latitude": 6.732,
-    "longitude": 99.706,
-    "district_id": 9101
   },
   {
     "id": 199,
@@ -1800,24 +396,6 @@ export const subdistricts = [
     "district_id": 1001
   },
   {
-    "id": 200,
-    "code": 830107,
-    "name_in_thai": "ต. ราไวย์",
-    "name_in_english": "Rawai",
-    "latitude": 7.747,
-    "longitude": 98.301,
-    "district_id": 8301
-  },
-  {
-    "id": 201,
-    "code": 820603,
-    "name_in_thai": "ต. เกาะพระทอง",
-    "name_in_english": "Ko Phra Thong",
-    "latitude": 8.519,
-    "longitude": 97.647,
-    "district_id": 8206
-  },
-  {
     "id": 202,
     "code": 100105,
     "name_in_thai": "แขวง ศาลเจ้าพ่อเสือ",
@@ -1825,96 +403,6 @@ export const subdistricts = [
     "latitude": 13.754,
     "longitude": 100.497,
     "district_id": 1001
-  },
-  {
-    "id": 203,
-    "code": 220607,
-    "name_in_thai": "ต. บางกะไชย",
-    "name_in_english": "Bang Kachai",
-    "latitude": 12.463,
-    "longitude": 102.023,
-    "district_id": 2206
-  },
-  {
-    "id": 204,
-    "code": 200905,
-    "name_in_thai": "ต. แสมสาร",
-    "name_in_english": "Samae San",
-    "latitude": 12.572,
-    "longitude": 100.932,
-    "district_id": 2009
-  },
-  {
-    "id": 205,
-    "code": 230601,
-    "name_in_thai": "ต. เกาะหมาก",
-    "name_in_english": "Ko Mak",
-    "latitude": 11.799,
-    "longitude": 102.451,
-    "district_id": 2306
-  },
-  {
-    "id": 206,
-    "code": 810105,
-    "name_in_thai": "ต. เขาคราม",
-    "name_in_english": "Khao Khram",
-    "latitude": 8.217,
-    "longitude": 98.725,
-    "district_id": 8101
-  },
-  {
-    "id": 207,
-    "code": 200901,
-    "name_in_thai": "ต. สัตหีบ",
-    "name_in_english": "Sattahip",
-    "latitude": 12.617,
-    "longitude": 100.881,
-    "district_id": 2009
-  },
-  {
-    "id": 208,
-    "code": 860116,
-    "name_in_thai": "ต. หาดทรายรี",
-    "name_in_english": "Hat Sai Ri",
-    "latitude": 10.376,
-    "longitude": 99.322,
-    "district_id": 8601
-  },
-  {
-    "id": 209,
-    "code": 820603,
-    "name_in_thai": "ต. เกาะพระทอง",
-    "name_in_english": "Ko Phra Thong",
-    "latitude": 8.569,
-    "longitude": 97.636,
-    "district_id": 8206
-  },
-  {
-    "id": 210,
-    "code": 920501,
-    "name_in_thai": "ต. บ่อหิน",
-    "name_in_english": "Bo Hin",
-    "latitude": 7.547,
-    "longitude": 99.279,
-    "district_id": 9205
-  },
-  {
-    "id": 211,
-    "code": 850109,
-    "name_in_thai": "ต. เกาะพยาม",
-    "name_in_english": "Ko Phayam",
-    "latitude": 9.717,
-    "longitude": 98.423,
-    "district_id": 8501
-  },
-  {
-    "id": 212,
-    "code": 840501,
-    "name_in_thai": "ต. เกาะพะงัน",
-    "name_in_english": "Ko Pha-Ngan",
-    "latitude": 9.709,
-    "longitude": 99.973,
-    "district_id": 8405
   },
   {
     "id": 213,
@@ -1935,15 +423,6 @@ export const subdistricts = [
     "district_id": 1001
   },
   {
-    "id": 215,
-    "code": 210305,
-    "name_in_thai": "ต. กร่ำ",
-    "name_in_english": "Kram",
-    "latitude": 12.569,
-    "longitude": 101.7,
-    "district_id": 2103
-  },
-  {
     "id": 216,
     "code": 920414,
     "name_in_thai": "ต. เกาะค้างคาว",
@@ -1951,33 +430,6 @@ export const subdistricts = [
     "latitude": 7.152,
     "longitude": 99.651,
     "district_id": 9204
-  },
-  {
-    "id": 217,
-    "code": 860116,
-    "name_in_thai": "ต. หาดทรายรี",
-    "name_in_english": "Hat Sai Ri",
-    "latitude": 10.323,
-    "longitude": 99.28,
-    "district_id": 8601
-  },
-  {
-    "id": 218,
-    "code": 810116,
-    "name_in_thai": "ต. อ่าวนาง",
-    "name_in_english": "Ao Nang",
-    "latitude": 7.821,
-    "longitude": 98.774,
-    "district_id": 8101
-  },
-  {
-    "id": 219,
-    "code": 820603,
-    "name_in_thai": "ต. เกาะพระทอง",
-    "name_in_english": "Ko Phra Thong",
-    "latitude": 9.477,
-    "longitude": 97.904,
-    "district_id": 8206
   },
   {
     "id": 220,
@@ -1998,15 +450,6 @@ export const subdistricts = [
     "district_id": 2203
   },
   {
-    "id": 222,
-    "code": 921003,
-    "name_in_thai": "ต. ตะเสะ",
-    "name_in_english": "Tase",
-    "latitude": 7.118,
-    "longitude": 99.426,
-    "district_id": 9210
-  },
-  {
     "id": 223,
     "code": 860304,
     "name_in_thai": "ต. ชุมโค",
@@ -2025,87 +468,6 @@ export const subdistricts = [
     "district_id": 1001
   },
   {
-    "id": 225,
-    "code": 200901,
-    "name_in_thai": "ต. สัตหีบ",
-    "name_in_english": "Sattahip",
-    "latitude": 12.676,
-    "longitude": 100.823,
-    "district_id": 2009
-  },
-  {
-    "id": 226,
-    "code": 830301,
-    "name_in_thai": "ต. เทพกระษัตรี",
-    "name_in_english": "Thep Krasattri",
-    "latitude": 8.108,
-    "longitude": 98.405,
-    "district_id": 8303
-  },
-  {
-    "id": 227,
-    "code": 810802,
-    "name_in_thai": "ต. เกาะศรีบอยา",
-    "name_in_english": "Ko Si Boya",
-    "latitude": 7.869,
-    "longitude": 99.044,
-    "district_id": 8108
-  },
-  {
-    "id": 228,
-    "code": 860801,
-    "name_in_thai": "ต. ปากตะโก",
-    "name_in_english": "Pak Tako",
-    "latitude": 10.145,
-    "longitude": 99.178,
-    "district_id": 8608
-  },
-  {
-    "id": 229,
-    "code": 810802,
-    "name_in_thai": "ต. เกาะศรีบอยา",
-    "name_in_english": "Ko Si Boya",
-    "latitude": 7.808,
-    "longitude": 98.991,
-    "district_id": 8108
-  },
-  {
-    "id": 230,
-    "code": 810106,
-    "name_in_thai": "ต. เขาทอง",
-    "name_in_english": "Khao Thong",
-    "latitude": 8.106,
-    "longitude": 98.707,
-    "district_id": 8101
-  },
-  {
-    "id": 231,
-    "code": 810116,
-    "name_in_thai": "ต. อ่าวนาง",
-    "name_in_english": "Ao Nang",
-    "latitude": 7.817,
-    "longitude": 98.795,
-    "district_id": 8101
-  },
-  {
-    "id": 232,
-    "code": 810802,
-    "name_in_thai": "ต. เกาะศรีบอยา",
-    "name_in_english": "Ko Si Boya",
-    "latitude": 7.879,
-    "longitude": 99.046,
-    "district_id": 8108
-  },
-  {
-    "id": 233,
-    "code": 840401,
-    "name_in_thai": "ต. อ่างทอง",
-    "name_in_english": "Ang Thong",
-    "latitude": 9.446,
-    "longitude": 99.652,
-    "district_id": 8404
-  },
-  {
     "id": 234,
     "code": 830304,
     "name_in_thai": "ต. ป่าคลอก",
@@ -2113,42 +475,6 @@ export const subdistricts = [
     "latitude": 8.028,
     "longitude": 98.461,
     "district_id": 8303
-  },
-  {
-    "id": 235,
-    "code": 810106,
-    "name_in_thai": "ต. เขาทอง",
-    "name_in_english": "Khao Thong",
-    "latitude": 8.12,
-    "longitude": 98.678,
-    "district_id": 8101
-  },
-  {
-    "id": 236,
-    "code": 810505,
-    "name_in_thai": "ต. อ่าวลึกน้อย",
-    "name_in_english": "Ao Luek Noi",
-    "latitude": 8.297,
-    "longitude": 98.694,
-    "district_id": 8105
-  },
-  {
-    "id": 237,
-    "code": 840401,
-    "name_in_thai": "ต. อ่างทอง",
-    "name_in_english": "Ang Thong",
-    "latitude": 9.783,
-    "longitude": 99.673,
-    "district_id": 8404
-  },
-  {
-    "id": 238,
-    "code": 910106,
-    "name_in_thai": "ต. เกาะสาหร่าย",
-    "name_in_english": "Ko Sarai",
-    "latitude": 6.694,
-    "longitude": 99.858,
-    "district_id": 9101
   },
   {
     "id": 239,
@@ -2160,15 +486,6 @@ export const subdistricts = [
     "district_id": 9204
   },
   {
-    "id": 240,
-    "code": 840501,
-    "name_in_thai": "ต. เกาะพะงัน",
-    "name_in_english": "Ko Pha-Ngan",
-    "latitude": 9.706,
-    "longitude": 99.948,
-    "district_id": 8405
-  },
-  {
     "id": 241,
     "code": 810303,
     "name_in_thai": "ต. เกาะกลาง",
@@ -2176,15 +493,6 @@ export const subdistricts = [
     "latitude": 7.746,
     "longitude": 99.126,
     "district_id": 8103
-  },
-  {
-    "id": 242,
-    "code": 810802,
-    "name_in_thai": "ต. เกาะศรีบอยา",
-    "name_in_english": "Ko Si Boya",
-    "latitude": 7.847,
-    "longitude": 98.983,
-    "district_id": 8108
   },
   {
     "id": 243,
@@ -2205,15 +513,6 @@ export const subdistricts = [
     "district_id": 8404
   },
   {
-    "id": 245,
-    "code": 820603,
-    "name_in_thai": "ต. เกาะพระทอง",
-    "name_in_english": "Ko Phra Thong",
-    "latitude": 8.828,
-    "longitude": 97.802,
-    "district_id": 8206
-  },
-  {
     "id": 246,
     "code": 810304,
     "name_in_thai": "ต. คลองยาง",
@@ -2230,24 +529,6 @@ export const subdistricts = [
     "latitude": 7.496,
     "longitude": 99.12,
     "district_id": 8103
-  },
-  {
-    "id": 248,
-    "code": 921003,
-    "name_in_thai": "ต. ตะเสะ",
-    "name_in_english": "Tase",
-    "latitude": 7.108,
-    "longitude": 99.428,
-    "district_id": 9210
-  },
-  {
-    "id": 249,
-    "code": 810105,
-    "name_in_thai": "ต. เขาคราม",
-    "name_in_english": "Khao Khram",
-    "latitude": 8.217,
-    "longitude": 98.73,
-    "district_id": 8101
   },
   {
     "id": 250,
@@ -2268,78 +549,6 @@ export const subdistricts = [
     "district_id": 2009
   },
   {
-    "id": 252,
-    "code": 850109,
-    "name_in_thai": "ต. เกาะพยาม",
-    "name_in_english": "Ko Phayam",
-    "latitude": 9.782,
-    "longitude": 98.447,
-    "district_id": 8501
-  },
-  {
-    "id": 253,
-    "code": 220602,
-    "name_in_thai": "ต. เกาะเปริด",
-    "name_in_english": "Ko Proet",
-    "latitude": 12.409,
-    "longitude": 102.122,
-    "district_id": 2206
-  },
-  {
-    "id": 254,
-    "code": 910106,
-    "name_in_thai": "ต. เกาะสาหร่าย",
-    "name_in_english": "Ko Sarai",
-    "latitude": 6.543,
-    "longitude": 99.261,
-    "district_id": 9101
-  },
-  {
-    "id": 255,
-    "code": 850109,
-    "name_in_thai": "ต. เกาะพยาม",
-    "name_in_english": "Ko Phayam",
-    "latitude": 9.736,
-    "longitude": 98.486,
-    "district_id": 8501
-  },
-  {
-    "id": 256,
-    "code": 840401,
-    "name_in_thai": "ต. อ่างทอง",
-    "name_in_english": "Ang Thong",
-    "latitude": 9.667,
-    "longitude": 99.666,
-    "district_id": 8404
-  },
-  {
-    "id": 257,
-    "code": 810106,
-    "name_in_thai": "ต. เขาทอง",
-    "name_in_english": "Khao Thong",
-    "latitude": 8.101,
-    "longitude": 98.69,
-    "district_id": 8101
-  },
-  {
-    "id": 258,
-    "code": 910106,
-    "name_in_thai": "ต. เกาะสาหร่าย",
-    "name_in_english": "Ko Sarai",
-    "latitude": 6.716,
-    "longitude": 99.887,
-    "district_id": 9101
-  },
-  {
-    "id": 259,
-    "code": 850109,
-    "name_in_thai": "ต. เกาะพยาม",
-    "name_in_english": "Ko Phayam",
-    "latitude": 9.866,
-    "longitude": 98.472,
-    "district_id": 8501
-  },
-  {
     "id": 260,
     "code": 840403,
     "name_in_thai": "ต. ตลิ่งงาม",
@@ -2349,33 +558,6 @@ export const subdistricts = [
     "district_id": 8404
   },
   {
-    "id": 261,
-    "code": 210305,
-    "name_in_thai": "ต. กร่ำ",
-    "name_in_english": "Kram",
-    "latitude": 12.611,
-    "longitude": 101.687,
-    "district_id": 2103
-  },
-  {
-    "id": 262,
-    "code": 910106,
-    "name_in_thai": "ต. เกาะสาหร่าย",
-    "name_in_english": "Ko Sarai",
-    "latitude": 6.521,
-    "longitude": 99.699,
-    "district_id": 9101
-  },
-  {
-    "id": 263,
-    "code": 910106,
-    "name_in_thai": "ต. เกาะสาหร่าย",
-    "name_in_english": "Ko Sarai",
-    "latitude": 6.523,
-    "longitude": 99.692,
-    "district_id": 9101
-  },
-  {
     "id": 264,
     "code": 100109,
     "name_in_thai": "แขวง ชนะสงคราม",
@@ -2383,42 +565,6 @@ export const subdistricts = [
     "latitude": 13.762,
     "longitude": 100.495,
     "district_id": 1001
-  },
-  {
-    "id": 265,
-    "code": 850109,
-    "name_in_thai": "ต. เกาะพยาม",
-    "name_in_english": "Ko Phayam",
-    "latitude": 9.769,
-    "longitude": 98.464,
-    "district_id": 8501
-  },
-  {
-    "id": 266,
-    "code": 840403,
-    "name_in_thai": "ต. ตลิ่งงาม",
-    "name_in_english": "Taling Ngam",
-    "latitude": 9.314,
-    "longitude": 99.913,
-    "district_id": 8404
-  },
-  {
-    "id": 267,
-    "code": 840401,
-    "name_in_thai": "ต. อ่างทอง",
-    "name_in_english": "Ang Thong",
-    "latitude": 9.679,
-    "longitude": 99.681,
-    "district_id": 8404
-  },
-  {
-    "id": 268,
-    "code": 830107,
-    "name_in_thai": "ต. ราไวย์",
-    "name_in_english": "Rawai",
-    "latitude": 7.76,
-    "longitude": 98.392,
-    "district_id": 8301
   },
   {
     "id": 269,
@@ -2439,78 +585,6 @@ export const subdistricts = [
     "district_id": 1002
   },
   {
-    "id": 271,
-    "code": 810505,
-    "name_in_thai": "ต. อ่าวลึกน้อย",
-    "name_in_english": "Ao Luek Noi",
-    "latitude": 8.294,
-    "longitude": 98.699,
-    "district_id": 8105
-  },
-  {
-    "id": 272,
-    "code": 830107,
-    "name_in_thai": "ต. ราไวย์",
-    "name_in_english": "Rawai",
-    "latitude": 7.757,
-    "longitude": 98.331,
-    "district_id": 8301
-  },
-  {
-    "id": 273,
-    "code": 810302,
-    "name_in_thai": "ต. เกาะลันตาน้อย",
-    "name_in_english": "Ko Lanta Noi",
-    "latitude": 7.613,
-    "longitude": 99.149,
-    "district_id": 8103
-  },
-  {
-    "id": 274,
-    "code": 820603,
-    "name_in_thai": "ต. เกาะพระทอง",
-    "name_in_english": "Ko Phra Thong",
-    "latitude": 9.421,
-    "longitude": 97.83,
-    "district_id": 8206
-  },
-  {
-    "id": 275,
-    "code": 230601,
-    "name_in_thai": "ต. เกาะหมาก",
-    "name_in_english": "Ko Mak",
-    "latitude": 11.774,
-    "longitude": 102.392,
-    "district_id": 2306
-  },
-  {
-    "id": 276,
-    "code": 910106,
-    "name_in_thai": "ต. เกาะสาหร่าย",
-    "name_in_english": "Ko Sarai",
-    "latitude": 6.698,
-    "longitude": 99.841,
-    "district_id": 9101
-  },
-  {
-    "id": 277,
-    "code": 840403,
-    "name_in_thai": "ต. ตลิ่งงาม",
-    "name_in_english": "Taling Ngam",
-    "latitude": 9.37,
-    "longitude": 99.977,
-    "district_id": 8404
-  },
-  {
-    "id": 278,
-    "code": 850501,
-    "name_in_thai": "ต. นาคา",
-    "name_in_english": "Nakha",
-    "latitude": 9.569,
-    "longitude": 98.384,
-    "district_id": 8505
-  },
-  {
     "id": 279,
     "code": 810118,
     "name_in_thai": "ต. คลองประสงค์",
@@ -2529,42 +603,6 @@ export const subdistricts = [
     "district_id": 1008
   },
   {
-    "id": 281,
-    "code": 830107,
-    "name_in_thai": "ต. ราไวย์",
-    "name_in_english": "Rawai",
-    "latitude": 7.485,
-    "longitude": 98.316,
-    "district_id": 8301
-  },
-  {
-    "id": 282,
-    "code": 830304,
-    "name_in_thai": "ต. ป่าคลอก",
-    "name_in_english": "Pa Khlok",
-    "latitude": 8.06,
-    "longitude": 98.446,
-    "district_id": 8303
-  },
-  {
-    "id": 283,
-    "code": 850105,
-    "name_in_thai": "ต. ปากน้ำ",
-    "name_in_english": "Pak Nam",
-    "latitude": 9.902,
-    "longitude": 98.512,
-    "district_id": 8501
-  },
-  {
-    "id": 284,
-    "code": 810304,
-    "name_in_thai": "ต. คลองยาง",
-    "name_in_english": "Khlong Yang",
-    "latitude": 7.833,
-    "longitude": 99.02,
-    "district_id": 8103
-  },
-  {
     "id": 285,
     "code": 100110,
     "name_in_thai": "แขวง บ้านพานถม",
@@ -2572,24 +610,6 @@ export const subdistricts = [
     "latitude": 13.762,
     "longitude": 100.503,
     "district_id": 1001
-  },
-  {
-    "id": 286,
-    "code": 830105,
-    "name_in_thai": "ต. รัษฎา",
-    "name_in_english": null,
-    "latitude": 7.829,
-    "longitude": 98.415,
-    "district_id": 8301
-  },
-  {
-    "id": 287,
-    "code": 850105,
-    "name_in_thai": "ต. ปากน้ำ",
-    "name_in_english": "Pak Nam",
-    "latitude": 9.931,
-    "longitude": 98.483,
-    "district_id": 8501
   },
   {
     "id": 288,
@@ -2628,24 +648,6 @@ export const subdistricts = [
     "district_id": 2001
   },
   {
-    "id": 292,
-    "code": 850502,
-    "name_in_thai": "ต. กำพวน",
-    "name_in_english": "Kamphuan",
-    "latitude": 9.436,
-    "longitude": 98.352,
-    "district_id": 8505
-  },
-  {
-    "id": 293,
-    "code": 920504,
-    "name_in_thai": "ต. ไม้ฝาด",
-    "name_in_english": "Mai Fat",
-    "latitude": 7.494,
-    "longitude": 99.302,
-    "district_id": 9205
-  },
-  {
     "id": 294,
     "code": 100805,
     "name_in_thai": "แขวง วัดโสมนัส",
@@ -2655,15 +657,6 @@ export const subdistricts = [
     "district_id": 1008
   },
   {
-    "id": 295,
-    "code": 200905,
-    "name_in_thai": "ต. แสมสาร",
-    "name_in_english": "Samae San",
-    "latitude": 12.521,
-    "longitude": 100.97,
-    "district_id": 2009
-  },
-  {
     "id": 296,
     "code": 101302,
     "name_in_thai": "แขวง สัมพันธวงศ์",
@@ -2671,24 +664,6 @@ export const subdistricts = [
     "latitude": 13.739,
     "longitude": 100.511,
     "district_id": 1013
-  },
-  {
-    "id": 297,
-    "code": 810118,
-    "name_in_thai": "ต. คลองประสงค์",
-    "name_in_english": "Khlong Prasong",
-    "latitude": 7.954,
-    "longitude": 98.806,
-    "district_id": 8101
-  },
-  {
-    "id": 298,
-    "code": 910106,
-    "name_in_thai": "ต. เกาะสาหร่าย",
-    "name_in_english": "Ko Sarai",
-    "latitude": 6.709,
-    "longitude": 99.894,
-    "district_id": 9101
   },
   {
     "id": 299,
@@ -2709,15 +684,6 @@ export const subdistricts = [
     "district_id": 1004
   },
   {
-    "id": 301,
-    "code": 830103,
-    "name_in_thai": "ต. เกาะแก้ว",
-    "name_in_english": "Ko Kaeo",
-    "latitude": 7.953,
-    "longitude": 98.451,
-    "district_id": 8301
-  },
-  {
     "id": 302,
     "code": 101301,
     "name_in_thai": "แขวง จักรวรรดิ",
@@ -2727,15 +693,6 @@ export const subdistricts = [
     "district_id": 1013
   },
   {
-    "id": 303,
-    "code": 910106,
-    "name_in_thai": "ต. เกาะสาหร่าย",
-    "name_in_english": "Ko Sarai",
-    "latitude": 6.584,
-    "longitude": 99.455,
-    "district_id": 9101
-  },
-  {
     "id": 304,
     "code": 100112,
     "name_in_thai": "แขวง วัดสามพระยา",
@@ -2743,24 +700,6 @@ export const subdistricts = [
     "latitude": 13.768,
     "longitude": 100.499,
     "district_id": 1001
-  },
-  {
-    "id": 305,
-    "code": 810106,
-    "name_in_thai": "ต. เขาทอง",
-    "name_in_english": "Khao Thong",
-    "latitude": 8.079,
-    "longitude": 98.677,
-    "district_id": 8101
-  },
-  {
-    "id": 306,
-    "code": 200901,
-    "name_in_thai": "ต. สัตหีบ",
-    "name_in_english": "Sattahip",
-    "latitude": 12.644,
-    "longitude": 100.889,
-    "district_id": 2009
   },
   {
     "id": 307,
@@ -2779,15 +718,6 @@ export const subdistricts = [
     "latitude": 13.753,
     "longitude": 100.513,
     "district_id": 1008
-  },
-  {
-    "id": 309,
-    "code": 910106,
-    "name_in_thai": "ต. เกาะสาหร่าย",
-    "name_in_english": "Ko Sarai",
-    "latitude": 6.564,
-    "longitude": 99.345,
-    "district_id": 9101
   },
   {
     "id": 310,
@@ -2826,15 +756,6 @@ export const subdistricts = [
     "district_id": 7401
   },
   {
-    "id": 314,
-    "code": 840401,
-    "name_in_thai": "ต. อ่างทอง",
-    "name_in_english": "Ang Thong",
-    "latitude": 9.548,
-    "longitude": 99.663,
-    "district_id": 8404
-  },
-  {
     "id": 315,
     "code": 100401,
     "name_in_thai": "แขวง มหาพฤฒาราม",
@@ -2842,51 +763,6 @@ export const subdistricts = [
     "latitude": 13.734,
     "longitude": 100.52,
     "district_id": 1004
-  },
-  {
-    "id": 316,
-    "code": 810304,
-    "name_in_thai": "ต. คลองยาง",
-    "name_in_english": "Khlong Yang",
-    "latitude": 7.848,
-    "longitude": 99.069,
-    "district_id": 8103
-  },
-  {
-    "id": 317,
-    "code": 850305,
-    "name_in_thai": "ต. บางหิน",
-    "name_in_english": "Bang Hin",
-    "latitude": 9.575,
-    "longitude": 98.515,
-    "district_id": 8503
-  },
-  {
-    "id": 318,
-    "code": 820603,
-    "name_in_thai": "ต. เกาะพระทอง",
-    "name_in_english": "Ko Phra Thong",
-    "latitude": 9.371,
-    "longitude": 97.866,
-    "district_id": 8206
-  },
-  {
-    "id": 319,
-    "code": 810303,
-    "name_in_thai": "ต. เกาะกลาง",
-    "name_in_english": "Ko Klang",
-    "latitude": 7.738,
-    "longitude": 99.126,
-    "district_id": 8103
-  },
-  {
-    "id": 320,
-    "code": 840401,
-    "name_in_thai": "ต. อ่างทอง",
-    "name_in_english": "Ang Thong",
-    "latitude": 9.612,
-    "longitude": 99.712,
-    "district_id": 8404
   },
   {
     "id": 321,
@@ -2898,42 +774,6 @@ export const subdistricts = [
     "district_id": 1015
   },
   {
-    "id": 322,
-    "code": 220205,
-    "name_in_thai": "ต. บางชัน",
-    "name_in_english": "Bang Chan",
-    "latitude": 12.292,
-    "longitude": 102.239,
-    "district_id": 2202
-  },
-  {
-    "id": 323,
-    "code": 910106,
-    "name_in_thai": "ต. เกาะสาหร่าย",
-    "name_in_english": "Ko Sarai",
-    "latitude": 6.714,
-    "longitude": 99.878,
-    "district_id": 9101
-  },
-  {
-    "id": 324,
-    "code": 840403,
-    "name_in_thai": "ต. ตลิ่งงาม",
-    "name_in_english": "Taling Ngam",
-    "latitude": 9.307,
-    "longitude": 99.961,
-    "district_id": 8404
-  },
-  {
-    "id": 325,
-    "code": 840401,
-    "name_in_thai": "ต. อ่างทอง",
-    "name_in_english": "Ang Thong",
-    "latitude": 9.429,
-    "longitude": 99.671,
-    "district_id": 8404
-  },
-  {
     "id": 326,
     "code": 101801,
     "name_in_thai": "แขวง สมเด็จเจ้าพระยา",
@@ -2941,33 +781,6 @@ export const subdistricts = [
     "latitude": 13.731,
     "longitude": 100.497,
     "district_id": 1018
-  },
-  {
-    "id": 327,
-    "code": 860706,
-    "name_in_thai": "ต. ด่านสวี",
-    "name_in_english": "Dan Sawi",
-    "latitude": 10.254,
-    "longitude": 99.256,
-    "district_id": 8607
-  },
-  {
-    "id": 328,
-    "code": 840401,
-    "name_in_thai": "ต. อ่างทอง",
-    "name_in_english": "Ang Thong",
-    "latitude": 9.698,
-    "longitude": 99.675,
-    "district_id": 8404
-  },
-  {
-    "id": 329,
-    "code": 820603,
-    "name_in_thai": "ต. เกาะพระทอง",
-    "name_in_english": "Ko Phra Thong",
-    "latitude": 8.593,
-    "longitude": 97.63,
-    "district_id": 8206
   },
   {
     "id": 330,
@@ -2979,15 +792,6 @@ export const subdistricts = [
     "district_id": 1001
   },
   {
-    "id": 331,
-    "code": 200905,
-    "name_in_thai": "ต. แสมสาร",
-    "name_in_english": "Samae San",
-    "latitude": 12.586,
-    "longitude": 100.963,
-    "district_id": 2009
-  },
-  {
     "id": 332,
     "code": 200102,
     "name_in_thai": "ต. มะขามหย่ง",
@@ -2995,15 +799,6 @@ export const subdistricts = [
     "latitude": 13.372,
     "longitude": 100.985,
     "district_id": 2001
-  },
-  {
-    "id": 333,
-    "code": 840401,
-    "name_in_thai": "ต. อ่างทอง",
-    "name_in_english": "Ang Thong",
-    "latitude": 9.658,
-    "longitude": 99.681,
-    "district_id": 8404
   },
   {
     "id": 334,
@@ -3015,15 +810,6 @@ export const subdistricts = [
     "district_id": 1015
   },
   {
-    "id": 335,
-    "code": 820603,
-    "name_in_thai": "ต. เกาะพระทอง",
-    "name_in_english": "Ko Phra Thong",
-    "latitude": 8.673,
-    "longitude": 97.638,
-    "district_id": 8206
-  },
-  {
     "id": 336,
     "code": 100402,
     "name_in_thai": "แขวง สีลม",
@@ -3033,42 +819,6 @@ export const subdistricts = [
     "district_id": 1004
   },
   {
-    "id": 337,
-    "code": 810302,
-    "name_in_thai": "ต. เกาะลันตาน้อย",
-    "name_in_english": "Ko Lanta Noi",
-    "latitude": 7.589,
-    "longitude": 99.144,
-    "district_id": 8103
-  },
-  {
-    "id": 338,
-    "code": 810802,
-    "name_in_thai": "ต. เกาะศรีบอยา",
-    "name_in_english": "Ko Si Boya",
-    "latitude": 7.886,
-    "longitude": 99.052,
-    "district_id": 8108
-  },
-  {
-    "id": 339,
-    "code": 810502,
-    "name_in_thai": "ต. แหลมสัก",
-    "name_in_english": "Laem Sak",
-    "latitude": 8.235,
-    "longitude": 98.642,
-    "district_id": 8105
-  },
-  {
-    "id": 340,
-    "code": 910106,
-    "name_in_thai": "ต. เกาะสาหร่าย",
-    "name_in_english": "Ko Sarai",
-    "latitude": 6.683,
-    "longitude": 99.863,
-    "district_id": 9101
-  },
-  {
     "id": 341,
     "code": 102210,
     "name_in_thai": "แขวง คูหาสวรรค์",
@@ -3076,15 +826,6 @@ export const subdistricts = [
     "latitude": 13.727,
     "longitude": 100.457,
     "district_id": 1022
-  },
-  {
-    "id": 342,
-    "code": 860116,
-    "name_in_thai": "ต. หาดทรายรี",
-    "name_in_english": "Hat Sai Ri",
-    "latitude": 10.395,
-    "longitude": 99.345,
-    "district_id": 8601
   },
   {
     "id": 343,
@@ -3114,33 +855,6 @@ export const subdistricts = [
     "district_id": 1601
   },
   {
-    "id": 346,
-    "code": 921003,
-    "name_in_thai": "ต. ตะเสะ",
-    "name_in_english": "Tase",
-    "latitude": 7.047,
-    "longitude": 99.471,
-    "district_id": 9210
-  },
-  {
-    "id": 347,
-    "code": 910106,
-    "name_in_thai": "ต. เกาะสาหร่าย",
-    "name_in_english": "Ko Sarai",
-    "latitude": 6.704,
-    "longitude": 99.877,
-    "district_id": 9101
-  },
-  {
-    "id": 348,
-    "code": 910106,
-    "name_in_thai": "ต. เกาะสาหร่าย",
-    "name_in_english": "Ko Sarai",
-    "latitude": 6.715,
-    "longitude": 99.81,
-    "district_id": 9101
-  },
-  {
     "id": 349,
     "code": 101802,
     "name_in_thai": "แขวง คลองสาน",
@@ -3168,24 +882,6 @@ export const subdistricts = [
     "district_id": 1501
   },
   {
-    "id": 352,
-    "code": 840401,
-    "name_in_thai": "ต. อ่างทอง",
-    "name_in_english": "Ang Thong",
-    "latitude": 9.649,
-    "longitude": 99.668,
-    "district_id": 8404
-  },
-  {
-    "id": 353,
-    "code": 810303,
-    "name_in_thai": "ต. เกาะกลาง",
-    "name_in_english": "Ko Klang",
-    "latitude": 7.706,
-    "longitude": 99.117,
-    "district_id": 8103
-  },
-  {
     "id": 354,
     "code": 103704,
     "name_in_thai": "แขวง มักกะสัน",
@@ -3193,15 +889,6 @@ export const subdistricts = [
     "latitude": 13.752,
     "longitude": 100.528,
     "district_id": 1037
-  },
-  {
-    "id": 355,
-    "code": 200901,
-    "name_in_thai": "ต. สัตหีบ",
-    "name_in_english": "Sattahip",
-    "latitude": 12.638,
-    "longitude": 100.871,
-    "district_id": 2009
   },
   {
     "id": 356,
@@ -3222,15 +909,6 @@ export const subdistricts = [
     "district_id": 1019
   },
   {
-    "id": 358,
-    "code": 850501,
-    "name_in_thai": "ต. นาคา",
-    "name_in_english": "Nakha",
-    "latitude": 9.544,
-    "longitude": 98.482,
-    "district_id": 8505
-  },
-  {
     "id": 359,
     "code": 140102,
     "name_in_thai": "ต. กะมัง",
@@ -3240,24 +918,6 @@ export const subdistricts = [
     "district_id": 1401
   },
   {
-    "id": 360,
-    "code": 850105,
-    "name_in_thai": "ต. ปากน้ำ",
-    "name_in_english": "Pak Nam",
-    "latitude": 9.916,
-    "longitude": 98.514,
-    "district_id": 8501
-  },
-  {
-    "id": 361,
-    "code": 850305,
-    "name_in_thai": "ต. บางหิน",
-    "name_in_english": "Bang Hin",
-    "latitude": 9.577,
-    "longitude": 98.485,
-    "district_id": 8503
-  },
-  {
     "id": 362,
     "code": 100202,
     "name_in_thai": "แขวง วชิรพยาบาล",
@@ -3265,15 +925,6 @@ export const subdistricts = [
     "latitude": 13.778,
     "longitude": 100.505,
     "district_id": 1002
-  },
-  {
-    "id": 363,
-    "code": 910106,
-    "name_in_thai": "ต. เกาะสาหร่าย",
-    "name_in_english": "Ko Sarai",
-    "latitude": 6.567,
-    "longitude": 99.45,
-    "district_id": 9101
   },
   {
     "id": 364,
@@ -3303,15 +954,6 @@ export const subdistricts = [
     "district_id": 9401
   },
   {
-    "id": 367,
-    "code": 840401,
-    "name_in_thai": "ต. อ่างทอง",
-    "name_in_english": "Ang Thong",
-    "latitude": 9.469,
-    "longitude": 99.67,
-    "district_id": 8404
-  },
-  {
     "id": 368,
     "code": 150101,
     "name_in_thai": "ต. ตลาดหลวง",
@@ -3330,15 +972,6 @@ export const subdistricts = [
     "district_id": 1015
   },
   {
-    "id": 370,
-    "code": 200905,
-    "name_in_thai": "ต. แสมสาร",
-    "name_in_english": "Samae San",
-    "latitude": 12.52,
-    "longitude": 100.956,
-    "district_id": 2009
-  },
-  {
     "id": 371,
     "code": 500102,
     "name_in_thai": "ต. พระสิงห์",
@@ -3348,15 +981,6 @@ export const subdistricts = [
     "district_id": 5001
   },
   {
-    "id": 372,
-    "code": 810116,
-    "name_in_thai": "ต. อ่าวนาง",
-    "name_in_english": "Ao Nang",
-    "latitude": 7.681,
-    "longitude": 98.768,
-    "district_id": 8101
-  },
-  {
     "id": 373,
     "code": 810803,
     "name_in_thai": "ต. คลองขนาน",
@@ -3364,15 +988,6 @@ export const subdistricts = [
     "latitude": 7.941,
     "longitude": 99.072,
     "district_id": 8108
-  },
-  {
-    "id": 374,
-    "code": 910106,
-    "name_in_thai": "ต. เกาะสาหร่าย",
-    "name_in_english": "Ko Sarai",
-    "latitude": 6.699,
-    "longitude": 99.909,
-    "district_id": 9101
   },
   {
     "id": 375,
@@ -3465,42 +1080,6 @@ export const subdistricts = [
     "district_id": 1204
   },
   {
-    "id": 385,
-    "code": 830107,
-    "name_in_thai": "ต. ราไวย์",
-    "name_in_english": "Rawai",
-    "latitude": 7.517,
-    "longitude": 98.331,
-    "district_id": 8301
-  },
-  {
-    "id": 386,
-    "code": 850305,
-    "name_in_thai": "ต. บางหิน",
-    "name_in_english": "Bang Hin",
-    "latitude": 9.58,
-    "longitude": 98.466,
-    "district_id": 8503
-  },
-  {
-    "id": 387,
-    "code": 820603,
-    "name_in_thai": "ต. เกาะพระทอง",
-    "name_in_english": "Ko Phra Thong",
-    "latitude": 8.565,
-    "longitude": 97.626,
-    "district_id": 8206
-  },
-  {
-    "id": 388,
-    "code": 850502,
-    "name_in_thai": "ต. กำพวน",
-    "name_in_english": "Kamphuan",
-    "latitude": 9.483,
-    "longitude": 98.377,
-    "district_id": 8505
-  },
-  {
     "id": 389,
     "code": 230602,
     "name_in_thai": "ต. เกาะกูด",
@@ -3519,15 +1098,6 @@ export const subdistricts = [
     "district_id": 1004
   },
   {
-    "id": 391,
-    "code": 860116,
-    "name_in_thai": "ต. หาดทรายรี",
-    "name_in_english": "Hat Sai Ri",
-    "latitude": 10.439,
-    "longitude": 99.292,
-    "district_id": 8601
-  },
-  {
     "id": 392,
     "code": 100101,
     "name_in_thai": "แขวง พระบรมมหาราชวัง",
@@ -3535,15 +1105,6 @@ export const subdistricts = [
     "latitude": 13.751,
     "longitude": 100.492,
     "district_id": 1001
-  },
-  {
-    "id": 393,
-    "code": 850109,
-    "name_in_thai": "ต. เกาะพยาม",
-    "name_in_english": "Ko Phayam",
-    "latitude": 9.704,
-    "longitude": 98.506,
-    "district_id": 8501
   },
   {
     "id": 394,
@@ -3564,24 +1125,6 @@ export const subdistricts = [
     "district_id": 1015
   },
   {
-    "id": 396,
-    "code": 820603,
-    "name_in_thai": "ต. เกาะพระทอง",
-    "name_in_english": "Ko Phra Thong",
-    "latitude": 8.486,
-    "longitude": 97.634,
-    "district_id": 8206
-  },
-  {
-    "id": 397,
-    "code": 810301,
-    "name_in_thai": "ต. เกาะลันตาใหญ่",
-    "name_in_english": "Ko Lanta Yai",
-    "latitude": 7.537,
-    "longitude": 99.127,
-    "district_id": 8103
-  },
-  {
     "id": 398,
     "code": 102006,
     "name_in_thai": "แขวง บางขุนนนท์",
@@ -3589,33 +1132,6 @@ export const subdistricts = [
     "latitude": 13.774,
     "longitude": 100.466,
     "district_id": 1020
-  },
-  {
-    "id": 399,
-    "code": 820603,
-    "name_in_thai": "ต. เกาะพระทอง",
-    "name_in_english": "Ko Phra Thong",
-    "latitude": 8.507,
-    "longitude": 97.632,
-    "district_id": 8206
-  },
-  {
-    "id": 400,
-    "code": 920213,
-    "name_in_thai": "ต. เกาะลิบง",
-    "name_in_english": "Ko Libong",
-    "latitude": 7.314,
-    "longitude": 99.253,
-    "district_id": 9202
-  },
-  {
-    "id": 401,
-    "code": 820603,
-    "name_in_thai": "ต. เกาะพระทอง",
-    "name_in_english": "Ko Phra Thong",
-    "latitude": 9.07,
-    "longitude": 97.812,
-    "district_id": 8206
   },
   {
     "id": 402,
@@ -3634,24 +1150,6 @@ export const subdistricts = [
     "latitude": 14.365,
     "longitude": 100.542,
     "district_id": 1401
-  },
-  {
-    "id": 404,
-    "code": 830107,
-    "name_in_thai": "ต. ราไวย์",
-    "name_in_english": "Rawai",
-    "latitude": 7.743,
-    "longitude": 98.378,
-    "district_id": 8301
-  },
-  {
-    "id": 405,
-    "code": 810302,
-    "name_in_thai": "ต. เกาะลันตาน้อย",
-    "name_in_english": "Ko Lanta Noi",
-    "latitude": 7.63,
-    "longitude": 99.145,
-    "district_id": 8103
   },
   {
     "id": 406,
@@ -3699,15 +1197,6 @@ export const subdistricts = [
     "district_id": 1002
   },
   {
-    "id": 411,
-    "code": 910106,
-    "name_in_thai": "ต. เกาะสาหร่าย",
-    "name_in_english": "Ko Sarai",
-    "latitude": 6.662,
-    "longitude": 99.849,
-    "district_id": 9101
-  },
-  {
     "id": 412,
     "code": 101804,
     "name_in_thai": "แขวง คลองต้นไทร",
@@ -3726,15 +1215,6 @@ export const subdistricts = [
     "district_id": 2001
   },
   {
-    "id": 414,
-    "code": 860306,
-    "name_in_thai": "ต. ปากคลอง",
-    "name_in_english": "Pak Khlong",
-    "latitude": 10.856,
-    "longitude": 99.487,
-    "district_id": 8603
-  },
-  {
     "id": 415,
     "code": 103302,
     "name_in_thai": "แขวง คลองตัน",
@@ -3742,24 +1222,6 @@ export const subdistricts = [
     "latitude": 13.723,
     "longitude": 100.571,
     "district_id": 1033
-  },
-  {
-    "id": 416,
-    "code": 230601,
-    "name_in_thai": "ต. เกาะหมาก",
-    "name_in_english": "Ko Mak",
-    "latitude": 11.842,
-    "longitude": 102.526,
-    "district_id": 2306
-  },
-  {
-    "id": 417,
-    "code": 910106,
-    "name_in_thai": "ต. เกาะสาหร่าย",
-    "name_in_english": "Ko Sarai",
-    "latitude": 6.491,
-    "longitude": 99.304,
-    "district_id": 9101
   },
   {
     "id": 418,
@@ -3805,15 +1267,6 @@ export const subdistricts = [
     "latitude": 13.743,
     "longitude": 100.56,
     "district_id": 1039
-  },
-  {
-    "id": 423,
-    "code": 830304,
-    "name_in_thai": "ต. ป่าคลอก",
-    "name_in_english": "Pa Khlok",
-    "latitude": 8.055,
-    "longitude": 98.464,
-    "district_id": 8303
   },
   {
     "id": 424,
@@ -3951,15 +1404,6 @@ export const subdistricts = [
     "district_id": 1401
   },
   {
-    "id": 439,
-    "code": 810301,
-    "name_in_thai": "ต. เกาะลันตาใหญ่",
-    "name_in_english": "Ko Lanta Yai",
-    "latitude": 7.207,
-    "longitude": 99.061,
-    "district_id": 8103
-  },
-  {
     "id": 440,
     "code": 750211,
     "name_in_thai": "ต. ยายแพง",
@@ -4014,15 +1458,6 @@ export const subdistricts = [
     "district_id": 7502
   },
   {
-    "id": 446,
-    "code": 810502,
-    "name_in_thai": "ต. แหลมสัก",
-    "name_in_english": "Laem Sak",
-    "latitude": 8.262,
-    "longitude": 98.63,
-    "district_id": 8105
-  },
-  {
     "id": 447,
     "code": 102208,
     "name_in_thai": "แขวง คลองขวาง",
@@ -4032,24 +1467,6 @@ export const subdistricts = [
     "district_id": 1022
   },
   {
-    "id": 448,
-    "code": 810301,
-    "name_in_thai": "ต. เกาะลันตาใหญ่",
-    "name_in_english": "Ko Lanta Yai",
-    "latitude": 7.224,
-    "longitude": 99.08,
-    "district_id": 8103
-  },
-  {
-    "id": 449,
-    "code": 230601,
-    "name_in_thai": "ต. เกาะหมาก",
-    "name_in_english": "Ko Mak",
-    "latitude": 11.804,
-    "longitude": 102.383,
-    "district_id": 2306
-  },
-  {
     "id": 450,
     "code": 140816,
     "name_in_thai": "ต. บ้านใหญ่",
@@ -4057,15 +1474,6 @@ export const subdistricts = [
     "latitude": 14.435,
     "longitude": 100.384,
     "district_id": 1408
-  },
-  {
-    "id": 451,
-    "code": 810802,
-    "name_in_thai": "ต. เกาะศรีบอยา",
-    "name_in_english": "Ko Si Boya",
-    "latitude": 7.829,
-    "longitude": 98.988,
-    "district_id": 8108
   },
   {
     "id": 452,
@@ -4084,15 +1492,6 @@ export const subdistricts = [
     "latitude": 13.702,
     "longitude": 100.476,
     "district_id": 1035
-  },
-  {
-    "id": 454,
-    "code": 840401,
-    "name_in_thai": "ต. อ่างทอง",
-    "name_in_english": "Ang Thong",
-    "latitude": 9.393,
-    "longitude": 99.669,
-    "district_id": 8404
   },
   {
     "id": 455,
@@ -4201,15 +1600,6 @@ export const subdistricts = [
     "latitude": 13.427,
     "longitude": 99.954,
     "district_id": 7503
-  },
-  {
-    "id": 467,
-    "code": 850105,
-    "name_in_thai": "ต. ปากน้ำ",
-    "name_in_english": "Pak Nam",
-    "latitude": 9.905,
-    "longitude": 98.479,
-    "district_id": 8501
   },
   {
     "id": 468,
@@ -4446,24 +1836,6 @@ export const subdistricts = [
     "district_id": 1401
   },
   {
-    "id": 494,
-    "code": 200701,
-    "name_in_thai": "ต. ศรีราชา",
-    "name_in_english": "Si Racha",
-    "latitude": 13.162,
-    "longitude": 100.923,
-    "district_id": 2007
-  },
-  {
-    "id": 495,
-    "code": 810301,
-    "name_in_thai": "ต. เกาะลันตาใหญ่",
-    "name_in_english": "Ko Lanta Yai",
-    "latitude": 7.417,
-    "longitude": 99.204,
-    "district_id": 8103
-  },
-  {
     "id": 496,
     "code": 570101,
     "name_in_thai": "ต. เวียง",
@@ -4534,24 +1906,6 @@ export const subdistricts = [
     "latitude": 13.814,
     "longitude": 100.175,
     "district_id": 7303
-  },
-  {
-    "id": 504,
-    "code": 830103,
-    "name_in_thai": "ต. เกาะแก้ว",
-    "name_in_english": "Ko Kaeo",
-    "latitude": 7.936,
-    "longitude": 98.427,
-    "district_id": 8301
-  },
-  {
-    "id": 505,
-    "code": 260101,
-    "name_in_thai": "ต. นครนายก",
-    "name_in_english": "Nakhon Nayok",
-    "latitude": 14.198,
-    "longitude": 101.233,
-    "district_id": 2601
   },
   {
     "id": 506,
@@ -4779,15 +2133,6 @@ export const subdistricts = [
     "district_id": 1407
   },
   {
-    "id": 531,
-    "code": 850502,
-    "name_in_thai": "ต. กำพวน",
-    "name_in_english": "Kamphuan",
-    "latitude": 9.495,
-    "longitude": 98.349,
-    "district_id": 8505
-  },
-  {
     "id": 532,
     "code": 820101,
     "name_in_thai": "ต. ท้ายช้าง",
@@ -4822,15 +2167,6 @@ export const subdistricts = [
     "latitude": 13.91,
     "longitude": 100.472,
     "district_id": 1206
-  },
-  {
-    "id": 536,
-    "code": 910106,
-    "name_in_thai": "ต. เกาะสาหร่าย",
-    "name_in_english": "Ko Sarai",
-    "latitude": 6.526,
-    "longitude": 99.169,
-    "district_id": 9101
   },
   {
     "id": 537,
@@ -4876,24 +2212,6 @@ export const subdistricts = [
     "latitude": 13.751,
     "longitude": 100.419,
     "district_id": 1019
-  },
-  {
-    "id": 542,
-    "code": 200905,
-    "name_in_thai": "ต. แสมสาร",
-    "name_in_english": "Samae San",
-    "latitude": 12.577,
-    "longitude": 100.947,
-    "district_id": 2009
-  },
-  {
-    "id": 543,
-    "code": 860801,
-    "name_in_thai": "ต. ปากตะโก",
-    "name_in_english": "Pak Tako",
-    "latitude": 10.112,
-    "longitude": 99.141,
-    "district_id": 8608
   },
   {
     "id": 544,
@@ -5094,15 +2412,6 @@ export const subdistricts = [
     "district_id": 7402
   },
   {
-    "id": 566,
-    "code": 830107,
-    "name_in_thai": "ต. ราไวย์",
-    "name_in_english": "Rawai",
-    "latitude": 7.788,
-    "longitude": 98.372,
-    "district_id": 8301
-  },
-  {
     "id": 567,
     "code": 760120,
     "name_in_thai": "ต. วังตะโก",
@@ -5184,15 +2493,6 @@ export const subdistricts = [
     "district_id": 1307
   },
   {
-    "id": 576,
-    "code": 830107,
-    "name_in_thai": "ต. ราไวย์",
-    "name_in_english": "Rawai",
-    "latitude": 7.598,
-    "longitude": 98.36,
-    "district_id": 8301
-  },
-  {
     "id": 577,
     "code": 730323,
     "name_in_thai": "ต. งิ้วราย",
@@ -5265,15 +2565,6 @@ export const subdistricts = [
     "district_id": 1017
   },
   {
-    "id": 585,
-    "code": 840401,
-    "name_in_thai": "ต. อ่างทอง",
-    "name_in_english": "Ang Thong",
-    "latitude": 9.619,
-    "longitude": 99.679,
-    "district_id": 8404
-  },
-  {
     "id": 586,
     "code": 610504,
     "name_in_thai": "ต. ห้วยรอบ",
@@ -5281,15 +2572,6 @@ export const subdistricts = [
     "latitude": 15.371,
     "longitude": 99.9,
     "district_id": 6105
-  },
-  {
-    "id": 587,
-    "code": 200408,
-    "name_in_thai": "ต. นาเกลือ",
-    "name_in_english": "Na Kluea",
-    "latitude": 12.912,
-    "longitude": 100.778,
-    "district_id": 2004
   },
   {
     "id": 588,
@@ -6174,15 +3456,6 @@ export const subdistricts = [
     "district_id": 9405
   },
   {
-    "id": 686,
-    "code": 910106,
-    "name_in_thai": "ต. เกาะสาหร่าย",
-    "name_in_english": "Ko Sarai",
-    "latitude": 6.72,
-    "longitude": 99.854,
-    "district_id": 9101
-  },
-  {
     "id": 687,
     "code": 940905,
     "name_in_thai": "ต. ตอหลัง",
@@ -6244,15 +3517,6 @@ export const subdistricts = [
     "latitude": 13.714,
     "longitude": 100.247,
     "district_id": 7306
-  },
-  {
-    "id": 694,
-    "code": 820603,
-    "name_in_thai": "ต. เกาะพระทอง",
-    "name_in_english": "Ko Phra Thong",
-    "latitude": 8.651,
-    "longitude": 97.63,
-    "district_id": 8206
   },
   {
     "id": 695,
@@ -6462,15 +3726,6 @@ export const subdistricts = [
     "district_id": 5001
   },
   {
-    "id": 718,
-    "code": 810803,
-    "name_in_thai": "ต. คลองขนาน",
-    "name_in_english": "Khlong Khanan",
-    "latitude": 7.904,
-    "longitude": 99.075,
-    "district_id": 8108
-  },
-  {
     "id": 719,
     "code": 141503,
     "name_in_thai": "ต. มหาราช",
@@ -6532,15 +3787,6 @@ export const subdistricts = [
     "latitude": 13.859,
     "longitude": 100.464,
     "district_id": 1201
-  },
-  {
-    "id": 726,
-    "code": 840403,
-    "name_in_thai": "ต. ตลิ่งงาม",
-    "name_in_english": "Taling Ngam",
-    "latitude": 9.372,
-    "longitude": 99.944,
-    "district_id": 8404
   },
   {
     "id": 727,
@@ -7263,15 +4509,6 @@ export const subdistricts = [
     "district_id": 7303
   },
   {
-    "id": 807,
-    "code": 830301,
-    "name_in_thai": "ต. เทพกระษัตรี",
-    "name_in_english": "Thep Krasattri",
-    "latitude": 8.107,
-    "longitude": 98.383,
-    "district_id": 8303
-  },
-  {
     "id": 808,
     "code": 540401,
     "name_in_thai": "ต. สูงเม่น",
@@ -7279,15 +4516,6 @@ export const subdistricts = [
     "latitude": 18.059,
     "longitude": 100.087,
     "district_id": 5404
-  },
-  {
-    "id": 809,
-    "code": 920213,
-    "name_in_thai": "ต. เกาะลิบง",
-    "name_in_english": "Ko Libong",
-    "latitude": 7.373,
-    "longitude": 99.295,
-    "district_id": 9202
   },
   {
     "id": 810,
@@ -7495,15 +4723,6 @@ export const subdistricts = [
     "latitude": 13.804,
     "longitude": 100.041,
     "district_id": 7301
-  },
-  {
-    "id": 833,
-    "code": 650103,
-    "name_in_thai": "ต. วัดจันทร์",
-    "name_in_english": "Wat Chan",
-    "latitude": 16.812,
-    "longitude": 100.225,
-    "district_id": 6501
   },
   {
     "id": 834,
@@ -8883,15 +6102,6 @@ export const subdistricts = [
     "district_id": 6105
   },
   {
-    "id": 987,
-    "code": 810116,
-    "name_in_thai": "ต. อ่าวนาง",
-    "name_in_english": "Ao Nang",
-    "latitude": 7.741,
-    "longitude": 98.783,
-    "district_id": 8101
-  },
-  {
     "id": 988,
     "code": 501906,
     "name_in_thai": "ต. หนองแฝก",
@@ -10062,15 +7272,6 @@ export const subdistricts = [
     "district_id": 7004
   },
   {
-    "id": 1118,
-    "code": 901509,
-    "name_in_thai": "ต. หัวเขา",
-    "name_in_english": "Hua Khao",
-    "latitude": 7.181,
-    "longitude": 100.57,
-    "district_id": 9015
-  },
-  {
     "id": 1119,
     "code": 760208,
     "name_in_thai": "ต. ห้วยโรง",
@@ -10159,15 +7360,6 @@ export const subdistricts = [
     "latitude": 13.964,
     "longitude": 101.483,
     "district_id": 2508
-  },
-  {
-    "id": 1129,
-    "code": 900804,
-    "name_in_thai": "ต. กระแสสินธุ์",
-    "name_in_english": "Krasae Sin",
-    "latitude": 7.566,
-    "longitude": 100.337,
-    "district_id": 9008
   },
   {
     "id": 1130,
@@ -11140,15 +8332,6 @@ export const subdistricts = [
     "latitude": 18.574,
     "longitude": 98.907,
     "district_id": 5012
-  },
-  {
-    "id": 1238,
-    "code": 230601,
-    "name_in_thai": "ต. เกาะหมาก",
-    "name_in_english": "Ko Mak",
-    "latitude": 11.818,
-    "longitude": 102.481,
-    "district_id": 2306
   },
   {
     "id": 1239,
@@ -12132,15 +9315,6 @@ export const subdistricts = [
     "district_id": 2105
   },
   {
-    "id": 1348,
-    "code": 200901,
-    "name_in_thai": "ต. สัตหีบ",
-    "name_in_english": "Sattahip",
-    "latitude": 12.696,
-    "longitude": 100.785,
-    "district_id": 2009
-  },
-  {
     "id": 1349,
     "code": 500709,
     "name_in_thai": "ต. แม่สา",
@@ -12166,15 +9340,6 @@ export const subdistricts = [
     "latitude": 12.681,
     "longitude": 101.223,
     "district_id": 2101
-  },
-  {
-    "id": 1352,
-    "code": 810802,
-    "name_in_thai": "ต. เกาะศรีบอยา",
-    "name_in_english": "Ko Si Boya",
-    "latitude": 7.862,
-    "longitude": 99.021,
-    "district_id": 8108
   },
   {
     "id": 1353,
@@ -12816,24 +9981,6 @@ export const subdistricts = [
     "district_id": 9501
   },
   {
-    "id": 1424,
-    "code": 200905,
-    "name_in_thai": "ต. แสมสาร",
-    "name_in_english": "Samae San",
-    "latitude": 12.623,
-    "longitude": 100.954,
-    "district_id": 2009
-  },
-  {
-    "id": 1425,
-    "code": 900804,
-    "name_in_thai": "ต. กระแสสินธุ์",
-    "name_in_english": "Krasae Sin",
-    "latitude": 7.594,
-    "longitude": 100.326,
-    "district_id": 9008
-  },
-  {
     "id": 1426,
     "code": 501503,
     "name_in_thai": "ต. หารแก้ว",
@@ -13401,15 +10548,6 @@ export const subdistricts = [
     "district_id": 7201
   },
   {
-    "id": 1489,
-    "code": 810802,
-    "name_in_thai": "ต. เกาะศรีบอยา",
-    "name_in_english": "Ko Si Boya",
-    "latitude": 7.899,
-    "longitude": 98.984,
-    "district_id": 8108
-  },
-  {
     "id": 1490,
     "code": 540402,
     "name_in_thai": "ต. น้ำชำ",
@@ -13635,15 +10773,6 @@ export const subdistricts = [
     "district_id": 1040
   },
   {
-    "id": 1515,
-    "code": 840401,
-    "name_in_thai": "ต. อ่างทอง",
-    "name_in_english": "Ang Thong",
-    "latitude": 9.527,
-    "longitude": 99.685,
-    "district_id": 8404
-  },
-  {
     "id": 1516,
     "code": 150606,
     "name_in_thai": "ต. ยี่ล้น",
@@ -13759,15 +10888,6 @@ export const subdistricts = [
     "latitude": 13.959,
     "longitude": 100.45,
     "district_id": 1206
-  },
-  {
-    "id": 1529,
-    "code": 200408,
-    "name_in_thai": "ต. นาเกลือ",
-    "name_in_english": "Na Kluea",
-    "latitude": 12.955,
-    "longitude": 100.909,
-    "district_id": 2004
   },
   {
     "id": 1530,
@@ -14308,15 +11428,6 @@ export const subdistricts = [
     "latitude": 14.985,
     "longitude": 102.687,
     "district_id": 3016
-  },
-  {
-    "id": 1590,
-    "code": 850109,
-    "name_in_thai": "ต. เกาะพยาม",
-    "name_in_english": "Ko Phayam",
-    "latitude": 9.736,
-    "longitude": 98.405,
-    "district_id": 8501
   },
   {
     "id": 1591,
@@ -15075,15 +12186,6 @@ export const subdistricts = [
     "district_id": 6001
   },
   {
-    "id": 1675,
-    "code": 220602,
-    "name_in_thai": "ต. เกาะเปริด",
-    "name_in_english": "Ko Proet",
-    "latitude": 12.415,
-    "longitude": 102.144,
-    "district_id": 2206
-  },
-  {
     "id": 1676,
     "code": 720705,
     "name_in_thai": "ต. บ้านกุ่ม",
@@ -15595,15 +12697,6 @@ export const subdistricts = [
     "latitude": 13.936,
     "longitude": 100.124,
     "district_id": 7304
-  },
-  {
-    "id": 1733,
-    "code": 860102,
-    "name_in_thai": "ต. ปากน้ำ",
-    "name_in_english": "Pak Nam",
-    "latitude": 10.414,
-    "longitude": 99.245,
-    "district_id": 8601
   },
   {
     "id": 1734,
@@ -16605,15 +13698,6 @@ export const subdistricts = [
     "district_id": 4401
   },
   {
-    "id": 1845,
-    "code": 830103,
-    "name_in_thai": "ต. เกาะแก้ว",
-    "name_in_english": "Ko Kaeo",
-    "latitude": 7.948,
-    "longitude": 98.378,
-    "district_id": 8301
-  },
-  {
     "id": 1846,
     "code": 330906,
     "name_in_thai": "ต. จิกสังข์ทอง",
@@ -16947,15 +14031,6 @@ export const subdistricts = [
     "district_id": 7601
   },
   {
-    "id": 1883,
-    "code": 830107,
-    "name_in_thai": "ต. ราไวย์",
-    "name_in_english": "Rawai",
-    "latitude": 7.793,
-    "longitude": 98.321,
-    "district_id": 8301
-  },
-  {
     "id": 1884,
     "code": 501205,
     "name_in_thai": "ต. แม่ก๊า",
@@ -16963,15 +14038,6 @@ export const subdistricts = [
     "latitude": 18.574,
     "longitude": 98.939,
     "district_id": 5012
-  },
-  {
-    "id": 1885,
-    "code": 850109,
-    "name_in_thai": "ต. เกาะพยาม",
-    "name_in_english": "Ko Phayam",
-    "latitude": 9.833,
-    "longitude": 98.45,
-    "district_id": 8501
   },
   {
     "id": 1886,
@@ -17026,15 +14092,6 @@ export const subdistricts = [
     "latitude": 12.209,
     "longitude": 102.436,
     "district_id": 2305
-  },
-  {
-    "id": 1892,
-    "code": 810802,
-    "name_in_thai": "ต. เกาะศรีบอยา",
-    "name_in_english": "Ko Si Boya",
-    "latitude": 7.836,
-    "longitude": 98.963,
-    "district_id": 8108
   },
   {
     "id": 1893,
@@ -19089,15 +16146,6 @@ export const subdistricts = [
     "district_id": 2406
   },
   {
-    "id": 2121,
-    "code": 840401,
-    "name_in_thai": "ต. อ่างทอง",
-    "name_in_english": "Ang Thong",
-    "latitude": 9.539,
-    "longitude": 99.95,
-    "district_id": 8404
-  },
-  {
     "id": 2122,
     "code": 321205,
     "name_in_thai": "ต. ศรีสุข",
@@ -19132,15 +16180,6 @@ export const subdistricts = [
     "latitude": 14.524,
     "longitude": 100.181,
     "district_id": 7201
-  },
-  {
-    "id": 2126,
-    "code": 900803,
-    "name_in_thai": "ต. เชิงแส",
-    "name_in_english": "Choeng Sae",
-    "latitude": 7.64,
-    "longitude": 100.274,
-    "district_id": 9008
   },
   {
     "id": 2127,
@@ -19870,15 +16909,6 @@ export const subdistricts = [
     "latitude": 14.464,
     "longitude": 100.233,
     "district_id": 7201
-  },
-  {
-    "id": 2208,
-    "code": 830108,
-    "name_in_thai": "ต. กะรน",
-    "name_in_english": "Karon",
-    "latitude": 7.835,
-    "longitude": 98.301,
-    "district_id": 8301
   },
   {
     "id": 2209,
@@ -21375,15 +18405,6 @@ export const subdistricts = [
     "district_id": 9506
   },
   {
-    "id": 2375,
-    "code": 900803,
-    "name_in_thai": "ต. เชิงแส",
-    "name_in_english": "Choeng Sae",
-    "latitude": 7.634,
-    "longitude": 100.332,
-    "district_id": 9008
-  },
-  {
     "id": 2376,
     "code": 480512,
     "name_in_thai": "ต. ธาตุพนมเหนือ",
@@ -21816,15 +18837,6 @@ export const subdistricts = [
     "district_id": 3007
   },
   {
-    "id": 2424,
-    "code": 440103,
-    "name_in_thai": "ต. ท่าตูม",
-    "name_in_english": "Tha Tum",
-    "latitude": 16.17,
-    "longitude": 103.46,
-    "district_id": 4401
-  },
-  {
     "id": 2425,
     "code": 560502,
     "name_in_thai": "ต. ดอนศรีชุม",
@@ -21897,15 +18909,6 @@ export const subdistricts = [
     "district_id": 7205
   },
   {
-    "id": 2433,
-    "code": 210305,
-    "name_in_thai": "ต. กร่ำ",
-    "name_in_english": "Kram",
-    "latitude": 12.668,
-    "longitude": 101.631,
-    "district_id": 2103
-  },
-  {
     "id": 2434,
     "code": 240403,
     "name_in_thai": "ต. บางวัว",
@@ -21940,15 +18943,6 @@ export const subdistricts = [
     "latitude": 13.035,
     "longitude": 99.829,
     "district_id": 7606
-  },
-  {
-    "id": 2438,
-    "code": 900106,
-    "name_in_thai": "ต. เกาะยอ",
-    "name_in_english": "Ko Yo",
-    "latitude": 7.171,
-    "longitude": 100.517,
-    "district_id": 9001
   },
   {
     "id": 2439,
@@ -22462,15 +19456,6 @@ export const subdistricts = [
     "latitude": 15.713,
     "longitude": 104.194,
     "district_id": 3501
-  },
-  {
-    "id": 2496,
-    "code": 850105,
-    "name_in_thai": "ต. ปากน้ำ",
-    "name_in_english": "Pak Nam",
-    "latitude": 10.06,
-    "longitude": 98.647,
-    "district_id": 8501
   },
   {
     "id": 2497,
@@ -23427,15 +20412,6 @@ export const subdistricts = [
     "district_id": 4607
   },
   {
-    "id": 2603,
-    "code": 910106,
-    "name_in_thai": "ต. เกาะสาหร่าย",
-    "name_in_english": "Ko Sarai",
-    "latitude": 6.558,
-    "longitude": 99.211,
-    "district_id": 9101
-  },
-  {
     "id": 2604,
     "code": 180508,
     "name_in_thai": "ต. ห้วยกรดพัฒนา",
@@ -24192,15 +21168,6 @@ export const subdistricts = [
     "district_id": 7208
   },
   {
-    "id": 2688,
-    "code": 820603,
-    "name_in_thai": "ต. เกาะพระทอง",
-    "name_in_english": "Ko Phra Thong",
-    "latitude": 9.445,
-    "longitude": 97.888,
-    "district_id": 8206
-  },
-  {
     "id": 2689,
     "code": 460102,
     "name_in_thai": "ต. เหนือ",
@@ -24343,15 +21310,6 @@ export const subdistricts = [
     "latitude": 15.536,
     "longitude": 102.724,
     "district_id": 3013
-  },
-  {
-    "id": 2705,
-    "code": 910106,
-    "name_in_thai": "ต. เกาะสาหร่าย",
-    "name_in_english": "Ko Sarai",
-    "latitude": 6.541,
-    "longitude": 99.299,
-    "district_id": 9101
   },
   {
     "id": 2706,
@@ -24514,15 +21472,6 @@ export const subdistricts = [
     "latitude": 16.369,
     "longitude": 100.373,
     "district_id": 6601
-  },
-  {
-    "id": 2724,
-    "code": 220607,
-    "name_in_thai": "ต. บางกะไชย",
-    "name_in_english": "Bang Kachai",
-    "latitude": 12.53,
-    "longitude": 102.024,
-    "district_id": 2206
   },
   {
     "id": 2725,
@@ -25425,15 +22374,6 @@ export const subdistricts = [
     "district_id": 9013
   },
   {
-    "id": 2825,
-    "code": 840403,
-    "name_in_thai": "ต. ตลิ่งงาม",
-    "name_in_english": "Taling Ngam",
-    "latitude": 9.453,
-    "longitude": 99.955,
-    "district_id": 8404
-  },
-  {
     "id": 2826,
     "code": 331003,
     "name_in_thai": "ต. ก้านเหลือง",
@@ -25477,15 +22417,6 @@ export const subdistricts = [
     "latitude": 14.688,
     "longitude": 100.693,
     "district_id": 1908
-  },
-  {
-    "id": 2831,
-    "code": 860116,
-    "name_in_thai": "ต. หาดทรายรี",
-    "name_in_english": "Hat Sai Ri",
-    "latitude": 10.369,
-    "longitude": 99.233,
-    "district_id": 8601
   },
   {
     "id": 2832,
@@ -25812,15 +22743,6 @@ export const subdistricts = [
     "district_id": 7301
   },
   {
-    "id": 2868,
-    "code": 220314,
-    "name_in_thai": "ต. คลองขุด",
-    "name_in_english": "Khlong Khut",
-    "latitude": 12.563,
-    "longitude": 101.935,
-    "district_id": 2203
-  },
-  {
     "id": 2869,
     "code": 321602,
     "name_in_thai": "ต. บึง",
@@ -26073,15 +22995,6 @@ export const subdistricts = [
     "district_id": 4712
   },
   {
-    "id": 2897,
-    "code": 860801,
-    "name_in_thai": "ต. ปากตะโก",
-    "name_in_english": "Pak Tako",
-    "latitude": 10.081,
-    "longitude": 99.142,
-    "district_id": 8608
-  },
-  {
     "id": 2898,
     "code": 350604,
     "name_in_thai": "ต. ผือฮี",
@@ -26089,15 +23002,6 @@ export const subdistricts = [
     "latitude": 15.45,
     "longitude": 104.27,
     "district_id": 3506
-  },
-  {
-    "id": 2899,
-    "code": 900703,
-    "name_in_thai": "ต. ตาเครียะ",
-    "name_in_english": "Takhria",
-    "latitude": 7.848,
-    "longitude": 100.256,
-    "district_id": 9007
   },
   {
     "id": 2900,
@@ -26377,15 +23281,6 @@ export const subdistricts = [
     "latitude": 15.332,
     "longitude": 104.257,
     "district_id": 3309
-  },
-  {
-    "id": 2931,
-    "code": 210105,
-    "name_in_thai": "ต. เพ",
-    "name_in_english": "Phe",
-    "latitude": 12.629,
-    "longitude": 101.418,
-    "district_id": 2101
   },
   {
     "id": 2932,
@@ -26845,15 +23740,6 @@ export const subdistricts = [
     "latitude": 15.066,
     "longitude": 103.999,
     "district_id": 3212
-  },
-  {
-    "id": 2983,
-    "code": 920213,
-    "name_in_thai": "ต. เกาะลิบง",
-    "name_in_english": "Ko Libong",
-    "latitude": 7.244,
-    "longitude": 99.387,
-    "district_id": 9202
   },
   {
     "id": 2984,
@@ -27385,15 +24271,6 @@ export const subdistricts = [
     "latitude": 6.479,
     "longitude": 101.485,
     "district_id": 9506
-  },
-  {
-    "id": 3043,
-    "code": 660408,
-    "name_in_thai": "ต. คลองคูณ",
-    "name_in_english": "Khlong Khun",
-    "latitude": 16.161,
-    "longitude": 100.361,
-    "district_id": 6604
   },
   {
     "id": 3044,
@@ -28339,15 +25216,6 @@ export const subdistricts = [
     "latitude": 15.074,
     "longitude": 103.55,
     "district_id": 3201
-  },
-  {
-    "id": 3149,
-    "code": 920213,
-    "name_in_thai": "ต. เกาะลิบง",
-    "name_in_english": "Ko Libong",
-    "latitude": 7.333,
-    "longitude": 99.389,
-    "district_id": 9202
   },
   {
     "id": 3150,
@@ -29484,15 +26352,6 @@ export const subdistricts = [
     "district_id": 3301
   },
   {
-    "id": 3276,
-    "code": 860106,
-    "name_in_thai": "ต. นาชะอัง",
-    "name_in_english": "Na Cha-Ang",
-    "latitude": 10.54,
-    "longitude": 99.227,
-    "district_id": 8601
-  },
-  {
     "id": 3277,
     "code": 930601,
     "name_in_thai": "ต. ปากพะยูน",
@@ -30175,15 +27034,6 @@ export const subdistricts = [
     "latitude": 17.763,
     "longitude": 101.735,
     "district_id": 4203
-  },
-  {
-    "id": 3353,
-    "code": 401001,
-    "name_in_thai": "ต. บ้านไผ่",
-    "name_in_english": "Ban Phai",
-    "latitude": 16.119,
-    "longitude": 102.713,
-    "district_id": 4010
   },
   {
     "id": 3354,
@@ -31066,15 +27916,6 @@ export const subdistricts = [
     "latitude": 14.804,
     "longitude": 104.922,
     "district_id": 3426
-  },
-  {
-    "id": 3452,
-    "code": 860706,
-    "name_in_thai": "ต. ด่านสวี",
-    "name_in_english": "Dan Sawi",
-    "latitude": 10.243,
-    "longitude": 99.191,
-    "district_id": 8607
   },
   {
     "id": 3453,
@@ -32886,15 +29727,6 @@ export const subdistricts = [
     "district_id": 6406
   },
   {
-    "id": 3654,
-    "code": 910504,
-    "name_in_thai": "ต. ปากน้ำ",
-    "name_in_english": "Pak Nam",
-    "latitude": 6.872,
-    "longitude": 99.731,
-    "district_id": 9105
-  },
-  {
     "id": 3655,
     "code": 901001,
     "name_in_thai": "ต. สะเดา",
@@ -33406,15 +30238,6 @@ export const subdistricts = [
     "latitude": 8.061,
     "longitude": 98.567,
     "district_id": 8202
-  },
-  {
-    "id": 3712,
-    "code": 810116,
-    "name_in_thai": "ต. อ่าวนาง",
-    "name_in_english": "Ao Nang",
-    "latitude": 8.052,
-    "longitude": 98.832,
-    "district_id": 8101
   },
   {
     "id": 3713,
@@ -35226,15 +32049,6 @@ export const subdistricts = [
     "district_id": 3505
   },
   {
-    "id": 3914,
-    "code": 900705,
-    "name_in_thai": "ต. บ้านใหม่",
-    "name_in_english": "Ban Mai",
-    "latitude": 7.821,
-    "longitude": 100.3,
-    "district_id": 9007
-  },
-  {
     "id": 3915,
     "code": 141001,
     "name_in_thai": "ต. ลาดบัวหลวง",
@@ -35980,15 +32794,6 @@ export const subdistricts = [
     "latitude": 15.617,
     "longitude": 102.591,
     "district_id": 3031
-  },
-  {
-    "id": 3998,
-    "code": 810301,
-    "name_in_thai": "ต. เกาะลันตาใหญ่",
-    "name_in_english": "Ko Lanta Yai",
-    "latitude": 7.534,
-    "longitude": 99.073,
-    "district_id": 8103
   },
   {
     "id": 3999,
@@ -36871,15 +33676,6 @@ export const subdistricts = [
     "latitude": 16.612,
     "longitude": 103.933,
     "district_id": 4614
-  },
-  {
-    "id": 4097,
-    "code": 820203,
-    "name_in_thai": "ต. พรุใน",
-    "name_in_english": "Phru Nai",
-    "latitude": 7.961,
-    "longitude": 98.59,
-    "district_id": 8202
   },
   {
     "id": 4098,
@@ -39672,15 +36468,6 @@ export const subdistricts = [
     "district_id": 5408
   },
   {
-    "id": 4408,
-    "code": 860408,
-    "name_in_thai": "ต. บางน้ำจืด",
-    "name_in_english": "Bang Nam Chuet",
-    "latitude": 10.022,
-    "longitude": 99.142,
-    "district_id": 8604
-  },
-  {
     "id": 4409,
     "code": 460602,
     "name_in_thai": "ต. สงเปลือย",
@@ -40336,15 +37123,6 @@ export const subdistricts = [
     "latitude": 15.415,
     "longitude": 105.26,
     "district_id": 3402
-  },
-  {
-    "id": 4482,
-    "code": 401002,
-    "name_in_thai": "ต. ในเมือง",
-    "name_in_english": "Nai Mueang",
-    "latitude": 16.106,
-    "longitude": 102.767,
-    "district_id": 4010
   },
   {
     "id": 4483,
@@ -41157,15 +37935,6 @@ export const subdistricts = [
     "district_id": 3502
   },
   {
-    "id": 4573,
-    "code": 900701,
-    "name_in_thai": "ต. ระโนด",
-    "name_in_english": "Ra Not",
-    "latitude": 7.728,
-    "longitude": 100.267,
-    "district_id": 9007
-  },
-  {
     "id": 4574,
     "code": 210318,
     "name_in_thai": "ต. สองสลึง",
@@ -41218,15 +37987,6 @@ export const subdistricts = [
     "latitude": 15.315,
     "longitude": 99.999,
     "district_id": 6105
-  },
-  {
-    "id": 4580,
-    "code": 921003,
-    "name_in_thai": "ต. ตะเสะ",
-    "name_in_english": "Tase",
-    "latitude": 7.183,
-    "longitude": 99.599,
-    "district_id": 9210
   },
   {
     "id": 4581,
@@ -42037,15 +38797,6 @@ export const subdistricts = [
     "latitude": 14.654,
     "longitude": 102.397,
     "district_id": 3022
-  },
-  {
-    "id": 4671,
-    "code": 920401,
-    "name_in_thai": "ต. ท่าข้าม",
-    "name_in_english": "Tha Kham",
-    "latitude": 7.172,
-    "longitude": 99.69,
-    "district_id": 9204
   },
   {
     "id": 4672,
@@ -43596,15 +40347,6 @@ export const subdistricts = [
     "district_id": 5714
   },
   {
-    "id": 4844,
-    "code": 840501,
-    "name_in_thai": "ต. เกาะพะงัน",
-    "name_in_english": "Ko Pha-Ngan",
-    "latitude": 9.759,
-    "longitude": 99.999,
-    "district_id": 8405
-  },
-  {
     "id": 4845,
     "code": 180306,
     "name_in_thai": "ต. หนองขุ่น",
@@ -44424,15 +41166,6 @@ export const subdistricts = [
     "district_id": 4407
   },
   {
-    "id": 4936,
-    "code": 200904,
-    "name_in_thai": "ต. บางเสร่",
-    "name_in_english": "Bang Sare",
-    "latitude": 12.744,
-    "longitude": 100.908,
-    "district_id": 2009
-  },
-  {
     "id": 4937,
     "code": 210802,
     "name_in_thai": "ต. มาบข่า",
@@ -45117,15 +41850,6 @@ export const subdistricts = [
     "district_id": 5203
   },
   {
-    "id": 5013,
-    "code": 801503,
-    "name_in_thai": "ต. ท้องเนียน",
-    "name_in_english": "Thong Nian",
-    "latitude": 9.28,
-    "longitude": 99.814,
-    "district_id": 8015
-  },
-  {
     "id": 5014,
     "code": 370109,
     "name_in_thai": "ต. น้ำปลีก",
@@ -45484,15 +42208,6 @@ export const subdistricts = [
     "latitude": 14.797,
     "longitude": 103.922,
     "district_id": 3215
-  },
-  {
-    "id": 5054,
-    "code": 830105,
-    "name_in_thai": "ต. รัษฎา",
-    "name_in_english": null,
-    "latitude": 7.874,
-    "longitude": 98.358,
-    "district_id": 8301
   },
   {
     "id": 5055,
@@ -46161,15 +42876,6 @@ export const subdistricts = [
     "district_id": 3109
   },
   {
-    "id": 5129,
-    "code": 840406,
-    "name_in_thai": "ต. บ่อผุด",
-    "name_in_english": "Bo Phut",
-    "latitude": 9.527,
-    "longitude": 100.039,
-    "district_id": 8404
-  },
-  {
     "id": 5130,
     "code": 860303,
     "name_in_thai": "ต. สะพลี",
@@ -46564,15 +43270,6 @@ export const subdistricts = [
     "latitude": 17.435,
     "longitude": 104.007,
     "district_id": 4704
-  },
-  {
-    "id": 5174,
-    "code": 830304,
-    "name_in_thai": "ต. ป่าคลอก",
-    "name_in_english": "Pa Khlok",
-    "latitude": 8.042,
-    "longitude": 98.399,
-    "district_id": 8303
   },
   {
     "id": 5175,
@@ -47331,15 +44028,6 @@ export const subdistricts = [
     "district_id": 2706
   },
   {
-    "id": 5259,
-    "code": 340301,
-    "name_in_thai": "ต. โขงเจียม",
-    "name_in_english": "Khong Chiam",
-    "latitude": 15.307,
-    "longitude": 105.53,
-    "district_id": 3403
-  },
-  {
     "id": 5260,
     "code": 270204,
     "name_in_thai": "ต. ไทรเดี่ยว",
@@ -47383,15 +44071,6 @@ export const subdistricts = [
     "latitude": 6.27,
     "longitude": 101.57,
     "district_id": 9607
-  },
-  {
-    "id": 5265,
-    "code": 900802,
-    "name_in_thai": "ต. โรง",
-    "name_in_english": "Rong",
-    "latitude": 7.677,
-    "longitude": 100.271,
-    "district_id": 9008
   },
   {
     "id": 5266,
@@ -48114,15 +44793,6 @@ export const subdistricts = [
     "district_id": 3027
   },
   {
-    "id": 5346,
-    "code": 570701,
-    "name_in_thai": "ต. แม่จัน",
-    "name_in_english": "Mae Chan",
-    "latitude": 20.112,
-    "longitude": 99.813,
-    "district_id": 5707
-  },
-  {
     "id": 5347,
     "code": 320208,
     "name_in_thai": "ต. กระเบื้อง",
@@ -48454,24 +45124,6 @@ export const subdistricts = [
     "latitude": 16.93,
     "longitude": 102.524,
     "district_id": 3903
-  },
-  {
-    "id": 5384,
-    "code": 830301,
-    "name_in_thai": "ต. เทพกระษัตรี",
-    "name_in_english": "Thep Krasattri",
-    "latitude": 8.047,
-    "longitude": 98.323,
-    "district_id": 8303
-  },
-  {
-    "id": 5385,
-    "code": 900711,
-    "name_in_thai": "ต. บ้านขาว",
-    "name_in_english": "Ban Khao",
-    "latitude": 7.833,
-    "longitude": 100.218,
-    "district_id": 9007
   },
   {
     "id": 5386,
@@ -49111,15 +45763,6 @@ export const subdistricts = [
     "latitude": 8.09,
     "longitude": 99.087,
     "district_id": 8108
-  },
-  {
-    "id": 5457,
-    "code": 810304,
-    "name_in_thai": "ต. คลองยาง",
-    "name_in_english": "Khlong Yang",
-    "latitude": 7.79,
-    "longitude": 99.11,
-    "district_id": 8103
   },
   {
     "id": 5458,
@@ -50697,15 +47340,6 @@ export const subdistricts = [
     "district_id": 3414
   },
   {
-    "id": 5633,
-    "code": 810302,
-    "name_in_thai": "ต. เกาะลันตาน้อย",
-    "name_in_english": "Ko Lanta Noi",
-    "latitude": 7.64,
-    "longitude": 99.084,
-    "district_id": 8103
-  },
-  {
     "id": 5634,
     "code": 320113,
     "name_in_thai": "ต. สวาย",
@@ -51595,15 +48229,6 @@ export const subdistricts = [
     "latitude": 16.287,
     "longitude": 104.837,
     "district_id": 4903
-  },
-  {
-    "id": 5733,
-    "code": 930306,
-    "name_in_thai": "ต. หานโพธิ์",
-    "name_in_english": "Han Pho",
-    "latitude": 7.541,
-    "longitude": 100.195,
-    "district_id": 9303
   },
   {
     "id": 5734,
@@ -53244,15 +49869,6 @@ export const subdistricts = [
     "district_id": 3604
   },
   {
-    "id": 5916,
-    "code": 810118,
-    "name_in_thai": "ต. คลองประสงค์",
-    "name_in_english": "Khlong Prasong",
-    "latitude": 8.002,
-    "longitude": 98.913,
-    "district_id": 8101
-  },
-  {
     "id": 5917,
     "code": 220308,
     "name_in_thai": "ต. สองพี่น้อง",
@@ -53910,15 +50526,6 @@ export const subdistricts = [
     "district_id": 2705
   },
   {
-    "id": 5990,
-    "code": 200901,
-    "name_in_thai": "ต. สัตหีบ",
-    "name_in_english": "Sattahip",
-    "latitude": 12.688,
-    "longitude": 100.889,
-    "district_id": 2009
-  },
-  {
     "id": 5991,
     "code": 330408,
     "name_in_thai": "ต. รุง",
@@ -54322,15 +50929,6 @@ export const subdistricts = [
     "latitude": 16.423,
     "longitude": 103.84,
     "district_id": 4508
-  },
-  {
-    "id": 6036,
-    "code": 850502,
-    "name_in_thai": "ต. กำพวน",
-    "name_in_english": "Kamphuan",
-    "latitude": 9.364,
-    "longitude": 98.424,
-    "district_id": 8505
   },
   {
     "id": 6037,
@@ -55557,15 +52155,6 @@ export const subdistricts = [
     "district_id": 6504
   },
   {
-    "id": 6173,
-    "code": 920501,
-    "name_in_thai": "ต. บ่อหิน",
-    "name_in_english": "Bo Hin",
-    "latitude": 7.593,
-    "longitude": 99.345,
-    "district_id": 9205
-  },
-  {
     "id": 6174,
     "code": 410701,
     "name_in_thai": "ต. ทุ่งฝน",
@@ -56347,15 +52936,6 @@ export const subdistricts = [
     "latitude": 15.245,
     "longitude": 103.492,
     "district_id": 3203
-  },
-  {
-    "id": 6261,
-    "code": 860306,
-    "name_in_thai": "ต. ปากคลอง",
-    "name_in_english": "Pak Khlong",
-    "latitude": 10.91,
-    "longitude": 99.463,
-    "district_id": 8603
   },
   {
     "id": 6262,
@@ -57672,15 +54252,6 @@ export const subdistricts = [
     "district_id": 4412
   },
   {
-    "id": 6408,
-    "code": 810303,
-    "name_in_thai": "ต. เกาะกลาง",
-    "name_in_english": "Ko Klang",
-    "latitude": 7.751,
-    "longitude": 99.063,
-    "district_id": 8103
-  },
-  {
     "id": 6409,
     "code": 451002,
     "name_in_thai": "ต. นางาม",
@@ -58752,15 +55323,6 @@ export const subdistricts = [
     "district_id": 8417
   },
   {
-    "id": 6528,
-    "code": 900801,
-    "name_in_thai": "ต. เกาะใหญ่",
-    "name_in_english": "Koyai",
-    "latitude": 7.54,
-    "longitude": 100.323,
-    "district_id": 9008
-  },
-  {
     "id": 6529,
     "code": 860708,
     "name_in_thai": "ต. วิสัยใต้",
@@ -58984,15 +55546,6 @@ export const subdistricts = [
     "latitude": 19.105,
     "longitude": 99.945,
     "district_id": 5601
-  },
-  {
-    "id": 6554,
-    "code": 810803,
-    "name_in_thai": "ต. คลองขนาน",
-    "name_in_english": "Khlong Khanan",
-    "latitude": 7.96,
-    "longitude": 99.03,
-    "district_id": 8108
   },
   {
     "id": 6555,
@@ -59643,15 +56196,6 @@ export const subdistricts = [
     "district_id": 6504
   },
   {
-    "id": 6627,
-    "code": 810505,
-    "name_in_thai": "ต. อ่าวลึกน้อย",
-    "name_in_english": "Ao Luek Noi",
-    "latitude": 8.243,
-    "longitude": 98.687,
-    "district_id": 8105
-  },
-  {
     "id": 6628,
     "code": 610603,
     "name_in_thai": "ต. ห้วยแห้ง",
@@ -59992,15 +56536,6 @@ export const subdistricts = [
     "latitude": 19.088,
     "longitude": 99.797,
     "district_id": 5601
-  },
-  {
-    "id": 6666,
-    "code": 230602,
-    "name_in_thai": "ต. เกาะกูด",
-    "name_in_english": "Ko Kut",
-    "latitude": 11.657,
-    "longitude": 102.567,
-    "district_id": 2306
   },
   {
     "id": 6667,
@@ -60624,15 +57159,6 @@ export const subdistricts = [
     "district_id": 6504
   },
   {
-    "id": 6736,
-    "code": 850103,
-    "name_in_thai": "ต. หงาว",
-    "name_in_english": "Ngao",
-    "latitude": 9.857,
-    "longitude": 98.589,
-    "district_id": 8501
-  },
-  {
     "id": 6737,
     "code": 301808,
     "name_in_thai": "ต. มะเกลือใหม่",
@@ -60957,15 +57483,6 @@ export const subdistricts = [
     "district_id": 3407
   },
   {
-    "id": 6773,
-    "code": 810105,
-    "name_in_thai": "ต. เขาคราม",
-    "name_in_english": "Khao Khram",
-    "latitude": 8.241,
-    "longitude": 98.825,
-    "district_id": 8101
-  },
-  {
     "id": 6774,
     "code": 810808,
     "name_in_thai": "ต. ห้วยยูง",
@@ -60973,15 +57490,6 @@ export const subdistricts = [
     "latitude": 8.12,
     "longitude": 99.026,
     "district_id": 8108
-  },
-  {
-    "id": 6775,
-    "code": 820202,
-    "name_in_thai": "ต. เกาะยาวใหญ่",
-    "name_in_english": "Ko Yao Yai",
-    "latitude": 8.04,
-    "longitude": 98.638,
-    "district_id": 8202
   },
   {
     "id": 6776,
@@ -61974,15 +58482,6 @@ export const subdistricts = [
     "district_id": 6001
   },
   {
-    "id": 6886,
-    "code": 230701,
-    "name_in_thai": "ต. เกาะช้าง",
-    "name_in_english": "Ko Chang",
-    "latitude": 12.07,
-    "longitude": 102.321,
-    "district_id": 2307
-  },
-  {
     "id": 6887,
     "code": 820108,
     "name_in_thai": "ต. เกาะปันหยี",
@@ -62325,15 +58824,6 @@ export const subdistricts = [
     "district_id": 2204
   },
   {
-    "id": 6925,
-    "code": 930109,
-    "name_in_thai": "ต. ลำปำ",
-    "name_in_english": "Lam Pam",
-    "latitude": 7.648,
-    "longitude": 100.188,
-    "district_id": 9301
-  },
-  {
     "id": 6926,
     "code": 520205,
     "name_in_thai": "ต. สบป้าน",
@@ -62530,15 +59020,6 @@ export const subdistricts = [
     "latitude": 17.983,
     "longitude": 99.048,
     "district_id": 5105
-  },
-  {
-    "id": 6948,
-    "code": 810502,
-    "name_in_thai": "ต. แหลมสัก",
-    "name_in_english": "Laem Sak",
-    "latitude": 8.304,
-    "longitude": 98.65,
-    "district_id": 8105
   },
   {
     "id": 6949,
@@ -62811,15 +59292,6 @@ export const subdistricts = [
     "district_id": 9101
   },
   {
-    "id": 6979,
-    "code": 220205,
-    "name_in_thai": "ต. บางชัน",
-    "name_in_english": "Bang Chan",
-    "latitude": 12.346,
-    "longitude": 102.31,
-    "district_id": 2202
-  },
-  {
     "id": 6980,
     "code": 470301,
     "name_in_thai": "ต. กุดบาก",
@@ -63054,15 +59526,6 @@ export const subdistricts = [
     "district_id": 4210
   },
   {
-    "id": 7006,
-    "code": 840301,
-    "name_in_thai": "ต. ดอนสัก",
-    "name_in_english": "Don Sak",
-    "latitude": 9.275,
-    "longitude": 99.707,
-    "district_id": 8403
-  },
-  {
     "id": 7007,
     "code": 160105,
     "name_in_thai": "ต. เขาพระงาม",
@@ -63097,15 +59560,6 @@ export const subdistricts = [
     "latitude": 19.682,
     "longitude": 99.945,
     "district_id": 5701
-  },
-  {
-    "id": 7011,
-    "code": 210114,
-    "name_in_thai": "ต. มาบตาพุด",
-    "name_in_english": "Maptaphut",
-    "latitude": 12.701,
-    "longitude": 101.188,
-    "district_id": 2101
   },
   {
     "id": 7012,
@@ -63538,15 +59992,6 @@ export const subdistricts = [
     "latitude": 14.682,
     "longitude": 99.642,
     "district_id": 7110
-  },
-  {
-    "id": 7060,
-    "code": 920504,
-    "name_in_thai": "ต. ไม้ฝาด",
-    "name_in_english": "Mai Fat",
-    "latitude": 7.505,
-    "longitude": 99.369,
-    "district_id": 9205
   },
   {
     "id": 7061,
@@ -64006,15 +60451,6 @@ export const subdistricts = [
     "latitude": 19.026,
     "longitude": 99.007,
     "district_id": 5014
-  },
-  {
-    "id": 7112,
-    "code": 910106,
-    "name_in_thai": "ต. เกาะสาหร่าย",
-    "name_in_english": "Ko Sarai",
-    "latitude": 6.628,
-    "longitude": 99.647,
-    "district_id": 9101
   },
   {
     "id": 7113,
@@ -64755,15 +61191,6 @@ export const subdistricts = [
     "district_id": 6301
   },
   {
-    "id": 7195,
-    "code": 850305,
-    "name_in_thai": "ต. บางหิน",
-    "name_in_english": "Bang Hin",
-    "latitude": 9.525,
-    "longitude": 98.581,
-    "district_id": 8503
-  },
-  {
     "id": 7196,
     "code": 801502,
     "name_in_thai": "ต. ควนทอง",
@@ -65367,15 +61794,6 @@ export const subdistricts = [
     "district_id": 6106
   },
   {
-    "id": 7263,
-    "code": 860304,
-    "name_in_thai": "ต. ชุมโค",
-    "name_in_english": "Chum Kho",
-    "latitude": 10.767,
-    "longitude": 99.336,
-    "district_id": 8603
-  },
-  {
     "id": 7264,
     "code": 530603,
     "name_in_thai": "ต. นาขุม",
@@ -65500,15 +61918,6 @@ export const subdistricts = [
     "latitude": 14.715,
     "longitude": 99.743,
     "district_id": 7110
-  },
-  {
-    "id": 7278,
-    "code": 810106,
-    "name_in_thai": "ต. เขาทอง",
-    "name_in_english": "Khao Thong",
-    "latitude": 8.157,
-    "longitude": 98.76,
-    "district_id": 8101
   },
   {
     "id": 7279,
@@ -65943,15 +62352,6 @@ export const subdistricts = [
     "district_id": 4901
   },
   {
-    "id": 7327,
-    "code": 820603,
-    "name_in_thai": "ต. เกาะพระทอง",
-    "name_in_english": "Ko Phra Thong",
-    "latitude": 9.127,
-    "longitude": 98.294,
-    "district_id": 8206
-  },
-  {
     "id": 7328,
     "code": 810402,
     "name_in_thai": "ต. คลองท่อมเหนือ",
@@ -66211,15 +62611,6 @@ export const subdistricts = [
     "latitude": 17.196,
     "longitude": 99.582,
     "district_id": 6406
-  },
-  {
-    "id": 7357,
-    "code": 560310,
-    "name_in_thai": "ต. ร่มเย็น",
-    "name_in_english": "Rom Yen",
-    "latitude": 19.517,
-    "longitude": 100.406,
-    "district_id": 5603
   },
   {
     "id": 7358,
@@ -67932,15 +64323,6 @@ export const subdistricts = [
     "district_id": 7103
   },
   {
-    "id": 7548,
-    "code": 820201,
-    "name_in_thai": "ต. เกาะยาวน้อย",
-    "name_in_english": "Ko Yao Noi",
-    "latitude": 8.19,
-    "longitude": 98.547,
-    "district_id": 8202
-  },
-  {
     "id": 7549,
     "code": 500612,
     "name_in_thai": "ต. กื้ดช้าง",
@@ -68814,15 +65196,6 @@ export const subdistricts = [
     "district_id": 3605
   },
   {
-    "id": 7646,
-    "code": 850501,
-    "name_in_thai": "ต. นาคา",
-    "name_in_english": "Nakha",
-    "latitude": 9.424,
-    "longitude": 98.54,
-    "district_id": 8505
-  },
-  {
     "id": 7647,
     "code": 580501,
     "name_in_thai": "ต. แม่ลาน้อย",
@@ -69451,15 +65824,6 @@ export const subdistricts = [
     "latitude": 18.992,
     "longitude": 97.801,
     "district_id": 5802
-  },
-  {
-    "id": 7717,
-    "code": 820203,
-    "name_in_thai": "ต. พรุใน",
-    "name_in_english": "Phru Nai",
-    "latitude": 7.83,
-    "longitude": 98.6,
-    "district_id": 8202
   },
   {
     "id": 7718,

@@ -4,7 +4,13 @@ import icon from "leaflet/dist/images/marker-icon.png";
 import iconShadow from "leaflet/dist/images/marker-shadow.png";
 import "leaflet/dist/leaflet.css";
 import "../../css/Pinmap.css";
-import testIcon from './test-icon.jpg';
+import Accident_Icon from "../../assets/iconPin/ColorIcon/Accident_Green.png";
+import Assault_Icon from "../../assets/iconPin/ColorIcon/Assault_Green.png";
+import Drug_Icon from "../../assets/iconPin/ColorIcon/Drugs_Green.png";
+import Gambling_Icon from "../../assets/iconPin/ColorIcon/Gambling_Green.png";
+import Murder_Icon from "../../assets/iconPin/ColorIcon/Murder_Green.png";
+import SexualAbuse_Icon from "../../assets/iconPin/ColorIcon/Sexual_Abuse_Green.png";
+import Theft_Icon from "../../assets/iconPin/ColorIcon/Theft_Green.png";
 
 import {
   MapContainer,
@@ -24,6 +30,46 @@ let DefaultIcon = L.icon({
   shadowUrl: iconShadow,
 });
 
+function getIconForCrimeType(crimeType) {
+  if (crimeType === "SexualAbuse") {
+    return L.icon({
+      iconUrl: SexualAbuse_Icon,
+      iconSize: [45, 59],
+    });
+  } else if (crimeType === "Theft_Burglary") {
+    return L.icon({
+      iconUrl: Theft_Icon,
+      iconSize: [45, 59],
+    });
+  } else if (crimeType === "Murder") {
+    return L.icon({
+      iconUrl: Murder_Icon,
+      iconSize: [45, 59],
+    });
+  } else if (crimeType === "Gambling") {
+    return L.icon({
+      iconUrl: Gambling_Icon,
+      iconSize: [45, 59],
+    });
+  } else if (crimeType === "Battery_Assault") {
+    return L.icon({
+      iconUrl: Assault_Icon,
+      iconSize: [45, 59],
+    });
+  } else if (crimeType === "Drug") {
+    return L.icon({
+      iconUrl: Drug_Icon,
+      iconSize: [45, 59],
+    });
+  } else if (crimeType === "Accident") {
+    return L.icon({
+      iconUrl: Accident_Icon,
+      iconSize: [45, 59],
+    });
+  } else {
+    return DefaultIcon;
+  }
+}
 // L.Marker.prototype.options.icon = DefaultIcon;
 
 export default function Pinmap() {
@@ -42,7 +88,6 @@ export default function Pinmap() {
     return null;
   }
 
-
   const [mapLayers, setMapLayers] = useState({
     street: true,
     satellite: false,
@@ -55,22 +100,20 @@ export default function Pinmap() {
   locations.forEach((location) => {
     const news = news_info.find((news) => news.info_id === location.info_id);
     const crimeType = news.crime_type;
-    
-    L.Marker.prototype.options.icon = L.icon({
-      iconUrl: testIcon,
-      shadowUrl: iconShadow,
-    })
+    const icon = getIconForCrimeType(crimeType);
+    L.Marker.prototype.options.icon = icon;
     if (!layerGroups[crimeType]) {
       layerGroups[crimeType] = [];
     }
 
     layerGroups[crimeType].push(
-      <Marker position={[location.latitude, location.longitude]}>
+      <Marker position={[location.latitude, location.longitude]} icon={icon}>
         <Popup>
           <div> Criminal: {news.criminal} </div>
           <div> Action: {news.action} </div>
           <div> Victim: {news.victim} </div>
           <div> Address: {location.formatted_address} </div>
+          <div>{crimeType}</div>
           <div className="popup-action">
             <button onClick={() => console.log("hello")}> Read more... </button>
           </div>
