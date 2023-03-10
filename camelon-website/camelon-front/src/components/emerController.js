@@ -3,6 +3,7 @@ import Container from "react-bootstrap/esm/Container";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Heading from "./Heading";
+import Card from "react-bootstrap/Card";
 
 import NavbarEmer from "./navbarEmer";
 
@@ -16,48 +17,176 @@ export default function EmerController() {
           mainName="Emergency Contact"
           subName={state.mode ? state.mode : "Overview"}
         />
-        <Row className="rectangle-1378">
-        <Col className="text-0">
-            <button onClick={() => setState({ mode: "Oveview" })}>
-              <div>Overview</div>
-            </button>
-          </Col>
-          <Col className="text-0">
-            <button onClick={() => setState({ mode: "Gambling" })}>
-              <div>Gambling</div>
-            </button>
-          </Col>
-          <Col className="text-1">
-            <button onClick={() => setState({ mode: "Murder" })}>
-              <div>Murder</div>
-            </button>
-          </Col>
-          <Col className="text-2">
-            <button onClick={() => setState({ mode: "SexualAbuse" })}>
-              <div>SexualAbuse</div>
-            </button>
-          </Col>
-          <Col className="text-3">
-            <button onClick={() => setState({ mode: "TheftBurglary" })}>
-              <div>TheftBurglary</div>
-            </button>
-          </Col>
-          <Col className="text-4">
-            <button onClick={() => setState({ mode: "BatteryAssault" })}>
-              <div>BatteryAssault</div>
-            </button>
-          </Col>
-          <Col className="text-5">
-            <button onClick={() => setState({ mode: "Drug" })}>
-              <div>Drug</div>
-            </button>
-          </Col>
-          <Col className="text-6">
-            <button onClick={() => setState({ mode: "Accident" })}>
-              <div>Accident</div>
-            </button>
-          </Col>
-        </Row>
+        <Card>
+          <Row
+            xs
+            style={{ height: "100%", padding: 10,}}
+            //className="rectangle-1378"
+          >
+            <Col sm>
+              <button
+              
+                style={{
+                  width: "100%",
+                  height: "100%",
+                  borderRadius: 4,
+                  backgroundColor:
+                    state.mode === "Overview" ? "#47474725" : "white",
+                }}
+                onClick={() => setState({ mode: "Overview" })}
+              >
+                <div
+                  style={{
+                    color: state.mode === "Overview" ? "#479B5F" : "black",
+                  }}
+                >
+                  Overview
+                </div>
+              </button>
+            </Col>
+            <Col sm>
+              <button
+                style={{
+                  width: "100%",
+                  height: "100%",
+                  borderRadius: 4,
+                  backgroundColor:
+                    state.mode === "Gambling" ? "#47474725" : "white",
+                }}
+                onClick={() => setState({ mode: "Gambling" })}
+              >
+                <div
+                  style={{
+                    color: state.mode === "Gambling" ? "#479B5F" : "black",
+                  }}
+                >
+                  Gambling
+                </div>
+              </button>
+            </Col>
+            <Col sm>
+              <button
+                style={{
+                  width: "100%",
+                  height: "100%",
+                  borderRadius: 4,
+                  backgroundColor:
+                    state.mode === "Murder" ? "#47474725" : "white",
+                }}
+                onClick={() => setState({ mode: "Murder" })}
+              >
+                <div
+                  style={{
+                    color: state.mode === "Murder" ? "#479B5F" : "black",
+                  }}
+                >
+                  Murder
+                </div>
+              </button>
+            </Col>
+            <Col sm>
+              <button
+                style={{
+                  width: "100%",
+                  height: "100%",
+                  borderRadius: 4,
+                  backgroundColor:
+                    state.mode === "SexualAbuse" ? "#47474725" : "white",
+                }}
+                onClick={() => setState({ mode: "SexualAbuse" })}
+              >
+                <div
+                  style={{
+                    color: state.mode === "SexualAbuse" ? "#479B5F" : "black",
+                  }}
+                >
+                  Sexual Abuse
+                </div>
+              </button>
+            </Col>
+            <Col sm>
+              <button
+                style={{
+                  width: "100%",
+                  height: "100%",
+                  borderRadius: 4,
+                  backgroundColor:
+                    state.mode === "TheftBurglary" ? "#47474725" : "white",
+                }}
+                onClick={() => setState({ mode: "TheftBurglary" })}
+              >
+                <div
+                  style={{
+                    color: state.mode === "TheftBurglary" ? "#479B5F" : "black",
+                  }}
+                >
+                  Theft Burglary
+                </div>
+              </button>
+            </Col>
+            <Col sm>
+              <button
+                style={{
+                  width: "100%",
+                  height: "100%",
+                  borderRadius: 4,
+                  backgroundColor:
+                    state.mode === "BatteryAssault" ? "#47474725" : "white",
+                }}
+                onClick={() => setState({ mode: "BatteryAssault" })}
+              >
+                <div
+                  style={{
+                    color:
+                      state.mode === "BatteryAssault" ? "#479B5F" : "black",
+                  }}
+                >
+                  Battery Assault
+                </div>
+              </button>
+            </Col>
+            <Col sm>
+              <button
+                style={{
+                  width: "100%",
+                  height: "100%",
+                  borderRadius: 4,
+                  backgroundColor:
+                    state.mode === "Drug" ? "#47474725" : "white",
+                }}
+                onClick={() => setState({ mode: "Drug" })}
+              >
+                <div
+                  style={{
+                    color: state.mode === "Drug" ? "#479B5F" : "black",
+                  }}
+                >
+                  Drug
+                </div>
+              </button>
+            </Col>
+            <Col sm>
+              <button
+                style={{
+                  width: "100%",
+                  height: "100%",
+                  borderRadius: 4,
+                  backgroundColor:
+                    state.mode === "Accident" ? "#47474725" : "white",
+                }}
+                onClick={() => setState({ mode: "Accident" })}
+              >
+                <div
+                  style={{
+                    color: state.mode === "Accident" ? "#479B5F" : "black",
+                  }}
+                >
+                  Accident
+                </div>
+              </button>
+            </Col>
+          </Row>
+        </Card>
         <NavbarEmer data={state.mode} />
       </Container>
     </>

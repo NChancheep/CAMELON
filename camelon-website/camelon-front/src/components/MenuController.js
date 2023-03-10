@@ -20,7 +20,6 @@ export default function MenuController() {
   return (
     <>
       <Container>
-        <div></div>
         <Heading
           mainName="Home"
           subName={(() => {
