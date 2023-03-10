@@ -11,6 +11,7 @@ import Gambling_Icon from "../../assets/iconPin/ColorIcon/Gambling_Green.png";
 import Murder_Icon from "../../assets/iconPin/ColorIcon/Murder_Green.png";
 import SexualAbuse_Icon from "../../assets/iconPin/ColorIcon/Sexual_Abuse_Green.png";
 import Theft_Icon from "../../assets/iconPin/ColorIcon/Theft_Green.png";
+import Other_Icon from "../../assets/iconPin/ColorIcon/Other_Green.png";
 
 import {
   MapContainer,
@@ -67,7 +68,10 @@ function getIconForCrimeType(crimeType) {
       iconSize: [45, 59],
     });
   } else {
-    return DefaultIcon;
+    return L.icon({
+      iconUrl: Other_Icon,
+      iconSize: [45, 59],
+    });
   }
 }
 // L.Marker.prototype.options.icon = DefaultIcon;
