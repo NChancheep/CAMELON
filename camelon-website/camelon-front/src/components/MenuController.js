@@ -13,14 +13,21 @@ export default function MenuController() {
   return (
     <>
       <Container>
-        <div ></div>
-        <Heading ></Heading>
+        <div></div>
+        <Heading></Heading>
         <Row xs style={{ marginBottom: "2%", height: "100%" }}>
           <Col sm>
             <button
-              style={{ marginTop: "2%", height: "6em", width: "100%" }}
+              style={{ marginTop: "2%", height: "6em", width: "100%", borderRadius:8 }}
               onClick={() => setState({ mode: "overview" })}
-              class="flex items-center justify-center bg-white text-black hover:bg-black hover:text-white font-bold py-2 px-4 border border-black rounded h-24"
+              disabled={(() => {
+                if (state.mode === "overview") {
+                  return true;
+                } else {
+                  return false;
+                }
+              })()}
+              class="flex items-center justify-center bg-white text-black hover:bg-black hover:text-white font-bold py-2 px-4 border border-black h-24"
             >
               <div class="text-xl">Overview</div>
             </button>
@@ -29,6 +36,13 @@ export default function MenuController() {
             <button
               style={{ marginTop: "2%", height: "6em", width: "100%" }}
               onClick={() => setState({ mode: "pin_map" })}
+              disabled={(() => {
+                if (state.mode === "pin_map") {
+                  return true;
+                } else {
+                  return false;
+                }
+              })()}
               class="flex items-center justify-center bg-white text-black hover:bg-black hover:text-white font-bold py-2 px-4 border border-black rounded h-24"
             >
               <div class="text-xl">Map</div>
@@ -38,6 +52,13 @@ export default function MenuController() {
             <button
               style={{ marginTop: "2%", height: "6em", width: "100%" }}
               onClick={() => setState({ mode: "heat_map" })}
+              disabled={(() => {
+                if (state.mode === "heat_map") {
+                  return true;
+                } else {
+                  return false;
+                }
+              })()}
               class="flex items-center justify-center bg-white text-black hover:bg-black hover:text-white font-bold py-2 px-4 border border-black rounded h-24"
             >
               <div class="text-xl">Heat Map</div>
@@ -47,6 +68,13 @@ export default function MenuController() {
             <button
               style={{ marginTop: "2%", height: "6em", width: "100%" }}
               onClick={() => setState({ mode: "choropleth_map" })}
+              disabled={(() => {
+                if (state.mode === "choropleth_map") {
+                  return true;
+                } else {
+                  return false;
+                }
+              })()}
               class="flex items-center justify-center bg-white text-black hover:bg-black hover:text-white font-bold py-2 px-4 border border-black rounded h-24"
             >
               <div class="text-xl">Choropleth map</div>
