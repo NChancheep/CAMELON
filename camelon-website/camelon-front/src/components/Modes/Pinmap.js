@@ -88,6 +88,12 @@ export default function Pinmap() {
     return null;
   }
 
+  function trimString(text) {
+   
+    return text.toString().replace(/\[|\]/g, '').trim()
+    
+  }
+
   const [mapLayers, setMapLayers] = useState({
     street: true,
     satellite: false,
@@ -109,25 +115,28 @@ export default function Pinmap() {
     layerGroups[crimeType].push(
       <Marker position={[location.latitude, location.longitude]} icon={icon}>
         <Popup>
-          <div> Criminal: {news.criminal} </div>
-          <div> Action: {news.action} </div>
-          <div> Victim: {news.victim} </div>
-          <div> Address: {location.formatted_address} </div>
-          <div>{crimeType}</div>
+          <div className="mb-2">
+            <div> Criminal: {trimString(news.criminal)} </div>
+            <div> Action: {trimString(news.action)} </div>
+            <div> Victim: {trimString(news.victim)} </div>
+            <div> Date: {trimString(news.datetime)} </div>
+            <div> Address: {trimString(location.formatted_address)} </div>
+          </div>
           <div className="popup-action">
             <button
               type="button"
+              className="bg-gray-500 hover:bg-gray-700 text-white py-2 px-4 rounded"
               onClick={(e) => {
                 e.preventDefault();
                 const regex = /(\d+)/;
-                const match = regex.exec(news.news_id)
-                const news_id = match[1]
-                if(news.news_id.includes("THR")) {
-
-                  window.location.href = "https://www.thairath.co.th/news/" + news_id; 
-                }
-                else {
-                  window.location.href = "https://d.dailynews.co.th/crime/" + news_id; 
+                const match = regex.exec(news.news_id);
+                const news_id = match[1];
+                if (news.news_id.includes("THR")) {
+                  window.location.href =
+                    "https://www.thairath.co.th/news/" + news_id;
+                } else {
+                  window.location.href =
+                    "https://d.dailynews.co.th/crime/" + news_id;
                 }
               }}
             >
