@@ -93,9 +93,7 @@ export default function Pinmap() {
   }
 
   function trimString(text) {
-   
-    return text.toString().replace(/\[|\]/g, '').trim()
-    
+    return text.toString().replace(/\[|\]/g, "").trim();
   }
 
   const [mapLayers, setMapLayers] = useState({
@@ -116,20 +114,54 @@ export default function Pinmap() {
       layerGroups[crimeType] = [];
     }
 
+    const fontSize = { fontSize: 16 };
+    const titleStyle = { fontWeight: 500, color: "#44985B" };
+
     layerGroups[crimeType].push(
       <Marker position={[location.latitude, location.longitude]} icon={icon}>
         <Popup>
           <div className="mb-2">
-            <div> Criminal: {trimString(news.criminal)} </div>
-            <div> Action: {trimString(news.action)} </div>
-            <div> Victim: {trimString(news.victim)} </div>
-            <div> Date: {trimString(news.datetime)} </div>
-            <div> Address: {trimString(location.formatted_address)} </div>
+            <div style={fontSize}>
+              {" "}
+              <span style={titleStyle}>Criminal: </span>{" "}
+              {trimString(news.criminal)
+                ? trimString(news.criminal)
+                : "ไม่มีข้อมูล"}{" "}
+            </div>
+            <div style={fontSize}>
+              {" "}
+              <span style={titleStyle}>Action: </span>
+              {trimString(news.action)
+                ? trimString(news.action)
+                : "ไม่มีข้อมูล"}{" "}
+            </div>
+            <div style={fontSize}>
+              {" "}
+              <span style={titleStyle}>Victim: </span>
+              {trimString(news.victim)
+                ? trimString(news.victim)
+                : "ไม่มีข้อมูล"}{" "}
+            </div>
+            <div style={fontSize}>
+              {" "}
+              <span style={titleStyle}>Date: </span>{" "}
+              {trimString(news.datetime)
+                ? trimString(news.datetime)
+                : "ไม่มีข้อมูล"}{" "}
+            </div>
+            <div style={fontSize}>
+              {" "}
+              <span style={titleStyle}>Address: </span>
+              {trimString(location.formatted_address)
+                ? trimString(location.formatted_address)
+                : "ไม่มีข้อมูล"}{" "}
+            </div>
           </div>
           <div className="popup-action">
             <button
+            style={{width:"100%"}}
               type="button"
-              className="bg-gray-500 hover:bg-gray-700 text-white py-2 px-4 rounded"
+              className="bg-white hover:bg-gray-700 text-black font-bold border py-2 px-4 rounded"
               onClick={(e) => {
                 e.preventDefault();
                 const regex = /(\d+)/;
@@ -145,7 +177,7 @@ export default function Pinmap() {
               }}
             >
               {" "}
-              Read More...
+              อ่านเพิ่มเติม..
             </button>
           </div>
         </Popup>
