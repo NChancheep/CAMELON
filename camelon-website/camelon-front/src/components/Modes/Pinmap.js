@@ -115,7 +115,25 @@ export default function Pinmap() {
           <div> Address: {location.formatted_address} </div>
           <div>{crimeType}</div>
           <div className="popup-action">
-            <button onClick={() => console.log("hello")}> Read more... </button>
+            <button
+              type="button"
+              onClick={(e) => {
+                e.preventDefault();
+                const regex = /(\d+)/;
+                const match = regex.exec(news.news_id)
+                const news_id = match[1]
+                if(news.news_id.includes("THR")) {
+
+                  window.location.href = "https://www.thairath.co.th/news/" + news_id; 
+                }
+                else {
+                  window.location.href = "https://d.dailynews.co.th/crime/" + news_id; 
+                }
+              }}
+            >
+              {" "}
+              Read More...
+            </button>
           </div>
         </Popup>
       </Marker>
@@ -166,6 +184,7 @@ export default function Pinmap() {
           </MapContainer>
         </div>
       </div>
+      <input type="range" min="1" max="600" />
     </>
   );
 }

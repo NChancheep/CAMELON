@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { MapContainer, GeoJSON } from "react-leaflet";
+import { MapContainer, GeoJSON,  } from "react-leaflet";
 
 import { useSelector } from "react-redux";
 
@@ -89,6 +89,7 @@ export default function ChoroplethMap() {
   return (
     <div class="sm" style={{ marginTop: 16 }}>
       <MapContainer center={[13.751, 100.492]} zoom={5}>
+      {/* <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" /> */}
         <div className="absolute top-10 right-10 bg-white p-4 rounded-md shadow-md w-60  text-base">
           {!selectedFeature && (
             <div>
