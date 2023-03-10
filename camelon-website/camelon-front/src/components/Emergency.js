@@ -1,8 +1,6 @@
-import { useState } from "react";
 import React from "react";
 import Sidebar2 from "./Sidebar2";
 import Emercontroller from "./emerController";
-import Heading from "./Heading";
 
 
 function Emergency() {
