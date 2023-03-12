@@ -1,4 +1,5 @@
 import { createSlice, current } from "@reduxjs/toolkit";
+import { news } from './data/news'
 import { locations } from './data/locations'
 import { news_info } from './data/news_info'
 import { provinces } from "./data/provinces";
@@ -6,6 +7,7 @@ import { districts } from "./data/districts";
 import { subdistricts } from "./data/subdistricts";
 import { thailandGeoJson } from "./data/thailand";
 const initialState = {
+    news: news,
     news_info: news_info,
     locations: locations,
     provinces: provinces,

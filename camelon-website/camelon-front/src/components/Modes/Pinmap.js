@@ -76,9 +76,14 @@ function getIconForCrimeType(crimeType) {
 }
 // L.Marker.prototype.options.icon = DefaultIcon;
 
+function TimeSlider() {
+  return <input type="range" min="0" max="100" />;
+}
+
 export default function Pinmap() {
   const { locations } = useSelector((state) => state.data);
   const { news_info } = useSelector((state) => state.data);
+  const { news } = useSelector((state) => state.data);
   const { user_current_location } = useSelector((state) => state.data);
 
   function SetView({ coords }) {
@@ -159,7 +164,7 @@ export default function Pinmap() {
           </div>
           <div className="popup-action">
             <button
-            style={{width:"100%"}}
+              style={{ width: "100%" }}
               type="button"
               className="bg-white hover:bg-gray-700 text-black font-bold border py-2 px-4 rounded"
               onClick={(e) => {
@@ -226,10 +231,11 @@ export default function Pinmap() {
               </LayersControl.BaseLayer>
               {crimeTypeLayers}
             </LayersControl>
+            
           </MapContainer>
         </div>
+        <TimeSlider />
       </div>
-      <input type="range" min="1" max="600" />
     </>
   );
 }
