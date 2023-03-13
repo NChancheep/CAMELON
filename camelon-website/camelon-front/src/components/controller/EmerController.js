@@ -8,30 +8,30 @@ import Card from "react-bootstrap/Card";
 import NavbarEmer from "../NavbarEmer";
 
 export default function EmerController() {
-  const [state, setState] = useState({});
+  const [state, setState] = useState({mode: "Overview"});
 
   return (
     <>
       <Container className={`nav-bar-select-locati`} style={{ height: 55 }}>
         <Heading
-          mainName="Emergency Contact"
+          mainName="เบอร์ติดต่อฉุกเฉิน"
           subName={(() => {
             if (state.mode === "Overview") {
-              return <span>Overview</span>;
+              return <span>เบอร์ติดต่อทั้งหมด</span>;
             } else if (state.mode === "Gambling") {
-              return <span>Gambling</span>;
+              return <span>การพนัน</span>;
             } else if (state.mode === "Murder") {
-              return <span>Murder</span>;
+              return <span>ฆาตกรรม</span>;
             } else if (state.mode === "SexualAbuse") {
-              return <span>Sexual Abuse</span>;
+              return <span>การล่วงละเมิดทางเพศ</span>;
             } else if (state.mode === "TheftBurglary") {
-              return <span>Theft Burglary</span>;
+              return <span>ลักทรัพย์</span>;
             } else if (state.mode === "BatteryAssault") {
-              return <span>Battery Assault</span>;
+              return <span>ทำร้ายร่างกาย</span>;
             } else if (state.mode === "Drug") {
-              return <span>Drug</span>;
+              return <span>ยาเสพติด</span>;
             } else if (state.mode === "Accident") {
-              return <span>Accident</span>;
+              return <span>อุบัติเหตุ</span>;
             } else {
               <span>{state.mode}</span>;
             }
@@ -59,7 +59,7 @@ export default function EmerController() {
                     color: state.mode === "Overview" ? "#479B5F" : "black",
                   }}
                 >
-                  Overview
+                  เบอร์ติดต่อทั้งหมด
                 </div>
               </button>
             </Col>
@@ -79,7 +79,7 @@ export default function EmerController() {
                     color: state.mode === "Gambling" ? "#479B5F" : "black",
                   }}
                 >
-                  Gambling
+                  การพนัน
                 </div>
               </button>
             </Col>
@@ -99,7 +99,7 @@ export default function EmerController() {
                     color: state.mode === "Murder" ? "#479B5F" : "black",
                   }}
                 >
-                  Murder
+                  ฆาตกรรม
                 </div>
               </button>
             </Col>
@@ -119,7 +119,7 @@ export default function EmerController() {
                     color: state.mode === "SexualAbuse" ? "#479B5F" : "black",
                   }}
                 >
-                  Sexual Abuse
+                  การล่วงละเมิด
                 </div>
               </button>
             </Col>
@@ -139,7 +139,7 @@ export default function EmerController() {
                     color: state.mode === "TheftBurglary" ? "#479B5F" : "black",
                   }}
                 >
-                  Theft Burglary
+                  ลักทรัพย์
                 </div>
               </button>
             </Col>
@@ -160,7 +160,7 @@ export default function EmerController() {
                       state.mode === "BatteryAssault" ? "#479B5F" : "black",
                   }}
                 >
-                  Battery Assault
+                  ทำร้ายร่างกาย
                 </div>
               </button>
             </Col>
@@ -180,7 +180,7 @@ export default function EmerController() {
                     color: state.mode === "Drug" ? "#479B5F" : "black",
                   }}
                 >
-                  Drug
+                  ยาเสพติด
                 </div>
               </button>
             </Col>
@@ -200,7 +200,7 @@ export default function EmerController() {
                     color: state.mode === "Accident" ? "#479B5F" : "black",
                   }}
                 >
-                  Accident
+                  อุบัติเหตุ
                 </div>
               </button>
             </Col>
