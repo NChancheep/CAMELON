@@ -11,11 +11,11 @@ import { Provider } from "react-redux";
 import Store from "./store/Store";
 
 // import Home component
-import Home from "./page/Home";
+import Home from "./page/HomePage";
 // import About component
-import Emergency from "./page/Emergency";
+import Emergency from "./page/EmergencyPage";
 // import ContactUs component
-import ContactUs from "./page/About";
+import ContactUs from "./page/AboutPage";
 import "@fontsource/kanit";
 
 function App() {

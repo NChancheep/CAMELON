@@ -1,5 +1,5 @@
 import React from "react";
-import EmergencyBanner from "../../cards/emerContact";
+import EmergencyBanner from "../../cards/EmerContact";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 const EmerContact = [

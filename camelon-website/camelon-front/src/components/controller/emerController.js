@@ -5,7 +5,7 @@ import Row from "react-bootstrap/Row";
 import Heading from "../Heading";
 import Card from "react-bootstrap/Card";
 
-import NavbarEmer from "../navbarEmer";
+import NavbarEmer from "../NavbarEmer";
 
 export default function EmerController() {
   const [state, setState] = useState({});

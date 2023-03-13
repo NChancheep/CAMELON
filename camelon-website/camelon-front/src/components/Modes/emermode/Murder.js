@@ -1,7 +1,7 @@
 import React from "react";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
-import EmergencyBanner from "../../cards/emerContact";
+import EmergencyBanner from "../../cards/EmerContact";
 const EmerContact = [
   {
     id: "1",
