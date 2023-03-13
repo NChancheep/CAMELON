@@ -1,6 +1,7 @@
 import React from "react";
 import Chart from "chart.js/auto";
 import { Radar } from 'react-chartjs-2';
+import Card from "react-bootstrap/Card";
 
 import {
     Chart as ChartJS,
@@ -35,9 +36,9 @@ const RadarChart = () => {
     ],
   };
   return (
-    <div>
+    <Card style={{width:"50%"}}>
       <Radar data={data} />
-    </div>
+    </Card>
   );
 };
 

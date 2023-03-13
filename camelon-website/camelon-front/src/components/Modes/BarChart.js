@@ -1,6 +1,7 @@
 import React from "react";
 import Chart from "chart.js/auto";
 import { Bar } from "react-chartjs-2";
+import Card from "react-bootstrap/Card";
 
 const BarChart = () => {
   const labels = ["January", "February", "March", "April", "May", "June"];
@@ -16,9 +17,9 @@ const BarChart = () => {
     ],
   };
   return (
-    <div>
+    <Card style={{width:"50%", height:"100%"}}>
       <Bar data={data} />
-    </div>
+    </Card>
   );
 };
 
