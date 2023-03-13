@@ -1,6 +1,6 @@
 import React from "react";
-import Sidebar2 from "./Sidebar2";
-import Emercontroller from "./emerController";
+import Sidebar2 from "../components/Sidebar2";
+import Emercontroller from "../components/controller/emerController";
 
 
 function Emergency() {

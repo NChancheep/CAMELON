@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import Container from "react-bootstrap/esm/Container";
-import Display from "./Display";
+import Display from "../Display";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
-import Filtter from "./Filtter";
-import Heading from "./Heading";
+import Filtter from "../Filtter";
+import Heading from "../Heading";
 import Card from "react-bootstrap/Card";
 export default function MenuController() {
   const [state, setState] = useState({ mode: "overview" });

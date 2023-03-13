@@ -1,12 +1,12 @@
 import React from "react";
-import Gambling from "./Modes/Gambling";
-import Murder from "./Modes/Murder";
-import SexualAbuse from "./Modes/SexualAbuse";
-import TheftBurglary from "./Modes/TheftBurglary";
-import BatteryAssault from "./Modes/BatteryAssault";
-import Drug from "./Modes/Drug";
-import Accident from "./Modes/Accident";
-import Overview from "./Modes/EmeOverview";
+import Gambling from "./Modes/emermode/Gambling";
+import Murder from "./Modes/emermode/Murder";
+import SexualAbuse from "./Modes/emermode/SexualAbuse";
+import TheftBurglary from "./Modes/emermode/TheftBurglary";
+import BatteryAssault from "./Modes/emermode/BatteryAssault";
+import Drug from "./Modes/emermode/Drug";
+import Accident from "./Modes/emermode/Accident";
+import Overview from "./Modes/emermode/EmeOverview";
 
 export default function NavbarEmer(props) {
   if (props.data === "Overview") {
