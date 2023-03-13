@@ -22,14 +22,14 @@ export default function Sidebar2() {
 
       <Link className="menu-item" style={{ display: "inline" }} to="/">
         <AiFillHome style={{ display: "inline", marginRight: 6 }} />
-        Home
+        หน้าแรก
       </Link>
       <br />
       <br />
 
       <Link className="menu-item" style={{ display: "inline" }} to="/Emergency">
         <AiFillInfoCircle style={{ display: "inline", marginRight: 6 }} />
-        Emergency
+        เบอร์ติดต่อฉุกเฉิน
       </Link>
       <br />
       <br />
@@ -40,8 +40,11 @@ export default function Sidebar2() {
           alt="Camelon"
           style={{ display: "inline", marginRight: 6 }}
         />
-        About Camelon
+        เกี่ยวกับเรา
       </Link>
+      <br />
+      <br />
+      <span style={{fontSize: 12,fontWeight: 400, pointerEvents:"none", color:"#474747"}}>Camelon Version 2.0.1</span>
     </Menu>
   );
 }

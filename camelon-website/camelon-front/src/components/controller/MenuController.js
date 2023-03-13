@@ -20,18 +20,16 @@ export default function MenuController() {
     <>
       <Container>
         <Heading
-          mainName="Home"
+          mainName="หน้าแรก"
           subName={(() => {
             if (state.mode === "overview") {
-              return <span>Overview</span>;
+              return <span>ภาพรวม</span>;
             } else if (state.mode === "pin_map") {
-              return <span>Map</span>;
+              return <span>รายละเอียดข่าวอาชญากรรม</span>;
             } else if (state.mode === "heat_map") {
-              return <span>Heat map</span>;
-            } else if (state.mode === "aboutus") {
-              return <span>About us</span>;
+              return <span>แผนที่ความถี่อาชญากรรม</span>;
             } else if (state.mode === "choropleth_map") {
-              return <span>Choropleth Map</span>;
+              return <span>แผนที่รายจังหวัด</span>;
             } else {
               <span>Overview</span>;
             }
@@ -57,7 +55,7 @@ export default function MenuController() {
                   color: state.mode === "overview" ? "#479B5F" : "black",
                 }}
               >
-                Overview
+                ภาพรวม
               </div>
             </button>
           </Col>
@@ -80,7 +78,7 @@ export default function MenuController() {
                   color: state.mode === "pin_map" ? "#479B5F" : "black",
                 }}
               >
-                Map
+                รายละเอียดข่าวอาชญากรรม
               </div>
             </button>
           </Col>
@@ -103,7 +101,7 @@ export default function MenuController() {
                   color: state.mode === "heat_map" ? "#479B5F" : "black",
                 }}
               >
-                Heat Map
+                แผนที่ความถี่อาชญากรรม
               </div>
             </button>
           </Col>
@@ -126,7 +124,7 @@ export default function MenuController() {
                   color: state.mode === "choropleth_map" ? "#479B5F" : "black",
                 }}
               >
-                Choropleth map
+                แผนที่รายจังหวัด
               </div>
             </button>
           </Col>

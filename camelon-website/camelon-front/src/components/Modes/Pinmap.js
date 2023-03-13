@@ -208,11 +208,11 @@ export default function Pinmap() {
                     if (news_data.news_id.includes("THR")) {
                       window.location.href =
                         "https://www.thairath.co.th/news/" + news_id;
-                        console(news_id)
+                      console(news_id);
                     } else {
                       window.location.href =
                         "https://d.dailynews.co.th/crime/" + news_id;
-                        console(news_id)
+                      console(news_id);
                     }
                   }}
                 >
@@ -259,11 +259,10 @@ export default function Pinmap() {
 
   function DateSelect() {
     return (
-      <Row>
-        <Col sm={2} className="d-flex flex-row-reverse">
-          <span>Select Date Range:</span>
-        </Col>
-        <Col sm={2}>
+      <Row xs>
+        
+        <Col sm>
+          Select Date Range: *เลือกได้แค่ตามนี้
           <DatePicker
             selectsRange={true}
             startDate={startDate}
@@ -275,24 +274,7 @@ export default function Pinmap() {
             showYearDropdown
             dropdownMode="select"
           />
-          {/* <DatePicker
-          style={{width:"50%"}}
-            selected={startDate}
-            onChange={(date) => setStartDate(date)}
-            showMonthDropdown
-            showYearDropdown
-            dropdownMode="select"
-          /> */}
         </Col>
-        {/* <Col sm={2}>
-          <DatePicker
-            selected={endDate}
-            onChange={(date) => setEndDate(date)}
-            showMonthDropdown
-            showYearDropdown
-            dropdownMode="select"
-          />
-        </Col> */}
       </Row>
     );
   }
