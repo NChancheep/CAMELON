@@ -266,6 +266,7 @@ export default function Pinmap() {
           <DatePicker
             showMonthDropdown
             showYearDropdown
+            dropdownMode="select"
             selectsRange={true}
             startDate={startDate}
             endDate={endDate}

@@ -4,6 +4,11 @@ import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/esm/Container";
 import Card from "react-bootstrap/Card";
+import Jump from "../../src/assets/Poto/jump.jpg";
+import Cheep from "../../src/assets/Poto/cheep.jpg";
+import Pete from "../../src/assets/Poto/pete.jpg";
+import Ing from "../../src/assets/Poto/siripen.png";
+import Aum from "../../src/assets/Poto/suppawong.png";
 
 const ContactUs = () => {
   return (
@@ -15,7 +20,11 @@ const ContactUs = () => {
         />
       </div>
       <Container>
-        <h1>Meet Our Team</h1>
+        <Row>
+          <Col sm className="d-flex justify-content-center">
+            <h1>What is Camelon</h1>
+          </Col>
+        </Row>
         <text>
           {" "}
           We would like to mention our appreciation to our advisor Dr. Siripen
@@ -54,46 +63,53 @@ const ContactUs = () => {
           enabling people to be able to apply our media in various fields,
           especially in terms of being a medium for use in decision making.
         </text>
+
         <Container>
           <Row>
-            <Col>
-              <div style={{ width: "18rem" }}>
-                <Card.Img
-                  variant="top"
-                  src="https://scontent.fbkk12-5.fna.fbcdn.net/v/t1.6435-9/163937029_3790817514348058_2393931198420441797_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=09cbfe&_nc_eui2=AeF2R7bjmW-6idtpMiNcHZMoCBU8Ul4zi7AIFTxSXjOLsA-BSc8GgLWy3a5FtuSqHwtHdIXqD1pa9dCzPB-4pLpR&_nc_ohc=ROBrgsAsu1AAX_TFAD_&_nc_ht=scontent.fbkk12-5.fna&oh=00_AfB9DAVGeCvq1rehp9d6eTvYYEiKQOUiVzLar33mR6k3KQ&oe=6436190B"
-                />
+            <Col sm className="d-flex justify-content-center">
+              <h1>Meet Our Team</h1>
+            </Col>
+          </Row>
+          <Row>
+            <Col sm>
+              <div style={{ width: "13rem" }}>
+                <Card.Img variant="top" src={Cheep} />
                 <Card.Body>
                   <Card.Title>Chancheep Mahacharoensuk</Card.Title>
-                  
                 </Card.Body>
               </div>
             </Col>
-
-            <Col>
-              <Card style={{ width: "18rem" }}>
-                <Card.Img
-                  variant="top"
-                  src="https://scontent.fbkk12-5.fna.fbcdn.net/v/t1.6435-9/166602694_2279749302159169_1129387676197536862_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=09cbfe&_nc_eui2=AeEoIfmIXadkF58WtpIa_ftE0ELSDsj2N3bQQtIOyPY3dixFGY0B_yF3hlPQ_vn1F9nSPtG9P8cWmbcFbsu1iA6J&_nc_ohc=4GL3rJlVlTMAX-pz5Y1&_nc_ht=scontent.fbkk12-5.fna&oh=00_AfBQcZBSW6wPZN_dZcYJonzplEnHL3vrsjzywtPlQvJoJA&oe=64360FCE"
-                />
-                <Card.Body>
-                  <Card.Title>Pattadon Singhajan</Card.Title>
-                  
-                </Card.Body>
-              </Card>
-            </Col>
-
-            <Col>
-              {" "}
-              <Card style={{ width: "18rem" }}>
-                <Card.Img
-                  variant="top"
-                  src="https://scontent.fbkk12-5.fna.fbcdn.net/v/t1.6435-9/162545352_2504059616406151_2002383930436508196_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=09cbfe&_nc_eui2=AeE2kvFCbFqgXtQYJi8Seexq7NLPpRPaSrDs0s-lE9pKsIFhS8kYBvpYYPU1luUDINtLm_IstSgU-GIK7GLaC35s&_nc_ohc=KvsG_dQp-0sAX9Y0UFD&_nc_ht=scontent.fbkk12-5.fna&oh=00_AfBzJJJuikHD7w7VNBfQMlRH_sebpHzMT7dbO9rGk5A_mQ&oe=643612DC"
-                />
+            <Col sm>
+              <div style={{ width: "13rem" }}>
+                <Card.Img variant="top" src={Jump} />
                 <Card.Body>
                   <Card.Title>Kantapong Matangkarat</Card.Title>
-                  
                 </Card.Body>
-              </Card>
+              </div>
+            </Col>
+            <Col sm>
+              <div style={{ width: "13rem" }}>
+                <Card.Img variant="top" src={Pete} />
+                <Card.Body>
+                  <Card.Title>Pattadon Singhajan</Card.Title>
+                </Card.Body>
+              </div>
+            </Col>
+            <Col sm>
+              <div style={{ width: "13rem" }}>
+                <Card.Img variant="top" src={Ing} />
+                <Card.Body>
+                  <Card.Title>Lect. Dr. Siripen Pongpaichet</Card.Title>
+                </Card.Body>
+              </div>
+            </Col>
+            <Col sm>
+              <div style={{ width: "13rem" }}>
+                <Card.Img variant="top" src={Aum} />
+                <Card.Body>
+                  <Card.Title>Assoc. Prof. Dr. Suppawong Tuarob</Card.Title>
+                </Card.Body>
+              </div>
             </Col>
           </Row>
         </Container>
