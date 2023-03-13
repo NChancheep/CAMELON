@@ -1,6 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import L from "leaflet";
 
+import Col from "react-bootstrap/Col";
+import Row from "react-bootstrap/Row";
+import Container from "react-bootstrap/esm/Container";
 import "leaflet/dist/leaflet.css";
 import "../../css/Pinmap.css";
 import Accident_Icon from "../../assets/iconPin/ColorIcon/Accident_Green.png";
@@ -22,7 +25,6 @@ import {
 } from "react-leaflet";
 
 import MarkerClusterGroup from "react-leaflet-cluster";
-
 
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
@@ -84,12 +86,13 @@ function TimeSlider() {
 }
 
 export default function Pinmap() {
-  const [startDate, setStartDate] = useState(new Date());
-  const [endDate, setEndDate] = useState(new Date());
-
+  // const [startDate, setStartDate] = useState(new Date());
+  // const [endDate, setEndDate] = useState(new Date());
+  const [dateRange, setDateRange] = useState([null, null]);
+  const [startDate, endDate] = dateRange;
   const { locations } = useSelector((state) => state.data);
   const { news_info } = useSelector((state) => state.data);
-  // const { news } = useSelector((state) => state.data);
+  const { news } = useSelector((state) => state.data);
   const { user_current_location } = useSelector((state) => state.data);
 
   function SetView({ coords }) {
@@ -109,8 +112,8 @@ export default function Pinmap() {
 
   function showNews(datetime) {
     if (
-      Date.parse(startDate) <= Date.parse(datetime) &&
-      Date.parse(datetime) <= Date.parse(endDate)
+      Date.parse(dateRange[0]) <= Date.parse(datetime) &&
+      Date.parse(datetime) <= Date.parse(dateRange[1])
     ) {
       return true;
     } else {
@@ -255,31 +258,46 @@ export default function Pinmap() {
 
   function DateSelect() {
     return (
-      <div className="flex items-center mt-4">
-        <span className="mr-4 font-medium">Select Date Range:</span>
-        <DatePicker
-          className="p-2 border rounded-lg mr-2"
-          selected={startDate}
-          onChange={(date) => setStartDate(date)}
-          showMonthDropdown
-          showYearDropdown
-          dropdownMode="select"
-        />
-        <span className="mr-2">to</span>
-        <DatePicker
-          className="p-2 border rounded-lg"
-          selected={endDate}
-          onChange={(date) => setEndDate(date)}
-          showMonthDropdown
-          showYearDropdown
-          dropdownMode="select"
-        />
-      </div>
+      <Row>
+        <Col sm={2} className="d-flex flex-row-reverse">
+          <span>Select Date Range:</span>
+        </Col>
+        <Col sm={2}>
+          <DatePicker
+            showMonthDropdown
+            showYearDropdown
+            selectsRange={true}
+            startDate={startDate}
+            endDate={endDate}
+            onChange={(update) => {
+              setDateRange(update);
+            }}
+          />
+          {/* <DatePicker
+          style={{width:"50%"}}
+            selected={startDate}
+            onChange={(date) => setStartDate(date)}
+            showMonthDropdown
+            showYearDropdown
+            dropdownMode="select"
+          /> */}
+        </Col>
+        {/* <Col sm={2}>
+          <DatePicker
+            selected={endDate}
+            onChange={(date) => setEndDate(date)}
+            showMonthDropdown
+            showYearDropdown
+            dropdownMode="select"
+          />
+        </Col> */}
+      </Row>
     );
   }
 
   return (
     <>
+      {" "}
       <div class="sm" style={{ marginTop: 16 }}>
         <div class="p-1 border-2 border-gray-200 border rounded dark:border-gray-700">
           <MapContainer
@@ -293,12 +311,11 @@ export default function Pinmap() {
                 user_current_location.longitude,
               ]}
             />
-
             <PinMap />
           </MapContainer>
         </div>
-        <DateSelect />
       </div>
+      <DateSelect class="z-index-10 bg-danger position-absolute" />
     </>
   );
 }
