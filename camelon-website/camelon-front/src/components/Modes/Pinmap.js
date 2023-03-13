@@ -88,7 +88,9 @@ function TimeSlider() {
 export default function Pinmap() {
   // const [startDate, setStartDate] = useState(new Date());
   // const [endDate, setEndDate] = useState(new Date());
-  const [dateRange, setDateRange] = useState([null, null]);
+  let dateMockStart = new Date("2000-01-01T00:00:00");
+  let dateMockEnd = Date.now();
+  const [dateRange, setDateRange] = useState([dateMockStart, dateMockEnd]);
   const [startDate, endDate] = dateRange;
   const { locations } = useSelector((state) => state.data);
   const { news_info } = useSelector((state) => state.data);
@@ -149,78 +151,79 @@ export default function Pinmap() {
 
       const fontSize = { fontSize: 16 };
       const titleStyle = { fontWeight: 500, color: "#44985B" };
-      {
-        showNews(news_datetime) &&
-          layerGroups[crimeType].push(
-            <Marker
-              position={[location.latitude, location.longitude]}
-              icon={icon}
-            >
-              <Popup>
-                <div className="mb-2">
-                  <div style={fontSize}>
-                    {" "}
-                    <span style={titleStyle}>Criminal: </span>{" "}
-                    {trimString(news_data.criminal)
-                      ? trimString(news_data.criminal)
-                      : "ไม่มีข้อมูล"}{" "}
-                  </div>
-                  <div style={fontSize}>
-                    {" "}
-                    <span style={titleStyle}>Action: </span>
-                    {trimString(news_data.action)
-                      ? trimString(news_data.action)
-                      : "ไม่มีข้อมูล"}{" "}
-                  </div>
-                  <div style={fontSize}>
-                    {" "}
-                    <span style={titleStyle}>Victim: </span>
-                    {trimString(news_data.victim)
-                      ? trimString(news_data.victim)
-                      : "ไม่มีข้อมูล"}{" "}
-                  </div>
-                  <div style={fontSize}>
-                    {" "}
-                    <span style={titleStyle}>Date: </span>{" "}
-                    {trimString(news_data.datetime)
-                      ? trimString(news_data.datetime)
-                      : "ไม่มีข้อมูล"}{" "}
-                  </div>
-                  <div style={fontSize}>
-                    {" "}
-                    <span style={titleStyle}>Address: </span>
-                    {trimString(location.formatted_address)
-                      ? trimString(location.formatted_address)
-                      : "ไม่มีข้อมูล"}{" "}
-                  </div>
+
+      showNews(news_datetime) &&
+        layerGroups[crimeType].push(
+          <Marker
+            position={[location.latitude, location.longitude]}
+            icon={icon}
+          >
+            <Popup>
+              <div className="mb-2">
+                <div style={fontSize}>
+                  {" "}
+                  <span style={titleStyle}>Criminal: </span>{" "}
+                  {trimString(news_data.criminal)
+                    ? trimString(news_data.criminal)
+                    : "ไม่มีข้อมูล"}{" "}
                 </div>
-                <div className="popup-action">
-                  <button
-                    style={{ width: "100%" }}
-                    type="button"
-                    className="bg-white hover:bg-gray-700 text-black font-bold border py-2 px-4 rounded"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      const regex = /(\d+)/;
-                      const match = regex.exec(news.news_id);
-                      const news_id = match[1];
-                      if (news.news_id.includes("THR")) {
-                        window.location.href =
-                          "https://www.thairath.co.th/news/" + news_id;
-                      } else {
-                        window.location.href =
-                          "https://d.dailynews.co.th/crime/" + news_id;
-                      }
-                    }}
-                  >
-                    {" "}
-                    อ่านเพิ่มเติม..
-                  </button>
+                <div style={fontSize}>
+                  {" "}
+                  <span style={titleStyle}>Action: </span>
+                  {trimString(news_data.action)
+                    ? trimString(news_data.action)
+                    : "ไม่มีข้อมูล"}{" "}
                 </div>
-              </Popup>
-            </Marker>
-          );
-      }
+                <div style={fontSize}>
+                  {" "}
+                  <span style={titleStyle}>Victim: </span>
+                  {trimString(news_data.victim)
+                    ? trimString(news_data.victim)
+                    : "ไม่มีข้อมูล"}{" "}
+                </div>
+                <div style={fontSize}>
+                  {" "}
+                  <span style={titleStyle}>Date: </span>{" "}
+                  {trimString(news_data.datetime)
+                    ? trimString(news_data.datetime)
+                    : "ไม่มีข้อมูล"}{" "}
+                </div>
+                <div style={fontSize}>
+                  {" "}
+                  <span style={titleStyle}>Address: </span>
+                  {trimString(location.formatted_address)
+                    ? trimString(location.formatted_address)
+                    : "ไม่มีข้อมูล"}{" "}
+                </div>
+              </div>
+              <div className="popup-action">
+                <button
+                  style={{ width: "100%" }}
+                  type="button"
+                  className="bg-white hover:bg-gray-700 text-black font-bold border py-2 px-4 rounded"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    const regex = /(\d+)/;
+                    const match = regex.exec(news_data.news_id);
+                    const news_id = match[1];
+                    if (news_data.news_id.includes("THR")) {
+                      window.location.href =
+                        "https://www.thairath.co.th/news/" + news_id;
+                        console(news_id)
+                    } else {
+                      window.location.href =
+                        "https://d.dailynews.co.th/crime/" + news_id;
+                        console(news_id)
+                    }
+                  }}
+                >
+                  {" "}
+                  อ่านเพิ่มเติม..
+                </button>
+              </div>
+            </Popup>
+          </Marker>
+        );
     });
 
     const crimeTypeLayers = Object.keys(layerGroups).map((crimeType) => (
@@ -263,7 +266,6 @@ export default function Pinmap() {
         </Col>
         <Col sm={2}>
           <DatePicker
-
             selectsRange={true}
             startDate={startDate}
             endDate={endDate}
