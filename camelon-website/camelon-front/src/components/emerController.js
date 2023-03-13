@@ -15,17 +15,36 @@ export default function EmerController() {
       <Container className={`nav-bar-select-locati`} style={{ height: 55 }}>
         <Heading
           mainName="Emergency Contact"
-          subName={state.mode ? state.mode : "Overview"}
+          subName={(() => {
+            if (state.mode === "Overview") {
+              return <span>Overview</span>;
+            } else if (state.mode === "Gambling") {
+              return <span>Gambling</span>;
+            } else if (state.mode === "Murder") {
+              return <span>Murder</span>;
+            } else if (state.mode === "SexualAbuse") {
+              return <span>Sexual Abuse</span>;
+            } else if (state.mode === "TheftBurglary") {
+              return <span>Theft Burglary</span>;
+            } else if (state.mode === "BatteryAssault") {
+              return <span>Battery Assault</span>;
+            } else if (state.mode === "Drug") {
+              return <span>Drug</span>;
+            } else if (state.mode === "Accident") {
+              return <span>Accident</span>;
+            } else {
+              <span>{state.mode}</span>;
+            }
+          })()}
         />
         <Card>
           <Row
             xs
-            style={{ height: "100%", padding: 10,}}
+            style={{ height: "100%", padding: 10 }}
             //className="rectangle-1378"
           >
             <Col sm>
               <button
-              
                 style={{
                   width: "100%",
                   height: "100%",

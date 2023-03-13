@@ -20,7 +20,7 @@ function FiltterComponent() {
 
   const getDistrictList = (province_id) => {
     const districts_list = districts.filter(
-      (district) => district.province_id == province_id
+      (district) => district.province_id === province_id
     );
     // console.log(districts_list)
     setDistrictList(districts_list);
@@ -28,13 +28,13 @@ function FiltterComponent() {
 
   const getSubdistrictList = (district_id) => {
     const subdistrict_list = subdistricts.filter(
-      (subdistrict) => subdistrict.district_id == district_id
+      (subdistrict) => subdistrict.district_id === district_id
     );
     setSubdistrictList(subdistrict_list);
   };
 
   const getLatLong = (id) => {
-    let position = subdistrictList.find((subdistrict) => subdistrict.id == id);
+    let position = subdistrictList.find((subdistrict) => subdistrict.id === id);
 
     const user_current_location = {
       latitude: position.latitude,
