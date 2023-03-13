@@ -263,6 +263,7 @@ export default function Pinmap() {
         </Col>
         <Col sm={2}>
           <DatePicker
+
             selectsRange={true}
             startDate={startDate}
             endDate={endDate}
