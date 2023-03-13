@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
 export default function Sidebar2() {
   return (
     <Menu>
-      <h1  style={{ fontSize: 24, fontWeight: 800 }}>
+      <h1  style={{ fontSize: 24, fontWeight: 800, pointerEvents:"none"}}>
         <img
           src={images}
           width="51"
@@ -39,7 +39,7 @@ export default function Sidebar2() {
           width="15"
           alt="Camelon"
           style={{ display: "inline", marginRight: 6 }}
-        />{" "}
+        />
         About Camelon
       </Link>
     </Menu>
