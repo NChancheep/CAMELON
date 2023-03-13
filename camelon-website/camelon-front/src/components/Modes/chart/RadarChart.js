@@ -21,13 +21,13 @@ ChartJS.register(
   );
 
 const RadarChart = () => {
-  const labels = ['Thing 1', 'Thing 2', 'Thing 3', 'Thing 4', 'Thing 5', 'Thing 6'];
+  const labels = ['Thing 1', 'Thing 2', 'Thing 3', 'Thing 4', 'Thing 5', 'Thing 6','Thing 7','Thing 8','Thing 9'];
   const data = {
     labels: labels,
     datasets: [
       {
         label: '# of Votes',
-      data: [2, 9, 3, 5, 2, 3],
+      data: [2, 9, 3, 5, 2, 3, 2,3,2],
       backgroundColor: '#44985B',
       borderColor: '#6A717D',
       borderWidth: 1,
