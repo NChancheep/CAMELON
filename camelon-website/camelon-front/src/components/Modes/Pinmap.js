@@ -251,10 +251,9 @@ export default function Pinmap() {
   }
 
   useEffect(() => {
-    console.log(startDate);
     PinMap();
-    console.log("re-render pin map!");
-  }, [startDate]);
+    // console.log("re-render pin map!");
+  }, [dateRange]);
 
   function DateSelect() {
     return (
@@ -264,14 +263,15 @@ export default function Pinmap() {
         </Col>
         <Col sm={2}>
           <DatePicker
-            showMonthDropdown
-            showYearDropdown
             selectsRange={true}
             startDate={startDate}
             endDate={endDate}
             onChange={(update) => {
               setDateRange(update);
             }}
+            showMonthDropdown
+            showYearDropdown
+            dropdownMode="select"
           />
           {/* <DatePicker
           style={{width:"50%"}}
