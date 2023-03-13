@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import L from "leaflet";
 
 import "leaflet/dist/leaflet.css";
@@ -22,6 +22,10 @@ import {
 } from "react-leaflet";
 
 import MarkerClusterGroup from "react-leaflet-cluster";
+
+
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
 import { useSelector } from "react-redux";
 
@@ -80,9 +84,12 @@ function TimeSlider() {
 }
 
 export default function Pinmap() {
+  const [startDate, setStartDate] = useState(new Date());
+  const [endDate, setEndDate] = useState(new Date());
+
   const { locations } = useSelector((state) => state.data);
   const { news_info } = useSelector((state) => state.data);
-  // const { news } = useSelector((state) => state.data);
+  const { news } = useSelector((state) => state.data);
   const { user_current_location } = useSelector((state) => state.data);
 
   function SetView({ coords }) {
@@ -100,102 +107,176 @@ export default function Pinmap() {
     return text.toString().replace(/\[|\]/g, "").trim();
   }
 
+  function showNews(datetime) {
+    if (
+      Date.parse(startDate) <= Date.parse(datetime) &&
+      Date.parse(datetime) <= Date.parse(endDate)
+    ) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
   const [mapLayers, setMapLayers] = useState({
     street: true,
     satellite: false,
     dark: false,
   });
 
-  const layerGroups = {};
+  function PinMap() {
+    const layerGroups = {};
 
-  // Group markers based on their crime types
-  locations.forEach((location) => {
-    const news = news_info.find((news) => news.info_id === location.info_id);
-    const crimeType = news.crime_type;
-    const icon = getIconForCrimeType(crimeType);
-    L.Marker.prototype.options.icon = icon;
-    if (!layerGroups[crimeType]) {
-      layerGroups[crimeType] = [];
-    }
+    // Group markers based on their crime types
+    locations.forEach((location) => {
+      const news_data = news_info.find(
+        (news) => news.info_id === location.info_id
+      );
+      const news_datetime = news.find(
+        (news) => news.news_id === news_data.news_id
+      ).publish_date;
+      // console.log(showNews(news_datetime));
 
-    const fontSize = { fontSize: 16 };
-    const titleStyle = { fontWeight: 500, color: "#44985B" };
+      const crimeType = news_data.crime_type;
+      const icon = getIconForCrimeType(crimeType);
+      L.Marker.prototype.options.icon = icon;
+      if (!layerGroups[crimeType]) {
+        layerGroups[crimeType] = [];
+      }
 
-    layerGroups[crimeType].push(
-      <Marker position={[location.latitude, location.longitude]} icon={icon}>
-        <Popup>
-          <div className="mb-2">
-            <div style={fontSize}>
-              {" "}
-              <span style={titleStyle}>Criminal: </span>{" "}
-              {trimString(news.criminal)
-                ? trimString(news.criminal)
-                : "ไม่มีข้อมูล"}{" "}
-            </div>
-            <div style={fontSize}>
-              {" "}
-              <span style={titleStyle}>Action: </span>
-              {trimString(news.action)
-                ? trimString(news.action)
-                : "ไม่มีข้อมูล"}{" "}
-            </div>
-            <div style={fontSize}>
-              {" "}
-              <span style={titleStyle}>Victim: </span>
-              {trimString(news.victim)
-                ? trimString(news.victim)
-                : "ไม่มีข้อมูล"}{" "}
-            </div>
-            <div style={fontSize}>
-              {" "}
-              <span style={titleStyle}>Date: </span>{" "}
-              {trimString(news.datetime)
-                ? trimString(news.datetime)
-                : "ไม่มีข้อมูล"}{" "}
-            </div>
-            <div style={fontSize}>
-              {" "}
-              <span style={titleStyle}>Address: </span>
-              {trimString(location.formatted_address)
-                ? trimString(location.formatted_address)
-                : "ไม่มีข้อมูล"}{" "}
-            </div>
-          </div>
-          <div className="popup-action">
-            <button
-              style={{ width: "100%" }}
-              type="button"
-              className="bg-white hover:bg-gray-700 text-black font-bold border py-2 px-4 rounded"
-              onClick={(e) => {
-                e.preventDefault();
-                const regex = /(\d+)/;
-                const match = regex.exec(news.news_id);
-                const news_id = match[1];
-                if (news.news_id.includes("THR")) {
-                  window.location.href =
-                    "https://www.thairath.co.th/news/" + news_id;
-                } else {
-                  window.location.href =
-                    "https://d.dailynews.co.th/crime/" + news_id;
-                }
-              }}
+      const fontSize = { fontSize: 16 };
+      const titleStyle = { fontWeight: 500, color: "#44985B" };
+      {
+        showNews(news_datetime) &&
+          layerGroups[crimeType].push(
+            <Marker
+              position={[location.latitude, location.longitude]}
+              icon={icon}
             >
-              {" "}
-              อ่านเพิ่มเติม..
-            </button>
-          </div>
-        </Popup>
-      </Marker>
-    );
-  });
+              <Popup>
+                <div className="mb-2">
+                  <div style={fontSize}>
+                    {" "}
+                    <span style={titleStyle}>Criminal: </span>{" "}
+                    {trimString(news_data.criminal)
+                      ? trimString(news_data.criminal)
+                      : "ไม่มีข้อมูล"}{" "}
+                  </div>
+                  <div style={fontSize}>
+                    {" "}
+                    <span style={titleStyle}>Action: </span>
+                    {trimString(news_data.action)
+                      ? trimString(news_data.action)
+                      : "ไม่มีข้อมูล"}{" "}
+                  </div>
+                  <div style={fontSize}>
+                    {" "}
+                    <span style={titleStyle}>Victim: </span>
+                    {trimString(news_data.victim)
+                      ? trimString(news_data.victim)
+                      : "ไม่มีข้อมูล"}{" "}
+                  </div>
+                  <div style={fontSize}>
+                    {" "}
+                    <span style={titleStyle}>Date: </span>{" "}
+                    {trimString(news_data.datetime)
+                      ? trimString(news_data.datetime)
+                      : "ไม่มีข้อมูล"}{" "}
+                  </div>
+                  <div style={fontSize}>
+                    {" "}
+                    <span style={titleStyle}>Address: </span>
+                    {trimString(location.formatted_address)
+                      ? trimString(location.formatted_address)
+                      : "ไม่มีข้อมูล"}{" "}
+                  </div>
+                </div>
+                <div className="popup-action">
+                  <button
+                    style={{ width: "100%" }}
+                    type="button"
+                    className="bg-white hover:bg-gray-700 text-black font-bold border py-2 px-4 rounded"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      const regex = /(\d+)/;
+                      const match = regex.exec(news.news_id);
+                      const news_id = match[1];
+                      if (news.news_id.includes("THR")) {
+                        window.location.href =
+                          "https://www.thairath.co.th/news/" + news_id;
+                      } else {
+                        window.location.href =
+                          "https://d.dailynews.co.th/crime/" + news_id;
+                      }
+                    }}
+                  >
+                    {" "}
+                    อ่านเพิ่มเติม..
+                  </button>
+                </div>
+              </Popup>
+            </Marker>
+          );
+      }
+    });
 
-  const crimeTypeLayers = Object.keys(layerGroups).map((crimeType) => (
-    <LayersControl.Overlay name={crimeType} key={crimeType} checked={true}>
-      <MarkerClusterGroup chunkedLoading>
-        {layerGroups[crimeType]}
-      </MarkerClusterGroup>
-    </LayersControl.Overlay>
-  ));
+    const crimeTypeLayers = Object.keys(layerGroups).map((crimeType) => (
+      <LayersControl.Overlay name={crimeType} key={crimeType} checked={true}>
+        <MarkerClusterGroup chunkedLoading>
+          {layerGroups[crimeType]}
+        </MarkerClusterGroup>
+      </LayersControl.Overlay>
+    ));
+
+    return (
+      <LayersControl position="topright">
+        <LayersControl.BaseLayer checked={mapLayers.street} name="Street">
+          <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
+        </LayersControl.BaseLayer>
+        <LayersControl.BaseLayer checked={mapLayers.satellite} name="Satellite">
+          <TileLayer url="https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}" />
+        </LayersControl.BaseLayer>
+        <LayersControl.BaseLayer checked={mapLayers.dark} name="Dark">
+          <TileLayer
+            attribution="Map tiles by Carto, under CC BY 3.0. Data by OpenStreetMap, under ODbL."
+            url="https://cartodb-basemaps-{s}.global.ssl.fastly.net/dark_all/{z}/{x}/{y}.png"
+          />
+        </LayersControl.BaseLayer>
+        {crimeTypeLayers}
+      </LayersControl>
+    );
+  }
+
+  useEffect(() => {
+    console.log(startDate);
+    PinMap();
+    console.log("re-render pin map!");
+  }, [startDate]);
+
+  function DateSelect() {
+    return (
+      <div className="flex items-center mt-4">
+        <span className="mr-4 font-medium">Select Date Range:</span>
+        <DatePicker
+          className="p-2 border rounded-lg mr-2"
+          selected={startDate}
+          onChange={(date) => setStartDate(date)}
+          showMonthDropdown
+          showYearDropdown
+          dropdownMode="select"
+        />
+        <span className="mr-2">to</span>
+        <DatePicker
+          className="p-2 border rounded-lg"
+          selected={endDate}
+          onChange={(date) => setEndDate(date)}
+          showMonthDropdown
+          showYearDropdown
+          dropdownMode="select"
+        />
+      </div>
+    );
+  }
 
   return (
     <>
@@ -212,28 +293,11 @@ export default function Pinmap() {
                 user_current_location.longitude,
               ]}
             />
-            <LayersControl position="topright">
-              <LayersControl.BaseLayer checked={mapLayers.street} name="Street">
-                <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
-              </LayersControl.BaseLayer>
-              <LayersControl.BaseLayer
-                checked={mapLayers.satellite}
-                name="Satellite"
-              >
-                <TileLayer url="https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}" />
-              </LayersControl.BaseLayer>
-              <LayersControl.BaseLayer checked={mapLayers.dark} name="Dark">
-                <TileLayer
-                  attribution="Map tiles by Carto, under CC BY 3.0. Data by OpenStreetMap, under ODbL."
-                  url="https://cartodb-basemaps-{s}.global.ssl.fastly.net/dark_all/{z}/{x}/{y}.png"
-                />
-              </LayersControl.BaseLayer>
-              {crimeTypeLayers}
-            </LayersControl>
-            
+
+            <PinMap />
           </MapContainer>
         </div>
-        <TimeSlider />
+        <DateSelect />
       </div>
     </>
   );
