@@ -1,7 +1,7 @@
-import MenuController from "./MenuController";
+import MenuController from "../components/controller/MenuController";
 import React from "react";
 import "../css/Sidebar.css";
-import Sidebar2 from "./Sidebar2";
+import Sidebar2 from "../components/Sidebar2";
 import "../css/setfont.css"
 function Home() {
   return (

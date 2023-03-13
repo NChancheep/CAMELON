@@ -3,7 +3,6 @@ import L from "leaflet";
 
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
-import Container from "react-bootstrap/esm/Container";
 import "leaflet/dist/leaflet.css";
 import "../../css/Pinmap.css";
 import Accident_Icon from "../../assets/iconPin/ColorIcon/Accident_Green.png";
@@ -81,9 +80,9 @@ function getIconForCrimeType(crimeType) {
 }
 // L.Marker.prototype.options.icon = DefaultIcon;
 
-function TimeSlider() {
-  return <input type="range" min="0" max="100" />;
-}
+// function TimeSlider() {
+//   return <input type="range" min="0" max="100" />;
+// }
 
 export default function Pinmap() {
   // const [startDate, setStartDate] = useState(new Date());

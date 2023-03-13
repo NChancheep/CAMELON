@@ -1,6 +1,6 @@
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
-import EmergencyBanner from "../cards/emerContact";
+import EmergencyBanner from "../../cards/emerContact";
 const EmerContact = [
   {
     id: "1",

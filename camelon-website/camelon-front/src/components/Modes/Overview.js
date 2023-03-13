@@ -1,6 +1,6 @@
 import React from "react";
-import BarChart from "./BarChart";
-import RadarChart from "./RadarChart";
+import BarChart from "./chart/BarChart";
+import RadarChart from "./chart/RadarChart";
 import Container from "react-bootstrap/esm/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
@@ -12,7 +12,6 @@ export default function Overview() {
         <Row >
           <Col><BarChart /></Col>
           <Col><RadarChart /></Col>
-          
         </Row>
       </Container>
     </div>
