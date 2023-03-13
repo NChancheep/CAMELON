@@ -89,7 +89,7 @@ export default function Pinmap() {
   // const [startDate, setStartDate] = useState(new Date());
   // const [endDate, setEndDate] = useState(new Date());
   let dateMockStart = new Date("2000-01-01T00:00:00");
-  let dateMockEnd = Date.now();
+  let dateMockEnd = new Date("2030-01-01T00:00:00");
   const [dateRange, setDateRange] = useState([dateMockStart, dateMockEnd]);
   const [startDate, endDate] = dateRange;
   const { locations } = useSelector((state) => state.data);
