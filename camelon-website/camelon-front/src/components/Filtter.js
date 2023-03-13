@@ -92,22 +92,6 @@ function FiltterComponent() {
           })}
         </select>
       </Col>
-      <Col sm>
-        <select>
-          <option value="" disabled selected>
-            ช่วงเวลา
-          </option>
-          <option>safsa</option>
-        </select>
-      </Col>
-      <Col sm>
-        <select>
-          <option value="" disabled selected>
-            ประเภทอาชญากรรม
-          </option>
-          <option>safsa</option>
-        </select>
-      </Col>
       <Col>
         {" "}
         <button
