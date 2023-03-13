@@ -10,14 +10,14 @@ const BarChart = () => {
     datasets: [
       {
         label: "My First dataset",
-        backgroundColor: "rgb(255, 99, 132)",
-        borderColor: "rgb(255, 99, 132)",
+        backgroundColor: "#44985B",
+        borderColor: "#6A717D",
         data: [0, 10, 5, 2, 20, 30, 45],
       },
     ],
   };
   return (
-    <Card style={{width:"50%", height:"100%"}}>
+    <Card style={{height:"50%"}}>
       <Bar data={data} />
     </Card>
   );

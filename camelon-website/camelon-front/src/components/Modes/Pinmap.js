@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import L from "leaflet";
-import icon from "leaflet/dist/images/marker-icon.png";
-import iconShadow from "leaflet/dist/images/marker-shadow.png";
+
 import "leaflet/dist/leaflet.css";
 import "../../css/Pinmap.css";
 import Accident_Icon from "../../assets/iconPin/ColorIcon/Accident_Green.png";
@@ -26,10 +25,10 @@ import MarkerClusterGroup from "react-leaflet-cluster";
 
 import { useSelector } from "react-redux";
 
-let DefaultIcon = L.icon({
-  iconUrl: icon,
-  shadowUrl: iconShadow,
-});
+// let DefaultIcon = L.icon({
+//   iconUrl: icon,
+//   shadowUrl: iconShadow,
+// });
 
 function getIconForCrimeType(crimeType) {
   if (crimeType === "SexualAbuse") {
@@ -83,7 +82,7 @@ function TimeSlider() {
 export default function Pinmap() {
   const { locations } = useSelector((state) => state.data);
   const { news_info } = useSelector((state) => state.data);
-  const { news } = useSelector((state) => state.data);
+  // const { news } = useSelector((state) => state.data);
   const { user_current_location } = useSelector((state) => state.data);
 
   function SetView({ coords }) {
