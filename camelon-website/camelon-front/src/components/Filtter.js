@@ -20,21 +20,21 @@ function FiltterComponent() {
 
   const getDistrictList = (province_id) => {
     const districts_list = districts.filter(
-      (district) => district.province_id === province_id
+      (district) => district.province_id === parseInt(province_id)
     );
-    // console.log(districts_list)
+    console.log(districts_list)
     setDistrictList(districts_list);
   };
 
   const getSubdistrictList = (district_id) => {
     const subdistrict_list = subdistricts.filter(
-      (subdistrict) => subdistrict.district_id === district_id
+      (subdistrict) => subdistrict.district_id === parseInt(district_id)
     );
     setSubdistrictList(subdistrict_list);
   };
 
   const getLatLong = (id) => {
-    let position = subdistrictList.find((subdistrict) => subdistrict.id === id);
+    let position = subdistrictList.find((subdistrict) => subdistrict.id === parseInt(id));
 
     const user_current_location = {
       latitude: position.latitude,
@@ -54,6 +54,7 @@ function FiltterComponent() {
         <select
           onChange={(e) => {
             getDistrictList(e.target.value);
+            console.log(districtList)
           }}
         >
           <option value="" disabled selected>
