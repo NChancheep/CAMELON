@@ -15,7 +15,7 @@ export default function MenuController() {
     borderRadius: 8,
   };
   var buttonClass =
-    "flex items-center justify-center font-bold border border-black hover:bg-gray-50";
+    "flex items-center justify-center font-bold border border-black hover:bg-green-50";
   return (
     <>
       <Container>
@@ -35,7 +35,7 @@ export default function MenuController() {
             }
           })()}
         />
-        <Row xs style={{ marginBottom: "2%", height: "100%" }}>
+        <Row xs style={{ marginBottom: "2%", height: "100%", fontFamily: "Kanit"  }}>
           <Col sm>
             <button
               style={styleButton}

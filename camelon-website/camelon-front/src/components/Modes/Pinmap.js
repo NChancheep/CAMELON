@@ -108,7 +108,7 @@ export default function Pinmap() {
   }
 
   function trimString(text) {
-    return text.toString().replace(/\[|\]/g, "").trim();
+    return text.toString().replace(/\['|']/g, "").trim();
   }
 
   function showNews(datetime) {
@@ -157,7 +157,7 @@ export default function Pinmap() {
           <>
             <a
               href={"https://www.thairath.co.th/news/" + news_id}
-              target="_blank"
+              target="_blank" rel="noreferrer"
             >
               <button
                 style={{ width: "100%" }}
@@ -174,7 +174,7 @@ export default function Pinmap() {
           <>
             <a
               href={"https://d.dailynews.co.th/crime/" + news_id}
-              target="_blank"
+              target="_blank" rel="noreferrer"
             >
               <button
                 style={{ width: "100%" }}
@@ -188,7 +188,7 @@ export default function Pinmap() {
         );
       }
 
-      const fontSize = { fontSize: 16 };
+      const fontSize = { fontSize: 16 , fontFamily: "Kanit" };
       const titleStyle = { fontWeight: 500, color: "#44985B" };
 
       showNews(news_datetime) &&
@@ -275,9 +275,9 @@ export default function Pinmap() {
 
   function DateSelect() {
     return (
-      <Row xs>
-        <Col sm>
-          Select Date Range: <br /> <div className="text-red-600">*เลือกได้แค่ตามนี้</div>
+      <Row xs style={{ fontFamily: "Kanit" }}>
+        <Col sm >
+          Select Date Range: <br /> <div className="text-red-600">*เลือกได้แค่ปี 2000 ถึง 2023</div>
           <DatePicker
             selectsRange={true}
             startDate={startDate}

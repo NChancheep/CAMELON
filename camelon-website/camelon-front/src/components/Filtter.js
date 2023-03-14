@@ -22,7 +22,7 @@ function FiltterComponent() {
     const districts_list = districts.filter(
       (district) => district.province_id === parseInt(province_id)
     );
-    console.log(districts_list)
+    console.log(districts_list);
     setDistrictList(districts_list);
   };
 
@@ -34,27 +34,29 @@ function FiltterComponent() {
   };
 
   const getLatLong = (id) => {
-    let position = subdistrictList.find((subdistrict) => subdistrict.id === parseInt(id));
+    let position = subdistrictList.find(
+      (subdistrict) => subdistrict.id === parseInt(id)
+    );
 
     const user_current_location = {
       latitude: position.latitude,
       longitude: position.longitude,
     };
-    
+
     dispatch(change_current_location(user_current_location));
   };
 
   return (
     <Row
       xs
-      style={{ height: "100%", padding: 10 }}
+      style={{ height: "100%", padding: 10, fontFamily: "Kanit" }}
       className="justify-content-center align-items-center"
     >
       <Col sm>
         <select
           onChange={(e) => {
             getDistrictList(e.target.value);
-            console.log(districtList)
+            console.log(districtList);
           }}
         >
           <option value="" disabled selected>
@@ -97,7 +99,7 @@ function FiltterComponent() {
         {" "}
         <button
           style={{ width: "100%" }}
-          class="bg-white text-black hover:bg-black hover:text-white font-bold border border-black rounded"
+          class="bg-white text-black hover:bg-black hover:text-white border border-black rounded"
           type="submit"
           onClick={() => {
             getLatLong(subdistrictId);

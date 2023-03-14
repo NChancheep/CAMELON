@@ -6,7 +6,7 @@ export default function Heading(props) {
   return (
     <Row >
       <Col className="d-flex flex-row-reverse">
-        <div style={{marginTop:"2%",marginBottom:"2%"}}>
+        <div style={{marginTop:"2%",marginBottom:"2%", fontFamily: "Kanit" }}>
           <h1 style={{ display: "inline"}}>{props.mainName} | {props.subName}</h1>
           <img
             src={images}

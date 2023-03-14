@@ -3,6 +3,7 @@ import { MapContainer, GeoJSON, TileLayer } from "react-leaflet";
 
 import { useSelector } from "react-redux";
 import "./ChoroplethMap.css";
+import "../../css/setfont.css"
 
 export default function ChoroplethMap() {
   const { thailandGeoJson } = useSelector((state) => state.data);
@@ -88,7 +89,7 @@ export default function ChoroplethMap() {
   };
 
   return (
-    <div class="sm" style={{ marginTop: 16 }}>
+    <div class="sm" className="font-link" style={{ marginTop: 16 }}>
       <div className="p-1 border-2 border-gray-200 border rounded dark:border-gray-700">
         <MapContainer center={[13.751, 100.492]} zoom={5}>
           <TileLayer
@@ -100,16 +101,16 @@ export default function ChoroplethMap() {
             style={{ zIndex: 999 }}
           >
             {!selectedFeature && (
-              <div>
-                <strong>Thailand Crime rate </strong> <br />
-                <span>Hover on each province for more details</span>
+              <div style={{fontFamily: 'Kanit'}}>
+                <strong>อัตราอาชญากรรมของประเทศไทย</strong> <br />
+                <span>เลื่อนเมาส์ไปที่แต่ละจังหวัดเพื่อดูรายละเอียดเพิ่มเติม</span>
               </div>
             )}
             {selectedFeature && (
               <div className="">
                 <div>Province Name (English): {selectedFeature.name_en}</div>
-                <div>Province Name (Thai): {selectedFeature.name_th}</div>
-                <span>Crime Index: {selectedFeature.crime_rate}</span>
+                <div>{selectedFeature.name_th}</div>
+                <span>ดัชนีอาชญากรรม (Crime Index): {selectedFeature.crime_rate}</span>
               </div>
             )}
           </div>
@@ -123,13 +124,13 @@ export default function ChoroplethMap() {
             className="absolute bottom-5 left-10 bg-white p-4 rounded-md shadow-md w-70  text-base"
             style={{ zIndex: 999 }}
           >
-            <div className="legend">
-              <div style={{ "--color": "#800026" }}>Danger!!!</div>
-              <div style={{ "--color": "#BD0026" }}>Very High Crime rate</div>
-              <div style={{ "--color": "#E31A1C" }}>High Crime rate</div>
-              <div style={{ "--color": "#FC4E2A" }}>Normal</div>
-              <div style={{ "--color": "#FD8D3C" }}>Low crime rate</div>
-              <div style={{ "--color": "#FED976" }}>Very low crime rate</div>
+            <div style={{fontFamily: 'Kanit'}} className="legend">
+              <div style={{ "--color": "#800026" }}>อันตราย!!!</div>
+              <div style={{ "--color": "#BD0026" }}>ค่อนข้างอันตรายมาก</div>
+              <div style={{ "--color": "#E31A1C" }}>ค่อนข้างอันตราย</div>
+              <div style={{ "--color": "#FC4E2A" }}>ปกติ</div>
+              <div style={{ "--color": "#FD8D3C" }}>ค่อนข้างน้อย</div>
+              <div style={{ "--color": "#FED976" }}>น้อย</div>
             </div>
           </div>
         </MapContainer>
