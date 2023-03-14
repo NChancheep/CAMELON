@@ -155,7 +155,10 @@ export default function Pinmap() {
       if (news_data.news_id.includes("THR")) {
         button = (
           <>
-            <a href={"https://www.thairath.co.th/news/" + news_id} target="_blank">
+            <a
+              href={"https://www.thairath.co.th/news/" + news_id}
+              target="_blank"
+            >
               <button
                 style={{ width: "100%" }}
                 type="button"
@@ -169,7 +172,10 @@ export default function Pinmap() {
       } else {
         button = (
           <>
-            <a href={"https://d.dailynews.co.th/crime/" + news_id} target="_blank">
+            <a
+              href={"https://d.dailynews.co.th/crime/" + news_id}
+              target="_blank"
+            >
               <button
                 style={{ width: "100%" }}
                 type="button"
@@ -181,8 +187,6 @@ export default function Pinmap() {
           </>
         );
       }
-
-     
 
       const fontSize = { fontSize: 16 };
       const titleStyle = { fontWeight: 500, color: "#44985B" };
@@ -273,7 +277,7 @@ export default function Pinmap() {
     return (
       <Row xs>
         <Col sm>
-          Select Date Range: *เลือกได้แค่ตามนี้
+          Select Date Range: <br /> <div className="text-red-600">*เลือกได้แค่ตามนี้</div>
           <DatePicker
             selectsRange={true}
             startDate={startDate}
@@ -307,10 +311,16 @@ export default function Pinmap() {
               ]}
             />
             <PinMap />
+            <div
+              className="absolute bottom-5 left-10 bg-gray-100 p-4 rounded-md shadow-md w-60 text-base"
+              style={{ zIndex: 999 }}
+            >
+              {" "}
+              <DateSelect />{" "}
+            </div>
           </MapContainer>
         </div>
       </div>
-      <DateSelect class="z-index-10 bg-danger position-absolute" />
     </>
   );
 }
