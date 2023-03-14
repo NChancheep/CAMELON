@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import { MapContainer, GeoJSON,  } from "react-leaflet";
+import { MapContainer, GeoJSON, TileLayer } from "react-leaflet";
 
 import { useSelector } from "react-redux";
+import "./ChoroplethMap.css";
 
 export default function ChoroplethMap() {
   const { thailandGeoJson } = useSelector((state) => state.data);
@@ -29,17 +30,17 @@ export default function ChoroplethMap() {
   }
 
   const getColor = (d) => {
-    return d > 10
+    return d >= 35
       ? "#800026"
-      : d > 9
+      : d > 30
       ? "#BD0026"
-      : d > 8
+      : d > 25
       ? "#E31A1C"
-      : d > 7
+      : d > 20
       ? "#FC4E2A"
-      : d > 6
+      : d > 15
       ? "#FD8D3C"
-      : d > 5
+      : d > 10
       ? "#FEB24C"
       : "#FED976";
   };
@@ -58,14 +59,14 @@ export default function ChoroplethMap() {
   const highlightFeature = (e) => {
     const layer = e.target;
     const { ID_0, ID_1, NL_NAME_1, NAME_1 } = layer.feature.properties;
-    const  crime_rate  = layer.feature.crime_rate
-    
+    const crime_rate = layer.feature.crime_rate;
+
     setSelectedFeature({
       id_0: ID_0,
       id_1: ID_1,
       name_th: NL_NAME_1,
       name_en: NAME_1,
-      crime_rate: crime_rate
+      crime_rate: crime_rate,
     });
     layer.setStyle({
       weight: 1,
@@ -89,8 +90,11 @@ export default function ChoroplethMap() {
   return (
     <div class="sm" style={{ marginTop: 16 }}>
       <MapContainer center={[13.751, 100.492]} zoom={5}>
-      {/* <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" /> */}
-        <div className="absolute top-10 right-10 bg-white p-4 rounded-md shadow-md w-60  text-base">
+        <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
+        <div
+          className="absolute top-10 right-10 bg-white p-4 rounded-md shadow-md w-60  text-base"
+          style={{ zIndex: 999 }}
+        >
           {!selectedFeature && (
             <div>
               <strong>Thailand Crime rate </strong> <br />
@@ -111,6 +115,19 @@ export default function ChoroplethMap() {
           style={style}
           onEachFeature={onEachFeature}
         />
+        <div
+          className="absolute bottom-5 left-10 bg-white p-4 rounded-md shadow-md w-70  text-base"
+          style={{ zIndex: 999 }}
+        >
+          <div className="legend">
+            <div style={{ "--color": "#800026" }}>Danger!!!</div>
+            <div style={{ "--color": "#BD0026" }}>Very High Crime rate</div>
+            <div style={{ "--color": "#E31A1C" }}>High Crime rate</div>
+            <div style={{ "--color": "#FC4E2A" }}>Normal</div>
+            <div style={{ "--color": "#FD8D3C" }}>Low crime rate</div>
+            <div style={{ "--color": "#FED976" }}>Very low crime rate</div>
+          </div>
+        </div>
       </MapContainer>
     </div>
   );
