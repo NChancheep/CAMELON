@@ -4,7 +4,6 @@ import { MapContainer, GeoJSON, TileLayer } from "react-leaflet";
 import { useSelector } from "react-redux";
 import "./ChoroplethMap.css";
 
-
 export default function ChoroplethMap() {
   const { thailandGeoJson } = useSelector((state) => state.data);
   const { locations } = useSelector((state) => state.data);
@@ -91,46 +90,49 @@ export default function ChoroplethMap() {
   return (
     <div class="sm" style={{ marginTop: 16 }}>
       <div className="p-1 border-2 border-gray-200 border rounded dark:border-gray-700">
-      <MapContainer center={[13.751, 100.492]} zoom={5}>
-        <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
-        <div
-          className="absolute top-10 right-10 bg-white p-4 rounded-md shadow-md w-60  text-base"
-          style={{ zIndex: 999 }}
-        >
-          {!selectedFeature && (
-            <div>
-              <strong>Thailand Crime rate </strong> <br />
-              <span>Hover on each province for more details</span>
-            </div>
-          )}
-          {selectedFeature && (
-            <div className="">
-              <div>Province Name (English): {selectedFeature.name_en}</div>
-              <div>Province Name (Thai): {selectedFeature.name_th}</div>
-              <span>Crime Index: {selectedFeature.crime_rate}</span>
-            </div>
-          )}
-        </div>
-
-        <GeoJSON
-          data={addCrimeRate(features)}
-          style={style}
-          onEachFeature={onEachFeature}
-        />
-        <div
-          className="absolute bottom-5 left-10 bg-white p-4 rounded-md shadow-md w-70  text-base"
-          style={{ zIndex: 999 }}
-        >
-          <div className="legend">
-            <div style={{ "--color": "#800026" }}>Danger!!!</div>
-            <div style={{ "--color": "#BD0026" }}>Very High Crime rate</div>
-            <div style={{ "--color": "#E31A1C" }}>High Crime rate</div>
-            <div style={{ "--color": "#FC4E2A" }}>Normal</div>
-            <div style={{ "--color": "#FD8D3C" }}>Low crime rate</div>
-            <div style={{ "--color": "#FED976" }}>Very low crime rate</div>
+        <MapContainer center={[13.751, 100.492]} zoom={5}>
+          <TileLayer
+            attribution="Map tiles by Carto, under CC BY 3.0. Data by OpenStreetMap, under ODbL."
+            url="https://cartodb-basemaps-{s}.global.ssl.fastly.net/dark_all/{z}/{x}/{y}.png"
+          />
+          <div
+            className="absolute top-10 right-10 bg-white p-4 rounded-md shadow-md w-60  text-base"
+            style={{ zIndex: 999 }}
+          >
+            {!selectedFeature && (
+              <div>
+                <strong>Thailand Crime rate </strong> <br />
+                <span>Hover on each province for more details</span>
+              </div>
+            )}
+            {selectedFeature && (
+              <div className="">
+                <div>Province Name (English): {selectedFeature.name_en}</div>
+                <div>Province Name (Thai): {selectedFeature.name_th}</div>
+                <span>Crime Index: {selectedFeature.crime_rate}</span>
+              </div>
+            )}
           </div>
-        </div>
-      </MapContainer>
+
+          <GeoJSON
+            data={addCrimeRate(features)}
+            style={style}
+            onEachFeature={onEachFeature}
+          />
+          <div
+            className="absolute bottom-5 left-10 bg-white p-4 rounded-md shadow-md w-70  text-base"
+            style={{ zIndex: 999 }}
+          >
+            <div className="legend">
+              <div style={{ "--color": "#800026" }}>Danger!!!</div>
+              <div style={{ "--color": "#BD0026" }}>Very High Crime rate</div>
+              <div style={{ "--color": "#E31A1C" }}>High Crime rate</div>
+              <div style={{ "--color": "#FC4E2A" }}>Normal</div>
+              <div style={{ "--color": "#FD8D3C" }}>Low crime rate</div>
+              <div style={{ "--color": "#FED976" }}>Very low crime rate</div>
+            </div>
+          </div>
+        </MapContainer>
       </div>
     </div>
   );
