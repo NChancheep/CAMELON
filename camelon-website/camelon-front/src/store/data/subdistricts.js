@@ -389,7 +389,7 @@ export const subdistricts = [
   {
     "id": 199,
     "code": 100106,
-    "name_in_thai": "แขวง เสาชิงช้า",
+    "name_in_thai": "เสาชิงช้า",
     "name_in_english": "Sao Chingcha",
     "latitude": 13.753,
     "longitude": 100.5,
@@ -398,7 +398,7 @@ export const subdistricts = [
   {
     "id": 202,
     "code": 100105,
-    "name_in_thai": "แขวง ศาลเจ้าพ่อเสือ",
+    "name_in_thai": "ศาลเจ้าพ่อเสือ",
     "name_in_english": "San Chaopho Suea",
     "latitude": 13.754,
     "longitude": 100.497,
@@ -416,7 +416,7 @@ export const subdistricts = [
   {
     "id": 214,
     "code": 100108,
-    "name_in_thai": "แขวง ตลาดยอด",
+    "name_in_thai": "ตลาดยอด",
     "name_in_english": "Talat Yot",
     "latitude": 13.76,
     "longitude": 100.498,
@@ -461,7 +461,7 @@ export const subdistricts = [
   {
     "id": 224,
     "code": 100103,
-    "name_in_thai": "แขวง วัดราชบพิธ",
+    "name_in_thai": "วัดราชบพิธ",
     "name_in_english": "Wat Ratchabophit",
     "latitude": 13.75,
     "longitude": 100.499,
@@ -497,7 +497,7 @@ export const subdistricts = [
   {
     "id": 243,
     "code": 100104,
-    "name_in_thai": "แขวง สำราญราษฎร์",
+    "name_in_thai": "สำราญราษฎร์",
     "name_in_english": "Samran Rat",
     "latitude": 13.751,
     "longitude": 100.503,
@@ -560,7 +560,7 @@ export const subdistricts = [
   {
     "id": 264,
     "code": 100109,
-    "name_in_thai": "แขวง ชนะสงคราม",
+    "name_in_thai": "ชนะสงคราม",
     "name_in_english": "Chana Songkhram",
     "latitude": 13.762,
     "longitude": 100.495,
@@ -578,7 +578,7 @@ export const subdistricts = [
   {
     "id": 270,
     "code": 100204,
-    "name_in_thai": "แขวง สี่แยกมหานาค",
+    "name_in_thai": "สี่แยกมหานาค",
     "name_in_english": "Si Yaek Maha Nak",
     "latitude": 13.758,
     "longitude": 100.517,
@@ -596,7 +596,7 @@ export const subdistricts = [
   {
     "id": 280,
     "code": 100804,
-    "name_in_thai": "แขวง บ้านบาตร",
+    "name_in_thai": "บ้านบาตร",
     "name_in_english": "",
     "latitude": 13.752,
     "longitude": 100.507,
@@ -605,7 +605,7 @@ export const subdistricts = [
   {
     "id": 285,
     "code": 100110,
-    "name_in_thai": "แขวง บ้านพานถม",
+    "name_in_thai": "บ้านพานถม",
     "name_in_english": "Ban Phan Thom",
     "latitude": 13.762,
     "longitude": 100.503,
@@ -614,7 +614,7 @@ export const subdistricts = [
   {
     "id": 288,
     "code": 101303,
-    "name_in_thai": "แขวง ตลาดน้อย",
+    "name_in_thai": "ตลาดน้อย",
     "name_in_english": "",
     "latitude": 13.734,
     "longitude": 100.513,
@@ -623,7 +623,7 @@ export const subdistricts = [
   {
     "id": 289,
     "code": 100802,
-    "name_in_thai": "แขวง วัดเทพศิรินทร์",
+    "name_in_thai": "วัดเทพศิรินทร์",
     "name_in_english": "",
     "latitude": 13.749,
     "longitude": 100.512,
@@ -632,7 +632,7 @@ export const subdistricts = [
   {
     "id": 290,
     "code": 100111,
-    "name_in_thai": "แขวง บางขุนพรหม",
+    "name_in_thai": "บางขุนพรหม",
     "name_in_english": "Bang Khun Phrom",
     "latitude": 13.765,
     "longitude": 100.505,
@@ -650,7 +650,7 @@ export const subdistricts = [
   {
     "id": 294,
     "code": 100805,
-    "name_in_thai": "แขวง วัดโสมนัส",
+    "name_in_thai": "วัดโสมนัส",
     "name_in_english": "",
     "latitude": 13.759,
     "longitude": 100.511,
@@ -659,7 +659,7 @@ export const subdistricts = [
   {
     "id": 296,
     "code": 101302,
-    "name_in_thai": "แขวง สัมพันธวงศ์",
+    "name_in_thai": "สัมพันธวงศ์",
     "name_in_english": "",
     "latitude": 13.739,
     "longitude": 100.511,
@@ -668,7 +668,7 @@ export const subdistricts = [
   {
     "id": 299,
     "code": 100107,
-    "name_in_thai": "แขวง บวรนิเวศ",
+    "name_in_thai": "บวรนิเวศ",
     "name_in_english": "Bowon Niwet",
     "latitude": 13.757,
     "longitude": 100.501,
@@ -677,7 +677,7 @@ export const subdistricts = [
   {
     "id": 300,
     "code": 100405,
-    "name_in_thai": "แขวง สี่พระยา",
+    "name_in_thai": "สี่พระยา",
     "name_in_english": "",
     "latitude": 13.725,
     "longitude": 100.514,
@@ -686,7 +686,7 @@ export const subdistricts = [
   {
     "id": 302,
     "code": 101301,
-    "name_in_thai": "แขวง จักรวรรดิ",
+    "name_in_thai": "จักรวรรดิ",
     "name_in_english": "",
     "latitude": 13.741,
     "longitude": 100.504,
@@ -695,7 +695,7 @@ export const subdistricts = [
   {
     "id": 304,
     "code": 100112,
-    "name_in_thai": "แขวง วัดสามพระยา",
+    "name_in_thai": "วัดสามพระยา",
     "name_in_english": "Wat Sam Phraya",
     "latitude": 13.768,
     "longitude": 100.499,
@@ -713,7 +713,7 @@ export const subdistricts = [
   {
     "id": 308,
     "code": 100803,
-    "name_in_thai": "แขวง คลองมหานาค",
+    "name_in_thai": "คลองมหานาค",
     "name_in_english": "",
     "latitude": 13.753,
     "longitude": 100.513,
@@ -731,7 +731,7 @@ export const subdistricts = [
   {
     "id": 311,
     "code": 100404,
-    "name_in_thai": "แขวง บางรัก",
+    "name_in_thai": "บางรัก",
     "name_in_english": "",
     "latitude": 13.727,
     "longitude": 100.527,
@@ -740,7 +740,7 @@ export const subdistricts = [
   {
     "id": 312,
     "code": 100801,
-    "name_in_thai": "แขวง ป้อมปราบ",
+    "name_in_thai": "ป้อมปราบ",
     "name_in_english": "",
     "latitude": 13.743,
     "longitude": 100.514,
@@ -758,7 +758,7 @@ export const subdistricts = [
   {
     "id": 315,
     "code": 100401,
-    "name_in_thai": "แขวง มหาพฤฒาราม",
+    "name_in_thai": "มหาพฤฒาราม",
     "name_in_english": "",
     "latitude": 13.734,
     "longitude": 100.52,
@@ -767,7 +767,7 @@ export const subdistricts = [
   {
     "id": 321,
     "code": 101502,
-    "name_in_thai": "แขวง หิรัญรูจี",
+    "name_in_thai": "หิรัญรูจี",
     "name_in_english": "",
     "latitude": 13.731,
     "longitude": 100.49,
@@ -776,7 +776,7 @@ export const subdistricts = [
   {
     "id": 326,
     "code": 101801,
-    "name_in_thai": "แขวง สมเด็จเจ้าพระยา",
+    "name_in_thai": "สมเด็จเจ้าพระยา",
     "name_in_english": "",
     "latitude": 13.731,
     "longitude": 100.497,
@@ -785,7 +785,7 @@ export const subdistricts = [
   {
     "id": 330,
     "code": 100102,
-    "name_in_thai": "แขวง วังบูรพาภิรมย์",
+    "name_in_thai": "วังบูรพาภิรมย์",
     "name_in_english": "Wang Burapha Phirom",
     "latitude": 13.744,
     "longitude": 100.499,
@@ -803,7 +803,7 @@ export const subdistricts = [
   {
     "id": 334,
     "code": 101501,
-    "name_in_thai": "แขวง วัดกัลยาณ์",
+    "name_in_thai": "วัดกัลยาณ์",
     "name_in_english": "",
     "latitude": 13.737,
     "longitude": 100.493,
@@ -812,7 +812,7 @@ export const subdistricts = [
   {
     "id": 336,
     "code": 100402,
-    "name_in_thai": "แขวง สีลม",
+    "name_in_thai": "สีลม",
     "name_in_english": "",
     "latitude": 13.73,
     "longitude": 100.525,
@@ -821,7 +821,7 @@ export const subdistricts = [
   {
     "id": 341,
     "code": 102210,
-    "name_in_thai": "แขวง คูหาสวรรค์",
+    "name_in_thai": "คูหาสวรรค์",
     "name_in_english": "",
     "latitude": 13.727,
     "longitude": 100.457,
@@ -839,7 +839,7 @@ export const subdistricts = [
   {
     "id": 344,
     "code": 101601,
-    "name_in_thai": "แขวง วัดอรุณ",
+    "name_in_thai": "วัดอรุณ",
     "name_in_english": "",
     "latitude": 13.743,
     "longitude": 100.486,
@@ -857,7 +857,7 @@ export const subdistricts = [
   {
     "id": 349,
     "code": 101802,
-    "name_in_thai": "แขวง คลองสาน",
+    "name_in_thai": "คลองสาน",
     "name_in_english": "",
     "latitude": 13.735,
     "longitude": 100.504,
@@ -884,7 +884,7 @@ export const subdistricts = [
   {
     "id": 354,
     "code": 103704,
-    "name_in_thai": "แขวง มักกะสัน",
+    "name_in_thai": "มักกะสัน",
     "name_in_english": "",
     "latitude": 13.752,
     "longitude": 100.528,
@@ -893,7 +893,7 @@ export const subdistricts = [
   {
     "id": 356,
     "code": 102206,
-    "name_in_thai": "แขวง บางจาก",
+    "name_in_thai": "บางจาก",
     "name_in_english": "",
     "latitude": 13.727,
     "longitude": 100.45,
@@ -902,7 +902,7 @@ export const subdistricts = [
   {
     "id": 357,
     "code": 101901,
-    "name_in_thai": "แขวง คลองชักพระ",
+    "name_in_thai": "คลองชักพระ",
     "name_in_english": "",
     "latitude": 13.76,
     "longitude": 100.456,
@@ -920,7 +920,7 @@ export const subdistricts = [
   {
     "id": 362,
     "code": 100202,
-    "name_in_thai": "แขวง วชิรพยาบาล",
+    "name_in_thai": "วชิรพยาบาล",
     "name_in_english": "Wachira Phayaban",
     "latitude": 13.778,
     "longitude": 100.505,
@@ -929,7 +929,7 @@ export const subdistricts = [
   {
     "id": 364,
     "code": 100701,
-    "name_in_thai": "แขวง รองเมือง",
+    "name_in_thai": "รองเมือง",
     "name_in_english": "",
     "latitude": 13.744,
     "longitude": 100.52,
@@ -938,7 +938,7 @@ export const subdistricts = [
   {
     "id": 365,
     "code": 103702,
-    "name_in_thai": "แขวง ถนนพญาไท",
+    "name_in_thai": "ถนนพญาไท",
     "name_in_english": "",
     "latitude": 13.757,
     "longitude": 100.538,
@@ -965,7 +965,7 @@ export const subdistricts = [
   {
     "id": 369,
     "code": 101503,
-    "name_in_thai": "แขวง บางยี่เรือ",
+    "name_in_thai": "บางยี่เรือ",
     "name_in_english": "",
     "latitude": 13.72,
     "longitude": 100.482,
@@ -1010,7 +1010,7 @@ export const subdistricts = [
   {
     "id": 377,
     "code": 100702,
-    "name_in_thai": "แขวง วังใหม่",
+    "name_in_thai": "วังใหม่",
     "name_in_english": "",
     "latitude": 13.742,
     "longitude": 100.526,
@@ -1028,7 +1028,7 @@ export const subdistricts = [
   {
     "id": 379,
     "code": 102004,
-    "name_in_thai": "แขวง ศิริราช",
+    "name_in_thai": "ศิริราช",
     "name_in_english": "",
     "latitude": 13.759,
     "longitude": 100.481,
@@ -1064,7 +1064,7 @@ export const subdistricts = [
   {
     "id": 383,
     "code": 103102,
-    "name_in_thai": "แขวง วัดพระยาไกร",
+    "name_in_thai": "วัดพระยาไกร",
     "name_in_english": "",
     "latitude": 13.706,
     "longitude": 100.508,
@@ -1091,7 +1091,7 @@ export const subdistricts = [
   {
     "id": 390,
     "code": 100403,
-    "name_in_thai": "แขวง สุริยวงศ์",
+    "name_in_thai": "สุริยวงศ์",
     "name_in_english": "",
     "latitude": 13.724,
     "longitude": 100.53,
@@ -1100,7 +1100,7 @@ export const subdistricts = [
   {
     "id": 392,
     "code": 100101,
-    "name_in_thai": "แขวง พระบรมมหาราชวัง",
+    "name_in_thai": "พระบรมมหาราชวัง",
     "name_in_english": "Phra Borom Maha Ratchawang",
     "latitude": 13.751,
     "longitude": 100.492,
@@ -1118,7 +1118,7 @@ export const subdistricts = [
   {
     "id": 395,
     "code": 101505,
-    "name_in_thai": "แขวง ตลาดพลู",
+    "name_in_thai": "ตลาดพลู",
     "name_in_english": "",
     "latitude": 13.715,
     "longitude": 100.473,
@@ -1127,7 +1127,7 @@ export const subdistricts = [
   {
     "id": 398,
     "code": 102006,
-    "name_in_thai": "แขวง บางขุนนนท์",
+    "name_in_thai": "บางขุนนนท์",
     "name_in_english": "",
     "latitude": 13.774,
     "longitude": 100.466,
@@ -1136,7 +1136,7 @@ export const subdistricts = [
   {
     "id": 402,
     "code": 102209,
-    "name_in_thai": "แขวง ปากคลองภาษีเจริญ",
+    "name_in_thai": "ปากคลองภาษีเจริญ",
     "name_in_english": "",
     "latitude": 13.722,
     "longitude": 100.464,
@@ -1190,7 +1190,7 @@ export const subdistricts = [
   {
     "id": 410,
     "code": 100203,
-    "name_in_thai": "แขวง สวนจิตรลดา",
+    "name_in_thai": "สวนจิตรลดา",
     "name_in_english": "Suan Chit Lada",
     "latitude": 13.767,
     "longitude": 100.52,
@@ -1199,7 +1199,7 @@ export const subdistricts = [
   {
     "id": 412,
     "code": 101804,
-    "name_in_thai": "แขวง คลองต้นไทร",
+    "name_in_thai": "คลองต้นไทร",
     "name_in_english": "",
     "latitude": 13.725,
     "longitude": 100.508,
@@ -1217,7 +1217,7 @@ export const subdistricts = [
   {
     "id": 415,
     "code": 103302,
-    "name_in_thai": "แขวง คลองตัน",
+    "name_in_thai": "คลองตัน",
     "name_in_english": "",
     "latitude": 13.723,
     "longitude": 100.571,
@@ -1226,7 +1226,7 @@ export const subdistricts = [
   {
     "id": 418,
     "code": 102801,
-    "name_in_thai": "แขวง ทุ่งวัดดอน",
+    "name_in_thai": "ทุ่งวัดดอน",
     "name_in_english": "",
     "latitude": 13.71,
     "longitude": 100.532,
@@ -1235,7 +1235,7 @@ export const subdistricts = [
   {
     "id": 419,
     "code": 100703,
-    "name_in_thai": "แขวง ปทุมวัน",
+    "name_in_thai": "ปทุมวัน",
     "name_in_english": "",
     "latitude": 13.74,
     "longitude": 100.535,
@@ -1244,7 +1244,7 @@ export const subdistricts = [
   {
     "id": 420,
     "code": 103101,
-    "name_in_thai": "แขวง บางคอแหลม",
+    "name_in_thai": "บางคอแหลม",
     "name_in_english": "",
     "latitude": 13.696,
     "longitude": 100.494,
@@ -1262,7 +1262,7 @@ export const subdistricts = [
   {
     "id": 422,
     "code": 103901,
-    "name_in_thai": "แขวง คลองเตยเหนือ",
+    "name_in_thai": "คลองเตยเหนือ",
     "name_in_english": "",
     "latitude": 13.743,
     "longitude": 100.56,
@@ -1280,7 +1280,7 @@ export const subdistricts = [
   {
     "id": 425,
     "code": 102005,
-    "name_in_thai": "แขวง บ้านช่างหล่อ",
+    "name_in_thai": "บ้านช่างหล่อ",
     "name_in_english": "",
     "latitude": 13.752,
     "longitude": 100.477,
@@ -1298,7 +1298,7 @@ export const subdistricts = [
   {
     "id": 427,
     "code": 102802,
-    "name_in_thai": "แขวง ยานนาวา",
+    "name_in_thai": "ยานนาวา",
     "name_in_english": "",
     "latitude": 13.714,
     "longitude": 100.514,
@@ -1316,7 +1316,7 @@ export const subdistricts = [
   {
     "id": 429,
     "code": 100201,
-    "name_in_thai": "แขวง ดุสิต",
+    "name_in_thai": "ดุสิต",
     "name_in_english": "Dusit",
     "latitude": 13.772,
     "longitude": 100.513,
@@ -1325,7 +1325,7 @@ export const subdistricts = [
   {
     "id": 430,
     "code": 102503,
-    "name_in_thai": "แขวง บางบำหรุ",
+    "name_in_thai": "บางบำหรุ",
     "name_in_english": "",
     "latitude": 13.781,
     "longitude": 100.482,
@@ -1343,7 +1343,7 @@ export const subdistricts = [
   {
     "id": 432,
     "code": 101803,
-    "name_in_thai": "แขวง บางลำภูล่าง",
+    "name_in_thai": "บางลำภูล่าง",
     "name_in_english": "",
     "latitude": 13.715,
     "longitude": 100.501,
@@ -1352,7 +1352,7 @@ export const subdistricts = [
   {
     "id": 433,
     "code": 103703,
-    "name_in_thai": "แขวง ถนนเพชรบุรี",
+    "name_in_thai": "ถนนเพชรบุรี",
     "name_in_english": "",
     "latitude": 13.752,
     "longitude": 100.559,
@@ -1388,7 +1388,7 @@ export const subdistricts = [
   {
     "id": 437,
     "code": 103701,
-    "name_in_thai": "แขวง ทุ่งพญาไท",
+    "name_in_thai": "ทุ่งพญาไท",
     "name_in_english": "",
     "latitude": 13.763,
     "longitude": 100.53,
@@ -1460,7 +1460,7 @@ export const subdistricts = [
   {
     "id": 447,
     "code": 102208,
-    "name_in_thai": "แขวง คลองขวาง",
+    "name_in_thai": "คลองขวาง",
     "name_in_english": "",
     "latitude": 13.738,
     "longitude": 100.423,
@@ -1487,7 +1487,7 @@ export const subdistricts = [
   {
     "id": 453,
     "code": 103502,
-    "name_in_thai": "แขวง บางค้อ",
+    "name_in_thai": "บางค้อ",
     "name_in_english": "",
     "latitude": 13.702,
     "longitude": 100.476,
@@ -1577,7 +1577,7 @@ export const subdistricts = [
   {
     "id": 464,
     "code": 102504,
-    "name_in_thai": "แขวง บางยี่ขัน",
+    "name_in_thai": "บางยี่ขัน",
     "name_in_english": "",
     "latitude": 13.774,
     "longitude": 100.492,
@@ -1586,7 +1586,7 @@ export const subdistricts = [
   {
     "id": 465,
     "code": 102009,
-    "name_in_thai": "แขวง อรุณอมรินทร์",
+    "name_in_thai": "อรุณอมรินทร์",
     "name_in_english": "",
     "latitude": 13.772,
     "longitude": 100.477,
@@ -1622,7 +1622,7 @@ export const subdistricts = [
   {
     "id": 470,
     "code": 102803,
-    "name_in_thai": "แขวง ทุ่งมหาเมฆ",
+    "name_in_thai": "ทุ่งมหาเมฆ",
     "name_in_english": "",
     "latitude": 13.718,
     "longitude": 100.541,
@@ -1649,7 +1649,7 @@ export const subdistricts = [
   {
     "id": 473,
     "code": 102207,
-    "name_in_thai": "แขวง บางแวก",
+    "name_in_thai": "บางแวก",
     "name_in_english": "",
     "latitude": 13.736,
     "longitude": 100.445,
@@ -1685,7 +1685,7 @@ export const subdistricts = [
   {
     "id": 477,
     "code": 102502,
-    "name_in_thai": "แขวง บางอ้อ",
+    "name_in_thai": "บางอ้อ",
     "name_in_english": "",
     "latitude": 13.802,
     "longitude": 100.512,
@@ -1775,7 +1775,7 @@ export const subdistricts = [
   {
     "id": 487,
     "code": 102501,
-    "name_in_thai": "แขวง บางพลัด",
+    "name_in_thai": "บางพลัด",
     "name_in_english": "",
     "latitude": 13.791,
     "longitude": 100.487,
@@ -1811,7 +1811,7 @@ export const subdistricts = [
   {
     "id": 491,
     "code": 100704,
-    "name_in_thai": "แขวง ลุมพินี",
+    "name_in_thai": "ลุมพินี",
     "name_in_english": "",
     "latitude": 13.736,
     "longitude": 100.546,
@@ -1847,7 +1847,7 @@ export const subdistricts = [
   {
     "id": 497,
     "code": 102202,
-    "name_in_thai": "แขวง บางด้วน",
+    "name_in_thai": "บางด้วน",
     "name_in_english": "",
     "latitude": 13.723,
     "longitude": 100.437,
@@ -1856,7 +1856,7 @@ export const subdistricts = [
   {
     "id": 498,
     "code": 103903,
-    "name_in_thai": "แขวง พระโขนงเหนือ",
+    "name_in_thai": "พระโขนงเหนือ",
     "name_in_english": "",
     "latitude": 13.719,
     "longitude": 100.596,
@@ -2027,7 +2027,7 @@ export const subdistricts = [
   {
     "id": 519,
     "code": 103303,
-    "name_in_thai": "แขวง พระโขนง",
+    "name_in_thai": "พระโขนง",
     "name_in_english": "",
     "latitude": 13.707,
     "longitude": 100.595,
@@ -2117,7 +2117,7 @@ export const subdistricts = [
   {
     "id": 529,
     "code": 102007,
-    "name_in_thai": "แขวง บางขุนศรี",
+    "name_in_thai": "บางขุนศรี",
     "name_in_english": "",
     "latitude": 13.76,
     "longitude": 100.463,
@@ -2207,7 +2207,7 @@ export const subdistricts = [
   {
     "id": 541,
     "code": 101907,
-    "name_in_thai": "แขวง บางเชือกหนัง",
+    "name_in_thai": "บางเชือกหนัง",
     "name_in_english": "",
     "latitude": 13.751,
     "longitude": 100.419,
@@ -2234,7 +2234,7 @@ export const subdistricts = [
   {
     "id": 546,
     "code": 101504,
-    "name_in_thai": "แขวง บุคคโล",
+    "name_in_thai": "บุคคโล",
     "name_in_english": "",
     "latitude": 13.707,
     "longitude": 100.486,
@@ -2432,7 +2432,7 @@ export const subdistricts = [
   {
     "id": 569,
     "code": 103103,
-    "name_in_thai": "แขวง บางโคล่",
+    "name_in_thai": "บางโคล่",
     "name_in_english": "",
     "latitude": 13.694,
     "longitude": 100.516,
@@ -2558,7 +2558,7 @@ export const subdistricts = [
   {
     "id": 584,
     "code": 101701,
-    "name_in_thai": "แขวง ห้วยขวาง",
+    "name_in_thai": "ห้วยขวาง",
     "name_in_english": "",
     "latitude": 13.769,
     "longitude": 100.577,
@@ -2648,7 +2648,7 @@ export const subdistricts = [
   {
     "id": 596,
     "code": 101904,
-    "name_in_thai": "แขวง บางพรม",
+    "name_in_thai": "บางพรม",
     "name_in_english": "",
     "latitude": 13.752,
     "longitude": 100.442,
@@ -2729,7 +2729,7 @@ export const subdistricts = [
   {
     "id": 605,
     "code": 103504,
-    "name_in_thai": "แขวง จอมทอง",
+    "name_in_thai": "จอมทอง",
     "name_in_english": "",
     "latitude": 13.693,
     "longitude": 100.468,
@@ -2792,7 +2792,7 @@ export const subdistricts = [
   {
     "id": 612,
     "code": 101704,
-    "name_in_thai": "แขวง สามเสนนอก",
+    "name_in_thai": "สามเสนนอก",
     "name_in_english": "",
     "latitude": 13.796,
     "longitude": 100.579,
@@ -2810,7 +2810,7 @@ export const subdistricts = [
   {
     "id": 614,
     "code": 101602,
-    "name_in_thai": "แขวง วัดท่าพระ",
+    "name_in_thai": "วัดท่าพระ",
     "name_in_english": "",
     "latitude": 13.733,
     "longitude": 100.475,
@@ -2828,7 +2828,7 @@ export const subdistricts = [
   {
     "id": 616,
     "code": 101203,
-    "name_in_thai": "แขวง ช่องนนทรี",
+    "name_in_thai": "ช่องนนทรี",
     "name_in_english": "",
     "latitude": 13.682,
     "longitude": 100.533,
@@ -2909,7 +2909,7 @@ export const subdistricts = [
   {
     "id": 625,
     "code": 102401,
-    "name_in_thai": "แขวง ราษฎร์บูรณะ",
+    "name_in_thai": "ราษฎร์บูรณะ",
     "name_in_english": "",
     "latitude": 13.67,
     "longitude": 100.51,
@@ -3035,7 +3035,7 @@ export const subdistricts = [
   {
     "id": 639,
     "code": 100206,
-    "name_in_thai": "แขวง ถนนนครไชยศรี",
+    "name_in_thai": "ถนนนครไชยศรี",
     "name_in_english": "",
     "latitude": 13.789,
     "longitude": 100.522,
@@ -3224,7 +3224,7 @@ export const subdistricts = [
   {
     "id": 660,
     "code": 104102,
-    "name_in_thai": "แขวง ตลาดบางเขน",
+    "name_in_thai": "ตลาดบางเขน",
     "name_in_english": "",
     "latitude": 13.871,
     "longitude": 100.58,
@@ -3233,7 +3233,7 @@ export const subdistricts = [
   {
     "id": 661,
     "code": 103802,
-    "name_in_thai": "แขวง จรเข้บัว",
+    "name_in_thai": "จรเข้บัว",
     "name_in_english": "",
     "latitude": 13.84,
     "longitude": 100.6,
@@ -3359,7 +3359,7 @@ export const subdistricts = [
   {
     "id": 675,
     "code": 101702,
-    "name_in_thai": "แขวง บางกะปิ",
+    "name_in_thai": "บางกะปิ",
     "name_in_english": "",
     "latitude": 13.752,
     "longitude": 100.586,
@@ -3368,7 +3368,7 @@ export const subdistricts = [
   {
     "id": 676,
     "code": 101902,
-    "name_in_thai": "แขวง ตลิ่งชัน",
+    "name_in_thai": "ตลิ่งชัน",
     "name_in_english": "",
     "latitude": 13.789,
     "longitude": 100.459,
@@ -3386,7 +3386,7 @@ export const subdistricts = [
   {
     "id": 678,
     "code": 102201,
-    "name_in_thai": "แขวง บางหว้า",
+    "name_in_thai": "บางหว้า",
     "name_in_english": "",
     "latitude": 13.714,
     "longitude": 100.443,
@@ -3593,7 +3593,7 @@ export const subdistricts = [
   {
     "id": 703,
     "code": 103501,
-    "name_in_thai": "แขวง บางขุนเทียน",
+    "name_in_thai": "บางขุนเทียน",
     "name_in_english": "",
     "latitude": 13.694,
     "longitude": 100.45,
@@ -3998,7 +3998,7 @@ export const subdistricts = [
   {
     "id": 750,
     "code": 101204,
-    "name_in_thai": "แขวง บางโพงพาง",
+    "name_in_thai": "บางโพงพาง",
     "name_in_english": "",
     "latitude": 13.697,
     "longitude": 100.544,
@@ -4061,7 +4061,7 @@ export const subdistricts = [
   {
     "id": 757,
     "code": 102402,
-    "name_in_thai": "แขวง บางปะกอก",
+    "name_in_thai": "บางปะกอก",
     "name_in_english": "",
     "latitude": 13.675,
     "longitude": 100.491,
@@ -4124,7 +4124,7 @@ export const subdistricts = [
   {
     "id": 764,
     "code": 103902,
-    "name_in_thai": "แขวง คลองตันเหนือ",
+    "name_in_thai": "คลองตันเหนือ",
     "name_in_english": "",
     "latitude": 13.736,
     "longitude": 100.576,
@@ -4250,7 +4250,7 @@ export const subdistricts = [
   {
     "id": 778,
     "code": 103301,
-    "name_in_thai": "แขวง คลองเตย",
+    "name_in_thai": "คลองเตย",
     "name_in_english": "",
     "latitude": 13.71,
     "longitude": 100.57,
@@ -4871,7 +4871,7 @@ export const subdistricts = [
   {
     "id": 850,
     "code": 103503,
-    "name_in_thai": "แขวง บางมด",
+    "name_in_thai": "บางมด",
     "name_in_english": "",
     "latitude": 13.672,
     "longitude": 100.468,
@@ -5033,7 +5033,7 @@ export const subdistricts = [
   {
     "id": 868,
     "code": 102601,
-    "name_in_thai": "แขวง ดินแดง",
+    "name_in_thai": "ดินแดง",
     "name_in_english": "",
     "latitude": 13.778,
     "longitude": 100.567,
@@ -5519,7 +5519,7 @@ export const subdistricts = [
   {
     "id": 922,
     "code": 101401,
-    "name_in_thai": "แขวง สามเสนใน",
+    "name_in_thai": "สามเสนใน",
     "name_in_english": "",
     "latitude": 13.782,
     "longitude": 100.545,
@@ -5798,7 +5798,7 @@ export const subdistricts = [
   {
     "id": 953,
     "code": 101903,
-    "name_in_thai": "แขวง ฉิมพลี",
+    "name_in_thai": "ฉิมพลี",
     "name_in_english": "",
     "latitude": 13.786,
     "longitude": 100.432,
@@ -5852,7 +5852,7 @@ export const subdistricts = [
   {
     "id": 959,
     "code": 104004,
-    "name_in_thai": "แขวง หลักสอง",
+    "name_in_thai": "หลักสอง",
     "name_in_english": "",
     "latitude": 13.683,
     "longitude": 100.396,
@@ -6167,7 +6167,7 @@ export const subdistricts = [
   {
     "id": 995,
     "code": 101905,
-    "name_in_thai": "แขวง บางระมาด",
+    "name_in_thai": "บางระมาด",
     "name_in_english": "",
     "latitude": 13.767,
     "longitude": 100.431,
@@ -6212,7 +6212,7 @@ export const subdistricts = [
   {
     "id": 1000,
     "code": 104604,
-    "name_in_thai": "แขวง ทรายกองดิน",
+    "name_in_thai": "ทรายกองดิน",
     "name_in_english": "",
     "latitude": 13.854,
     "longitude": 100.745,
@@ -7058,7 +7058,7 @@ export const subdistricts = [
   {
     "id": 1094,
     "code": 101101,
-    "name_in_thai": "แขวง ลาดกระบัง",
+    "name_in_thai": "ลาดกระบัง",
     "name_in_english": "",
     "latitude": 13.723,
     "longitude": 100.771,
@@ -7346,7 +7346,7 @@ export const subdistricts = [
   {
     "id": 1127,
     "code": 104001,
-    "name_in_thai": "แขวง บางแค",
+    "name_in_thai": "บางแค",
     "name_in_english": "",
     "latitude": 13.698,
     "longitude": 100.409,
@@ -7544,7 +7544,7 @@ export const subdistricts = [
   {
     "id": 1150,
     "code": 104002,
-    "name_in_thai": "แขวง บางแคเหนือ",
+    "name_in_thai": "บางแคเหนือ",
     "name_in_english": "",
     "latitude": 13.72,
     "longitude": 100.4,
@@ -7778,7 +7778,7 @@ export const subdistricts = [
   {
     "id": 1176,
     "code": 104901,
-    "name_in_thai": "แขวง บางมด",
+    "name_in_thai": "บางมด",
     "name_in_english": "",
     "latitude": 13.651,
     "longitude": 100.51,
@@ -7940,7 +7940,7 @@ export const subdistricts = [
   {
     "id": 1194,
     "code": 100601,
-    "name_in_thai": "แขวง คลองจั่น",
+    "name_in_thai": "คลองจั่น",
     "name_in_english": "",
     "latitude": 13.786,
     "longitude": 100.635,
@@ -8156,7 +8156,7 @@ export const subdistricts = [
   {
     "id": 1218,
     "code": 104203,
-    "name_in_thai": "แขวง คลองถนน",
+    "name_in_thai": "คลองถนน",
     "name_in_english": "",
     "latitude": 13.898,
     "longitude": 100.63,
@@ -8561,7 +8561,7 @@ export const subdistricts = [
   {
     "id": 1264,
     "code": 103202,
-    "name_in_thai": "แขวง หนองบอน",
+    "name_in_thai": "หนองบอน",
     "name_in_english": "",
     "latitude": 13.687,
     "longitude": 100.656,
@@ -8876,7 +8876,7 @@ export const subdistricts = [
   {
     "id": 1299,
     "code": 102901,
-    "name_in_thai": "แขวง บางซื่อ",
+    "name_in_thai": "บางซื่อ",
     "name_in_english": "",
     "latitude": 13.82,
     "longitude": 100.529,
@@ -9047,7 +9047,7 @@ export const subdistricts = [
   {
     "id": 1318,
     "code": 100905,
-    "name_in_thai": "แขวง บางจาก",
+    "name_in_thai": "บางจาก",
     "name_in_english": "",
     "latitude": 13.692,
     "longitude": 100.626,
@@ -10145,7 +10145,7 @@ export const subdistricts = [
   {
     "id": 1444,
     "code": 103801,
-    "name_in_thai": "แขวง ลาดพร้าว",
+    "name_in_thai": "ลาดพร้าว",
     "name_in_english": "",
     "latitude": 13.811,
     "longitude": 100.612,
@@ -10316,7 +10316,7 @@ export const subdistricts = [
   {
     "id": 1463,
     "code": 104202,
-    "name_in_thai": "แขวง ออเงิน",
+    "name_in_thai": "ออเงิน",
     "name_in_english": "",
     "latitude": 13.896,
     "longitude": 100.672,
@@ -10685,7 +10685,7 @@ export const subdistricts = [
   {
     "id": 1505,
     "code": 100608,
-    "name_in_thai": "แขวง หัวหมาก",
+    "name_in_thai": "หัวหมาก",
     "name_in_english": "",
     "latitude": 13.756,
     "longitude": 100.66,
@@ -10703,7 +10703,7 @@ export const subdistricts = [
   {
     "id": 1507,
     "code": 104201,
-    "name_in_thai": "แขวง สายไหม",
+    "name_in_thai": "สายไหม",
     "name_in_english": "",
     "latitude": 13.921,
     "longitude": 100.654,
@@ -10766,7 +10766,7 @@ export const subdistricts = [
   {
     "id": 1514,
     "code": 104003,
-    "name_in_thai": "แขวง บางไผ่",
+    "name_in_thai": "บางไผ่",
     "name_in_english": "",
     "latitude": 13.741,
     "longitude": 100.385,
@@ -11000,7 +11000,7 @@ export const subdistricts = [
   {
     "id": 1542,
     "code": 101102,
-    "name_in_thai": "แขวง คลองสองต้นนุ่น",
+    "name_in_thai": "คลองสองต้นนุ่น",
     "name_in_english": "",
     "latitude": 13.753,
     "longitude": 100.723,
@@ -11153,7 +11153,7 @@ export const subdistricts = [
   {
     "id": 1559,
     "code": 103203,
-    "name_in_thai": "แขวง ดอกไม้",
+    "name_in_thai": "ดอกไม้",
     "name_in_english": "",
     "latitude": 13.68,
     "longitude": 100.689,
@@ -11234,7 +11234,7 @@ export const subdistricts = [
   {
     "id": 1568,
     "code": 100306,
-    "name_in_thai": "แขวง คู้ฝั่งเหนือ",
+    "name_in_thai": "คู้ฝั่งเหนือ",
     "name_in_english": "",
     "latitude": 13.872,
     "longitude": 100.81,
@@ -11270,7 +11270,7 @@ export const subdistricts = [
   {
     "id": 1572,
     "code": 104701,
-    "name_in_thai": "แขวง บางนา",
+    "name_in_thai": "บางนา",
     "name_in_english": "",
     "latitude": 13.672,
     "longitude": 100.616,
@@ -11369,7 +11369,7 @@ export const subdistricts = [
   {
     "id": 1583,
     "code": 102303,
-    "name_in_thai": "แขวง หนองค้างพลู",
+    "name_in_thai": "หนองค้างพลู",
     "name_in_english": "",
     "latitude": 13.714,
     "longitude": 100.351,
@@ -11702,7 +11702,7 @@ export const subdistricts = [
   {
     "id": 1621,
     "code": 104101,
-    "name_in_thai": "แขวง ทุ่งสองห้อง",
+    "name_in_thai": "ทุ่งสองห้อง",
     "name_in_english": "",
     "latitude": 13.883,
     "longitude": 100.564,
@@ -11999,7 +11999,7 @@ export const subdistricts = [
   {
     "id": 1654,
     "code": 104501,
-    "name_in_thai": "แขวง วังทองหลาง",
+    "name_in_thai": "วังทองหลาง",
     "name_in_english": "",
     "latitude": 13.779,
     "longitude": 100.609,
@@ -12116,7 +12116,7 @@ export const subdistricts = [
   {
     "id": 1667,
     "code": 101103,
-    "name_in_thai": "แขวง คลองสามประเวศ",
+    "name_in_thai": "คลองสามประเวศ",
     "name_in_english": "",
     "latitude": 13.753,
     "longitude": 100.754,
@@ -12449,7 +12449,7 @@ export const subdistricts = [
   {
     "id": 1705,
     "code": 100502,
-    "name_in_thai": "แขวง อนุสาวรีย์",
+    "name_in_thai": "อนุสาวรีย์",
     "name_in_english": "",
     "latitude": 13.868,
     "longitude": 100.606,
@@ -12521,7 +12521,7 @@ export const subdistricts = [
   {
     "id": 1713,
     "code": 104605,
-    "name_in_thai": "แขวง ทรายกองดินใต้",
+    "name_in_thai": "ทรายกองดินใต้",
     "name_in_english": "",
     "latitude": 13.861,
     "longitude": 100.786,
@@ -13259,7 +13259,7 @@ export const subdistricts = [
   {
     "id": 1796,
     "code": 104801,
-    "name_in_thai": "แขวง ทวีวัฒนา",
+    "name_in_thai": "ทวีวัฒนา",
     "name_in_english": "",
     "latitude": 13.758,
     "longitude": 100.348,
@@ -13538,7 +13538,7 @@ export const subdistricts = [
   {
     "id": 1827,
     "code": 102302,
-    "name_in_thai": "แขวง หนองแขม",
+    "name_in_thai": "หนองแขม",
     "name_in_english": "",
     "latitude": 13.68,
     "longitude": 100.358,
@@ -13997,7 +13997,7 @@ export const subdistricts = [
   {
     "id": 1879,
     "code": 104603,
-    "name_in_thai": "แขวง บางชัน",
+    "name_in_thai": "บางชัน",
     "name_in_english": "",
     "latitude": 13.839,
     "longitude": 100.7,
@@ -15221,7 +15221,7 @@ export const subdistricts = [
   {
     "id": 2018,
     "code": 104902,
-    "name_in_thai": "แขวง ทุ่งครุ",
+    "name_in_thai": "ทุ่งครุ",
     "name_in_english": "",
     "latitude": 13.614,
     "longitude": 100.497,
@@ -15248,7 +15248,7 @@ export const subdistricts = [
   {
     "id": 2021,
     "code": 100305,
-    "name_in_thai": "แขวง โคกแฝด",
+    "name_in_thai": "โคกแฝด",
     "name_in_english": "",
     "latitude": 13.84,
     "longitude": 100.836,
@@ -15986,7 +15986,7 @@ export const subdistricts = [
   {
     "id": 2103,
     "code": 100508,
-    "name_in_thai": "แขวง ท่าแร้ง",
+    "name_in_thai": "ท่าแร้ง",
     "name_in_english": "",
     "latitude": 13.866,
     "longitude": 100.65,
@@ -16445,7 +16445,7 @@ export const subdistricts = [
   {
     "id": 2156,
     "code": 102701,
-    "name_in_thai": "แขวง คลองกุ่ม",
+    "name_in_thai": "คลองกุ่ม",
     "name_in_english": "",
     "latitude": 13.808,
     "longitude": 100.65,
@@ -16499,7 +16499,7 @@ export const subdistricts = [
   {
     "id": 2162,
     "code": 101105,
-    "name_in_thai": "แขวง ทับยาว",
+    "name_in_thai": "ทับยาว",
     "name_in_english": "",
     "latitude": 13.728,
     "longitude": 100.815,
@@ -16751,7 +16751,7 @@ export const subdistricts = [
   {
     "id": 2190,
     "code": 101106,
-    "name_in_thai": "แขวง ขุมทอง",
+    "name_in_thai": "ขุมทอง",
     "name_in_english": "",
     "latitude": 13.736,
     "longitude": 100.855,
@@ -16967,7 +16967,7 @@ export const subdistricts = [
   {
     "id": 2215,
     "code": 103401,
-    "name_in_thai": "แขวง สวนหลวง",
+    "name_in_thai": "สวนหลวง",
     "name_in_english": "",
     "latitude": 13.726,
     "longitude": 100.628,
@@ -17012,7 +17012,7 @@ export const subdistricts = [
   {
     "id": 2220,
     "code": 100303,
-    "name_in_thai": "แขวง คลองสิบ",
+    "name_in_thai": "คลองสิบ",
     "name_in_english": "",
     "latitude": 13.914,
     "longitude": 100.82,
@@ -17372,7 +17372,7 @@ export const subdistricts = [
   {
     "id": 2260,
     "code": 103201,
-    "name_in_thai": "แขวง ประเวศ",
+    "name_in_thai": "ประเวศ",
     "name_in_english": "",
     "latitude": 13.719,
     "longitude": 100.664,
@@ -17615,7 +17615,7 @@ export const subdistricts = [
   {
     "id": 2287,
     "code": 101001,
-    "name_in_thai": "แขวง มีนบุรี",
+    "name_in_thai": "มีนบุรี",
     "name_in_english": "",
     "latitude": 13.804,
     "longitude": 100.723,
@@ -18146,7 +18146,7 @@ export const subdistricts = [
   {
     "id": 2346,
     "code": 104301,
-    "name_in_thai": "แขวง คันนายาว",
+    "name_in_thai": "คันนายาว",
     "name_in_english": "",
     "latitude": 13.821,
     "longitude": 100.677,
@@ -19127,7 +19127,7 @@ export const subdistricts = [
   {
     "id": 2459,
     "code": 104601,
-    "name_in_thai": "แขวง สามวาตะวันตก",
+    "name_in_thai": "สามวาตะวันตก",
     "name_in_english": "",
     "latitude": 13.889,
     "longitude": 100.708,
@@ -19784,7 +19784,7 @@ export const subdistricts = [
   {
     "id": 2533,
     "code": 104401,
-    "name_in_thai": "แขวง สะพานสูง",
+    "name_in_thai": "สะพานสูง",
     "name_in_english": "",
     "latitude": 13.761,
     "longitude": 100.688,
@@ -20954,7 +20954,7 @@ export const subdistricts = [
   {
     "id": 2664,
     "code": 100308,
-    "name_in_thai": "แขวง ลำต้อยติ่ง",
+    "name_in_thai": "ลำต้อยติ่ง",
     "name_in_english": "",
     "latitude": 13.781,
     "longitude": 100.877,
@@ -22727,7 +22727,7 @@ export const subdistricts = [
   {
     "id": 2866,
     "code": 104802,
-    "name_in_thai": "แขวง ศาลาธรรมสพน์",
+    "name_in_thai": "ศาลาธรรมสพน์",
     "name_in_english": "",
     "latitude": 13.783,
     "longitude": 100.39,
@@ -23267,7 +23267,7 @@ export const subdistricts = [
   {
     "id": 2929,
     "code": 100307,
-    "name_in_thai": "แขวง ลำผักชี",
+    "name_in_thai": "ลำผักชี",
     "name_in_english": "",
     "latitude": 13.797,
     "longitude": 100.844,
@@ -23699,7 +23699,7 @@ export const subdistricts = [
   {
     "id": 2978,
     "code": 103001,
-    "name_in_thai": "แขวง ลาดยาว",
+    "name_in_thai": "ลาดยาว",
     "name_in_english": "",
     "latitude": 13.826,
     "longitude": 100.565,
@@ -23807,7 +23807,7 @@ export const subdistricts = [
   {
     "id": 2991,
     "code": 101104,
-    "name_in_thai": "แขวง ลำปลาทิว",
+    "name_in_thai": "ลำปลาทิว",
     "name_in_english": "",
     "latitude": 13.765,
     "longitude": 100.817,
@@ -24734,7 +24734,7 @@ export const subdistricts = [
   {
     "id": 3095,
     "code": 100302,
-    "name_in_thai": "แขวง หนองจอก",
+    "name_in_thai": "หนองจอก",
     "name_in_english": "",
     "latitude": 13.869,
     "longitude": 100.885,
@@ -25139,7 +25139,7 @@ export const subdistricts = [
   {
     "id": 3140,
     "code": 105001,
-    "name_in_thai": "แขวง บางบอน",
+    "name_in_thai": "บางบอน",
     "name_in_english": "",
     "latitude": 13.646,
     "longitude": 100.37,
@@ -26714,7 +26714,7 @@ export const subdistricts = [
   {
     "id": 3317,
     "code": 101002,
-    "name_in_thai": "แขวง แสนแสบ",
+    "name_in_thai": "แสนแสบ",
     "name_in_english": "",
     "latitude": 13.812,
     "longitude": 100.774,
@@ -26840,7 +26840,7 @@ export const subdistricts = [
   {
     "id": 3331,
     "code": 103602,
-    "name_in_thai": "แขวง สีกัน",
+    "name_in_thai": "สีกัน",
     "name_in_english": "",
     "latitude": 13.925,
     "longitude": 100.593,
@@ -26957,7 +26957,7 @@ export const subdistricts = [
   {
     "id": 3344,
     "code": 100301,
-    "name_in_thai": "แขวง กระทุ่มราย",
+    "name_in_thai": "กระทุ่มราย",
     "name_in_english": "",
     "latitude": 13.823,
     "longitude": 100.897,
@@ -28649,7 +28649,7 @@ export const subdistricts = [
   {
     "id": 3534,
     "code": 104602,
-    "name_in_thai": "แขวง สามวาตะวันออก",
+    "name_in_thai": "สามวาตะวันออก",
     "name_in_english": "",
     "latitude": 13.896,
     "longitude": 100.76,
@@ -30530,7 +30530,7 @@ export const subdistricts = [
   {
     "id": 3745,
     "code": 100304,
-    "name_in_thai": "แขวง คลองสิบสอง",
+    "name_in_thai": "คลองสิบสอง",
     "name_in_english": "",
     "latitude": 13.914,
     "longitude": 100.88,
@@ -34526,7 +34526,7 @@ export const subdistricts = [
   {
     "id": 4192,
     "code": 920903,
-    "name_in_thai": "ต.หนองบัว",
+    "name_in_thai": "หนองบัว",
     "name_in_english": "Nong Bua",
     "latitude": 7.978,
     "longitude": 99.731,
@@ -34751,7 +34751,7 @@ export const subdistricts = [
   {
     "id": 4217,
     "code": 102107,
-    "name_in_thai": "แขวง แสมดำ",
+    "name_in_thai": "แสมดำ",
     "name_in_english": "",
     "latitude": 13.605,
     "longitude": 100.395,
@@ -50123,7 +50123,7 @@ export const subdistricts = [
   {
     "id": 5945,
     "code": 102105,
-    "name_in_thai": "แขวง ท่าข้าม",
+    "name_in_thai": "ท่าข้าม",
     "name_in_english": "",
     "latitude": 13.555,
     "longitude": 100.434,
@@ -61670,7 +61670,7 @@ export const subdistricts = [
   {
     "id": 7249,
     "code": 550610,
-    "name_in_thai": "ต.ผาทอง",
+    "name_in_thai": "ผาทอง",
     "name_in_english": "Pha Thong",
     "latitude": 19.235,
     "longitude": 100.684,

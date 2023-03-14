@@ -212,7 +212,7 @@ export const districts = [
   {
     "id": 30,
     "code": 1001,
-    "name_in_thai": "เขต พระนคร",
+    "name_in_thai": "พระนคร",
     "name_in_english": "Phra Nakhon",
     "province_id": 10
   },
@@ -254,21 +254,21 @@ export const districts = [
   {
     "id": 36,
     "code": 1002,
-    "name_in_thai": "เขต ดุสิต",
+    "name_in_thai": "ดุสิต",
     "name_in_english": "Dusit",
     "province_id": 10
   },
   {
     "id": 37,
     "code": 1008,
-    "name_in_thai": "เขต ป้อมปราบศัตรูพ่าย",
+    "name_in_thai": "ป้อมปราบศัตรูพ่าย",
     "name_in_english": "Pom Prap Sattruphai",
     "province_id": 10
   },
   {
     "id": 38,
     "code": 1013,
-    "name_in_thai": "เขต สัมพันธวงศ์",
+    "name_in_thai": "สัมพันธวงศ์",
     "name_in_english": "Samphanthawong",
     "province_id": 10
   },
@@ -282,7 +282,7 @@ export const districts = [
   {
     "id": 40,
     "code": 1004,
-    "name_in_thai": "เขต บางรัก",
+    "name_in_thai": "บางรัก",
     "name_in_english": "Bang Rak",
     "province_id": 10
   },
@@ -310,21 +310,21 @@ export const districts = [
   {
     "id": 44,
     "code": 1015,
-    "name_in_thai": "เขต ธนบุรี",
+    "name_in_thai": "ธนบุรี",
     "name_in_english": "Thon Buri",
     "province_id": 10
   },
   {
     "id": 45,
     "code": 1018,
-    "name_in_thai": "เขต คลองสาน",
+    "name_in_thai": "คลองสาน",
     "name_in_english": "Khlong San",
     "province_id": 10
   },
   {
     "id": 46,
     "code": 1022,
-    "name_in_thai": "เขต ภาษีเจริญ",
+    "name_in_thai": "ภาษีเจริญ",
     "name_in_english": "Phasi Charoen",
     "province_id": 10
   },
@@ -338,7 +338,7 @@ export const districts = [
   {
     "id": 48,
     "code": 1016,
-    "name_in_thai": "เขต บางกอกใหญ่",
+    "name_in_thai": "บางกอกใหญ่",
     "name_in_english": "Bangkok Yai",
     "province_id": 10
   },
@@ -366,14 +366,14 @@ export const districts = [
   {
     "id": 52,
     "code": 1037,
-    "name_in_thai": "เขต ราชเทวี",
+    "name_in_thai": "ราชเทวี",
     "name_in_english": "Rat Thewi",
     "province_id": 10
   },
   {
     "id": 53,
     "code": 1019,
-    "name_in_thai": "เขต ตลิ่งชัน",
+    "name_in_thai": "ตลิ่งชัน",
     "name_in_english": "Taling Chan",
     "province_id": 10
   },
@@ -387,7 +387,7 @@ export const districts = [
   {
     "id": 55,
     "code": 1007,
-    "name_in_thai": "เขต ปทุมวัน",
+    "name_in_thai": "ปทุมวัน",
     "name_in_english": "Pathum Wan",
     "province_id": 10
   },
@@ -415,14 +415,14 @@ export const districts = [
   {
     "id": 59,
     "code": 1020,
-    "name_in_thai": "เขต บางกอกน้อย",
+    "name_in_thai": "บางกอกน้อย",
     "name_in_english": "Bangkok Noi",
     "province_id": 10
   },
   {
     "id": 60,
     "code": 1031,
-    "name_in_thai": "เขต บางคอแหลม",
+    "name_in_thai": "บางคอแหลม",
     "name_in_english": "Bang Kho Laem",
     "province_id": 10
   },
@@ -450,14 +450,14 @@ export const districts = [
   {
     "id": 64,
     "code": 1033,
-    "name_in_thai": "เขต คลองเตย",
+    "name_in_thai": "คลองเตย",
     "name_in_english": "Khlong Toei",
     "province_id": 10
   },
   {
     "id": 65,
     "code": 1028,
-    "name_in_thai": "เขต สาทร",
+    "name_in_thai": "สาทร",
     "name_in_english": "Sa Thon",
     "province_id": 10
   },
@@ -471,7 +471,7 @@ export const districts = [
   {
     "id": 67,
     "code": 1039,
-    "name_in_thai": "เขต วัฒนา",
+    "name_in_thai": "วัฒนา",
     "name_in_english": "Watthana",
     "province_id": 10
   },
@@ -492,7 +492,7 @@ export const districts = [
   {
     "id": 70,
     "code": 1025,
-    "name_in_thai": "เขต บางพลัด",
+    "name_in_thai": "บางพลัด",
     "name_in_english": "Bang Phlat",
     "province_id": 10
   },
@@ -555,7 +555,7 @@ export const districts = [
   {
     "id": 79,
     "code": 1035,
-    "name_in_thai": "เขต จอมทอง",
+    "name_in_thai": "จอมทอง",
     "name_in_english": "Chom Thong",
     "province_id": 10
   },
@@ -870,7 +870,7 @@ export const districts = [
   {
     "id": 124,
     "code": 1017,
-    "name_in_thai": "เขต ห้วยขวาง",
+    "name_in_thai": "ห้วยขวาง",
     "name_in_english": "Huai Khwang",
     "province_id": 10
   },
@@ -926,7 +926,7 @@ export const districts = [
   {
     "id": 132,
     "code": 1012,
-    "name_in_thai": "เขต ยานนาวา",
+    "name_in_thai": "ยานนาวา",
     "name_in_english": "Yannawa",
     "province_id": 10
   },
@@ -975,7 +975,7 @@ export const districts = [
   {
     "id": 139,
     "code": 1024,
-    "name_in_thai": "เขต ราษฎร์บูรณะ",
+    "name_in_thai": "ราษฎร์บูรณะ",
     "name_in_english": "Rat Burana",
     "province_id": 10
   },
@@ -1024,14 +1024,14 @@ export const districts = [
   {
     "id": 146,
     "code": 1041,
-    "name_in_thai": "เขต หลักสี่",
+    "name_in_thai": "หลักสี่",
     "name_in_english": "Lak Si",
     "province_id": 10
   },
   {
     "id": 147,
     "code": 1038,
-    "name_in_thai": "เขต ลาดพร้าว",
+    "name_in_thai": "ลาดพร้าว",
     "name_in_english": "Lat Phrao",
     "province_id": 10
   },
@@ -1339,7 +1339,7 @@ export const districts = [
   {
     "id": 191,
     "code": 1026,
-    "name_in_thai": "เขต ดินแดง",
+    "name_in_thai": "ดินแดง",
     "name_in_english": "Din Daeng",
     "province_id": 10
   },
@@ -1395,7 +1395,7 @@ export const districts = [
   {
     "id": 199,
     "code": 1014,
-    "name_in_thai": "เขต พญาไท",
+    "name_in_thai": "พญาไท",
     "name_in_english": "Phaya Thai",
     "province_id": 10
   },
@@ -1430,7 +1430,7 @@ export const districts = [
   {
     "id": 204,
     "code": 1040,
-    "name_in_thai": "เขต บางแค",
+    "name_in_thai": "บางแค",
     "name_in_english": "Bang Khae",
     "province_id": 10
   },
@@ -1493,7 +1493,7 @@ export const districts = [
   {
     "id": 213,
     "code": 1046,
-    "name_in_thai": "เขต คลองสามวา",
+    "name_in_thai": "คลองสามวา",
     "name_in_english": "Khlong Sam Wa",
     "province_id": 10
   },
@@ -1668,7 +1668,7 @@ export const districts = [
   {
     "id": 238,
     "code": 1011,
-    "name_in_thai": "เขต ลาดกระบัง",
+    "name_in_thai": "ลาดกระบัง",
     "name_in_english": "Lat Krabang",
     "province_id": 10
   },
@@ -1780,7 +1780,7 @@ export const districts = [
   {
     "id": 254,
     "code": 1049,
-    "name_in_thai": "เขต ทุ่งครุ",
+    "name_in_thai": "ทุ่งครุ",
     "name_in_english": "Thung Khu",
     "province_id": 10
   },
@@ -1794,7 +1794,7 @@ export const districts = [
   {
     "id": 256,
     "code": 1006,
-    "name_in_thai": "เขต บางกะปิ",
+    "name_in_thai": "บางกะปิ",
     "name_in_english": "Bang Kapi",
     "province_id": 10
   },
@@ -1829,7 +1829,7 @@ export const districts = [
   {
     "id": 261,
     "code": 1042,
-    "name_in_thai": "เขต สายไหม",
+    "name_in_thai": "สายไหม",
     "name_in_english": "Sai Mai",
     "province_id": 10
   },
@@ -1864,7 +1864,7 @@ export const districts = [
   {
     "id": 266,
     "code": 1032,
-    "name_in_thai": "เขต ประเวศ",
+    "name_in_thai": "ประเวศ",
     "name_in_english": "Prawet",
     "province_id": 10
   },
@@ -1913,7 +1913,7 @@ export const districts = [
   {
     "id": 273,
     "code": 1029,
-    "name_in_thai": "เขต บางซื่อ",
+    "name_in_thai": "บางซื่อ",
     "name_in_english": "Bang Su",
     "province_id": 10
   },
@@ -1941,7 +1941,7 @@ export const districts = [
   {
     "id": 277,
     "code": 1009,
-    "name_in_thai": "เขต พระโขนง",
+    "name_in_thai": "พระโขนง",
     "name_in_english": "Phra Khanong",
     "province_id": 10
   },
@@ -2228,7 +2228,7 @@ export const districts = [
   {
     "id": 318,
     "code": 1003,
-    "name_in_thai": "เขต หนองจอก",
+    "name_in_thai": "หนองจอก",
     "name_in_english": "Nong Chok",
     "province_id": 10
   },
@@ -2242,7 +2242,7 @@ export const districts = [
   {
     "id": 320,
     "code": 1047,
-    "name_in_thai": "เขต บางนา",
+    "name_in_thai": "บางนา",
     "name_in_english": "Bang Na",
     "province_id": 10
   },
@@ -2270,7 +2270,7 @@ export const districts = [
   {
     "id": 324,
     "code": 1023,
-    "name_in_thai": "เขต หนองแขม",
+    "name_in_thai": "หนองแขม",
     "name_in_english": "Nong Khaem",
     "province_id": 10
   },
@@ -2396,7 +2396,7 @@ export const districts = [
   {
     "id": 342,
     "code": 1045,
-    "name_in_thai": "เขต วังทองหลาง",
+    "name_in_thai": "วังทองหลาง",
     "name_in_english": "Wang Thong Lang",
     "province_id": 10
   },
@@ -2445,7 +2445,7 @@ export const districts = [
   {
     "id": 349,
     "code": 1005,
-    "name_in_thai": "เขต บางเขน",
+    "name_in_thai": "บางเขน",
     "name_in_english": "Bang Khen",
     "province_id": 10
   },
@@ -2578,7 +2578,7 @@ export const districts = [
   {
     "id": 368,
     "code": 1048,
-    "name_in_thai": "เขต ทวีวัฒนา",
+    "name_in_thai": "ทวีวัฒนา",
     "name_in_english": "Thawi Watthana",
     "province_id": 10
   },
@@ -3145,7 +3145,7 @@ export const districts = [
   {
     "id": 449,
     "code": 1027,
-    "name_in_thai": "เขต บึงกุ่ม",
+    "name_in_thai": "บึงกุ่ม",
     "name_in_english": "Bung Kum",
     "province_id": 10
   },
@@ -3222,7 +3222,7 @@ export const districts = [
   {
     "id": 460,
     "code": 1034,
-    "name_in_thai": "เขต สวนหลวง",
+    "name_in_thai": "สวนหลวง",
     "name_in_english": "Suan Luang",
     "province_id": 10
   },
@@ -3292,7 +3292,7 @@ export const districts = [
   {
     "id": 470,
     "code": 1010,
-    "name_in_thai": "เขต มีนบุรี",
+    "name_in_thai": "มีนบุรี",
     "name_in_english": "Min Buri",
     "province_id": 10
   },
@@ -3411,7 +3411,7 @@ export const districts = [
   {
     "id": 487,
     "code": 1043,
-    "name_in_thai": "เขต คันนายาว",
+    "name_in_thai": "คันนายาว",
     "name_in_english": "Khanna Yao",
     "province_id": 10
   },
@@ -3572,7 +3572,7 @@ export const districts = [
   {
     "id": 510,
     "code": 1044,
-    "name_in_thai": "เขต สะพานสูง",
+    "name_in_thai": "สะพานสูง",
     "name_in_english": "Saphan Sung",
     "province_id": 10
   },
@@ -4027,7 +4027,7 @@ export const districts = [
   {
     "id": 575,
     "code": 1030,
-    "name_in_thai": "เขต จตุจักร",
+    "name_in_thai": "จตุจักร",
     "name_in_english": "Chatuchak",
     "province_id": 10
   },
@@ -4174,7 +4174,7 @@ export const districts = [
   {
     "id": 596,
     "code": 1050,
-    "name_in_thai": "เขต บางบอน",
+    "name_in_thai": "บางบอน",
     "name_in_english": "Bang Bon",
     "province_id": 10
   },
@@ -4391,7 +4391,7 @@ export const districts = [
   {
     "id": 627,
     "code": 1036,
-    "name_in_thai": "เขต ดอนเมือง",
+    "name_in_thai": "ดอนเมือง",
     "name_in_english": "Don Mueang",
     "province_id": 10
   },
@@ -5140,7 +5140,7 @@ export const districts = [
   {
     "id": 734,
     "code": 1021,
-    "name_in_thai": "เขต บางขุนเทียน",
+    "name_in_thai": "บางขุนเทียน",
     "name_in_english": "Bang Khun Thian",
     "province_id": 10
   },
