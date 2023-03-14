@@ -4,6 +4,7 @@ import { MapContainer, GeoJSON, TileLayer } from "react-leaflet";
 import { useSelector } from "react-redux";
 import "./ChoroplethMap.css";
 
+
 export default function ChoroplethMap() {
   const { thailandGeoJson } = useSelector((state) => state.data);
   const { locations } = useSelector((state) => state.data);
@@ -89,6 +90,7 @@ export default function ChoroplethMap() {
 
   return (
     <div class="sm" style={{ marginTop: 16 }}>
+      <div className="p-1 border-2 border-gray-200 border rounded dark:border-gray-700">
       <MapContainer center={[13.751, 100.492]} zoom={5}>
         <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
         <div
@@ -129,6 +131,7 @@ export default function ChoroplethMap() {
           </div>
         </div>
       </MapContainer>
+      </div>
     </div>
   );
 }
