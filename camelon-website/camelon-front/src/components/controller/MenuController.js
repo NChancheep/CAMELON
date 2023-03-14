@@ -15,7 +15,7 @@ export default function MenuController() {
     borderRadius: 8,
   };
   var buttonClass =
-    "flex items-center justify-center font-bold border border-black";
+    "flex items-center justify-center font-bold border border-black hover:bg-gray-50";
   return (
     <>
       <Container>
