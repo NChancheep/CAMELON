@@ -37,6 +37,34 @@ const EmerContact = [
     image:
       "https://logo-th.com/wp-content/uploads/2018/12/%e0%b8%aa%e0%b8%b3%e0%b8%99%e0%b8%b1%e0%b8%81%e0%b8%87%e0%b8%b2%e0%b8%99%e0%b8%95%e0%b8%b3%e0%b8%a3%e0%b8%a7%e0%b8%88%e0%b9%81%e0%b8%ab%e0%b9%88%e0%b8%87%e0%b8%8a%e0%b8%b2%e0%b8%95%e0%b8%b4.jpg",
   },
+  {
+    id: "17",
+    name: "สถานีวิทยุร่วมด้วยช่วยกัน",
+    callNum: "1677",
+    image:
+      "https://obs.line-scdn.net/0hOBGuBXhqEG16DDycHJhvOkZJHgANIhYlAjlcWQ1bTlQFNFVoRD5eCgoORl8HNFY5R2laWA1bT11V",
+  },
+  {
+    id: "18",
+    name: "สถานีวิทยุ จส.100",
+    callNum: "*1808",
+    image:
+      "https://static.mytuner.mobi/media/tvos_radios/TxRQrBB7gg.jpg",
+  },
+  {
+    id: "19",
+    name: "แจ้งเพลิงไหม้ดับเพลิง",
+    callNum: "199",
+    image:
+      "https://scontent.fbkk12-3.fna.fbcdn.net/v/t39.30808-6/276988791_101207139218059_5903094721086429325_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=09cbfe&_nc_eui2=AeGkVIV9HNBELAHdLerNyBd-78H5hY_aFM3vwfmFj9oUzVx29p978AibEq9mkGWSN7njngaKCzODxUbAyt2wk7aW&_nc_ohc=tkCDtmlPRoIAX9L7dpR&_nc_oc=AQmwmGuqisPicltDvkV5-tRNkWA2EW-O2GYwUHHlqwfrFlKCJes3eRVDO3syzY569no&_nc_ht=scontent.fbkk12-3.fna&oh=00_AfD6yG5SGDniBHL6-5OMEZKZu_ItpljDSs04Owo8K-ht3A&oe=64104003",
+  },
+  {
+    id: "23",
+    name: "หน่วยแพทย์กู้ชีพกรุงเทพมหานคร",
+    callNum: "1555",
+    image:
+      "https://upload.wikimedia.org/wikipedia/th/thumb/4/48/%E0%B8%95%E0%B8%A3%E0%B8%B2%E0%B8%AA%E0%B8%B1%E0%B8%8D%E0%B8%A5%E0%B8%B1%E0%B8%81%E0%B8%A9%E0%B8%93%E0%B9%8C%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%9B%E0%B8%B2%E0%B8%99%E0%B8%84%E0%B8%A3%E0%B8%AB%E0%B8%A5%E0%B8%A7%E0%B8%87.svg/1200px-%E0%B8%95%E0%B8%A3%E0%B8%B2%E0%B8%AA%E0%B8%B1%E0%B8%8D%E0%B8%A5%E0%B8%B1%E0%B8%81%E0%B8%A9%E0%B8%93%E0%B9%8C%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%9B%E0%B8%B2%E0%B8%99%E0%B8%84%E0%B8%A3%E0%B8%AB%E0%B8%A5%E0%B8%A7%E0%B8%87.svg.png",
+  },
 ];
 function Accident() {
     return (
