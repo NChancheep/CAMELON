@@ -148,6 +148,42 @@ export default function Pinmap() {
         layerGroups[crimeType] = [];
       }
 
+      let button;
+      const regex = /(\d+)/;
+      const match = regex.exec(news_data.news_id);
+      const news_id = match[1];
+      if (news_data.news_id.includes("THR")) {
+        button = (
+          <>
+            <a href={"https://www.thairath.co.th/news/" + news_id} target="_blank">
+              <button
+                style={{ width: "100%" }}
+                type="button"
+                className="bg-gray-50 hover:bg-gray-100 text-black font-bold border py-2 px-4 rounded"
+              >
+                อ่านเพิ่มเติม..
+              </button>
+            </a>
+          </>
+        );
+      } else {
+        button = (
+          <>
+            <a href={"https://d.dailynews.co.th/crime/" + news_id} target="_blank">
+              <button
+                style={{ width: "100%" }}
+                type="button"
+                className="bg-gray-50 hover:bg-gray-100 text-black font-bold border py-2 px-4 rounded"
+              >
+                อ่านเพิ่มเติม..
+              </button>
+            </a>
+          </>
+        );
+      }
+
+     
+
       const fontSize = { fontSize: 16 };
       const titleStyle = { fontWeight: 500, color: "#44985B" };
 
@@ -182,9 +218,9 @@ export default function Pinmap() {
                 </div>
                 <div style={fontSize}>
                   {" "}
-                  <span style={titleStyle}>Date: </span>{" "}
-                  {trimString(news_data.datetime)
-                    ? trimString(news_data.datetime)
+                  <span style={titleStyle}>News Date: </span>{" "}
+                  {trimString(news_datetime)
+                    ? trimString(news_datetime)
                     : "ไม่มีข้อมูล"}{" "}
                 </div>
                 <div style={fontSize}>
@@ -195,31 +231,7 @@ export default function Pinmap() {
                     : "ไม่มีข้อมูล"}{" "}
                 </div>
               </div>
-              <div className="popup-action">
-                <button
-                  style={{ width: "100%" }}
-                  type="button"
-                  className="bg-white hover:bg-gray-700 text-black font-bold border py-2 px-4 rounded"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    const regex = /(\d+)/;
-                    const match = regex.exec(news_data.news_id);
-                    const news_id = match[1];
-                    if (news_data.news_id.includes("THR")) {
-                      window.location.href =
-                        "https://www.thairath.co.th/news/" + news_id;
-                      console(news_id);
-                    } else {
-                      window.location.href =
-                        "https://d.dailynews.co.th/crime/" + news_id;
-                      console(news_id);
-                    }
-                  }}
-                >
-                  {" "}
-                  อ่านเพิ่มเติม..
-                </button>
-              </div>
+              <div className="popup-action">{button}</div>
             </Popup>
           </Marker>
         );
@@ -260,7 +272,6 @@ export default function Pinmap() {
   function DateSelect() {
     return (
       <Row xs>
-        
         <Col sm>
           Select Date Range: *เลือกได้แค่ตามนี้
           <DatePicker
