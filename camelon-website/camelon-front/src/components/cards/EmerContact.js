@@ -9,7 +9,7 @@ function EmergencyBanner(props) {
   return (
     <Card
       className="justify-content-center align-items-center"
-      style={{ width: "100%", marginTop: 30, height: "80%" }}
+      style={{ width: "100%", marginTop: 30, height: "80%", fontFamily: "Kanit"  }}
     >
       <Container style={{ margin: 10 }}>
         <Row>
