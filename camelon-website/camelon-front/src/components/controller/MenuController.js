@@ -55,7 +55,7 @@ export default function MenuController() {
                   color: state.mode === "overview" ? "#479B5F" : "black",
                 }}
               >
-                ภาพรวม
+                ข้อมูลสถิติ
               </div>
             </button>
           </Col>
@@ -78,7 +78,7 @@ export default function MenuController() {
                   color: state.mode === "pin_map" ? "#479B5F" : "black",
                 }}
               >
-                รายละเอียดข่าวอาชญากรรม
+                รายละเอียดจุดอาชญากรรม
               </div>
             </button>
           </Col>
