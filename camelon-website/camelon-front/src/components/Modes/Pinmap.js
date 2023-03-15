@@ -282,7 +282,7 @@ export default function Pinmap() {
     });
 
     function isNonCrime(crimeType) {
-      if (crimeType == "Non_Crime") {
+      if (crimeType === "Non_Crime") {
         return true;
       }
       return false;
