@@ -328,8 +328,15 @@ export default function Pinmap() {
   function DateSelect() {
     return (
       <Row xs style={{ fontFamily: "Kanit" }}>
-        <Col sm>
-          Select Date Range: <br />{" "}
+        <Col
+          sm
+          className="rounded-md hover:bg-gray-200 "
+          style={{  width: "100%",backgroundColor:"#479B5F",marginBottom:"5%" }}
+        >
+          <button style={{width: "100%",color:"white"}} onClick={getLocation}>หาตำแหน่งของฉัน</button>
+        </Col>
+        <Col sm className="bg-gray-50 rounded-md ">
+          เลือกช่วงเวลาแสดงข่าว <br />
           <div className="text-red-600">*เลือกได้แค่ปี 2000 ถึง 2023</div>
           <DatePicker
             selectsRange={true}
@@ -374,7 +381,7 @@ export default function Pinmap() {
   return (
     <>
       {" "}
-      <div class="sm" style={{ marginTop: 16 }}>
+      <div class="sm" style={{ marginTop: 16, marginBottom:"5%"}}>
         <div class="p-1 border-2 border-gray-200 border rounded dark:border-gray-700">
           <MapContainer
             center={[13.751, 100.492]}
@@ -387,14 +394,7 @@ export default function Pinmap() {
                 user_current_location.longitude,
               ]}
             />
-            <button
-              className="absolute top-20 left-3 bg-gray-50 p-4 rounded-md shadow-md w-30 text-base hover:bg-gray-200"
-              style={{ zIndex: 1500 }}
-              onClick={getLocation}
-            >
-              {" "}
-              Locate me{" "}
-            </button>
+
             <PinMap />
             {showUserMarker && (
               <Marker
@@ -404,9 +404,16 @@ export default function Pinmap() {
                 <Popup>You are here</Popup>
               </Marker>
             )}
-
+            {/* <button
+              className="absolute top-20 left-3 bg-gray-50 p-4 rounded-md shadow-md w-60 text-base hover:bg-gray-200"
+              style={{ zIndex: 1500 }}
+              onClick={getLocation}
+            >
+              {" "}
+              Locate me{" "}
+            </button> */}
             <div
-              className="absolute bottom-5 left-10 bg-gray-100 p-4 rounded-md shadow-md w-60 text-base"
+              className="absolute bottom-5 left-10 bg-gray-100 p-4 rounded-md w-60 text-base"
               style={{ zIndex: 999 }}
             >
               {" "}

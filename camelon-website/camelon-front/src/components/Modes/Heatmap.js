@@ -42,7 +42,7 @@ export default function Heatmap() {
 
   return (
     <>
-      <div class="sm" style={{ marginTop: 16 }}>
+      <div class="sm" style={{ marginTop: 16,marginBottom:"5%" }}>
         <div class="p-1 border-2 border-gray-200 border rounded dark:border-gray-700">
           <MapContainer center={[13.751, 100.492]} zoom={13}>
             <TileLayer
