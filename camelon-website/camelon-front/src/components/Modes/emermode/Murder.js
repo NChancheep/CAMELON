@@ -17,6 +17,27 @@ const EmerContact = [
     image:
       "https://logo-th.com/wp-content/uploads/2018/12/%e0%b8%aa%e0%b8%b3%e0%b8%99%e0%b8%b1%e0%b8%81%e0%b8%87%e0%b8%b2%e0%b8%99%e0%b8%95%e0%b8%b3%e0%b8%a3%e0%b8%a7%e0%b8%88%e0%b9%81%e0%b8%ab%e0%b9%88%e0%b8%87%e0%b8%8a%e0%b8%b2%e0%b8%95%e0%b8%b4.jpg",
   },
+  {
+    id: "5",
+    name: "กองปราบปราม",
+    callNum: "1135",
+    image:
+      "https://esvector.net/home_es/images/stories/logo/10-11/police_fight.jpg",
+  },
+  {
+    id: "14",
+    name: "หน่วยแพทย์ฉุกเฉิน (ทั่วไทย)",
+    callNum: "1669",
+    image:
+      "https://test.niems.go.th/Web2019/UploadCK/Subwebsite/255601141508321334_eh6WOzbZxXrrNcmO.jpg",
+  },
+  {
+    id: "23",
+    name: "หน่วยแพทย์กู้ชีพกรุงเทพมหานคร",
+    callNum: "1555",
+    image:
+      "http://vajirafoundation.org/wp-content/uploads/2021/11/smart.jpg",
+  },
 ];
 function Murder() {
   return (

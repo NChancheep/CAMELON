@@ -89,7 +89,7 @@ export default function ChoroplethMap() {
   };
 
   return (
-    <div class="sm" className="font-link" style={{ marginTop: 16 }}>
+    <div class="sm" className="font-link" style={{ marginTop: 16, marginBottom:"5%"}}>
       <div className="p-1 border-2 border-gray-200 border rounded dark:border-gray-700">
         <MapContainer center={[13.751, 100.492]} zoom={5}>
           <TileLayer

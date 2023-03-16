@@ -29,11 +29,18 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
 import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
+import { change_current_location } from "./../../store/Reducer";
 
-// let DefaultIcon = L.icon({
-//   iconUrl: icon,
-//   shadowUrl: iconShadow,
-// });
+const DefaultIcon = L.icon({
+  iconUrl:
+    "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon.png",
+  iconRetinaUrl:
+    "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon-2x.png",
+  iconSize: [25, 41],
+  iconAnchor: [12.5, 41],
+  popupAnchor: [0, -41],
+});
 
 function getIconForCrimeType(crimeType) {
   if (crimeType === "SexualAbuse") {
@@ -78,6 +85,27 @@ function getIconForCrimeType(crimeType) {
     });
   }
 }
+
+function getCrimeTypeName(crimeTypeMetadata) {
+  switch (crimeTypeMetadata) {
+    case "SexualAbuse":
+      return "การล่วงละเมิด";
+    case "Murder":
+      return "ฆาตกรรม";
+    case "Gambling":
+      return "การพนัน";
+    case "Accident":
+      return "อุบัติเหตุ";
+    case "Theft_Burglary":
+      return "ลักทรัพย์";
+    case "Battery_Assault":
+      return "ทำร้ายร่างกาย";
+    case "Drug":
+      return "ยาเสพติด";
+    default:
+      return "อื่นๆ";
+  }
+}
 // L.Marker.prototype.options.icon = DefaultIcon;
 
 // function TimeSlider() {
@@ -90,11 +118,18 @@ export default function Pinmap() {
   let dateMockStart = new Date("2000-01-01T00:00:00");
   let dateMockEnd = new Date("2030-01-01T00:00:00");
   const [dateRange, setDateRange] = useState([dateMockStart, dateMockEnd]);
+  const [currentLocation, setCurrentLocation] = useState({
+    latitude: null,
+    longitude: null,
+  });
+  const [showUserMarker, setShowUserMarker] = useState(false);
   const [startDate, endDate] = dateRange;
   const { locations } = useSelector((state) => state.data);
   const { news_info } = useSelector((state) => state.data);
   const { news } = useSelector((state) => state.data);
   const { user_current_location } = useSelector((state) => state.data);
+
+  const dispatch = useDispatch();
 
   function SetView({ coords }) {
     const map = useMap();
@@ -108,7 +143,10 @@ export default function Pinmap() {
   }
 
   function trimString(text) {
-    return text.toString().replace(/\['|']/g, "").trim();
+    return text
+      .toString()
+      .replace(/\['|']/g, "")
+      .trim();
   }
 
   function showNews(datetime) {
@@ -157,7 +195,8 @@ export default function Pinmap() {
           <>
             <a
               href={"https://www.thairath.co.th/news/" + news_id}
-              target="_blank" rel="noreferrer"
+              target="_blank"
+              rel="noreferrer"
             >
               <button
                 style={{ width: "100%" }}
@@ -174,7 +213,8 @@ export default function Pinmap() {
           <>
             <a
               href={"https://d.dailynews.co.th/crime/" + news_id}
-              target="_blank" rel="noreferrer"
+              target="_blank"
+              rel="noreferrer"
             >
               <button
                 style={{ width: "100%" }}
@@ -188,7 +228,7 @@ export default function Pinmap() {
         );
       }
 
-      const fontSize = { fontSize: 16 , fontFamily: "Kanit" };
+      const fontSize = { fontSize: 16, fontFamily: "Kanit" };
       const titleStyle = { fontWeight: 500, color: "#44985B" };
 
       showNews(news_datetime) &&
@@ -241,13 +281,25 @@ export default function Pinmap() {
         );
     });
 
-    const crimeTypeLayers = Object.keys(layerGroups).map((crimeType) => (
-      <LayersControl.Overlay name={crimeType} key={crimeType} checked={true}>
-        <MarkerClusterGroup chunkedLoading>
-          {layerGroups[crimeType]}
-        </MarkerClusterGroup>
-      </LayersControl.Overlay>
-    ));
+    function isNonCrime(crimeType) {
+      if (crimeType === "Non_Crime") {
+        return true;
+      }
+      return false;
+    }
+    const crimeTypeLayers = Object.keys(layerGroups)
+      .filter((crimeType) => !isNonCrime(crimeType))
+      .map((crimeType) => (
+        <LayersControl.Overlay
+          name={getCrimeTypeName(crimeType)}
+          key={crimeType}
+          checked={true}
+        >
+          <MarkerClusterGroup chunkedLoading>
+            {layerGroups[crimeType]}
+          </MarkerClusterGroup>
+        </LayersControl.Overlay>
+      ));
 
     return (
       <LayersControl position="topright">
@@ -276,8 +328,16 @@ export default function Pinmap() {
   function DateSelect() {
     return (
       <Row xs style={{ fontFamily: "Kanit" }}>
-        <Col sm >
-          Select Date Range: <br /> <div className="text-red-600">*เลือกได้แค่ปี 2000 ถึง 2023</div>
+        <Col
+          sm
+          className="rounded-md hover:bg-gray-200 "
+          style={{  width: "100%",backgroundColor:"#479B5F",marginBottom:"5%" }}
+        >
+          <button style={{width: "100%",color:"white"}} onClick={getLocation}>หาตำแหน่งของฉัน</button>
+        </Col>
+        <Col sm className="bg-gray-50 rounded-md ">
+          เลือกช่วงเวลาแสดงข่าว <br />
+          <div className="text-red-600">*เลือกได้แค่ปี 2000 ถึง 2023</div>
           <DatePicker
             selectsRange={true}
             startDate={startDate}
@@ -294,10 +354,34 @@ export default function Pinmap() {
     );
   }
 
+  function getLocation() {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(changeUserLocation);
+    } else {
+      console.log("Geolocation is not supported by this browser.");
+    }
+  }
+
+  function changeUserLocation(position) {
+    const user_current_location = {
+      latitude: position.coords.latitude,
+      longitude: position.coords.longitude,
+    };
+
+    setCurrentLocation(user_current_location);
+    dispatch(change_current_location(user_current_location));
+  }
+
+  useEffect(() => {
+    if (currentLocation.latitude != null && currentLocation.longitude != null) {
+      setShowUserMarker(true);
+    }
+  }, [currentLocation]);
+
   return (
     <>
       {" "}
-      <div class="sm" style={{ marginTop: 16 }}>
+      <div class="sm" style={{ marginTop: 16, marginBottom:"5%"}}>
         <div class="p-1 border-2 border-gray-200 border rounded dark:border-gray-700">
           <MapContainer
             center={[13.751, 100.492]}
@@ -310,9 +394,26 @@ export default function Pinmap() {
                 user_current_location.longitude,
               ]}
             />
+
             <PinMap />
+            {showUserMarker && (
+              <Marker
+                position={[currentLocation.latitude, currentLocation.longitude]}
+                icon={DefaultIcon}
+              >
+                <Popup>You are here</Popup>
+              </Marker>
+            )}
+            {/* <button
+              className="absolute top-20 left-3 bg-gray-50 p-4 rounded-md shadow-md w-60 text-base hover:bg-gray-200"
+              style={{ zIndex: 1500 }}
+              onClick={getLocation}
+            >
+              {" "}
+              Locate me{" "}
+            </button> */}
             <div
-              className="absolute bottom-5 left-10 bg-gray-100 p-4 rounded-md shadow-md w-60 text-base"
+              className="absolute bottom-5 left-10 bg-gray-100 p-4 rounded-md w-60 text-base"
               style={{ zIndex: 999 }}
             >
               {" "}
