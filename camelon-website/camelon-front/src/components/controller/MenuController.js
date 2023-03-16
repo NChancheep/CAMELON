@@ -137,7 +137,7 @@ export default function MenuController() {
             </Card>
           </Col>
         </Row>
-        <Display data={state.mode} />
+        <Display  data={state.mode} />
       </Container>
     </>
   );
