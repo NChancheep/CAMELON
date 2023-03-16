@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { MapContainer, GeoJSON, TileLayer } from "react-leaflet";
 
 import { useSelector } from "react-redux";
-import "./ChoroplethMap.css";
+import "../../css/ChoroplethMap.css";
 import "../../css/setfont.css"
 
 export default function ChoroplethMap() {
@@ -20,7 +20,6 @@ export default function ChoroplethMap() {
   }
 
   function getCrimeRate(name) {
-    // console.log(name)
     let crime_count = 0;
     locations.map((location) => {
       if (location.formatted_address.includes(name)) {
@@ -107,10 +106,11 @@ export default function ChoroplethMap() {
               </div>
             )}
             {selectedFeature && (
-              <div className="">
-                <div>Province Name (English): {selectedFeature.name_en}</div>
+              <div style={{fontFamily: 'Kanit'}}className="">
+                <div>Province: {selectedFeature.name_en}</div>
                 <div>{selectedFeature.name_th}</div>
-                <span>ดัชนีอาชญากรรม (Crime Index): {selectedFeature.crime_rate}</span>
+                <div>Crime Index: {selectedFeature.crime_rate}</div>
+                <div>ดัชนีอาชญากรรม: {selectedFeature.crime_rate}</div>
               </div>
             )}
           </div>
