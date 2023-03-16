@@ -8,23 +8,32 @@ export default function Footer() {
     <MDBFooter bgColor="light" className="text-center text-lg-start text-muted">
       <Row>
         <section className="d-flex justify-content-center justify-content-lg-between p-4">
-          <Col style={{ width: "100%" }}>
-            <div>
+          <Col
+            className="d-flex justify-content-center"
+            style={{ width: "100%" }}
+          >
+            <h4 style={{ fontSize: 16, textAlign: "center" }}>
               <span>National software contest 2023</span>
-            </div>
+            </h4>
           </Col>
-          <Col style={{ width: "100%" }}>
+          <Col
+            className="d-flex justify-content-center"
+            style={{ width: "100%" }}
+          >
             <div>
-              <span style={{ width: "100%" }}>
+              <h4 style={{ fontSize: 16, textAlign: "center" }}>
                 The Faculty of Information and Communication Technology, Mahidol
                 University
-              </span>
+              </h4>
             </div>
           </Col>
-          <Col style={{ width: "100%" }}>
-            <div>
+          <Col
+            className="d-flex justify-content-center"
+            style={{ width: "100%" }}
+          >
+            <h4 style={{ fontSize: 16, textAlign: "center" }}>
               <span>Camelon Team</span>
-            </div>
+            </h4>
           </Col>
         </section>
       </Row>
@@ -32,10 +41,10 @@ export default function Footer() {
         className="text-center p-4"
         style={{ backgroundColor: "rgba(0, 0, 0, 0.05)" }}
       >
-        © 2023 ICT Mahidol University:
-        <a className="text-reset fw-bold" href="https://mdbootstrap.com/">
+        © 2023 ICT Mahidol University:{" "}
+        <span className="text-reset fw-bold">
           Camelon
-        </a>
+        </span>
       </div>
     </MDBFooter>
   );

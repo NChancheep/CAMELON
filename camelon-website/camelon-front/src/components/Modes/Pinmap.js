@@ -13,6 +13,7 @@ import Murder_Icon from "../../assets/iconPin/ColorIcon/Murder_Green.png";
 import SexualAbuse_Icon from "../../assets/iconPin/ColorIcon/Sexual_Abuse_Green.png";
 import Theft_Icon from "../../assets/iconPin/ColorIcon/Theft_Green.png";
 import Other_Icon from "../../assets/iconPin/ColorIcon/Other_Green.png";
+import Your_Icon from "../../assets/iconPin/ColorIcon/Your_Green.png";
 
 import {
   MapContainer,
@@ -33,13 +34,8 @@ import { useDispatch } from "react-redux";
 import { change_current_location } from "./../../store/Reducer";
 
 const DefaultIcon = L.icon({
-  iconUrl:
-    "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon.png",
-  iconRetinaUrl:
-    "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon-2x.png",
-  iconSize: [25, 41],
-  iconAnchor: [12.5, 41],
-  popupAnchor: [0, -41],
+  iconUrl: Your_Icon,
+  iconSize: [45, 59],
 });
 
 function getIconForCrimeType(crimeType) {
@@ -146,6 +142,16 @@ export default function Pinmap() {
     return text
       .toString()
       .replace(/\['|']/g, "")
+      .replace("'", "")
+      .replace("'", "")
+      .replace("'", "")
+      .replace("'", "")
+      .replace("'", "")
+      .replace("'", "")
+      .replace("'", "")
+      .replace("'", "")
+      .replace("'", "")
+      
       .trim();
   }
 
@@ -241,37 +247,44 @@ export default function Pinmap() {
               <div className="mb-2">
                 <div style={fontSize}>
                   {" "}
-                  <span style={titleStyle}>Criminal: </span>{" "}
+                  <span style={titleStyle}>ประเภท: </span>{" "}
+                  {trimString(getCrimeTypeName(news_data.crime_type))
+                    ? trimString(getCrimeTypeName(news_data.crime_type))
+                    : "ไม่มีข้อมูล"}{" "}
+                </div>
+                <div style={fontSize}>
+                  {" "}
+                  <span style={titleStyle}>ผู้กระทำ: </span>{" "}
                   {trimString(news_data.criminal)
                     ? trimString(news_data.criminal)
                     : "ไม่มีข้อมูล"}{" "}
                 </div>
                 <div style={fontSize}>
                   {" "}
-                  <span style={titleStyle}>Action: </span>
+                  <span style={titleStyle}>การกระทำ: </span>
                   {trimString(news_data.action)
                     ? trimString(news_data.action)
                     : "ไม่มีข้อมูล"}{" "}
                 </div>
                 <div style={fontSize}>
                   {" "}
-                  <span style={titleStyle}>Victim: </span>
+                  <span style={titleStyle}>ผู้รับเคราะห์: </span>
                   {trimString(news_data.victim)
                     ? trimString(news_data.victim)
                     : "ไม่มีข้อมูล"}{" "}
                 </div>
                 <div style={fontSize}>
                   {" "}
-                  <span style={titleStyle}>News Date: </span>{" "}
+                  <span style={titleStyle}>ข่าววันที่: </span>{" "}
                   {trimString(news_datetime)
                     ? trimString(news_datetime)
                     : "ไม่มีข้อมูล"}{" "}
                 </div>
                 <div style={fontSize}>
                   {" "}
-                  <span style={titleStyle}>Address: </span>
-                  {trimString(location.formatted_address)
-                    ? trimString(location.formatted_address)
+                  <span style={titleStyle}>ตำแหน่งที่เกิด: </span>
+                  {trimString(news_data.location)
+                    ? trimString(news_data.location)
                     : "ไม่มีข้อมูล"}{" "}
                 </div>
               </div>
@@ -331,9 +344,18 @@ export default function Pinmap() {
         <Col
           sm
           className="rounded-md hover:bg-gray-200 "
-          style={{  width: "100%",backgroundColor:"#479B5F",marginBottom:"5%" }}
+          style={{
+            width: "100%",
+            backgroundColor: "#479B5F",
+            marginBottom: "5%",
+          }}
         >
-          <button style={{width: "100%",color:"white"}} onClick={getLocation}>หาตำแหน่งของฉัน</button>
+          <button
+            style={{ width: "100%", color: "white" }}
+            onClick={getLocation}
+          >
+            หาตำแหน่งของฉัน
+          </button>
         </Col>
         <Col sm className="bg-gray-50 rounded-md ">
           เลือกช่วงเวลาแสดงข่าว <br />
@@ -381,7 +403,7 @@ export default function Pinmap() {
   return (
     <>
       {" "}
-      <div class="sm" style={{ marginTop: 16, marginBottom:"5%"}}>
+      <div class="sm" style={{ marginTop: 16, marginBottom: "5%" }}>
         <div class="p-1 border-2 border-gray-200 border rounded dark:border-gray-700">
           <MapContainer
             center={[13.751, 100.492]}
@@ -401,23 +423,14 @@ export default function Pinmap() {
                 position={[currentLocation.latitude, currentLocation.longitude]}
                 icon={DefaultIcon}
               >
-                <Popup>You are here</Popup>
+                <Popup>คุณอยู่แถวนี้</Popup>
               </Marker>
             )}
-            {/* <button
-              className="absolute top-20 left-3 bg-gray-50 p-4 rounded-md shadow-md w-60 text-base hover:bg-gray-200"
-              style={{ zIndex: 1500 }}
-              onClick={getLocation}
-            >
-              {" "}
-              Locate me{" "}
-            </button> */}
             <div
               className="absolute bottom-5 left-10 bg-gray-100 p-4 rounded-md w-60 text-base"
               style={{ zIndex: 999 }}
             >
-              {" "}
-              <DateSelect />{" "}
+              <DateSelect />
             </div>
           </MapContainer>
         </div>

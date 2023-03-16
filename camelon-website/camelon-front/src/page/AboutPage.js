@@ -9,17 +9,61 @@ import Cheep from "../../src/assets/Poto/cheep.jpg";
 import Pete from "../../src/assets/Poto/pete.jpg";
 import Ing from "../../src/assets/Poto/siripen.png";
 import Aum from "../../src/assets/Poto/suppawong.png";
+// import Acident from "../../src/assets/type/acident.jpg";
+// import Assault from "../../src/assets/type/assault.jpg";
+// import Drug from "../../src/assets/type/drug.jpg";
+// import Gamble from "../../src/assets/type/gamble.jpg";
+// import Molest from "../../src/assets/type/molest.jpg";
+// import Murder from "../../src/assets/type/murder.jpg";
+// import Steal from "../../src/assets/type/steal.jpg";
+ 
 import { AiFillLinkedin, AiFillGithub } from "react-icons/ai";
 import Footer from "../components/Footer";
 
-// import "../css/AboutUs.css"
-
-
+import "../css/AboutUs.css";
+// const CrimeType = [
+//   {
+//     id: "1",
+//     name: "Chancheep Mahacharoensuk",
+//     image: Acident,
+//   },
+//   {
+//     id: "2",
+//     name: "Chancheep Mahacharoensuk",
+//     image: Assault,
+//   },
+//   {
+//     id: "3",
+//     name: "Chancheep Mahacharoensuk",
+//     image: Drug,
+//   },
+//   {
+//     id: "4",
+//     name: "Chancheep Mahacharoensuk",
+//     image: Gamble,
+//   },
+//   {
+//     id: "5",
+//     name: "Chancheep Mahacharoensuk",
+//     image: Molest,
+//   },
+//   {
+//     id: "6",
+//     name: "Chancheep Mahacharoensuk",
+//     image: Murder,
+//   },
+//   {
+//     id: "7",
+//     name: "Chancheep Mahacharoensuk",
+//     image: Steal,
+//   },
+// ];
 const Contact = [
   {
     id: "1",
     name: "Chancheep Mahacharoensuk",
     linkin: "https://www.linkedin.com/in/chancheep-mcs/",
+    github:"https://github.com/NChancheep",
     role: "สมาชิก",
     image: Cheep,
   },
@@ -27,6 +71,7 @@ const Contact = [
     id: "2",
     name: "Kantapong Matangkarat",
     linkin: "https://www.linkedin.com/in/kantapong-matangkarat-550338207/",
+    github:"https://github.com/kantapong137",
     role: "สมาชิก",
     image: Jump,
   },
@@ -34,6 +79,7 @@ const Contact = [
     id: "3",
     name: "Pattadon \nSinghajan",
     linkin: "https://www.linkedin.com/in/pattadon-singhajan/",
+    github:"https://github.com/PeteSHJJ",
     role: "สมาชิก",
     image: Pete,
   },
@@ -41,13 +87,15 @@ const Contact = [
     id: "4",
     name: "Lect. Dr. Siripen Pongpaichet",
     linkin: "https://www.linkedin.com/in/siripenpongpaichet/",
+    github:"https://github.com/siripenp",
     role: "อาจารย์ที่ปรึกษา",
     image: Ing,
   },
   {
     id: "5",
     name: "Assoc. Prof. Dr. Suppawong Tuarob",
-    linkin: "https://www.linkedin.com/in/suppawong-tuarob-phd-2461b022/",
+    linkin: "#",
+    github:"https://github.com/siripenp",
     role: "อาจารย์ที่ปรึกษาร่วม",
     image: Aum,
   },
@@ -61,8 +109,10 @@ const ContactUs = () => {
           outerContainerId={"outer-container"}
         />
       </div>
-      <Container style={{ fontFamily: "Kanit" ,paddingLeft:"5%",paddingRight:"5%"}}>
-        <Row >
+      <Container
+        style={{ fontFamily: "Kanit", paddingLeft: "2%", paddingRight: "2%" }}
+      >
+        <Row>
           <Col sm className="d-flex justify-content-center">
             <h1
               style={{ marginTop: "5%", color: "#479B5F", fontWeight: "900" }}
@@ -87,13 +137,15 @@ const ContactUs = () => {
 
         <br />
         <br />
-        <Row style={{ backgroundColor: "#479B5F25"}}>
+        <Row style={{ backgroundColor: "#479B5F25" }}>
           <Col sm className="d-flex justify-content-center">
-            <h3 style={{ color: "#479B5F", fontWeight: "900",marginTop:"2%" }}>
+            <h3
+              style={{ color: "#479B5F", fontWeight: "900", marginTop: "2%" }}
+            >
               แรงบันดาลใจของคาเมล๊อน
             </h3>
           </Col>
-          <text style={{marginBottom:"2%"}}>
+          <text style={{ marginBottom: "2%" }}>
             {" "}
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ปัญหาอาชญากรรมนั้นเป็นปัญหาที่ส่งผลกระทบอย่างมากต่อสังคม
             แม้จะมีความพยายามของรัฐบาลทั่วโลก
@@ -119,8 +171,24 @@ const ContactUs = () => {
             โครงการนี้มุ่งสร้างความอุ่นใจด้วยการนำเสนอแนวทางที่ครอบคลุมเพื่อทำความเข้าใจแนวโน้มอาชญากรรม
             คาเมล๊อนนั้นยังให้อำนาจแก่ผู้คนในการตัดสินใจอย่างชาญฉลาดเกี่ยวกับความปลอดภัยและเพื่อใช้แนวทางเชิงรุกเพื่อแก้ไขปัญหาอาชญากรรมในพื้นที่ของตนได้
           </text>
+          
         </Row>
-
+        {/* <Row>
+            {CrimeType.map((data) => (
+              
+                <div class="content_img" key={data.id}>
+                  <img
+                    src={data.image}
+                    alt=""
+                    style={{ width: "100%", height: "100%" }}
+                  />
+                  <div style={{ width: "100%", height: "100%" }}>
+                    {data.name}
+                  </div>
+                </div>
+              
+            ))}
+          </Row> */}
         <Container style={{ marginTop: "2%", marginBottom: "2%" }}>
           <Row>
             <Col
@@ -144,7 +212,7 @@ const ContactUs = () => {
                     <Card.Link href={data.linkin}>
                       <AiFillLinkedin style={{ display: "inline" }} />
                     </Card.Link>
-                    <Card.Link href={data.linkin}>
+                    <Card.Link href={data.github}>
                       <AiFillGithub
                         style={{
                           display: "inline",

@@ -12,7 +12,8 @@ function Emergency() {
           outerContainerId={"outer-container"}
         />
       </div>
-      <Emercontroller />
+      <Emercontroller  />
+      
     </main>
   );
 }

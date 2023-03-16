@@ -12,7 +12,7 @@ export default function EmerController() {
 
   return (
     <>
-      <Container className={`nav-bar-select-locati`} style={{ height: 55 }}>
+      <Container className={`nav-bar-select-locati`} style={{ height: 55, }}>
         <Heading
           mainName="เบอร์ติดต่อฉุกเฉิน"
           subName={(() => {
