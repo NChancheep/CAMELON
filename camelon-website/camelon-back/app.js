@@ -21,68 +21,8 @@ db.connect((err) => {
   }
 });
 
-app.get("/thai_geographies", (req, res) => {
-    db.query("SELECT * FROM thai_geographies", (err, result) => {
-      if (err) {
-        console.log(err);
-      } else {
-        res.send(result);
-      }
-    });
-  });
-
-app.get("/thai_geographies/:id/thai_provinces", (req, res) => {
-    id = req.params.id;
-    console.log(id)
-    db.query(
-      "SELECT * FROM thai_provinces WHERE geography_id = ?",
-      [id],
-      (err, result) => {
-        if (err) {
-          console.log(err);
-        } else {
-          res.send(result);
-        }
-      }
-    );
-  });
-
-  app.get("/thai_provinces/:province_id/thai_amphures", (req, res) => {
-    province_id = req.params.province_id;
-    db.query(
-      "SELECT * FROM thai_amphures WHERE province_id = ?",
-      [province_id],
-      (err, result) => {
-        if (err) {
-          console.log(err);
-        } else {
-          res.send(result);
-        }
-      }
-    );
-  });
-
-
-  app.get("/thai_amphures/:amphure_id/thai_tambons", (req, res) => {
-    amphure_id = req.params.amphure_id;
-    db.query(
-      "SELECT * FROM thai_tambons WHERE amphure_id = ?",
-      [amphure_id],
-      (err, result) => {
-        if (err) {
-          console.log(err);
-        } else {
-          res.send(result);
-        }
-      }
-    );
-  });
-  
-  
-  
-  
-app.get("/thai_provinces", (req, res) => {
-  db.query("SELECT * FROM thai_provinces", (err, result) => {
+app.get("/thairath_metadata", (req, res) => {
+  db.query("SELECT * FROM thairath_metadata", (err, result) => {
     if (err) {
       console.log(err);
     } else {
@@ -91,61 +31,43 @@ app.get("/thai_provinces", (req, res) => {
   });
 });
 
-app.get("/provinces/:province_id/districts", (req, res) => {
-  province_id = req.params.province_id;
-  // console.log(province_id)
-  db.query(
-    "SELECT * FROM districts WHERE province_id = ?",
-    [province_id],
-    (err, result) => {
-      if (err) {
-        console.log(err);
-      } else {
-        res.send(result);
-      }
-    }
-  );
-});
-
-
-
-app.get(
-  "/districts/:district_id/subdistricts",
-  (req, res) => {
-    district_id = req.params.district_id;
+app.get("/crimetypes_count", (req, res) => {
+  console.log(req.query.year);
+  if (req.query.year == "all_year") {
     db.query(
-      "SELECT * FROM subdistricts WHERE district_id = ?",
-      [district_id],
+      `SELECT crime_type, COUNT(*) as crime_rate
+      FROM Thairath_Metadata WHERE  YEAR(date) BETWEEN '1970' AND '3000'
+      GROUP BY crime_type
+      ORDER BY crime_rate
+      `,
       (err, result) => {
         if (err) {
           console.log(err);
+          res.status(500).send(err);
         } else {
+          console.log(result);
           res.send(result);
-          console.log(result)
+        }
+      }
+    );
+  } else {
+    db.query(
+      `SELECT crime_type, COUNT(*) as crime_rate
+    FROM Thairath_Metadata WHERE YEAR(date) = ?
+    GROUP BY crime_type
+    ORDER BY crime_rate`,
+      [req.query.year],
+      (err, result) => {
+        if (err) {
+          console.log(err);
+          res.status(500).send(err);
+        } else {
+          console.log(result);
+          res.send(result);
         }
       }
     );
   }
-);
-
-app.get("/districts", (req, res) => {
-  db.query("SELECT name_in_thai FROM districts", (err, result) => {
-    if (err) {
-      console.log(err);
-    } else {
-      res.send(result);
-    }
-  });
-});
-
-app.get("/subdistricts", (req, res) => {
-  db.query("SELECT name_in_thai FROM subdistricts ", (err, result) => {
-    if (err) {
-      console.log(err);
-    } else {
-      res.send(result);
-    }
-  });
 });
 
 app.listen("3001", () => {
