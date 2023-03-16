@@ -2,6 +2,3 @@
 @tailwind components;
 @tailwind utilities;
 
-body, html {
-    font-family: "Kanit";
-  }
