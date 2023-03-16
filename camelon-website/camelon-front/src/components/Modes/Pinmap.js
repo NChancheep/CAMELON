@@ -343,10 +343,9 @@ export default function Pinmap() {
       <Row xs style={{ fontFamily: "Kanit" }}>
         <Col
           sm
-          className="rounded-md hover:bg-gray-200 "
+          className="rounded-md bg-green-700 hover:bg-green-900"
           style={{
             width: "100%",
-            backgroundColor: "#479B5F",
             marginBottom: "5%",
           }}
         >
