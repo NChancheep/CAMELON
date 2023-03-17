@@ -70,6 +70,50 @@ app.get("/crimetypes_count", (req, res) => {
   }
 });
 
-app.listen("3001", () => {
-  console.log("Server is running on port 3001");
+app.get("/crimecount", (req, res) => {
+  console.log(req.query.year);
+
+  if (req.query.year == "all_year") {
+    db.query(
+      `SELECT MONTH(date) AS Month, COUNT(*) as crime_rate
+        FROM Thairath_Metadata 
+        WHERE YEAR(date) BETWEEN '1970' AND '3000'
+        GROUP BY Month
+        ORDER BY Month;
+        `,
+      [req.query.year],
+      (err, result) => {
+        if (err) {
+          console.log(err);
+          res.status(500).send(err);
+        } else {
+          console.log(result);
+          res.send(result);
+        }
+      }
+    );
+  } else {
+    db.query(
+      `SELECT MONTH(date) AS Month, COUNT(*) as crime_rate
+        FROM Thairath_Metadata 
+        WHERE YEAR(date) = ?
+        GROUP BY Month
+        ORDER BY Month;
+        `,
+      [req.query.year],
+      (err, result) => {
+        if (err) {
+          console.log(err);
+          res.status(500).send(err);
+        } else {
+          // console.log(result);
+          res.send(result);
+        }
+      }
+    );
+  }
+});
+
+app.listen(3001, '0.0.0.0', function() {
+  console.log('Listening to port:  ' + 3001);
 });

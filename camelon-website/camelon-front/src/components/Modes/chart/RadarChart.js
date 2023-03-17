@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Radar } from "react-chartjs-2";
 import Card from "react-bootstrap/Card";
 import Axios from "axios";
-
+import { ThreeDots } from "react-loader-spinner";
 import {
   Chart as ChartJS,
   RadialLinearScale,
@@ -12,6 +12,7 @@ import {
   Tooltip,
   Legend,
 } from "chart.js";
+
 ChartJS.register(
   RadialLinearScale,
   PointElement,
@@ -20,7 +21,8 @@ ChartJS.register(
   Tooltip,
   Legend
 );
-function getCrimeTypeName(crimeTypeMetadata) {
+
+const getCrimeTypeName = (crimeTypeMetadata) => {
   switch (crimeTypeMetadata) {
     case "SexualAbuse":
       return "การล่วงละเมิด";
@@ -39,37 +41,53 @@ function getCrimeTypeName(crimeTypeMetadata) {
     default:
       return "อื่นๆ";
   }
+};
+
+function LoadingIndicator() {
+  return (
+    <div
+      style={{
+        position: "absolute",
+        top: "50%",
+        left: "50%",
+        transform: "translate(-50%, -50%)",
+      }}
+    >
+      <ThreeDots
+        height="80"
+        width="80"
+        radius="9"
+        color="#4fa94d"
+        ariaLabel="three-dots-loading"
+        visible={true}
+      />
+    </div>
+  );
 }
 
-function convertToSQLDateTime(str) {
-  // Convert the string to a Date object
-  const dateObj = new Date(str);
 
-  // Extract the date and time components
-  const year = dateObj.getFullYear();
-  const month = (dateObj.getMonth() + 1).toString().padStart(2, '0');
-  const date = dateObj.getDate().toString().padStart(2, '0');
-  // const hours = dateObj.getHours().toString().padStart(2, '0');
-  // const minutes = dateObj.getMinutes().toString().padStart(2, '0');
-  // const seconds = dateObj.getSeconds().toString().padStart(2, '0');
-
-  // Construct the SQL datetime string
-  const sqlDateTime = `${year}-${month}-${date}`;
-
-  // Return the SQL datetime string
-  return sqlDateTime;
-}
 export default function RadarChart(props) {
   const { year } = props;
   const [crimeTypeList, setCrimeTypeList] = useState([]);
   const [isShow, setIsShow] = useState(false);
-  const [dataSet, setDataSet] = useState({});
+  const [dataSet, setDataSet] = useState({
+    labels: [],
+    datasets: [
+      {
+        label: "# of Crimes per 1000 peoples",
+        data: [],
+        backgroundColor: "#44985B",
+        borderColor: "#6A717D",
+        borderWidth: 1,
+      },
+    ],
+  });
 
   const getCrimeType = () => {
     const options = {
       params: {
         year: year,
-      }
+      },
     };
     Axios.get("http://localhost:3001/crimetypes_count", options)
       .then((response) => {
@@ -81,37 +99,49 @@ export default function RadarChart(props) {
   };
 
   useEffect(() => {
-
+    setIsShow(false);
     getCrimeType();
-  
-}, [year])
+  }, [year]);
 
-useEffect(() => {
+  useEffect(() => {
+    const labels = crimeTypeList.map((crime) =>
+      getCrimeTypeName(crime.crime_type)
+    );
+    const data = {
+      labels: labels,
+      datasets: [
+        {
+          label: "# of Crimes per 1000 peoples",
+          data: crimeTypeList.map((crime) => crime.crime_rate / 1000),
+          backgroundColor: "#44985B",
+          borderColor: "#6A717D",
+          borderWidth: 1,
+        },
+      ],
+    };
+    setDataSet(data);
+  }, [crimeTypeList]);
 
-  const labels = crimeTypeList.map((crime) => getCrimeTypeName(crime.crime_type));
-  const data = {
-    labels: labels,
-    datasets: [
-      {
-        label: "# of Crimes per 1000 peoples",
-        data: crimeTypeList.map((crime) => crime.crime_rate/1000),
-        backgroundColor: "#44985B",
-        borderColor: "#6A717D",
-        borderWidth: 1,
-      }
-    ]
-  }
-  setDataSet(data)
-  setIsShow(true)
+  useEffect(() => {
+    if(dataSet.datasets[0].data.length !== 0) {
+      setIsShow(true)
+    }
+  }, [dataSet]);
 
-
-}, [crimeTypeList])
-
-
- 
-return (
-  <Card  style={{ width: "100%", backgroundColor: "#faf7f7" }}>
-    {isShow && <Radar data={dataSet} />}
-  </Card>
-);
+  return (
+    <Card
+      style={{
+        width: "100%",
+        height: "100%",
+        backgroundColor: "#faf7f7",
+        position: "relative",
+      }}
+    >
+      {isShow ? (
+        <Radar data={dataSet} />
+      ) : (
+        <LoadingIndicator />
+      )}
+    </Card>
+  );
 }
