@@ -1,19 +1,20 @@
-FROM node:latest
+# Use an official Node.js runtime as a parent image
+FROM node:18.15.0
 
-# Create app directory
-WORKDIR /usr/src/app
+# Set the working directory to /app
+WORKDIR /app
 
-# Install app dependencies
-# A wildcard is used to ensure both package.json AND package-lock.json are copied
-# where available (npm@5+)
+# Copy the package.json and package-lock.json files to the working directory
 COPY package*.json ./
 
+# Install dependencies
 RUN npm install
-# If you are building your code for production
-# RUN npm ci --only=production
 
-# Bundle app source
+# Copy the rest of the application code to the working directory
 COPY . .
 
-EXPOSE 8080
-CMD [ "npm", "run", "dev" ]
+# Expose port 3000 for the container
+EXPOSE 3000
+
+# Start the application
+CMD ["npm", "start"]
