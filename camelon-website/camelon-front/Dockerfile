@@ -22,8 +22,8 @@ FROM nginx:latest
 # Copy the build output from the previous step to the default Nginx web root directory
 COPY --from=0 /app/build /usr/share/nginx/html
 
-# Expose port 80 for the container
-EXPOSE 80
+# Expose port 3000 for the container
+EXPOSE 3000
 
 # Start Nginx in the foreground
 CMD ["nginx", "-g", "daemon off;"]
