@@ -75,11 +75,10 @@ app.get("/crimecount", (req, res) => {
 
   if (req.query.year == "all_year") {
     db.query(
-      `SELECT MONTH(date) AS Month, COUNT(*) as crime_rate
-        FROM Thairath_Metadata 
-        WHERE YEAR(date) BETWEEN '1970' AND '3000'
-        GROUP BY Month
-        ORDER BY Month;
+      `SELECT YEAR(DATE) AS Year, COUNT(*) as crime_rate
+      FROM Thairath_Metadata WHERE  YEAR(date) BETWEEN '1970' AND '3000'
+      GROUP BY YEAR(DATE)
+      ORDER BY YEAR(DATE)
         `,
       [req.query.year],
       (err, result) => {
