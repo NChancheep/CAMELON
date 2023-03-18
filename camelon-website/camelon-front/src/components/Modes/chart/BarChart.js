@@ -5,53 +5,53 @@ import Card from "react-bootstrap/Card";
 import Axios from "axios";
 import { ThreeDots } from "react-loader-spinner";
 
-const BarChart = (props) => {
+const BarChart = ({ year }) => {
   const [crimeData, setCrimeData] = useState([]);
   const [dataSet, setDataSet] = useState([]);
-  const [isShow, setIsShow] = useState(false);
-  const { year } = props;
+  const [isLoading, setIsLoading] = useState(true);
 
-  const getdataset = () => {
-    const options = {
+  useEffect(() => {
+    setIsLoading(true);
+    Axios.get("http://localhost:3001/crimecount", {
       params: {
         year: year,
       },
-    };
-    Axios.get("http://localhost:3001/crimecount", options)
+    })
       .then((response) => {
         setCrimeData(response.data);
       })
       .catch((error) => {
-        console.log(error);
+        console.error(error);
       });
-  };
-
-  useEffect(() => {
-    setIsShow(false);
-    getdataset();
   }, [year]);
 
   useEffect(() => {
-    console.log(crimeData);
-    const labels = [
-      "January",
-      "February",
-      "March",
-      "April",
-      "May",
-      "June",
-      "July",
-      "August",
-      "September",
-      "October",
-      "November",
-      "December",
-    ];
+    if (crimeData.length === 0) {
+      return;
+    }
+    
+    const labels = year === 'all_year'
+      ? crimeData.map((crime) => crime.Year)
+      : [
+          "January",
+          "February",
+          "March",
+          "April",
+          "May",
+          "June",
+          "July",
+          "August",
+          "September",
+          "October",
+          "November",
+          "December",
+        ];
+    
     const data = {
       labels: labels,
       datasets: [
         {
-          label: "# of Crimes occurences per month",
+          label: "# of Crimes occurrences per month",
           data: crimeData.map((crime) => crime.crime_rate),
           backgroundColor: "#44985B",
           borderColor: "#6A717D",
@@ -59,9 +59,10 @@ const BarChart = (props) => {
         },
       ],
     };
+    
     setDataSet(data);
-    setIsShow(true);
-  }, [crimeData]);
+    setIsLoading(false);
+  }, [crimeData, year]);
 
   return (
     <Card
@@ -72,9 +73,7 @@ const BarChart = (props) => {
         justifyContent: "center",
       }}
     >
-      {isShow ? (
-        <Bar data={dataSet} />
-      ) : (
+      {isLoading ? (
         <div
           style={{
             position: "absolute",
@@ -84,14 +83,16 @@ const BarChart = (props) => {
           }}
         >
           <ThreeDots
-            height="80"
-            width="80"
-            radius="9"
+            height={80}
+            width={80}
+            radius={9}
             color="#4fa94d"
             ariaLabel="three-dots-loading"
             visible={true}
           />
         </div>
+      ) : (
+        <Bar data={dataSet} />
       )}
     </Card>
   );

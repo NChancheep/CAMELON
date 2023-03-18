@@ -12,8 +12,8 @@ export default function Overview() {
   let dateMockEnd = new Date("2030-01-01T00:00:00");
   const [dateRange, setDateRange] = useState([dateMockStart, dateMockEnd]);
   const [year, setYear] = useState("all_year");
-  const [yearBarChart, setYearBarChart] = useState();
-  const [yearBarChart2, setYearBarChart2] = useState();
+  const [yearBarChart, setYearBarChart] = useState("all_year");
+  const [yearBarChart2, setYearBarChart2] = useState("all_year");
   const year_list = [
     2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021,
     2022, 2023,
@@ -34,6 +34,9 @@ export default function Overview() {
               {year_list.map((year) => {
                 return <option value={year}>{year}</option>;
               })}
+               <option value="all_year" selected>
+                เลือกทุกปี
+              </option>
               
             </select>
             <BarChart year={yearBarChart} />
