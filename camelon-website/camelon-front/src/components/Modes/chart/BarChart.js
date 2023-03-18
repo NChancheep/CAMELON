@@ -9,7 +9,27 @@ const BarChart = ({ year }) => {
   const [crimeData, setCrimeData] = useState([]);
   const [dataSet, setDataSet] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-
+  function LoadingIndicator() {
+    return (
+      <div
+        style={{
+          position: "absolute",
+          top: "50%",
+          left: "50%",
+          transform: "translate(-50%, -50%)",
+        }}
+      >
+        <ThreeDots
+          height="80"
+          width="80"
+          radius="9"
+          color="#4fa94d"
+          ariaLabel="three-dots-loading"
+          visible={true}
+        />
+      </div>
+    );
+  }
   useEffect(() => {
     setIsLoading(true);
     Axios.get("http://localhost:3001/crimecount", {
@@ -29,24 +49,25 @@ const BarChart = ({ year }) => {
     if (crimeData.length === 0) {
       return;
     }
-    
-    const labels = year === 'all_year'
-      ? crimeData.map((crime) => crime.Year)
-      : [
-          "January",
-          "February",
-          "March",
-          "April",
-          "May",
-          "June",
-          "July",
-          "August",
-          "September",
-          "October",
-          "November",
-          "December",
-        ];
-    
+
+    const labels =
+      year === "all_year"
+        ? crimeData.map((crime) => crime.Year)
+        : [
+            "January",
+            "February",
+            "March",
+            "April",
+            "May",
+            "June",
+            "July",
+            "August",
+            "September",
+            "October",
+            "November",
+            "December",
+          ];
+
     const data = {
       labels: labels,
       datasets: [
@@ -59,12 +80,14 @@ const BarChart = ({ year }) => {
         },
       ],
     };
-    
+
     setDataSet(data);
     setIsLoading(false);
   }, [crimeData, year]);
 
-  return (
+  return isLoading ? (
+    LoadingIndicator()
+  ) : (
     <Card
       style={{
         height: "50%",
