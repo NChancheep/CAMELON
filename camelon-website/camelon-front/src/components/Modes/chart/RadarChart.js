@@ -112,8 +112,8 @@ export default function RadarChart(props) {
         {
           label: "# of Crimes per 1000 peoples",
           data: crimeTypeList.map((crime) => crime.crime_rate / 1000),
-          backgroundColor: "#44985B",
-          borderColor: "#6A717D",
+          backgroundColor: "#2D6A4F90",
+          borderColor: "#6A717D00",
           borderWidth: 1,
         },
       ],
