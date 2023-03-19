@@ -9,7 +9,7 @@ import Cheep from "../../src/assets/Poto/cheep.jpg";
 import Pete from "../../src/assets/Poto/pete.jpg";
 import Ing from "../../src/assets/Poto/siripen.png";
 import Aum from "../../src/assets/Poto/suppawong.png";
-import Goal from "../../src/assets/Goal.png";
+// import Goal from "../../src/assets/Goal.png";
 // import Acident from "../../src/assets/type/acident.jpg";
 // import Assault from "../../src/assets/type/assault.jpg";
 // import Drug from "../../src/assets/type/drug.jpg";

@@ -72,7 +72,7 @@ const BarChart = ({ year }) => {
       labels: labels,
       datasets: [
         {
-          label: "# of Crimes occurrences per month",
+          label: year === "all_year" ? "# of Crimes occurrences per year" : "# of Crimes occurrences per month",
           data: crimeData.map((crime) => crime.crime_rate),
           backgroundColor: [
             "#D8F3DC",
