@@ -2282,8 +2282,8 @@ export const locations = [
   {
     "place_id": "ChIJTZnTVb8BHjERZhj-UKtptiE",
     "formatted_address": "7 1 Tambon Khao Phra Ngam, เมือง Chang Wat Lopburi 15160, Thailand",
-    "latitude": 14.8488833,
-    "longitude": 100.6423435,
+    "latitude": 13.90638,
+    "longitude": 100.62740,
     "location_type": "ROOFTOP",
     "info_id": 2318
   },
