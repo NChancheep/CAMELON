@@ -13,8 +13,17 @@ RUN npm install
 # Copy the rest of the application code to the working directory
 COPY . .
 
-# Expose port 3000 for the container
-EXPOSE 3001
+# Build the application
+RUN npm run build
 
-# Start the application
-CMD ["npm", "start"]
+# Set up Nginx configuration
+FROM nginx:latest
+
+# Copy the build output from the previous step to the default Nginx web root directory
+COPY --from=0 /app/build /usr/share/nginx/html
+
+# Expose port 3000 for the container
+EXPOSE 3000
+
+# Start Nginx in the foreground
+CMD ["nginx", "-g", "daemon off;"]

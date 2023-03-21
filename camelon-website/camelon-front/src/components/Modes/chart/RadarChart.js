@@ -65,7 +65,6 @@ function LoadingIndicator() {
   );
 }
 
-
 export default function RadarChart(props) {
   const { year } = props;
   const [crimeTypeList, setCrimeTypeList] = useState([]);
@@ -113,8 +112,8 @@ export default function RadarChart(props) {
         {
           label: "# of Crimes per 1000 peoples",
           data: crimeTypeList.map((crime) => crime.crime_rate / 1000),
-          backgroundColor: "#44985B",
-          borderColor: "#6A717D",
+          backgroundColor: "#2D6A4F90",
+          borderColor: "#6A717D00",
           borderWidth: 1,
         },
       ],
@@ -123,25 +122,24 @@ export default function RadarChart(props) {
   }, [crimeTypeList]);
 
   useEffect(() => {
-    if(dataSet.datasets[0].data.length !== 0) {
-      setIsShow(true)
+    if (dataSet.datasets[0].data.length !== 0) {
+      setIsShow(true);
     }
   }, [dataSet]);
 
-  return (
+  return isShow ? (
     <Card
       style={{
         width: "100%",
         height: "100%",
-        backgroundColor: "#faf7f7",
+        backgroundColor: "#ffffff",
         position: "relative",
       }}
+      className="justify-content-center align-items-center"
     >
-      {isShow ? (
-        <Radar data={dataSet} />
-      ) : (
-        <LoadingIndicator />
-      )}
+      <Radar data={dataSet} />
     </Card>
+  ) : (
+    <LoadingIndicator />
   );
 }

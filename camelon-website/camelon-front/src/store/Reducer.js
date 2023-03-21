@@ -1,4 +1,4 @@
-import { createSlice, current } from "@reduxjs/toolkit";
+import { createSlice, } from "@reduxjs/toolkit";
 import { news } from './data/news'
 import { locations } from './data/locations'
 import { news_info } from './data/news_info'

@@ -35,7 +35,10 @@ export default function MenuController() {
             }
           })()}
         />
-        <Row xs style={{ marginBottom: "2%", height: "100%", fontFamily: "Kanit"  }}>
+        <Row
+          xs
+          style={{ marginBottom: "2%", height: "100%", fontFamily: "Kanit" }}
+        >
           <Col sm>
             <button
               style={styleButton}
@@ -132,12 +135,16 @@ export default function MenuController() {
 
         <Row xs>
           <Col>
-            <Card>
-              <Filtter></Filtter>
-            </Card>
+            {state.mode === "overview" || state.mode === "choropleth_map"? (
+              <div></div>
+            ) : (
+              <Card>
+                <Filtter></Filtter>
+              </Card>
+            )}
           </Col>
         </Row>
-        <Display  data={state.mode} />
+        <Display data={state.mode} />
       </Container>
     </>
   );
