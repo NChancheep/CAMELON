@@ -12,7 +12,6 @@ export default function ChoroplethMap() {
   const { locations } = useSelector((state) => state.data);
   const { news_info } = useSelector((state) => state.data);
   let features = thailandGeoJson[0].features;
-
   const [selectedFeature, setSelectedFeature] = useState(null);
   const [data, setData] = useState(null);
   const [isShow, setIsShow] = useState(false);
@@ -21,7 +20,8 @@ export default function ChoroplethMap() {
     return data.map((item) => ({
       ...item,
       crime_rate: getCrimeRateAndMeter(item.geometry.coordinates[0]).crime_rate,
-      crime_meter: getCrimeRateAndMeter(item.geometry.coordinates[0]).crime_meter,
+      crime_meter: getCrimeRateAndMeter(item.geometry.coordinates[0])
+        .crime_meter,
     }));
   }
 
@@ -36,23 +36,23 @@ export default function ChoroplethMap() {
       setIsShow(true);
     }
   }, [data]);
-
+  
   function getCrimeWeight(crimeTypeMetadata) {
     switch (crimeTypeMetadata) {
       case "SexualAbuse":
-        return 5;
-      case "Murder":
-        return 8;
-      case "Gambling":
         return 2;
-      case "Accident":
-        return 7;
-      case "Theft_Burglary":
-        return 6;
-      case "Battery_Assault":
-        return 3;
-      case "Drug":
+      case "Murder":
         return 4;
+      case "Gambling":
+        return 1;
+      case "Accident":
+        return 1;
+      case "Theft_Burglary":
+        return 3;
+      case "Battery_Assault":
+        return 2;
+      case "Drug":
+        return 2;
       default:
         return 1;
     }
@@ -70,17 +70,13 @@ export default function ChoroplethMap() {
           let news_data = news_info.find(
             (news) => news.info_id === location.info_id
           );
+          //console.log(news_data.name_en1);
           crime_weight_sum += getCrimeWeight(news_data.crime_type);
           total_crime += 1;
         }
       });
     }
-    let crime_meter = crime_weight_sum/100;
-    if (crime_meter > 10)
-    {
-      crime_meter = 10
-     
-    }
+    let crime_meter = crime_weight_sum / 100;
     return { crime_rate: total_crime, crime_meter: crime_meter };
   }
 
@@ -101,9 +97,9 @@ export default function ChoroplethMap() {
   };
 
   const style = (feature) => {
-    console.log(feature)
     return {
       fillColor: getColor(feature.crime_meter),
+      
       weight: 2,
       opacity: 1,
       color: "white",
@@ -124,7 +120,7 @@ export default function ChoroplethMap() {
       name_th: NL_NAME_1,
       name_en: NAME_1,
       crime_rate: crime_rate,
-      crime_meter: crime_meter
+      crime_meter: crime_meter,
     });
     layer.setStyle({
       weight: 1,
@@ -197,19 +193,30 @@ export default function ChoroplethMap() {
             </div>
           </div>
           <div
-            className="absolute bottom-5 right-10 bg-white p-4 rounded-md w-60 "
+            className="absolute bottom-5 right-10 bg-white p-4 rounded-md w-60 shadow-md text-base"
             style={{ zIndex: 999 }}
           >
-            {selectedFeature && (
-              <GaugeChart
-                id="gauge-chart3"
-                nrOfLevels={6}
-                colors={["green", "orange", "red"]}
-                arcWidth={0.3}
-                percent={selectedFeature.crime_meter/10}
-                textColor={"black"}
-                // hideText={true} // If you want to hide the text
-              />
+            {selectedFeature == null ? (
+              <div style={{ fontFamily: "Kanit" }}>
+                <strong>Crimino Meter</strong> <br />
+                <span>
+                  เลื่อนเมาส์ไปที่แต่ละจังหวัดเพื่อดูอัตราความรุนแรงของแต่ละจังหวัดคิดเป็นเปอร์เซ็น
+                </span>
+              </div>
+            ) : (
+              <div style={{ fontFamily: "Kanit" }}>
+                <strong>Crimino Meter<br /> {selectedFeature.name_th}</strong> <br />
+                <br />
+                <GaugeChart
+                  id="gauge-chart3"
+                  nrOfLevels={4}
+                  colors={["green", "orange", "red"]}
+                  arcWidth={0.3}
+                  percent={selectedFeature.crime_meter / 10}
+                  textColor={"black"}
+                  // hideText={true} // If you want to hide the text
+                />
+              </div>
             )}
           </div>
         </MapContainer>
