@@ -14,7 +14,7 @@ import SexualAbuse_Icon from "../../assets/iconPin/ColorIcon/Sexual_Abuse_Green.
 import Theft_Icon from "../../assets/iconPin/ColorIcon/Theft_Green.png";
 import Other_Icon from "../../assets/iconPin/ColorIcon/Other_Green.png";
 import Your_Icon from "../../assets/iconPin/ColorIcon/Your_Green.png";
-
+import TimeSelecter from "../TimeSelecter"
 import {
   MapContainer,
   TileLayer,
@@ -142,16 +142,7 @@ export default function Pinmap() {
     return text
       .toString()
       .replace(/\['|']/g, "")
-      .replace("'", "")
-      .replace("'", "")
-      .replace("'", "")
-      .replace("'", "")
-      .replace("'", "")
-      .replace("'", "")
-      .replace("'", "")
-      .replace("'", "")
-      .replace("'", "")
-      
+      .replaceAll("'", "")  
       .trim();
   }
 
@@ -335,7 +326,6 @@ export default function Pinmap() {
 
   useEffect(() => {
     PinMap();
-    // console.log("re-render pin map!");
   }, [dateRange]);
 
   function DateSelect() {
@@ -415,7 +405,6 @@ export default function Pinmap() {
                 user_current_location.longitude,
               ]}
             />
-
             <PinMap />
             {showUserMarker && (
               <Marker
@@ -433,6 +422,7 @@ export default function Pinmap() {
             </div>
           </MapContainer>
         </div>
+        <TimeSelecter></TimeSelecter>
       </div>
     </>
   );
