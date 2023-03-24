@@ -13,6 +13,8 @@ import {
   Legend,
 } from "chart.js";
 
+import CamelonApi from "../../../api/CamelonApi";
+
 ChartJS.register(
   RadialLinearScale,
   PointElement,
@@ -22,37 +24,102 @@ ChartJS.register(
   Legend
 );
 
-const getCrimeTypeName = (crimeTypeMetadata) => {
-  switch (crimeTypeMetadata) {
-    case "SexualAbuse":
-      return "การล่วงละเมิด";
-    case "Murder":
-      return "ฆาตกรรม";
-    case "Gambling":
-      return "การพนัน";
-    case "Accident":
-      return "อุบัติเหตุ";
-    case "Theft_Burglary":
-      return "ลักทรัพย์";
-    case "Battery_Assault":
-      return "ทำร้ายร่างกาย";
-    case "Drug":
-      return "ยาเสพติด";
-    default:
-      return "อื่นๆ";
-  }
-};
+const RadarChart = ({ data }) => {
+  const [data1, setData1] = useState([]);
+  const [data2, setData2] = useState([]);
+  const [chartData, setChartData] = useState([]);
+  const [options, setOptions] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
+  const [isFirstLoad, setIsFirstLoad] = useState(true);
 
-function LoadingIndicator() {
+  // console.log(data)
+  useEffect(() => {
+    setIsLoading(true);
+    setData1([]);
+    setData2([]);
+    if (Object.keys(data).length !== 0) {
+      setIsFirstLoad(false);
+      CamelonApi.get("thairathcrimetypes", {
+        params: {
+          year: data.year,
+        },
+      })
+        .then((response) => {
+          // console.log(response.data)
+          setData1(response.data);
+        })
+        .catch((error) => {
+          console.error(error);
+        });
+
+      CamelonApi.get("dailynewscrimetypes", {
+        params: {
+          year: data.year,
+        },
+      })
+        .then((response) => {
+          // console.log(response.data)
+          setData2(response.data);
+        })
+        .catch((error) => {
+          console.error(error);
+        });
+    }
+  }, [data]);
+
+  useEffect(() => {
+    const options = {
+      responsive: true,
+      plugins: {
+        legend: {
+          position: "top",
+        },
+        title: {
+          display: true,
+          text:
+            data.year === ""
+              ? `Comparing Annual Rates of Different Types of Crime (ทุกปี)`
+              : `Comparing Annual Rates of Different Types of Crime (${data.year})`,
+        },
+      },
+    };
+    let labels;
+    if (data1.length !== 0 && data2.length !== 0) {
+      labels = Object.keys(data1[0]);
+
+      var chart_data = {
+        labels,
+        datasets: [
+          {
+            label: "Thairath",
+            data: Object.values(data1[0]),
+            borderColor: "rgb(255, 99, 132)",
+            backgroundColor: "rgba(255, 99, 132, 0.5)",
+          },
+          {
+            label: "Dailynews",
+            data: Object.values(data2[0]),
+            borderColor: "rgb(53, 162, 235)",
+            backgroundColor: "rgba(53, 162, 235, 0.5)",
+          },
+        ],
+      };
+    }
+    
+    setChartData(chart_data);
+    setOptions(options);
+    if (data1.length !== 0 && data2.length !== 0) {
+      setIsLoading(false);
+      // console.log(data1.length)
+      // console.log(data2.length)
+    }
+  }, [data1, data2]);
+
   return (
-    <div
-      style={{
-        position: "absolute",
-        top: "50%",
-        left: "50%",
-        transform: "translate(-50%, -50%)",
-      }}
-    >
+    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '100%' }}>
+    {isFirstLoad ? (
+      <div>โปรดเลือกปีเพื่อเเสดงข้อมูล</div>
+    ) : isLoading ? (
       <ThreeDots
         height="80"
         width="80"
@@ -61,85 +128,11 @@ function LoadingIndicator() {
         ariaLabel="three-dots-loading"
         visible={true}
       />
-    </div>
-  );
-}
+    ) : (
+      <Radar data={chartData}  options={options}  />
+    )}
+  </div>
+  )
+};
 
-export default function RadarChart(props) {
-  const { year } = props;
-  const [crimeTypeList, setCrimeTypeList] = useState([]);
-  const [isShow, setIsShow] = useState(false);
-  const [dataSet, setDataSet] = useState({
-    labels: [],
-    datasets: [
-      {
-        label: "# of Crimes per 1000 peoples",
-        data: [],
-        backgroundColor: "#44985B",
-        borderColor: "#6A717D",
-        borderWidth: 1,
-      },
-    ],
-  });
-
-  const getCrimeType = () => {
-    const options = {
-      params: {
-        year: year,
-      },
-    };
-    Axios.get("http://localhost:3001/crimetypes_count", options)
-      .then((response) => {
-        setCrimeTypeList(response.data);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  };
-
-  useEffect(() => {
-    setIsShow(false);
-    getCrimeType();
-  }, [year]);
-
-  useEffect(() => {
-    const labels = crimeTypeList.map((crime) =>
-      getCrimeTypeName(crime.crime_type)
-    );
-    const data = {
-      labels: labels,
-      datasets: [
-        {
-          label: "# of Crimes per 1000 peoples",
-          data: crimeTypeList.map((crime) => crime.crime_rate / 1000),
-          backgroundColor: "#2D6A4F90",
-          borderColor: "#6A717D00",
-          borderWidth: 1,
-        },
-      ],
-    };
-    setDataSet(data);
-  }, [crimeTypeList]);
-
-  useEffect(() => {
-    if (dataSet.datasets[0].data.length !== 0) {
-      setIsShow(true);
-    }
-  }, [dataSet]);
-
-  return isShow ? (
-    <Card
-      style={{
-        width: "100%",
-        height: "100%",
-        backgroundColor: "#ffffff",
-        position: "relative",
-      }}
-      className="justify-content-center align-items-center"
-    >
-      <Radar data={dataSet} />
-    </Card>
-  ) : (
-    <LoadingIndicator />
-  );
-}
+export default RadarChart;
