@@ -142,15 +142,15 @@ export default function Pinmap() {
     return text
       .toString()
       .replace(/\['|']/g, "")
-      .replace("'", "")
-      .replace("'", "")
-      .replace("'", "")
-      .replace("'", "")
-      .replace("'", "")
-      .replace("'", "")
-      .replace("'", "")
-      .replace("'", "")
-      .replace("'", "")
+      .replaceAll("'", "")
+      // .replace("'", "")
+      // .replace("'", "")
+      // .replace("'", "")
+      // .replace("'", "")
+      // .replace("'", "")
+      // .replace("'", "")
+      // .replace("'", "")
+      // .replace("'", "")
       
       .trim();
   }
