@@ -79,10 +79,10 @@ export default function TimeSelecter() {
                     <label>
                       Select a year:
                       <select value={selectedYear} onChange={handleYearChange}>
-                      <option value="2016">2016</option>
-                      <option value="2017">2017</option>
-                      <option value="2018">2018</option>
-                      <option value="2019">2019</option>
+                        <option value="2016">2016</option>
+                        <option value="2017">2017</option>
+                        <option value="2018">2018</option>
+                        <option value="2019">2019</option>
                         <option value="2020">2020</option>
                         <option value="2021">2021</option>
                         <option value="2022">2022</option>
@@ -120,8 +120,7 @@ export default function TimeSelecter() {
               </Row>
 
               <Row>
-                {/* <text>{count("2021", "01")}</text> */}
-                {/* {months.map((data) => (
+                {months.map((data) => (
                   <Col sm key={data.id}>
                     <button
                       style={{ width: "100%" }}
@@ -133,13 +132,12 @@ export default function TimeSelecter() {
                         <text style={{ color: "#479B5F", fontWeight: "bold" }}>
                           {data.name}{" "}
                         </text>
-                        <text value={data.id}>{count(selectedYear, "01")}</text>
-
+                        <text value={data.id}>2012321</text>
                         <text>เหตุการณ์</text>
                       </Card>
                     </button>
                   </Col>
-                ))} */}
+                ))}
               </Row>
             </Col>
           </Row>
