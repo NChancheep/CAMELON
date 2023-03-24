@@ -142,16 +142,7 @@ export default function Pinmap() {
     return text
       .toString()
       .replace(/\['|']/g, "")
-      .replaceAll("'", "")
-      // .replace("'", "")
-      // .replace("'", "")
-      // .replace("'", "")
-      // .replace("'", "")
-      // .replace("'", "")
-      // .replace("'", "")
-      // .replace("'", "")
-      // .replace("'", "")
-      
+      .replaceAll("'", "")  
       .trim();
   }
 
