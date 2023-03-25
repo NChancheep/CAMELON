@@ -231,6 +231,92 @@ app.get("/dailynewscrimetypes", (req, res) => {
   }
 });
 
+
+app.get("/thairathCrimesCount", (req, res) => {
+  console.log(req.query.year);
+  if (req.query.year === "") {
+    db.query(
+      `SELECT MONTH(date) as month, COUNT(*) as 'Numbers'
+      FROM Thairath_Metadata
+      GROUP BY MONTH(date)
+      ORDER BY MONTH(date);
+  `, 
+      (err, result) => {
+        if (err) {
+          console.log(err);
+          res.status(500).send(err);
+        } else {
+          res.send(result);
+          console.log("Thairath");
+          console.log(result);
+        }
+      }
+    );
+  } else {
+    db.query(
+      `SELECT MONTH(date) as month, COUNT(*) as 'Numbers'
+      FROM Thairath_Metadata WHERE YEAR(date) = ?
+      GROUP BY MONTH(date)
+      ORDER BY MONTH(date);
+  `,
+      [req.query.year],
+      (err, result) => {
+        if (err) {
+          console.log(err);
+          res.status(500).send(err);
+        } else {
+          res.send(result);
+          console.log("Thairath");
+          console.log(result);
+        }
+      }
+    );
+  }
+});
+
+
+app.get("/dailynewsCrimesCount", (req, res) => {
+  console.log(req.query.year);
+  if (req.query.year === "") {
+    db.query(
+      `SELECT MONTH(date) as month, COUNT(*) as 'Numbers'
+      FROM Dailynews_Metadata
+      GROUP BY MONTH(date)
+      ORDER BY MONTH(date);
+  `, 
+      (err, result) => {
+        if (err) {
+          console.log(err);
+          res.status(500).send(err);
+        } else {
+          res.send(result);
+          console.log("DailyNews");
+          console.log(result);
+        }
+      }
+    );
+  } else {
+    db.query(
+      `SELECT MONTH(date) as month, COUNT(*) as 'Numbers'
+      FROM Dailynews_Metadata WHERE YEAR(date) = ?
+      GROUP BY MONTH(date)
+      ORDER BY MONTH(date);
+  `,
+      [req.query.year],
+      (err, result) => {
+        if (err) {
+          console.log(err);
+          res.status(500).send(err);
+        } else {
+          res.send(result);
+          console.log("DailyNews");
+          console.log(result);
+        }
+      }
+    );
+  }
+});
+
 app.listen(3001, "0.0.0.0", function () {
   console.log("Listening to port:  " + 3001);
 });
