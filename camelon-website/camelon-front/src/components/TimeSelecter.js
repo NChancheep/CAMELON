@@ -1,8 +1,15 @@
-import React, { useState } from "react";
+import React from "react";
 import { Col, Card, Row } from "react-bootstrap";
 import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
+import { change_selected_months } from "../store/Reducer";
+import { change_selected_year } from "../store/Reducer";
+
 function TimeSelecter() {
-  const [selectedYear, setSelectedYear] = useState("2021");
+  
+  const { selectedMonths } = useSelector((state) => state.data);
+  const { selectedYear } = useSelector((state) => state.data);
+
   const { news } = useSelector((state) => state.data);
   function count(year, month) {
     let count = 0;
@@ -17,20 +24,20 @@ function TimeSelecter() {
     return count;
   }
 
-  const months = [
-    { name: "ม.ค.", number: "01" },
-    { name: "ก.พ.", number: "02" },
-    { name: "มี.ค.", number: "03" },
-    { name: "เม.ย.", number: "04" },
-    { name: "พ.ค.", number: "05" },
-    { name: "มิ.ย.", number: "06" },
-    { name: "ก.ค.", number: "07" },
-    { name: "ส.ค.", number: "08" },
-    { name: "ก.ย.", number: "09" },
-    { name: "ต.ค.", number: "10" },
-    { name: "พ.ย.", number: "11" },
-    { name: "ธ.ค.", number: "12" },
-  ];
+
+  const dispatch = useDispatch();
+  
+ 
+
+  function handleMonthClick(clickedMonth) {
+    let newMonths = [...selectedMonths];
+    newMonths.forEach((month, index) => {
+      if (month.name === clickedMonth.name) {
+        newMonths[index] = {...month, isSelected: !month.isSelected};
+      }
+    });
+    dispatch(change_selected_months(newMonths));
+  }
 
   return (
     <Card style={{ marginTop: "2%", fontFamily: "Kanit" }}>
@@ -40,40 +47,53 @@ function TimeSelecter() {
             กรุณาเลือกปีที่ต้องการจะทราบข้อมูล:
             <select
               value={selectedYear}
-              onChange={(e) => setSelectedYear(e.target.value)}
+              onChange={(e) => dispatch(change_selected_year(e.target.value))}
             >
-              <option value="" disabled>
+              <option disabled>
                 เลือกปี
               </option>
-              <option value="2016">2016</option>
-              <option value="2017">2017</option>
+              <option value="" selected>เลือกทุกปี</option>
               <option value="2018">2018</option>
-              <option value="2019">2019</option>
               <option value="2020">2020</option>
               <option value="2021">2021</option>
-              <option value="2022">2022</option>
-              <option value="2023">2023</option>
             </select>
           </label>
         </Col>
       </Row>
       <Row xs style={{ padding: 10 }}>
-        {months.map((month) => (
+        {selectedMonths.map((month) => (
           <Col sm key={month.number}>
-            <button
-              style={{ width: "100%" }}
-              className="bg-white text-black hover:bg-black hover:text-white"
-              type="submit"
-              onClick={() => {}}
-            >
-              <Card style={{ padding: "10%" }}>
-                <text style={{ color: "#479B5F", fontWeight: "bold" }}>
-                  {month.name}
-                </text>
-                <text>{count(selectedYear, month.number)}</text>
-                <text>เหตุการณ์</text>
-              </Card>
-            </button>
+            {month.isSelected ? (
+              <button
+                style={{ width: "100%" }}
+                className=""
+                type="submit"
+                onClick={() => handleMonthClick(month)}
+              >
+                <Card style={{ padding: "10%" , backgroundColor: "rgb(220 252 231)"}}>
+                  <text style={{ color: "#479B5F", fontWeight: "bold" }}>
+                    {month.name}
+                  </text>
+                  <text>{count(selectedYear, month.number)}</text>
+                  <text>เหตุการณ์</text>
+                </Card>
+              </button>
+            ) : (
+              <button
+                style={{ width: "100%" }}
+                className="bg-white text-black hover:bg-black hover:text-white"
+                type="submit"
+                onClick={() => handleMonthClick(month)}
+              >
+                <Card style={{ padding: "10%" }} className="hover:bg-green-100">
+                  <text style={{ color: "#479B5F", fontWeight: "bold" }}>
+                    {month.name}
+                  </text>
+                  <text>{count(selectedYear, month.number)}</text>
+                  <text>เหตุการณ์</text>
+                </Card>
+              </button>
+            )}
           </Col>
         ))}
       </Row>
