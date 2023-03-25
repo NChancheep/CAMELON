@@ -20,6 +20,8 @@ export default function Overview() {
   const [specificYear, setSpecificYear] = useState("");
   const [raderChartData, setRadarChartData] = useState({});
 
+  const [yearBarChart, setYearBarChart] = useState("");
+
   // useEffect(() => {
   //   CamelonApi.get("years")
   //     .then((response) => {
@@ -173,6 +175,14 @@ export default function Overview() {
                   Submit
                 </Button>
               </Form>
+            </Col>
+          </Row>
+          <Row xs className="justify-content-center mt-5">
+            <Col sm={6} style={{ height: "100%" }}>
+              <BarChart data={raderChartData} />
+            </Col>
+            <Col sm={6} style={{ height: "100%" }}>
+              
             </Col>
           </Row>
           <div style={{ marginBottom: "10%" }}></div>
