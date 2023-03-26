@@ -88,20 +88,7 @@ const BarChart = ({ year }) => {
             "#081C22",
             "#081C30",
           ],
-          // backgroundColor: [
-          //   "#d9fbfb",
-          //   "#9ef0f0",
-          //   "#3ddbd9",
-          //   "#08bdba",
-          //   "#009d9a",
-          //   "#007d79",
-          //   "#005d5d",
-          //   "#004144",
-          //   "#022b30",
-          //   "#081a1c",
-          //   "#081a1c",
-          //   "#081a1c",
-          // ],
+          
           borderColor: "#6A717D00",
           borderWidth: 1,
         },
@@ -117,13 +104,13 @@ const BarChart = ({ year }) => {
   ) : (
     <Card
       style={{
-        height: "50%",
+        height: "20%",
         position: "relative",
         alignItems: "center",
         justifyContent: "center",
       }}
     >
-      <Bar data={dataSet} />
+      <Bar data={dataSet} onClick={console.log("kuy")}/>
     </Card>
   );
 };
