@@ -12,14 +12,27 @@ function TimeSelecter() {
 
   const { news } = useSelector((state) => state.data);
   function count(year, month) {
+    console.log(year);
     let count = 0;
     for (let i = 0; i < news.length; i++) {
-      if (
-        news[i].publish_date.split("-")[0] === year &&
-        news[i].publish_date.split("-")[1] === month
-      ) {
-        count++;
+      if(year != ""){
+        if (
+          news[i].publish_date.split("-")[0] === year &&
+          news[i].publish_date.split("-")[1] === month
+        ) {
+          // console.log(news[i].publish_date)
+          // console.log("ปีที่เลือก"+year)
+          // console.log("เดือนที่เลือก"+(month))
+          count++;
+        }
+      } else{
+        if (
+          news[i].publish_date.split("-")[1] === month
+        ) {
+          count++;
+        }
       }
+      
     }
     return count;
   }
@@ -31,6 +44,7 @@ function TimeSelecter() {
 
   function handleMonthClick(clickedMonth) {
     let newMonths = [...selectedMonths];
+    console.log(newMonths)
     newMonths.forEach((month, index) => {
       if (month.name === clickedMonth.name) {
         newMonths[index] = {...month, isSelected: !month.isSelected};
@@ -40,7 +54,7 @@ function TimeSelecter() {
   }
 
   return (
-    <Card style={{ marginTop: "2%", fontFamily: "Kanit" }}>
+    <Card style={{ marginTop: "2%", fontFamily: "Kanit",}}>
       <Row xs>
         <Col sm style={{ margin: "1%" }}>
           <label>
@@ -60,15 +74,22 @@ function TimeSelecter() {
           </label>
         </Col>
       </Row>
-      <Row xs style={{ padding: 10 }}>
+      <Row xs style={{ padding: 10,  }}>
         {selectedMonths.map((month) => (
           <Col sm key={month.number}>
             {month.isSelected ? (
               <button
-                style={{ width: "100%" }}
+              disabled={(() => {
+                if (selectedYear === "") {
+                  return true;
+                } else {
+                  return false;
+                }
+              })()}
+                style={{ width: "100%",  marginBottom:"10%" }}
                 className=""
                 type="submit"
-                onClick={() => handleMonthClick(month)}
+                onClick={() =>handleMonthClick(month)}
               >
                 <Card style={{ padding: "10%" , backgroundColor: "rgb(220 252 231)"}}>
                   <text style={{ color: "#479B5F", fontWeight: "bold" }}>
