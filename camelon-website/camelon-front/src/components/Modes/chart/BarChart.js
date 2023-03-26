@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Chart from "chart.js/auto";
 import { Bar } from "react-chartjs-2";
-import Card from "react-bootstrap/Card";
 import Axios from "axios";
 import { ThreeDots } from "react-loader-spinner";
 import CamelonApi from "../../../api/CamelonApi";
@@ -94,7 +93,6 @@ const BarChart = ({ data }) => {
         newData_dailyNews.push(monthData ? monthData.Numbers : 0);
       }
 
-
       // console.log(newData);
       // console.log(data1);
       labels = Object.values(months);
@@ -125,7 +123,7 @@ const BarChart = ({ data }) => {
       // console.log(data1.length)
       // console.log(data2.length)
     }
-  }, [data1, data2]);
+  }, [data.year, data1, data2, months]);
 
   return (
     <div
@@ -137,16 +135,20 @@ const BarChart = ({ data }) => {
       }}
     >
       {isFirstLoad ? (
-        <div>โปรดเลือกปีเพื่อเเสดงข้อมูล</div>
+        <div style={{ color: "#9c9c9c", fontSize: 14 }}>
+          **โปรดเลือกปีเพื่อเเสดงข้อมูล
+        </div>
       ) : isLoading ? (
-        <ThreeDots
-          height="80"
-          width="80"
-          radius="9"
-          color="#4fa94d"
-          ariaLabel="three-dots-loading"
-          visible={true}
-        />
+        <div style={{ margin: "25%" }}>
+          <ThreeDots
+            height="80"
+            width="80"
+            radius="9"
+            color="#4fa94d"
+            ariaLabel="three-dots-loading"
+            visible={true}
+          />
+        </div>
       ) : (
         <Bar data={chartData} options={options} />
       )}

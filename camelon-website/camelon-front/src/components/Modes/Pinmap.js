@@ -102,15 +102,8 @@ function getCrimeTypeName(crimeTypeMetadata) {
       return "อื่นๆ";
   }
 }
-// L.Marker.prototype.options.icon = DefaultIcon;
-
-// function TimeSlider() {
-//   return <input type="range" min="0" max="100" />;
-// }
 
 export default function Pinmap() {
-  // const [startDate, setStartDate] = useState(new Date());
-  // const [endDate, setEndDate] = useState(new Date());
   let dateMockStart = new Date("2000-01-01T00:00:00");
   let dateMockEnd = new Date("2030-01-01T00:00:00");
   const [dateRange, setDateRange] = useState([dateMockStart, dateMockEnd]);
@@ -193,12 +186,6 @@ export default function Pinmap() {
   function SetView({ coords }) {
     const map = useMap();
     map.setView(coords, map.getZoom());
-    // var newMarker = new L.circle(coords).addTo(map);
-    // var marker = L.circle(coords, 1609.34, {
-    //   color: "blue",
-    //   fillColor: "blue",
-    // }).addTo(map);
-    return null;
   }
 
   function trimString(text) {
@@ -228,8 +215,6 @@ export default function Pinmap() {
 
   function PinMap() {
     const layerGroups = {};
-
-    // Group markers based on their crime types
     locations.forEach((location) => {
       const news_data = news_info.find(
         (news) => news.info_id === location.info_id
@@ -237,15 +222,12 @@ export default function Pinmap() {
       const news_datetime = news.find(
         (news) => news.news_id === news_data.news_id
       ).publish_date;
-      // console.log(showNews(news_datetime));
-
       const crimeType = news_data.crime_type;
       const icon = getIconForCrimeType(crimeType);
       L.Marker.prototype.options.icon = icon;
       if (!layerGroups[crimeType]) {
         layerGroups[crimeType] = [];
       }
-
       let button;
       const regex = /(\d+)/;
       const match = regex.exec(news_data.news_id);
@@ -452,7 +434,11 @@ export default function Pinmap() {
       setShowUserMarker(true);
     }
   }, [currentLocation]);
-
+  const [yearBarChart, setYearBarChart] = useState("all_year");
+  const year_list = [
+    2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021,
+    2022, 2023,
+  ];
   return (
     <>
       {" "}

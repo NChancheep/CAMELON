@@ -33,7 +33,7 @@ const LineChart = ({ data }) => {
         params: {
           yearStart: data.startYear,
           yearEnd: data.endYear,
-          crimeType: data.crimeType
+          crimeType: data.crimeType,
         },
       })
         .then((response) => {
@@ -48,7 +48,7 @@ const LineChart = ({ data }) => {
         params: {
           yearStart: data.startYear,
           yearEnd: data.endYear,
-          crimeType: data.crimeType
+          crimeType: data.crimeType,
         },
       })
         .then((response) => {
@@ -70,7 +70,10 @@ const LineChart = ({ data }) => {
         },
         title: {
           display: true,
-          text: data.crimeType === '' ? `Crime Incidents Covered in the News (${data.startYear}-${data.endYear})` : `${data.crimeType} Crime Incidents Covered in the News (${data.startYear}-${data.endYear})`,
+          text:
+            data.crimeType === ""
+              ? `Crime Incidents Covered in the News (${data.startYear}-${data.endYear})`
+              : `${data.crimeType} Crime Incidents Covered in the News (${data.startYear}-${data.endYear})`,
         },
       },
     };
@@ -100,21 +103,32 @@ const LineChart = ({ data }) => {
       // console.log(data1.length)
       // console.log(data2.length)
     }
-  }, [data1, data2]);
+  }, [data.crimeType, data.endYear, data.startYear, data1, data2]);
 
   return (
-    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '100%' }}>
+    <div
+      style={{
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        height: "100%",
+      }}
+    >
       {isFirstLoad ? (
-        <div>โปรดเลือกปี เเละประเภทอาชญากรรม</div>
+        <div style={{ color: "#9c9c9c", fontSize: 14, marginTop: "1%" }}>
+          **โปรดเลือกปีเพื่อเเสดงข้อมูล
+        </div>
       ) : isLoading ? (
-        <ThreeDots
-          height="80"
-          width="80"
-          radius="9"
-          color="#4fa94d"
-          ariaLabel="three-dots-loading"
-          visible={true}
-        />
+        <div style={{ margin: "25%" }}>
+          <ThreeDots
+            height="80"
+            width="80"
+            radius="9"
+            color="#4fa94d"
+            ariaLabel="three-dots-loading"
+            visible={true}
+          />
+        </div>
       ) : (
         <Line data={chartData} options={options} />
       )}

@@ -15,7 +15,7 @@ function TimeSelecter() {
     console.log(year);
     let count = 0;
     for (let i = 0; i < news.length; i++) {
-      if(year != ""){
+      if(year !== ""){
         if (
           news[i].publish_date.split("-")[0] === year &&
           news[i].publish_date.split("-")[1] === month
