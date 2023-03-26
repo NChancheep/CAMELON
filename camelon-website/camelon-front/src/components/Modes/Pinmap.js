@@ -121,64 +121,90 @@ export default function Pinmap() {
   const { selectedYear } = useSelector((state) => state.data);
 
   useEffect(() => {
+    // let earliestSelectedMonth = null;
+    // let latestSelectedMonth = null;
+    // let earliestStartDate = null;
+    // let latestStartDate = null;
+    // console.log(selectedMonths)
+    
+    // for (let i = 0; i < selectedMonths.length; i++) {
+    //   const month = selectedMonths[i];
+    //   if (month.isSelected === true) {
+    //     if (
+    //       earliestSelectedMonth === null ||
+    //       month.number < earliestSelectedMonth.number
+    //     ) {
+    //       earliestSelectedMonth = month;
+    //     }
+    //     if (
+    //       latestSelectedMonth === null ||
+    //       month.number > latestSelectedMonth.number
+    //     ) {
+    //       latestSelectedMonth = month;
+    //     }
+    //   }
+    // }
+    // // console.log(earliestSelectedMonth, latestSelectedMonth)
+    // if (earliestSelectedMonth !== null) {
+    //   if ((selectedYear === "")) {
+    //     let year = "1970";
+    //     earliestStartDate = new Date(year, earliestSelectedMonth.number - 1);
+    //   } else {
+    //     earliestStartDate = new Date(
+    //       selectedYear,
+    //       earliestSelectedMonth.number - 1
+    //     );
+    //   }
+
+    //   // console.log("Earliest start date:", earliestStartDate);
+    // }
+
+    // if (latestSelectedMonth !== null) {
+    //   latestStartDate = new Date(
+    //     selectedYear,
+    //     latestSelectedMonth.number - 1,
+    //     31
+    //   );
+    //   // console.log("Latest start date:", latestStartDate);
+
+    //   if ((selectedYear === "")) {
+    //     let year = "3000";
+    //     latestStartDate = new Date(year, latestSelectedMonth.number - 1);
+    //   } else {
+    //     latestStartDate = new Date(
+    //       selectedYear,
+    //       latestSelectedMonth.number - 1,
+    //       31
+    //     );
+    //   }
+    // }
+    // // console.log(earliestStartDate, latestStartDate)
+    // setDateRange([earliestStartDate, latestStartDate]);
+    let date_range = []
     let earliestSelectedMonth = null;
     let latestSelectedMonth = null;
     let earliestStartDate = null;
     let latestStartDate = null;
-    
+    if (selectedYear === "") {
+      earliestStartDate = new Date(1970, 1, 1)
+      latestStartDate = new Date(3000, 12, 31)
+      date_range.push(earliestStartDate)
+      date_range.push(latestStartDate)
+      setDateRange(date_range)
+    } else {
     for (let i = 0; i < selectedMonths.length; i++) {
-      const month = selectedMonths[i];
-      if (month.isSelected === true) {
-        if (
-          earliestSelectedMonth === null ||
-          month.number < earliestSelectedMonth.number
-        ) {
-          earliestSelectedMonth = month;
-        }
-        if (
-          latestSelectedMonth === null ||
-          month.number > latestSelectedMonth.number
-        ) {
-          latestSelectedMonth = month;
-        }
+      if(selectedMonths[i].isSelected) {
+        earliestStartDate = new Date(selectedYear, selectedMonths[i].number - 1, 1)
+        latestStartDate = new Date(selectedYear, selectedMonths[i].number - 1, 31)
+        date_range.push(earliestStartDate)
+        date_range.push(latestStartDate)
       }
     }
-    // console.log(earliestSelectedMonth, latestSelectedMonth)
-    if (earliestSelectedMonth !== null) {
-      if ((selectedYear === "")) {
-        let year = "1970";
-        earliestStartDate = new Date(year, earliestSelectedMonth.number - 1);
-      } else {
-        earliestStartDate = new Date(
-          selectedYear,
-          earliestSelectedMonth.number - 1
-        );
-      }
+    setDateRange(date_range)
+  }
+    // console.log(date_range)
+    
 
-      // console.log("Earliest start date:", earliestStartDate);
-    }
-
-    if (latestSelectedMonth !== null) {
-      latestStartDate = new Date(
-        selectedYear,
-        latestSelectedMonth.number - 1,
-        31
-      );
-      // console.log("Latest start date:", latestStartDate);
-
-      if ((selectedYear === "")) {
-        let year = "3000";
-        latestStartDate = new Date(year, latestSelectedMonth.number - 1);
-      } else {
-        latestStartDate = new Date(
-          selectedYear,
-          latestSelectedMonth.number - 1,
-          31
-        );
-      }
-    }
-    // console.log(earliestStartDate, latestStartDate)
-    setDateRange([earliestStartDate, latestStartDate]);
   }, [selectedMonths, selectedYear]);
 
   const dispatch = useDispatch();
@@ -196,15 +222,20 @@ export default function Pinmap() {
       .trim();
   }
 
-  function showNews(datetime) {
-    if (
-      Date.parse(dateRange[0]) <= Date.parse(datetime) &&
-      Date.parse(datetime) <= Date.parse(dateRange[1])
-    ) {
-      return true;
-    } else {
-      return false;
+  function isWithinOneMonthRange(datetime) {
+   
+    for (let i = 0; i < dateRange.length; i += 2) {
+      const startDate = dateRange[i];
+      const endDate = dateRange[i + 1];
+      if (
+        Date.parse(datetime) >= Date.parse(startDate) &&
+        Date.parse(datetime) <= Date.parse(endDate) 
+      ) {
+        
+        return true;
+      }
     }
+    return false;
   }
 
   const [mapLayers, setMapLayers] = useState({
@@ -273,7 +304,7 @@ export default function Pinmap() {
       const fontSize = { fontSize: 16, fontFamily: "Kanit" };
       const titleStyle = { fontWeight: 500, color: "#44985B" };
 
-      showNews(news_datetime) &&
+      isWithinOneMonthRange(news_datetime) &&
         layerGroups[crimeType].push(
           <Marker
             position={[location.latitude, location.longitude]}
