@@ -132,6 +132,7 @@ export default function Pinmap() {
     let latestSelectedMonth = null;
     let earliestStartDate = null;
     let latestStartDate = null;
+    
     for (let i = 0; i < selectedMonths.length; i++) {
       const month = selectedMonths[i];
       if (month.isSelected === true) {
@@ -149,7 +150,7 @@ export default function Pinmap() {
         }
       }
     }
-
+    // console.log(earliestSelectedMonth, latestSelectedMonth)
     if (earliestSelectedMonth !== null) {
       if ((selectedYear === "")) {
         let year = "1970";
@@ -178,10 +179,12 @@ export default function Pinmap() {
       } else {
         latestStartDate = new Date(
           selectedYear,
-          latestSelectedMonth.number - 1
+          latestSelectedMonth.number - 1,
+          31
         );
       }
     }
+    // console.log(earliestStartDate, latestStartDate)
     setDateRange([earliestStartDate, latestStartDate]);
   }, [selectedMonths, selectedYear]);
 
