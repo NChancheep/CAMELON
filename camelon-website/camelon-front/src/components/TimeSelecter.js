@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Col, Card, Row } from "react-bootstrap";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
@@ -37,6 +37,16 @@ function TimeSelecter() {
     return count;
   }
 
+  
+  useEffect(() => {
+    if (selectedYear === '') {
+      let newMonths = [...selectedMonths];
+      newMonths.forEach((month, index) => {
+        newMonths[index] = {...month, isSelected: true}
+      })
+      dispatch(change_selected_months(newMonths));
+    }
+  }, [selectedYear])
 
   const dispatch = useDispatch();
   
@@ -44,7 +54,7 @@ function TimeSelecter() {
 
   function handleMonthClick(clickedMonth) {
     let newMonths = [...selectedMonths];
-    console.log(newMonths)
+    // console.log(newMonths)
     newMonths.forEach((month, index) => {
       if (month.name === clickedMonth.name) {
         newMonths[index] = {...month, isSelected: !month.isSelected};
