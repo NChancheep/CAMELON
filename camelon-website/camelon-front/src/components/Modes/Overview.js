@@ -6,6 +6,7 @@ import "react-datepicker/dist/react-datepicker.css";
 import { Form, Button, Container, Row, Col } from "react-bootstrap";
 import CamelonApi from "../../api/CamelonApi";
 import { ThreeDots } from "react-loader-spinner";
+import Card from "react-bootstrap/Card";
 
 export default function Overview() {
   const [startYear, setStartYear] = useState(2016);
@@ -87,72 +88,68 @@ export default function Overview() {
         />
       ) : (
         <Container style={{ width: "100%", fontFamily: "Kanit" }}>
-          <Row xs className="justify-content-center">
-            <Col sm={6} style={{ height: "100%" }}>
-              <LineChart data={lineChartData} />
-            </Col>
-            <Col sm={6} style={{ height: "100%" }}>
-              <Form>
-                <Form.Group>
-                  <Form.Label>Year Range:</Form.Label>
-                  <div className="d-flex">
-                    <Form.Control
-                      as="select"
-                      value={startYear}
-                      onChange={handleStartYearChange}
-                    >
-                      <option value="">Select year</option>
-                      {yearList.map((val) => {
-                        return <option value={val}>{val}</option>;
-                      })}
-                    </Form.Control>
-                    <span className="mx-2">-</span>
-                    <Form.Control
-                      as="select"
-                      value={endYear}
-                      onChange={handleEndYearChange}
-                    >
-                      <option value="">Select year</option>
-                      {yearList.map((val) => {
-                        return <option value={val}>{val}</option>;
-                      })}
-                    </Form.Control>
-                  </div>
-                  <Form.Label className="mt-3">Crime Type:</Form.Label>
+          <Col xs>
+            <Form>
+              <Form.Group>
+                <Form.Label>กรุณาเลือกระยะเวลาของปีที่คุณต้องการจะทราบแนวโน้มข้อมูลข่าวอาชญากรรม</Form.Label>
+                <div className="d-flex">
                   <Form.Control
                     as="select"
-                    value={crimeType}
-                    onChange={handleCrimeTypeChange}
+                    value={startYear}
+                    onChange={handleStartYearChange}
                   >
-                    <option value="">ทุกประเภท</option>
-                    <option value="Accident">Accident</option>
-                    <option value="Battery/Assault">Battery/Assault</option>
-                    <option value="Drug">Drug</option>
-                    <option value="Gambling">Gambling</option>
-                    <option value="Murder">Murder</option>
-                    <option value="Sexual Abuse">Sexual Abuse</option>
-                    <option value="Theft/Burglary">Theft/Burglary</option>
+                    <option value="">กรุณาเลือกปีที่ต้องการจะทราบข้อมูล</option>
+                    {yearList.map((val) => {
+                      return <option value={val}>{val}</option>;
+                    })}
                   </Form.Control>
-                </Form.Group>
-                <Button
-                  type="submit"
-                  className="mt-3"
-                  variant="success"
-                  onClick={handleSubmit}
+                  <span className="mx-2">-</span>
+                  <Form.Control
+                    as="select"
+                    value={endYear}
+                    onChange={handleEndYearChange}
+                  >
+                    <option value="">กรุณาเลือกปีที่ต้องการจะทราบข้อมูล</option>
+                    {yearList.map((val) => {
+                      return <option value={val}>{val}</option>;
+                    })}
+                  </Form.Control>
+                </div>
+                <Form.Label className="mt-3">ประเภทของข่าวอาชญากรรมที่ต้องการจะทราบข้อมูล</Form.Label>
+                <Form.Control
+                  as="select"
+                  value={crimeType}
+                  onChange={handleCrimeTypeChange}
                 >
-                  Submit
-                </Button>
-              </Form>
-            </Col>
-          </Row>
-          <Row xs className="justify-content-center mt-5">
-            <Col sm={6} style={{ height: "100%" }}>
-              <RadarChart data={raderChartData} />
-            </Col>
-            <Col sm={6} style={{ height: "100%" }}>
+                  <option value="">ทุกประเภท</option>
+                  <option value="Accident">Accident</option>
+                  <option value="Battery/Assault">Battery/Assault</option>
+                  <option value="Drug">Drug</option>
+                  <option value="Gambling">Gambling</option>
+                  <option value="Murder">Murder</option>
+                  <option value="Sexual Abuse">Sexual Abuse</option>
+                  <option value="Theft/Burglary">Theft/Burglary</option>
+                </Form.Control>
+              </Form.Group>
+            </Form>
+
+            <Row style={{ marginLeft: 1, marginRight: 1 }}>
+              <Button
+                type="submit"
+                className="mt-3"
+                variant="success"
+                onClick={handleSubmit}
+              >
+                ตกลง
+              </Button>
+            </Row>
+            <LineChart data={lineChartData} />
+          </Col>
+          <Col className="justify-content-center mt-5">
+            <Col sm style={{ height: "100%" }}>
               <Form>
                 <Form.Group>
-                  <Form.Label>เลือกปี:</Form.Label>
+                  <Form.Label>กรุณาเลือกระยะเวลาของปีที่คุณต้องการจะทราบจำนวนข่าวอาชญากรรมที่เกิดขึ้นในแต่ละปี</Form.Label>
                   <div className="d-flex">
                     <Form.Control
                       as="select"
@@ -166,26 +163,29 @@ export default function Overview() {
                     </Form.Control>
                   </div>
                 </Form.Group>
-                <Button
-                  type="submit"
-                  className="mt-3"
-                  variant="success"
-                  onClick={handleRaderChartSubmit}
-                >
-                  Submit
-                </Button>
               </Form>
             </Col>
-          </Row>
-          <Row xs className="justify-content-center mt-5">
-            <Col sm={6} style={{ height: "100%" }}>
-              <BarChart data={raderChartData} />
-            </Col>
-            <Col sm={6} style={{ height: "100%" }}>
-              
-            </Col>
-          </Row>
-          <div style={{ marginBottom: "10%" }}></div>
+            <Row style={{ marginLeft: 1, marginRight: 1 }}>
+              <Button
+                type="submit"
+                className="mt-3"
+                variant="success"
+                onClick={handleRaderChartSubmit}
+              >
+                ตกลง
+              </Button>
+            </Row>
+            <Row xs className="justify-content-center mt-5">
+              <Col>
+                <BarChart data={raderChartData} />
+              </Col>
+              <Col>
+                <RadarChart data={raderChartData} />
+              </Col>
+            </Row>
+          </Col>
+
+          <div style={{ marginBottom: "2%" }}></div>
         </Container>
       )}
     </div>
