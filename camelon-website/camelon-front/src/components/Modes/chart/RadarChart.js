@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { Radar } from "react-chartjs-2";
-import Card from "react-bootstrap/Card";
 import Axios from "axios";
 import { ThreeDots } from "react-loader-spinner";
 import {

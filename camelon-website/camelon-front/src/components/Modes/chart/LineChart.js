@@ -103,7 +103,7 @@ const LineChart = ({ data }) => {
       // console.log(data1.length)
       // console.log(data2.length)
     }
-  }, [data1, data2]);
+  }, [data.crimeType, data.endYear, data.startYear, data1, data2]);
 
   return (
     <div
