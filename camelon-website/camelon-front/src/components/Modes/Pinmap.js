@@ -1,3 +1,5 @@
+/* eslint-disable react-hooks/exhaustive-deps */
+/* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from "react";
 import L from "leaflet";
 
@@ -496,7 +498,7 @@ export default function Pinmap() {
               </Marker>
             )}
             <div
-              className="absolute bottom-5 left-10 bg-gray-100 p-4 rounded-md w-60 text-base"
+              className="absolute bottom-5 left-10 rounded-md w-60 text-base"
               style={{ zIndex: 999 }}
             >
               <DateSelect />
