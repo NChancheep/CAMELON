@@ -14,7 +14,7 @@ import SexualAbuse_Icon from "../../assets/iconPin/ColorIcon/Sexual_Abuse_Green.
 import Theft_Icon from "../../assets/iconPin/ColorIcon/Theft_Green.png";
 import Other_Icon from "../../assets/iconPin/ColorIcon/Other_Green.png";
 import Your_Icon from "../../assets/iconPin/ColorIcon/Your_Green.png";
-
+import TimeSelecter from "../TimeSelecter";
 import {
   MapContainer,
   TileLayer,
@@ -117,6 +117,69 @@ export default function Pinmap() {
   const { news_info } = useSelector((state) => state.data);
   const { news } = useSelector((state) => state.data);
   const { user_current_location } = useSelector((state) => state.data);
+  const { selectedMonths } = useSelector((state) => state.data);
+  const { selectedYear } = useSelector((state) => state.data);
+
+  useEffect(() => {
+    let earliestSelectedMonth = null;
+    let latestSelectedMonth = null;
+    let earliestStartDate = null;
+    let latestStartDate = null;
+    
+    for (let i = 0; i < selectedMonths.length; i++) {
+      const month = selectedMonths[i];
+      if (month.isSelected === true) {
+        if (
+          earliestSelectedMonth === null ||
+          month.number < earliestSelectedMonth.number
+        ) {
+          earliestSelectedMonth = month;
+        }
+        if (
+          latestSelectedMonth === null ||
+          month.number > latestSelectedMonth.number
+        ) {
+          latestSelectedMonth = month;
+        }
+      }
+    }
+    // console.log(earliestSelectedMonth, latestSelectedMonth)
+    if (earliestSelectedMonth !== null) {
+      if ((selectedYear === "")) {
+        let year = "1970";
+        earliestStartDate = new Date(year, earliestSelectedMonth.number - 1);
+      } else {
+        earliestStartDate = new Date(
+          selectedYear,
+          earliestSelectedMonth.number - 1
+        );
+      }
+
+      // console.log("Earliest start date:", earliestStartDate);
+    }
+
+    if (latestSelectedMonth !== null) {
+      latestStartDate = new Date(
+        selectedYear,
+        latestSelectedMonth.number - 1,
+        31
+      );
+      // console.log("Latest start date:", latestStartDate);
+
+      if ((selectedYear === "")) {
+        let year = "3000";
+        latestStartDate = new Date(year, latestSelectedMonth.number - 1);
+      } else {
+        latestStartDate = new Date(
+          selectedYear,
+          latestSelectedMonth.number - 1,
+          31
+        );
+      }
+    }
+    // console.log(earliestStartDate, latestStartDate)
+    setDateRange([earliestStartDate, latestStartDate]);
+  }, [selectedMonths, selectedYear]);
 
   const dispatch = useDispatch();
 
@@ -129,16 +192,7 @@ export default function Pinmap() {
     return text
       .toString()
       .replace(/\['|']/g, "")
-      .replace("'", "")
-      .replace("'", "")
-      .replace("'", "")
-      .replace("'", "")
-      .replace("'", "")
-      .replace("'", "")
-      .replace("'", "")
-      .replace("'", "")
-      .replace("'", "")
-
+      .replaceAll("'", "")
       .trim();
   }
 
@@ -337,7 +391,8 @@ export default function Pinmap() {
             หาตำแหน่งของฉัน
           </button>
         </Col>
-        <Col sm className="bg-gray-50 rounded-md ">
+        {/* ห้ามลบ */}
+        {/* <Col sm className="bg-gray-50 rounded-md ">
           เลือกช่วงเวลาแสดงข่าว <br />
           <div className="text-red-600">*เลือกได้แค่ปี 2000 ถึง 2023</div>
           <DatePicker
@@ -351,7 +406,7 @@ export default function Pinmap() {
             showYearDropdown
             dropdownMode="select"
           />
-        </Col>
+        </Col> */}
       </Row>
     );
   }
@@ -400,7 +455,6 @@ export default function Pinmap() {
                 user_current_location.longitude,
               ]}
             />
-
             <PinMap />
             {showUserMarker && (
               <Marker
@@ -418,23 +472,7 @@ export default function Pinmap() {
             </div>
           </MapContainer>
         </div>
-        <Col style={{ height: "20%" }}>
-          <select
-            onChange={(e) => {
-              setYearBarChart(e.target.value);
-            }}
-          >
-            <option value="" disabled selected>
-              เลือกปี
-            </option>
-            {year_list.map((year) => {
-              return <option value={year}>{year}</option>;
-            })}
-            <option value="all_year" selected>
-              เลือกทุกปี
-            </option>
-          </select>
-        </Col>
+        <TimeSelecter></TimeSelecter>
       </div>
     </>
   );

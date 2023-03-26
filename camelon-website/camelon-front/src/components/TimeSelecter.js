@@ -1,187 +1,125 @@
-import React, { useState } from "react";
-import Container from "react-bootstrap/esm/Container";
-import Col from "react-bootstrap/Col";
-import Row from "react-bootstrap/Row";
-import Card from "react-bootstrap/Card";
+import React from "react";
+import { Col, Card, Row } from "react-bootstrap";
+import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
+import { change_selected_months } from "../store/Reducer";
+import { change_selected_year } from "../store/Reducer";
 
-import NavbarEmer from "../NavbarEmer";
+function TimeSelecter() {
+  
+  const { selectedMonths } = useSelector((state) => state.data);
+  const { selectedYear } = useSelector((state) => state.data);
 
-export default function TimeSelecter() {
-  const [state, setState] = useState({mode: "Overview"});
+  const { news } = useSelector((state) => state.data);
+  function count(year, month) {
+    console.log(year);
+    let count = 0;
+    for (let i = 0; i < news.length; i++) {
+      if(year != ""){
+        if (
+          news[i].publish_date.split("-")[0] === year &&
+          news[i].publish_date.split("-")[1] === month
+        ) {
+          // console.log(news[i].publish_date)
+          // console.log("ปีที่เลือก"+year)
+          // console.log("เดือนที่เลือก"+(month))
+          count++;
+        }
+      } else{
+        if (
+          news[i].publish_date.split("-")[1] === month
+        ) {
+          count++;
+        }
+      }
+      
+    }
+    return count;
+  }
+
+
+  const dispatch = useDispatch();
+  
+ 
+
+  function handleMonthClick(clickedMonth) {
+    let newMonths = [...selectedMonths];
+    console.log(newMonths)
+    newMonths.forEach((month, index) => {
+      if (month.name === clickedMonth.name) {
+        newMonths[index] = {...month, isSelected: !month.isSelected};
+      }
+    });
+    dispatch(change_selected_months(newMonths));
+  }
+
   return (
-    <>
-      <Container className={`nav-bar-select-locati`} style={{ height: 55, }}>
-        <Card>
-          <Row
-            xs
-            style={{ height: "100%", padding: 10, fontFamily: "Kanit"  }}
-            //className="rectangle-1378"
-          >
-            <Col sm>
+    <Card style={{ marginTop: "2%", fontFamily: "Kanit",}}>
+      <Row xs>
+        <Col sm style={{ margin: "1%" }}>
+          <label>
+            กรุณาเลือกปีที่ต้องการจะทราบข้อมูล:
+            <select
+              value={selectedYear}
+              onChange={(e) => dispatch(change_selected_year(e.target.value))}
+            >
+              <option disabled>
+                เลือกปี
+              </option>
+              <option value="" selected>เลือกทุกปี</option>
+              <option value="2018">2018</option>
+              <option value="2020">2020</option>
+              <option value="2021">2021</option>
+            </select>
+          </label>
+        </Col>
+      </Row>
+      <Row xs style={{ padding: 10,  }}>
+        {selectedMonths.map((month) => (
+          <Col sm key={month.number}>
+            {month.isSelected ? (
               <button
-                style={{
-                  width: "100%",
-                  height: "100%",
-                  borderRadius: 4,
-                  backgroundColor:
-                    state.mode === "Overview" ? "#47474725" : "white",
-                }}
-                onClick={() => setState({ mode: "Overview" })}
+              disabled={(() => {
+                if (selectedYear === "") {
+                  return true;
+                } else {
+                  return false;
+                }
+              })()}
+                style={{ width: "100%",  marginBottom:"10%" }}
+                className=""
+                type="submit"
+                onClick={() =>handleMonthClick(month)}
               >
-                <div
-                  style={{
-                    color: state.mode === "Overview" ? "#479B5F" : "black",
-                  }}
-                >
-                  เบอร์ติดต่อทั้งหมด
-                </div>
+                <Card style={{ padding: "10%" , backgroundColor: "rgb(220 252 231)"}}>
+                  <text style={{ color: "#479B5F", fontWeight: "bold" }}>
+                    {month.name}
+                  </text>
+                  <text>{count(selectedYear, month.number)}</text>
+                  <text>เหตุการณ์</text>
+                </Card>
               </button>
-            </Col>
-            <Col sm>
+            ) : (
               <button
-                style={{
-                  width: "100%",
-                  height: "100%",
-                  borderRadius: 4,
-                  backgroundColor:
-                    state.mode === "Gambling" ? "#47474725" : "white",
-                }}
-                onClick={() => setState({ mode: "Gambling" })}
+                style={{ width: "100%" }}
+                className="bg-white text-black hover:bg-black hover:text-white"
+                type="submit"
+                onClick={() => handleMonthClick(month)}
               >
-                <div
-                  style={{
-                    color: state.mode === "Gambling" ? "#479B5F" : "black",
-                  }}
-                >
-                  การพนัน
-                </div>
+                <Card style={{ padding: "10%" }} className="hover:bg-green-100">
+                  <text style={{ color: "#479B5F", fontWeight: "bold" }}>
+                    {month.name}
+                  </text>
+                  <text>{count(selectedYear, month.number)}</text>
+                  <text>เหตุการณ์</text>
+                </Card>
               </button>
-            </Col>
-            <Col sm>
-              <button
-                style={{
-                  width: "100%",
-                  height: "100%",
-                  borderRadius: 4,
-                  backgroundColor:
-                    state.mode === "Murder" ? "#47474725" : "white",
-                }}
-                onClick={() => setState({ mode: "Murder" })}
-              >
-                <div
-                  style={{
-                    color: state.mode === "Murder" ? "#479B5F" : "black",
-                  }}
-                >
-                  ฆาตกรรม
-                </div>
-              </button>
-            </Col>
-            <Col sm>
-              <button
-                style={{
-                  width: "100%",
-                  height: "100%",
-                  borderRadius: 4,
-                  backgroundColor:
-                    state.mode === "SexualAbuse" ? "#47474725" : "white",
-                }}
-                onClick={() => setState({ mode: "SexualAbuse" })}
-              >
-                <div
-                  style={{
-                    color: state.mode === "SexualAbuse" ? "#479B5F" : "black",
-                  }}
-                >
-                  การล่วงละเมิด
-                </div>
-              </button>
-            </Col>
-            <Col sm>
-              <button
-                style={{
-                  width: "100%",
-                  height: "100%",
-                  borderRadius: 4,
-                  backgroundColor:
-                    state.mode === "TheftBurglary" ? "#47474725" : "white",
-                }}
-                onClick={() => setState({ mode: "TheftBurglary" })}
-              >
-                <div
-                  style={{
-                    color: state.mode === "TheftBurglary" ? "#479B5F" : "black",
-                  }}
-                >
-                  ลักทรัพย์
-                </div>
-              </button>
-            </Col>
-            <Col sm>
-              <button
-                style={{
-                  width: "100%",
-                  height: "100%",
-                  borderRadius: 4,
-                  backgroundColor:
-                    state.mode === "BatteryAssault" ? "#47474725" : "white",
-                }}
-                onClick={() => setState({ mode: "BatteryAssault" })}
-              >
-                <div
-                  style={{
-                    color:
-                      state.mode === "BatteryAssault" ? "#479B5F" : "black",
-                  }}
-                >
-                  ทำร้ายร่างกาย
-                </div>
-              </button>
-            </Col>
-            <Col sm>
-              <button
-                style={{
-                  width: "100%",
-                  height: "100%",
-                  borderRadius: 4,
-                  backgroundColor:
-                    state.mode === "Drug" ? "#47474725" : "white",
-                }}
-                onClick={() => setState({ mode: "Drug" })}
-              >
-                <div
-                  style={{
-                    color: state.mode === "Drug" ? "#479B5F" : "black",
-                  }}
-                >
-                  ยาเสพติด
-                </div>
-              </button>
-            </Col>
-            <Col sm>
-              <button
-                style={{
-                  width: "100%",
-                  height: "100%",
-                  borderRadius: 4,
-                  backgroundColor:
-                    state.mode === "Accident" ? "#47474725" : "white",
-                }}
-                onClick={() => setState({ mode: "Accident" })}
-              >
-                <div
-                  style={{
-                    color: state.mode === "Accident" ? "#479B5F" : "black",
-                  }}
-                >
-                  อุบัติเหตุ
-                </div>
-              </button>
-            </Col>
-          </Row>
-        </Card>
-        <NavbarEmer data={state.mode} />
-      </Container>
-    </>
+            )}
+          </Col>
+        ))}
+      </Row>
+    </Card>
   );
 }
+
+export default TimeSelecter;
