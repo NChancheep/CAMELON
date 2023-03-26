@@ -105,7 +105,7 @@ const RadarChart = ({ data }) => {
         ],
       };
     }
-    
+
     setChartData(chart_data);
     setOptions(options);
     if (data1.length !== 0 && data2.length !== 0) {
@@ -116,23 +116,34 @@ const RadarChart = ({ data }) => {
   }, [data1, data2]);
 
   return (
-    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '100%' }}>
-    {isFirstLoad ? (
-      <div>โปรดเลือกปีเพื่อเเสดงข้อมูล</div>
-    ) : isLoading ? (
-      <ThreeDots
-        height="80"
-        width="80"
-        radius="9"
-        color="#4fa94d"
-        ariaLabel="three-dots-loading"
-        visible={true}
-      />
-    ) : (
-      <Radar data={chartData}  options={options}  />
-    )}
-  </div>
-  )
+    <div
+      style={{
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        height: "100%",
+      }}
+    >
+      {isFirstLoad ? (
+        <div style={{ color: "#9c9c9c", fontSize: 14 }}>
+          **โปรดเลือกปีเพื่อเเสดงข้อมูล
+        </div>
+      ) : isLoading ? (
+        <div style={{ margin: "25%" }}>
+          <ThreeDots
+            height="80"
+            width="80"
+            radius="9"
+            color="#4fa94d"
+            ariaLabel="three-dots-loading"
+            visible={true}
+          />
+        </div>
+      ) : (
+        <Radar data={chartData} options={options} />
+      )}
+    </div>
+  );
 };
 
 export default RadarChart;
