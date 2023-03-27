@@ -36,6 +36,16 @@ export default function Overview() {
   //     });
   // }, []);
 
+  useEffect(() => {
+
+    if (startYear > endYear) {
+      alert("โปรดเลือกปีให้ถูกต้อง");
+      setStartYear(2016)
+      setEndYear(2020)
+    } 
+
+  }, [startYear, endYear])
+
   const handleSubmit = (e) => {
     e.preventDefault();
     const data = {
