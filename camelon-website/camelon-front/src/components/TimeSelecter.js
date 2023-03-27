@@ -12,7 +12,7 @@ function TimeSelecter() {
 
   const { news } = useSelector((state) => state.data);
   function count(year, month) {
-    console.log(year);
+    // console.log(year);
     let count = 0;
     for (let i = 0; i < news.length; i++) {
       if(year !== ""){
@@ -116,7 +116,7 @@ function TimeSelecter() {
                 type="submit"
                 onClick={() => handleMonthClick(month)}
               >
-                <Card style={{ padding: "10%" }} className="hover:bg-green-100">
+                <Card style={{ padding: "10%" }} className="">
                   <text style={{ color: "#479B5F", fontWeight: "bold" }}>
                     {month.name}
                   </text>
