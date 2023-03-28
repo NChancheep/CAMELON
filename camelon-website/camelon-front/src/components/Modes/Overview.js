@@ -81,7 +81,27 @@ export default function Overview() {
   const handleSpecificYearChange = (e) => {
     setSpecificYear(e.target.value);
   };
-
+  function getCrimeTypeName(crimeTypeMetadata) {
+    switch (crimeTypeMetadata) {
+      case "SexualAbuse":
+        return "การล่วงละเมิด";
+      case "Murder":
+        return "ฆาตกรรม";
+      case "Gambling":
+        return "การพนัน";
+      case "Accident":
+        return "อุบัติเหตุ";
+      case "Theft_Burglary":
+        return "ลักทรัพย์";
+      case "Battery_Assault":
+        return "ทำร้ายร่างกาย";
+      case "Drug":
+        return "ยาเสพติด";
+      default:
+        return "อื่นๆ";
+    }
+  }
+  
   return (
     <div
       class="sm"
@@ -132,13 +152,13 @@ export default function Overview() {
                   onChange={handleCrimeTypeChange}
                 >
                   <option value="">ทุกประเภท</option>
-                  <option value="Accident">Accident</option>
-                  <option value="Battery/Assault">Battery/Assault</option>
-                  <option value="Drug">Drug</option>
-                  <option value="Gambling">Gambling</option>
-                  <option value="Murder">Murder</option>
-                  <option value="Sexual Abuse">Sexual Abuse</option>
-                  <option value="Theft/Burglary">Theft/Burglary</option>
+                  <option value="Accident">อุบัติเหตุ</option>
+                  <option value="Battery/Assault">ทำร้ายร่างกาย</option>
+                  <option value="Drug">ยาเสพติด</option>
+                  <option value="Gambling">การพนัน</option>
+                  <option value="Murder">ฆาตกรรม</option>
+                  <option value="Sexual Abuse">การล่วงละเมิด</option>
+                  <option value="Theft/Burglary">ลักทรัพย์</option>
                 </Form.Control>
               </Form.Group>
             </Form>
