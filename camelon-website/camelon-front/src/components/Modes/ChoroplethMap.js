@@ -81,19 +81,15 @@ export default function ChoroplethMap() {
   }
 
   const getColor = (d) => {
-    return d >= 10
+    return d >= 3
       ? "#800026"
-      : d > 8
+      : d > 1.5
       ? "#BD0026"
-      : d > 6
-      ? "#E31A1C"
-      : d > 4
-      ? "#FC4E2A"
-      : d > 2
-      ? "#FD8D3C"
       : d > 1
-      ? "#FEB24C"
-      : "#FED976";
+      ? "#FD8D3C"
+      : d > 0.5
+      ? "#a6d96a"
+      : "#198754";
   };
 
   const style = (feature) => {
@@ -184,12 +180,11 @@ export default function ChoroplethMap() {
             style={{ zIndex: 999 }}
           >
             <div style={{ fontFamily: "Kanit" }} className="legend">
-              <div style={{ "--color": "#800026" }}>อันตราย!!!</div>
-              <div style={{ "--color": "#BD0026" }}>ค่อนข้างอันตรายมาก</div>
-              <div style={{ "--color": "#E31A1C" }}>ค่อนข้างอันตราย</div>
-              <div style={{ "--color": "#FC4E2A" }}>ปกติ</div>
-              <div style={{ "--color": "#FD8D3C" }}>ค่อนข้างน้อย</div>
-              <div style={{ "--color": "#FED976" }}>น้อย</div>
+              <div style={{ "--color": "#800026" }}>มีข่าวเกิดขึ้นมาก</div>
+              <div style={{ "--color": "#BD0026" }}>มีข่าวเกิดขึ้นค่อนข้างมาก</div>
+              <div style={{ "--color": "#FD8D3C" }}>ปกติ</div>
+              <div style={{ "--color": "#a6d96a" }}>มีข่าวเกิดขึ้นค่อนข้างน้อย</div>
+              <div style={{ "--color": "#198754" }}>มีข่าวเกิดขึ้นน้อย</div>
             </div>
           </div>
           <div
@@ -209,8 +204,8 @@ export default function ChoroplethMap() {
                 <br />
                 <GaugeChart
                   id="gauge-chart3"
-                  nrOfLevels={4}
-                  colors={["green", "orange", "red"]}
+                  nrOfLevels={5}
+                  colors={["#198754", "#a6d96a", "#FD8D3C","#BD0026","#800026"]}
                   arcWidth={0.3}
                   percent={selectedFeature.crime_meter / 10}
                   textColor={"black"}
