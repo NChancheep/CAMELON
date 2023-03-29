@@ -15,7 +15,6 @@ export default function Overview() {
   const [lineChartData, setLineChartData] = useState({});
   const [yearList, setYearList] = useState([
     2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021,
-    2022,
   ]);
   const [isPageLoading, setIsPageLoading] = useState(false);
   const [specificYear, setSpecificYear] = useState("");
@@ -210,10 +209,10 @@ export default function Overview() {
               <Col>
                 <Row>
                   <Col>
-                    <BarChart
+                    {/* <BarChart
                       style={{ width: "100%", height: "100%" }}
                       data={raderChartData}
-                    />
+                    /> */}
                   </Col>
                   <Col>
                     <RadarChart

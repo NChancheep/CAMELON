@@ -5,6 +5,21 @@ import Axios from "axios";
 import { ThreeDots } from "react-loader-spinner";
 import CamelonApi from "../../../api/CamelonApi";
 
+const months = {
+  1: "January",
+  2: "February",
+  3: "March",
+  4: "April",
+  5: "May",
+  6: "June",
+  7: "July",
+  8: "August",
+  9: "September",
+  10: "October",
+  11: "November",
+  12: "December",
+};
+
 const BarChart = ({ data }) => {
   const [data1, setData1] = useState([]);
   const [data2, setData2] = useState([]);
@@ -13,20 +28,7 @@ const BarChart = ({ data }) => {
   const [isLoading, setIsLoading] = useState(false);
   const [isFirstLoad, setIsFirstLoad] = useState(true);
 
-  const months = {
-    1: "January",
-    2: "February",
-    3: "March",
-    4: "April",
-    5: "May",
-    6: "June",
-    7: "July",
-    8: "August",
-    9: "September",
-    10: "October",
-    11: "November",
-    12: "December",
-  };
+ 
 
   // console.log(data)
   useEffect(() => {
