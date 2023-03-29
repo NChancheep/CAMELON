@@ -360,8 +360,15 @@ export default function Pinmap() {
                 <div style={fontSize}>
                   {" "}
                   <span style={titleStyle}>ข่าววันที่: </span>{" "}
-                  {trimString(news_datetime)
-                    ? trimString(news_datetime)
+                  {trimString(news_datetime).split(" ")[0]
+                    ? trimString(news_datetime).split(" ")[0]
+                    : "ไม่มีข้อมูล"}{" "}
+                </div>
+                <div style={fontSize}>
+                  {" "}
+                  <span style={titleStyle}>เวลา: </span>{" "}
+                  {trimString(news_datetime).split(" ")[1]
+                    ? trimString(news_datetime).split(" ")[1]+" นาฬิกา"
                     : "ไม่มีข้อมูล"}{" "}
                 </div>
                 <div style={fontSize}>
