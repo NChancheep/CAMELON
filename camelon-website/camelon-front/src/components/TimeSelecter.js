@@ -6,7 +6,6 @@ import { change_selected_months } from "../store/Reducer";
 import { change_selected_year } from "../store/Reducer";
 
 function TimeSelecter() {
-  
   const { selectedMonths } = useSelector((state) => state.data);
   const { selectedYear } = useSelector((state) => state.data);
 
@@ -15,7 +14,7 @@ function TimeSelecter() {
     // console.log(year);
     let count = 0;
     for (let i = 0; i < news.length; i++) {
-      if(year !== ""){
+      if (year !== "") {
         if (
           news[i].publish_date.split("-")[0] === year &&
           news[i].publish_date.split("-")[1] === month
@@ -25,46 +24,40 @@ function TimeSelecter() {
           // console.log("เดือนที่เลือก"+(month))
           count++;
         }
-      } else{
-        if (
-          news[i].publish_date.split("-")[1] === month
-        ) {
+      } else {
+        if (news[i].publish_date.split("-")[1] === month) {
           count++;
         }
       }
-      
     }
     return count;
   }
 
-  
   useEffect(() => {
-    if (selectedYear === '') {
+    if (selectedYear === "") {
       let newMonths = [...selectedMonths];
       newMonths.forEach((month, index) => {
-        newMonths[index] = {...month, isSelected: true}
-      })
+        newMonths[index] = { ...month, isSelected: true };
+      });
       dispatch(change_selected_months(newMonths));
     }
-  }, [selectedYear])
+  }, [selectedYear]);
 
   const dispatch = useDispatch();
-  
- 
 
   function handleMonthClick(clickedMonth) {
     let newMonths = [...selectedMonths];
     // console.log(newMonths)
     newMonths.forEach((month, index) => {
       if (month.name === clickedMonth.name) {
-        newMonths[index] = {...month, isSelected: !month.isSelected};
+        newMonths[index] = { ...month, isSelected: !month.isSelected };
       }
     });
     dispatch(change_selected_months(newMonths));
   }
 
   return (
-    <Card style={{ marginTop: "2%", fontFamily: "Kanit",}}>
+    <Card style={{ marginTop: "2%", fontFamily: "Kanit" }}>
       <Row xs>
         <Col sm style={{ margin: "1%" }}>
           <label>
@@ -73,35 +66,38 @@ function TimeSelecter() {
               value={selectedYear}
               onChange={(e) => dispatch(change_selected_year(e.target.value))}
             >
-              <option disabled>
-                เลือกปี
+              <option disabled>เลือกปี</option>
+              <option value="" selected>
+                เลือกทุกปี
               </option>
-              <option value="" selected>เลือกทุกปี</option>
               <option value="2018">2018</option>
               <option value="2020">2020</option>
               <option value="2021">2021</option>
             </select>
           </label>
         </Col>
+        <Col sm style={{ margin: "1%" }}>
+          <label>*สามารถเลือกเดือนที่ต้องการจะทราบว่ามีเหตุการณ์ใดเกินขึ้นได้บางจากการกดที่เดือนที่ต้องการ</label>
+        </Col>
       </Row>
-      <Row xs style={{ padding: 10,  }}>
+      <Row xs style={{ padding: 10 }}>
         {selectedMonths.map((month) => (
           <Col sm key={month.number}>
             {month.isSelected ? (
               <button
-              disabled={(() => {
-                if (selectedYear === "") {
-                  return true;
-                } else {
-                  return false;
-                }
-              })()}
-                style={{ width: "100%",  marginBottom:"10%" }}
+                disabled={(() => {
+                  if (selectedYear === "") {
+                    return true;
+                  } else {
+                    return false;
+                  }
+                })()}
+                style={{ width: "100%", marginBottom: "10%" }}
                 className=""
                 type="submit"
-                onClick={() =>handleMonthClick(month)}
+                onClick={() => handleMonthClick(month)}
               >
-                <Card style={{ padding: "10%" , backgroundColor: "rgb(220 252 231)"}}>
+                <Card style={{ padding: "10%", backgroundColor: "#E7FCDC7C" }}>
                   <text style={{ color: "#479B5F", fontWeight: "bold" }}>
                     {month.name}
                   </text>
@@ -117,7 +113,7 @@ function TimeSelecter() {
                 onClick={() => handleMonthClick(month)}
               >
                 <Card style={{ padding: "10%" }} className="">
-                  <text style={{ color: "#479B5F", fontWeight: "bold" }}>
+                  <text style={{ color: "#000000", fontWeight: "bold" }}>
                     {month.name}
                   </text>
                   <text>{count(selectedYear, month.number)}</text>

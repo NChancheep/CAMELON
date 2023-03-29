@@ -254,7 +254,7 @@ export const thailandGeoJson = [{
           "NAME_1": "Amnat Charoen",
           "TYPE_1": "Changwat",
           "ENGTYPE_1": "Province",
-          "NL_NAME_1": "จังหวัดอำนาจเจริ",
+          "NL_NAME_1": "จังหวัดอำนาจเจริญ",
           "VARNAME_1": null
         }
       },
@@ -877,7 +877,7 @@ export const thailandGeoJson = [{
           "NAME_1": "Bueng Kan",
           "TYPE_1": "Changwat",
           "ENGTYPE_1": "Province",
-          "NL_NAME_1": "บึงกาฬ",
+          "NL_NAME_1": "จังหวัดบึงกาฬ",
           "VARNAME_1": null
         }
       },
