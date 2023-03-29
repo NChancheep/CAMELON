@@ -103,7 +103,7 @@ const LineChart = ({ data }) => {
       }}
     >
       {isFirstLoad ? (
-        <div style={{ color: "#9c9c9c", fontSize: 14, marginTop: "1%" }}>
+        <div style={{ color: "#9c9c9c", fontSize: 14, marginTop: "3%" }}>
           **โปรดเลือกปีเพื่อเเสดงข้อมูล
         </div>
       ) : isLoading ? (

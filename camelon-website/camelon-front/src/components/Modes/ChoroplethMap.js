@@ -57,10 +57,11 @@ export default function ChoroplethMap() {
         return 1;
     }
   }
-  const provinceName = "";
+  // const provinceName = selectedFeature.name_th;
   function getCrimeRateAndMeter(coordinates) {
     let total_crime = 0;
     let crime_weight_sum = 0;
+
     if (coordinates.length > 4) {
       const poly = polygon([coordinates]);
       locations.forEach((location) => {
@@ -74,6 +75,10 @@ export default function ChoroplethMap() {
         }
       });
     }
+    console.log("=========================================================");
+    // console.log(provinceName);
+    // console.log(selectedFeature.name_th);
+    console.log("=========================================================");
     let crime_meter = crime_weight_sum / 100;
     return { crime_rate: total_crime, crime_meter: crime_meter };
   }
