@@ -6,7 +6,7 @@ import "../../css/ChoroplethMap.css";
 import "../../css/setfont.css";
 import GaugeChart from "react-gauge-chart";
 import { polygon, point, booleanPointInPolygon } from "@turf/turf";
-import { getThailandPopulation } from '../../store/data/thailand_province_population.js';
+import { getThailandPopulation } from "../../store/data/thailand_province_population.js";
 
 export default function ChoroplethMap() {
   const { thailandGeoJson } = useSelector((state) => state.data);
@@ -18,12 +18,17 @@ export default function ChoroplethMap() {
   const [isShow, setIsShow] = useState(false);
 
   function addCrimeRate(data) {
-    console.log(data)
+    console.log(data);
     return data.map((item) => ({
       ...item,
-      crime_rate: getCrimeRateAndMeter(item.geometry.coordinates[0], item.properties.NAME_1).crime_rate,
-      crime_meter: getCrimeRateAndMeter(item.geometry.coordinates[0])
-        .crime_meter,
+      crime_rate: getCrimeRateAndMeter(
+        item.geometry.coordinates[0],
+        item.properties.NAME_1
+      ).crime_rate,
+      crime_meter: getCrimeRateAndMeter(
+        item.geometry.coordinates[0],
+        item.properties.NAME_1
+      ).crime_meter,
     }));
   }
 
@@ -76,31 +81,39 @@ export default function ChoroplethMap() {
         }
       });
     }
-    console.log("=========================================================");
-    console.log(name)
-    console.log(getThailandPopulation(name));
-    // console.log(provinceName);
-    // console.log(selectedFeature.name_th);
-    console.log("=========================================================");
-    let crime_meter = crime_weight_sum / 100;
+    // console.log("=========================================================");
+    // console.log(name);
+    // console.log(getThailandPopulation(name));
+    // console.log("=========================================================");
+    // console.log("จังหวัด: " + name);
+    // console.log("total_crime: " + total_crime);
+    // console.log("crime_weight_sum: " + crime_weight_sum);
+    // console.log("Population: " + getThailandPopulation(name));
+    // console.log(
+    //   "คำนวณ: " + (crime_weight_sum / getThailandPopulation(name)) * 1000000
+    // );
+    let crime_meter = (crime_weight_sum / getThailandPopulation(name)) * 100000;
     return { crime_rate: total_crime, crime_meter: crime_meter };
   }
 
   const getColor = (d) => {
-    return d >= 3
+    return d >= 100
       ? "#800026"
-      : d > 1.5
+      : d > 75
       ? "#BD0026"
-      : d > 1
+      : d > 50
       ? "#FD8D3C"
-      : d > 0.5
+      : d > 25
       ? "#a6d96a"
       : "#198754";
   };
 
   const style = (feature) => {
+    console.log("==========================feature.crime_meter==========================");
+    console.log(feature.crime_meter);
+    console.log("==========================feature.crime_meter==========================");
     return {
-      fillColor: getColor(feature.crime_meter),
+      fillColor: getColor(feature.crime_meter*10),
 
       weight: 2,
       opacity: 1,
@@ -209,7 +222,7 @@ export default function ChoroplethMap() {
             ) : (
               <div style={{ fontFamily: "Kanit" }}>
                 <strong>
-                  Crimino Meter
+                  Crimino Meter 
                   <br /> {selectedFeature.name_th}
                 </strong>{" "}
                 <br />
