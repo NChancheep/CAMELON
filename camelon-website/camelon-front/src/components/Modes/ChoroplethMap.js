@@ -163,10 +163,8 @@ export default function ChoroplethMap() {
             )}
             {selectedFeature && (
               <div style={{ fontFamily: "Kanit" }} className="">
-                <div>Province: {selectedFeature.name_en}</div>
                 <div>{selectedFeature.name_th}</div>
-                <div>Crime Index: {selectedFeature.crime_rate}</div>
-                <div>ดัชนีอาชญากรรม: {selectedFeature.crime_rate}</div>
+                <div>จำนวนข่าวอาชญากรรม: {selectedFeature.crime_rate}</div>
               </div>
             )}
           </div>
