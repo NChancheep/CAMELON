@@ -1,4 +1,4 @@
-function getThailandPopulation() {
+export function getThailandPopulation(provinceName) {
     const thailandPopulation = {
       "Bangkok": 5694674,
       "Samut Prakan": 1227666,
@@ -76,6 +76,8 @@ function getThailandPopulation() {
       "Yala": 524129,
       "Narathiwat": 760195
     }
+    return thailandPopulation[provinceName] || 0;
+
 }
      
   
