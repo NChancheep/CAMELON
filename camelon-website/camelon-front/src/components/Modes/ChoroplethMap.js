@@ -36,7 +36,7 @@ export default function ChoroplethMap() {
       setIsShow(true);
     }
   }, [data]);
-  
+
   function getCrimeWeight(crimeTypeMetadata) {
     switch (crimeTypeMetadata) {
       case "SexualAbuse":
@@ -57,9 +57,8 @@ export default function ChoroplethMap() {
         return 1;
     }
   }
-
+  const provinceName = "";
   function getCrimeRateAndMeter(coordinates) {
-    // console.log(coordinates)
     let total_crime = 0;
     let crime_weight_sum = 0;
     if (coordinates.length > 4) {
@@ -70,7 +69,6 @@ export default function ChoroplethMap() {
           let news_data = news_info.find(
             (news) => news.info_id === location.info_id
           );
-          //console.log(news_data.name_en1);
           crime_weight_sum += getCrimeWeight(news_data.crime_type);
           total_crime += 1;
         }
@@ -95,7 +93,7 @@ export default function ChoroplethMap() {
   const style = (feature) => {
     return {
       fillColor: getColor(feature.crime_meter),
-      
+
       weight: 2,
       opacity: 1,
       color: "white",
@@ -179,9 +177,13 @@ export default function ChoroplethMap() {
           >
             <div style={{ fontFamily: "Kanit" }} className="legend">
               <div style={{ "--color": "#800026" }}>มีข่าวเกิดขึ้นมาก</div>
-              <div style={{ "--color": "#BD0026" }}>มีข่าวเกิดขึ้นค่อนข้างมาก</div>
+              <div style={{ "--color": "#BD0026" }}>
+                มีข่าวเกิดขึ้นค่อนข้างมาก
+              </div>
               <div style={{ "--color": "#FD8D3C" }}>ปกติ</div>
-              <div style={{ "--color": "#a6d96a" }}>มีข่าวเกิดขึ้นค่อนข้างน้อย</div>
+              <div style={{ "--color": "#a6d96a" }}>
+                มีข่าวเกิดขึ้นค่อนข้างน้อย
+              </div>
               <div style={{ "--color": "#198754" }}>มีข่าวเกิดขึ้นน้อย</div>
             </div>
           </div>
@@ -198,12 +200,22 @@ export default function ChoroplethMap() {
               </div>
             ) : (
               <div style={{ fontFamily: "Kanit" }}>
-                <strong>Crimino Meter<br /> {selectedFeature.name_th}</strong> <br />
+                <strong>
+                  Crimino Meter
+                  <br /> {selectedFeature.name_th}
+                </strong>{" "}
+                <br />
                 <br />
                 <GaugeChart
                   id="gauge-chart3"
                   nrOfLevels={5}
-                  colors={["#198754", "#a6d96a", "#FD8D3C","#BD0026","#800026"]}
+                  colors={[
+                    "#198754",
+                    "#a6d96a",
+                    "#FD8D3C",
+                    "#BD0026",
+                    "#800026",
+                  ]}
                   arcWidth={0.3}
                   percent={selectedFeature.crime_meter / 10}
                   textColor={"black"}
