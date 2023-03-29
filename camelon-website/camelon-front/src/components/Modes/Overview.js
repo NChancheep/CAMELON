@@ -65,26 +65,26 @@ export default function Overview() {
   const handleSpecificYearChange = (e) => {
     setSpecificYear(e.target.value);
   };
-  function getCrimeTypeName(crimeTypeMetadata) {
-    switch (crimeTypeMetadata) {
-      case "SexualAbuse":
-        return "การล่วงละเมิด";
-      case "Murder":
-        return "ฆาตกรรม";
-      case "Gambling":
-        return "การพนัน";
-      case "Accident":
-        return "อุบัติเหตุ";
-      case "Theft_Burglary":
-        return "ลักทรัพย์";
-      case "Battery_Assault":
-        return "ทำร้ายร่างกาย";
-      case "Drug":
-        return "ยาเสพติด";
-      default:
-        return "อื่นๆ";
-    }
-  }
+  // function getCrimeTypeName(crimeTypeMetadata) {
+  //   switch (crimeTypeMetadata) {
+  //     case "SexualAbuse":
+  //       return "การล่วงละเมิด";
+  //     case "Murder":
+  //       return "ฆาตกรรม";
+  //     case "Gambling":
+  //       return "การพนัน";
+  //     case "Accident":
+  //       return "อุบัติเหตุ";
+  //     case "Theft_Burglary":
+  //       return "ลักทรัพย์";
+  //     case "Battery_Assault":
+  //       return "ทำร้ายร่างกาย";
+  //     case "Drug":
+  //       return "ยาเสพติด";
+  //     default:
+  //       return "อื่นๆ";
+  //   }
+  // }
 
   return (
     <div
@@ -138,14 +138,16 @@ export default function Overview() {
                       </div>
                     </Col>
                     <Col>
-                      <Form.Label>กรุณาเลือกเดือน</Form.Label>
+                      <Form.Label>กรุณาเลือกแหล่งข่าว</Form.Label>
                       <div className="d-flex">
                         <Form.Control
                           as="select"
                           value={startYear}
                           onChange={null}
                         >
-                          <option value="">เดือน</option>
+                          <option value="">แหล่งข่าว</option>
+                          <option value="">ไทยรัฐ</option>
+                          <option value="Accident">เดลินิว</option>
                         </Form.Control>
                       </div>
                     </Col>
@@ -208,12 +210,12 @@ export default function Overview() {
               </Row>
               <Col>
                 <Row>
-                  <Col>
-                    {/* <BarChart
+                  {/* <Col>
+                    <BarChart
                       style={{ width: "100%", height: "100%" }}
                       data={raderChartData}
-                    /> */}
-                  </Col>
+                    />
+                  </Col> */}
                   <Col>
                     <RadarChart
                       style={{ width: "100%", height: "100%" }}
