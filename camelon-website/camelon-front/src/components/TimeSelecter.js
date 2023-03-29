@@ -33,15 +33,15 @@ function TimeSelecter() {
     return count;
   }
 
-  useEffect(() => {
-    if (selectedYear === "") {
-      let newMonths = [...selectedMonths];
-      newMonths.forEach((month, index) => {
-        newMonths[index] = { ...month, isSelected: true };
-      });
-      dispatch(change_selected_months(newMonths));
-    }
-  }, [selectedYear]);
+  // useEffect(() => {
+  //   if (selectedYear === "") {
+  //     let newMonths = [...selectedMonths];
+  //     newMonths.forEach((month, index) => {
+  //       newMonths[index] = { ...month, isSelected: true };
+  //     });
+  //     dispatch(change_selected_months(newMonths));
+  //   }
+  // }, [selectedYear]);
 
   const dispatch = useDispatch();
 
@@ -85,13 +85,13 @@ function TimeSelecter() {
           <Col sm key={month.number}>
             {month.isSelected ? (
               <button
-                disabled={(() => {
-                  if (selectedYear === "") {
-                    return true;
-                  } else {
-                    return false;
-                  }
-                })()}
+                // disabled={(() => {
+                //   if (selectedYear === "") {
+                //     return true;
+                //   } else {
+                //     return false;
+                //   }
+                // })()}
                 style={{ width: "100%", marginBottom: "10%" }}
                 className=""
                 type="submit"
