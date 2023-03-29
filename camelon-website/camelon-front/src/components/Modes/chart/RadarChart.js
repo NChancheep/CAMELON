@@ -124,7 +124,7 @@ const RadarChart = ({ data }) => {
       }}
     >
       {isFirstLoad ? (
-        <div style={{ color: "#9c9c9c", fontSize: 14 }}>
+        <div style={{ color: "#9c9c9c", fontSize: 14, marginTop:"3%" }}>
           **โปรดเลือกปีเพื่อเเสดงข้อมูล
         </div>
       ) : isLoading ? (
@@ -139,7 +139,7 @@ const RadarChart = ({ data }) => {
           />
         </div>
       ) : (
-        <Radar data={chartData} options={options} />
+        <Radar width={100} height={"100%"} data={chartData} options={options} />
       )}
     </div>
   );

@@ -135,7 +135,7 @@ const BarChart = ({ data }) => {
       }}
     >
       {isFirstLoad ? (
-        <div style={{ color: "#9c9c9c", fontSize: 14 }}>
+        <div style={{ color: "#9c9c9c", fontSize: 14, marginTop:"3%" }}>
           **โปรดเลือกปีเพื่อเเสดงข้อมูล
         </div>
       ) : isLoading ? (
@@ -150,7 +150,7 @@ const BarChart = ({ data }) => {
           />
         </div>
       ) : (
-        <Bar data={chartData} options={options} />
+        <Bar width={"100%"} data={chartData} options={options} />
       )}
     </div>
   );

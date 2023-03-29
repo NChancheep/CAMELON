@@ -23,28 +23,13 @@ export default function Overview() {
 
   const [yearBarChart, setYearBarChart] = useState("");
 
-  // useEffect(() => {
-  //   CamelonApi.get("years")
-  //     .then((response) => {
-  //       setYearList(response.data);
-  //     })
-  //     .then(() => {
-  //       setIsPageLoading(false);
-  //     })
-  //     .catch((error) => {
-  //       console.error(error);
-  //     });
-  // }, []);
-
   useEffect(() => {
-
     if (startYear > endYear) {
       alert("โปรดเลือกปีให้ถูกต้อง");
-      setStartYear(2016)
-      setEndYear(2020)
-    } 
-
-  }, [startYear, endYear])
+      setStartYear(2016);
+      setEndYear(2020);
+    }
+  }, [startYear, endYear]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -101,11 +86,11 @@ export default function Overview() {
         return "อื่นๆ";
     }
   }
-  
+
   return (
     <div
       class="sm"
-      style={{ marginTop: 16, display: "flex", justifyContent: "center" }}
+      style={{ marginTop: 5, display: "flex", justifyContent: "center" }}
     >
       {isPageLoading ? (
         <ThreeDots
@@ -118,68 +103,87 @@ export default function Overview() {
         />
       ) : (
         <Container style={{ width: "100%", fontFamily: "Kanit" }}>
-          <Col xs>
-            <Form>
-              <Form.Group>
-                <Form.Label>กรุณาเลือกระยะเวลาของปีที่คุณต้องการจะทราบแนวโน้มข้อมูลข่าวอาชญากรรม</Form.Label>
-                <div className="d-flex">
-                  <Form.Control
-                    as="select"
-                    value={startYear}
-                    onChange={handleStartYearChange}
-                  >
-                    <option value="">กรุณาเลือกปีที่ต้องการจะทราบข้อมูล</option>
-                    {yearList.map((val) => {
-                      return <option value={val}>{val}</option>;
-                    })}
-                  </Form.Control>
-                  <span className="mx-2">-</span>
-                  <Form.Control
-                    as="select"
-                    value={endYear}
-                    onChange={handleEndYearChange}
-                  >
-                    <option value="">กรุณาเลือกปีที่ต้องการจะทราบข้อมูล</option>
-                    {yearList.map((val) => {
-                      return <option value={val}>{val}</option>;
-                    })}
-                  </Form.Control>
-                </div>
-                <Form.Label className="mt-3">ประเภทของข่าวอาชญากรรมที่ต้องการจะทราบข้อมูล</Form.Label>
-                <Form.Control
-                  as="select"
-                  value={crimeType}
-                  onChange={handleCrimeTypeChange}
-                >
-                  <option value="">ทุกประเภท</option>
-                  <option value="Accident">อุบัติเหตุ</option>
-                  <option value="Battery/Assault">ทำร้ายร่างกาย</option>
-                  <option value="Drug">ยาเสพติด</option>
-                  <option value="Gambling">การพนัน</option>
-                  <option value="Murder">ฆาตกรรม</option>
-                  <option value="Sexual Abuse">การล่วงละเมิด</option>
-                  <option value="Theft/Burglary">ลักทรัพย์</option>
-                </Form.Control>
-              </Form.Group>
-            </Form>
-
-            <Row style={{ marginLeft: 1, marginRight: 1 }}>
-              <Button
-                type="submit"
-                className="mt-3"
-                variant="success"
-                onClick={handleSubmit}
-              >
-                ตกลง
-              </Button>
-            </Row>
-            <LineChart data={lineChartData} />
-          </Col>
-          <Col className="justify-content-center mt-5">
-            <Col sm style={{ height: "100%" }}>
+          <Row>
+            <Col xs>
               <Form>
                 <Form.Group>
-                  <Form.Label>กรุณาเลือกระยะเวลาของปีที่คุณต้องการจะทราบจำนวนข่าวอาชญากรรมที่เกิดขึ้นในแต่ละปี</Form.Label>
+                  <Row>
+                    <Col sm={6}>
+                      <Form.Label>กรุณาเลือกระยะเวลาของปี</Form.Label>
+                      <div className="d-flex">
+                        <Form.Control
+                          as="select"
+                          value={startYear}
+                          onChange={handleStartYearChange}
+                        >
+                          <option value="">
+                            กรุณาเลือกปีที่ต้องการจะทราบข้อมูล
+                          </option>
+                          {yearList.map((val) => {
+                            return <option value={val}>{val}</option>;
+                          })}
+                        </Form.Control>
+                        <span className="mx-2 mt-2">ถึง</span>
+                        <Form.Control
+                          as="select"
+                          value={endYear}
+                          onChange={handleEndYearChange}
+                        >
+                          <option value="">
+                            กรุณาเลือกปีที่ต้องการจะทราบข้อมูล
+                          </option>
+                          {yearList.map((val) => {
+                            return <option value={val}>{val}</option>;
+                          })}
+                        </Form.Control>
+                      </div>
+                    </Col>
+                    <Col>
+                      <Form.Label>กรุณาเลือกเดือน</Form.Label>
+                      <div className="d-flex">
+                        <Form.Control
+                          as="select"
+                          value={startYear}
+                          onChange={null}
+                        >
+                          <option value="">เดือน</option>
+                        </Form.Control>
+                      </div>
+                    </Col>
+                    <Col>
+                      <Form.Label>กรุณาเลือกประเภท</Form.Label>
+                      <Form.Control
+                        as="select"
+                        value={crimeType}
+                        onChange={handleCrimeTypeChange}
+                      >
+                        <option value="">ทุกประเภท</option>
+                        <option value="Accident">อุบัติเหตุ</option>
+                        <option value="Battery/Assault">ทำร้ายร่างกาย</option>
+                        <option value="Drug">ยาเสพติด</option>
+                        <option value="Gambling">การพนัน</option>
+                        <option value="Murder">ฆาตกรรม</option>
+                        <option value="Sexual Abuse">การล่วงละเมิด</option>
+                        <option value="Theft/Burglary">ลักทรัพย์</option>
+                      </Form.Control>
+                    </Col>
+                  </Row>
+                </Form.Group>
+              </Form>
+
+              <Row style={{ marginLeft: 1, marginRight: 1, marginTop: "3%" }}>
+                <Button type="submit" variant="success" onClick={handleSubmit}>
+                  ตกลง
+                </Button>
+              </Row>
+              <LineChart data={lineChartData} />
+            </Col>
+            <Col xs className="justify-content-center">
+              <Form>
+                <Form.Group>
+                  <Form.Label>
+                    กรุณาเลือกระยะเวลาของปีที่คุณต้องการจะทราบจำนวนข่าวอาชญากรรมที่เกิดขึ้นในแต่ละปี
+                  </Form.Label>
                   <div className="d-flex">
                     <Form.Control
                       as="select"
@@ -194,26 +198,33 @@ export default function Overview() {
                   </div>
                 </Form.Group>
               </Form>
+              <Row style={{ marginLeft: 1, marginRight: 1, marginTop: "3%" }}>
+                <Button
+                  type="submit"
+                  variant="success"
+                  onClick={handleRaderChartSubmit}
+                >
+                  ตกลง
+                </Button>
+              </Row>
+              <Col>
+                <Row>
+                  <Col>
+                    <BarChart
+                      style={{ width: "100%", height: "100%" }}
+                      data={raderChartData}
+                    />
+                  </Col>
+                  <Col>
+                    <RadarChart
+                      style={{ width: "100%", height: "100%" }}
+                      data={raderChartData}
+                    />
+                  </Col>
+                </Row>
+              </Col>
             </Col>
-            <Row style={{ marginLeft: 1, marginRight: 1 }}>
-              <Button
-                type="submit"
-                className="mt-3"
-                variant="success"
-                onClick={handleRaderChartSubmit}
-              >
-                ตกลง
-              </Button>
-            </Row>
-            <Row xs className="justify-content-center mt-5">
-              <Col>
-                <BarChart data={raderChartData} />
-              </Col>
-              <Col>
-                <RadarChart data={raderChartData} />
-              </Col>
-            </Row>
-          </Col>
+          </Row>
 
           <div style={{ marginBottom: "2%" }}></div>
         </Container>
