@@ -6,6 +6,7 @@ import "../../css/ChoroplethMap.css";
 import "../../css/setfont.css";
 import GaugeChart from "react-gauge-chart";
 import { polygon, point, booleanPointInPolygon } from "@turf/turf";
+import { getThailandPopulation } from '../../store/data/thailand_province_population.js';
 
 export default function ChoroplethMap() {
   const { thailandGeoJson } = useSelector((state) => state.data);
@@ -59,12 +60,9 @@ export default function ChoroplethMap() {
     }
   }
 
-  const provinceName = "";
   function getCrimeRateAndMeter(coordinates, name) {
-    console.log(name)
     let total_crime = 0;
     let crime_weight_sum = 0;
-
     if (coordinates.length > 4) {
       const poly = polygon([coordinates]);
       locations.forEach((location) => {
@@ -79,6 +77,8 @@ export default function ChoroplethMap() {
       });
     }
     console.log("=========================================================");
+    console.log(name)
+    console.log(getThailandPopulation(name));
     // console.log(provinceName);
     // console.log(selectedFeature.name_th);
     console.log("=========================================================");
