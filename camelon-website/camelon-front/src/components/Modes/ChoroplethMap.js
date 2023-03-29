@@ -17,9 +17,10 @@ export default function ChoroplethMap() {
   const [isShow, setIsShow] = useState(false);
 
   function addCrimeRate(data) {
+    console.log(data)
     return data.map((item) => ({
       ...item,
-      crime_rate: getCrimeRateAndMeter(item.geometry.coordinates[0]).crime_rate,
+      crime_rate: getCrimeRateAndMeter(item.geometry.coordinates[0], item.properties.NAME_1).crime_rate,
       crime_meter: getCrimeRateAndMeter(item.geometry.coordinates[0])
         .crime_meter,
     }));
@@ -57,8 +58,10 @@ export default function ChoroplethMap() {
         return 1;
     }
   }
-  // const provinceName = selectedFeature.name_th;
-  function getCrimeRateAndMeter(coordinates) {
+
+  const provinceName = "";
+  function getCrimeRateAndMeter(coordinates, name) {
+    console.log(name)
     let total_crime = 0;
     let crime_weight_sum = 0;
 
