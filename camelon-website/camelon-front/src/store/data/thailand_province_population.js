@@ -64,7 +64,7 @@ export function getThailandPopulation(provinceName) {
       "Prachuap Khiri Khan": 536373,
       "Chumphon": 498094,
       "Ranong": 178590,"Surat Thani": 1040438,
-      "Phang Nga": 172059,
+      "Phangnga": 172059,
       "Phuket": 413017,
       "Krabi": 538028,
       "Nakhon Si Thammarat": 1571074,
