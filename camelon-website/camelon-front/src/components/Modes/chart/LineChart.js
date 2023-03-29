@@ -29,13 +29,7 @@ const LineChart = ({ data }) => {
     setData2([]);
     if (Object.keys(data).length !== 0) {
       setIsFirstLoad(false);
-      CamelonApi.get("thairathNewsRecords", {
-        params: {
-          yearStart: data.startYear,
-          yearEnd: data.endYear,
-          crimeType: data.crimeType,
-        },
-      })
+      CamelonApi.get(`thairath_crimes_summary?yearStart=${data.startYear}&yearEnd=${data.endYear}`)
         .then((response) => {
           // console.log(response.data)
           setData1(response.data);
@@ -44,13 +38,7 @@ const LineChart = ({ data }) => {
           console.error(error);
         });
 
-      CamelonApi.get("dailyNewsRecords", {
-        params: {
-          yearStart: data.startYear,
-          yearEnd: data.endYear,
-          crimeType: data.crimeType,
-        },
-      })
+      CamelonApi.get(`dailynews_crimes_summary?yearStart=${data.startYear}&yearEnd=${data.endYear}`)
         .then((response) => {
           // console.log(response.data)
           setData2(response.data);
@@ -78,7 +66,7 @@ const LineChart = ({ data }) => {
       },
     };
 
-    const labels = data1.map((data) => data.year);
+    const labels = ['มกราคม', 'กุมภาพันธ์', 'มีนาคม', 'เมษายน', 'พฤษภาคม', 'มิถุนายน', 'กรกฎาคม', 'สิงหาคม' , 'กันยายน', 'ตุลาคม', 'พฤศจิกายน', 'ธันวาคม']
     let chart_data = {
       labels,
       datasets: [

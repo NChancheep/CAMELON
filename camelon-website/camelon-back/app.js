@@ -231,7 +231,6 @@ app.get("/dailynewscrimetypes", (req, res) => {
   }
 });
 
-
 app.get("/thairathCrimesCount", (req, res) => {
   console.log(req.query.year);
   if (req.query.year === "") {
@@ -240,7 +239,7 @@ app.get("/thairathCrimesCount", (req, res) => {
       FROM Thairath_Metadata
       GROUP BY MONTH(date)
       ORDER BY MONTH(date);
-  `, 
+  `,
       (err, result) => {
         if (err) {
           console.log(err);
@@ -274,7 +273,6 @@ app.get("/thairathCrimesCount", (req, res) => {
   }
 });
 
-
 app.get("/dailynewsCrimesCount", (req, res) => {
   console.log(req.query.year);
   if (req.query.year === "") {
@@ -283,7 +281,7 @@ app.get("/dailynewsCrimesCount", (req, res) => {
       FROM Dailynews_Metadata
       GROUP BY MONTH(date)
       ORDER BY MONTH(date);
-  `, 
+  `,
       (err, result) => {
         if (err) {
           console.log(err);
@@ -310,6 +308,124 @@ app.get("/dailynewsCrimesCount", (req, res) => {
         } else {
           res.send(result);
           console.log("DailyNews");
+          console.log(result);
+        }
+      }
+    );
+  }
+});
+
+app.get("/thairath_crimes_summary", (req, res) => {
+  db.query(
+    `SELECT month, SUM(numbers) as Numbers FROM thairath_summary_table_monthly_all_year
+      WHERE year between ? and ?
+      group by month
+      order by month
+  `,
+    [req.query.yearStart, req.query.yearEnd],
+    (err, result) => {
+      if (err) {
+        console.log(err);
+        res.status(500).send(err);
+      } else {
+        res.send(result);
+        console.log("Thairath");
+        console.log(result);
+      }
+    }
+  );
+});
+
+app.get("/dailynews_crimes_summary", (req, res) => {
+  db.query(
+    `SELECT month, SUM(numbers) as Numbers FROM dailynews_summary_table_monthly_all_year
+    WHERE year between ? and ?
+    group by month
+    order by month
+`,
+    [req.query.yearStart, req.query.yearEnd],
+    (err, result) => {
+      if (err) {
+        console.log(err);
+        res.status(500).send(err);
+      } else {
+        res.send(result);
+        console.log("Thairath");
+        console.log(result);
+      }
+    }
+  );
+});
+
+app.get("/thairath_crimes_statistics", (req, res) => {
+  console.log(req.query.year);
+
+  if (req.query.year !== "") {
+    db.query(
+      `SELECT * from thairath_crime_statistics
+      WHERE YEAR= ?
+  `,
+      [req.query.year],
+      (err, result) => {
+        if (err) {
+          console.log(err);
+          res.status(500).send(err);
+        } else {
+          res.send(result);
+          console.log("Thairath");
+          console.log(result);
+        }
+      }
+    );
+  } else {
+    db.query(
+      `SELECT SUM(Gambling) as Gambling, SUM(Murder) as Murder, SUM(\`Sexual Abuse\`) as 'Sexual Abuse', SUM(\`Theft/Burglary\`) as 'Theft/Burglary', SUM(Drug) as Drug, SUM(\`Battery/Assault\`) as 'Battery/Assualt', SUM(Accident) as Accident from thairath_crime_statistics
+
+
+  `,
+      (err, result) => {
+        if (err) {
+          console.log(err);
+          res.status(500).send(err);
+        } else {
+          res.send(result);
+          console.log("Thairath");
+          console.log(result);
+        }
+      }
+    );
+  }
+});
+
+app.get("/dailynews_crimes_statistics", (req, res) => {
+  if (req.query.year !== "") {
+    db.query(
+      `SELECT * from dailynews_crime_statistics
+      WHERE YEAR= ?
+  `,
+      [req.query.year],
+      (err, result) => {
+        if (err) {
+          console.log(err);
+          res.status(500).send(err);
+        } else {
+          res.send(result);
+          console.log("Dailynews");
+          console.log(result);
+        }
+      }
+    );
+  } else {
+    db.query(
+      `SELECT SUM(Gambling) as Gambling, SUM(Murder) as Murder, SUM(\`Sexual Abuse\`) as 'Sexual Abuse', SUM(\`Theft/Burglary\`) as 'Theft/Burglary', SUM(Drug) as Drug, SUM(\`Battery/Assault\`) as 'Battery/Assualt', SUM(Accident) as Accident from dailynews_crime_statistics
+  `,
+      (err, result) => {
+        if (err) {
+          console.log(err);
+          res.status(500).send(err);
+        } else {
+          res.send(result);
+          console.log("Dailynews");
           console.log(result);
         }
       }

@@ -38,7 +38,7 @@ const RadarChart = ({ data }) => {
     setData2([]);
     if (Object.keys(data).length !== 0) {
       setIsFirstLoad(false);
-      CamelonApi.get("thairathcrimetypes", {
+      CamelonApi.get("thairath_crimes_statistics", {
         params: {
           year: data.year,
         },
@@ -51,7 +51,7 @@ const RadarChart = ({ data }) => {
           console.error(error);
         });
 
-      CamelonApi.get("dailynewscrimetypes", {
+      CamelonApi.get("dailynews_crimes_statistics", {
         params: {
           year: data.year,
         },
@@ -67,6 +67,8 @@ const RadarChart = ({ data }) => {
   }, [data]);
 
   useEffect(() => {
+    console.log(data1)
+    console.log(data2)
     const options = {
       responsive: true,
       plugins: {
@@ -85,7 +87,12 @@ const RadarChart = ({ data }) => {
     let labels;
     if (data1.length !== 0 && data2.length !== 0) {
       labels = Object.keys(data1[0]);
-
+      const index = labels.indexOf('year')
+      if (index > -1) {
+        labels.splice(index, 1)
+      }
+      delete data1[0].year 
+      delete data2[0].year
       var chart_data = {
         labels,
         datasets: [
