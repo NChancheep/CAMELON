@@ -21,6 +21,7 @@ export default function Overview() {
   const [raderChartData, setRadarChartData] = useState({});
 
   const [yearBarChart, setYearBarChart] = useState("");
+  const [newsSource, setNewsSource] = useState("thairath")
 
   useEffect(() => {
     if (startYear > endYear) {
@@ -36,6 +37,7 @@ export default function Overview() {
       startYear: startYear,
       endYear: endYear,
       crimeType: crimeType,
+      newsSource: newsSource
     };
 
     setLineChartData(data);
@@ -64,6 +66,10 @@ export default function Overview() {
 
   const handleSpecificYearChange = (e) => {
     setSpecificYear(e.target.value);
+  };
+
+  const handleNewsSourceChange = (e) => {
+    setNewsSource(e.target.value);
   };
   // function getCrimeTypeName(crimeTypeMetadata) {
   //   switch (crimeTypeMetadata) {
@@ -142,12 +148,12 @@ export default function Overview() {
                       <div className="d-flex">
                         <Form.Control
                           as="select"
-                          value={startYear}
-                          onChange={null}
+                          value={newsSource}
+                          onChange={handleNewsSourceChange}
                         >
-                          <option value="">แหล่งข่าว</option>
-                          <option value="">ไทยรัฐ</option>
-                          <option value="Accident">เดลินิว</option>
+                          <option value="" disabled>แหล่งข่าว</option>
+                          <option value="Thairath" selected>ไทยรัฐ</option>
+                          <option value="Dailynews">เดลินิวส์</option>
                         </Form.Control>
                       </div>
                     </Col>
