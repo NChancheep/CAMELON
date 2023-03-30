@@ -509,9 +509,7 @@ export default function Pinmap() {
                   ) : (
                     <div></div>
                   )}
-                  {/* {trimString(news_data.crime_type)
-                    ? trimString(news_data.crime_type)
-                    : "ไม่มีข้อมูล"} */}
+                
                 </div>
               </div>
               <div className="popup-action">{button}</div>
