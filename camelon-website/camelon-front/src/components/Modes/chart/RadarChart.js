@@ -70,7 +70,8 @@ const RadarChart = ({ data }) => {
     console.log(data1)
     console.log(data2)
     const options = {
-      responsive: true,
+      maintainAspectRatio: false,
+      //responsive: true,
       plugins: {
         legend: {
           position: "top",
@@ -79,8 +80,8 @@ const RadarChart = ({ data }) => {
           display: true,
           text:
             data.year === ""
-              ? `Comparing Annual Rates of Different Types of Crime (ทุกปี)`
-              : `Comparing Annual Rates of Different Types of Crime (${data.year})`,
+              ? `การเปรียบเทียบอัตราประจำปีของอาชญากรรมประเภทต่างๆ (ทุกปี)`
+              : `การเปรียบเทียบอัตราประจำปีของอาชญากรรมประเภทต่างๆ (${data.year})`,
         },
       },
     };
@@ -99,14 +100,14 @@ const RadarChart = ({ data }) => {
           {
             label: "Thairath",
             data: Object.values(data1[0]),
-            borderColor: "rgb(255, 99, 132)",
-            backgroundColor: "rgba(255, 99, 132, 0.5)",
+            borderColor: "#06B401",
+            backgroundColor: "#06B40150",
           },
           {
             label: "Dailynews",
             data: Object.values(data2[0]),
-            borderColor: "rgb(53, 162, 235)",
-            backgroundColor: "rgba(53, 162, 235, 0.5)",
+            borderColor: "#DA3E7B",
+            backgroundColor: "#DA3E7B50",
           },
         ],
       };
@@ -146,7 +147,7 @@ const RadarChart = ({ data }) => {
           />
         </div>
       ) : (
-        <Radar width={100} height={"100%"} data={chartData} options={options} />
+        <Radar style={{ height: "100%", width: "100%"}}  data={chartData} options={options} />
       )}
     </div>
   );

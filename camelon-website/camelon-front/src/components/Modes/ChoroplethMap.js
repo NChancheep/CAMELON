@@ -81,17 +81,17 @@ export default function ChoroplethMap() {
         }
       });
     }
-    // console.log("=========================================================");
-    // console.log(name);
-    // console.log(getThailandPopulation(name));
-    // console.log("=========================================================");
-    // console.log("จังหวัด: " + name);
-    // console.log("total_crime: " + total_crime);
-    // console.log("crime_weight_sum: " + crime_weight_sum);
-    // console.log("Population: " + getThailandPopulation(name));
-    // console.log(
-    //   "คำนวณ: " + (crime_weight_sum / getThailandPopulation(name)) * 1000000
-    // );
+    console.log("=========================================================");
+    console.log(name);
+    console.log(getThailandPopulation(name));
+    console.log("=========================================================");
+    console.log("จังหวัด: " + name);
+    console.log("total_crime: " + total_crime);
+    console.log("crime_weight_sum: " + crime_weight_sum);
+    console.log("Population: " + getThailandPopulation(name));
+    console.log(
+      "คำนวณ: " + (crime_weight_sum / getThailandPopulation(name)) * 1000000
+    );
     let crime_meter = (crime_weight_sum / getThailandPopulation(name)) * 100000;
     return { crime_rate: total_crime, crime_meter: crime_meter };
   }
@@ -238,7 +238,7 @@ export default function ChoroplethMap() {
                     "#800026",
                   ]}
                   arcWidth={0.3}
-                  percent={selectedFeature.crime_meter / 10}
+                  percent={(selectedFeature.crime_meter/10)>100?100:(selectedFeature.crime_meter/10)}
                   textColor={"black"}
                   // hideText={true} // If you want to hide the text
                 />
