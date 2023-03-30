@@ -38,7 +38,7 @@ const RadarChart = ({ data }) => {
     setData2([]);
     if (Object.keys(data).length !== 0) {
       setIsFirstLoad(false);
-      CamelonApi.get("thairathcrimetypes", {
+      CamelonApi.get("thairath_crimes_statistics", {
         params: {
           year: data.year,
         },
@@ -51,7 +51,7 @@ const RadarChart = ({ data }) => {
           console.error(error);
         });
 
-      CamelonApi.get("dailynewscrimetypes", {
+      CamelonApi.get("dailynews_crimes_statistics", {
         params: {
           year: data.year,
         },
@@ -67,8 +67,11 @@ const RadarChart = ({ data }) => {
   }, [data]);
 
   useEffect(() => {
+    console.log(data1)
+    console.log(data2)
     const options = {
-      responsive: true,
+      maintainAspectRatio: false,
+      //responsive: true,
       plugins: {
         legend: {
           position: "top",
@@ -77,29 +80,34 @@ const RadarChart = ({ data }) => {
           display: true,
           text:
             data.year === ""
-              ? `Comparing Annual Rates of Different Types of Crime (ทุกปี)`
-              : `Comparing Annual Rates of Different Types of Crime (${data.year})`,
+              ? `การเปรียบเทียบอัตราประจำปีของอาชญากรรมประเภทต่างๆ (ทุกปี)`
+              : `การเปรียบเทียบอัตราประจำปีของอาชญากรรมประเภทต่างๆ (${data.year})`,
         },
       },
     };
     let labels;
     if (data1.length !== 0 && data2.length !== 0) {
       labels = Object.keys(data1[0]);
-
+      const index = labels.indexOf('year')
+      if (index > -1) {
+        labels.splice(index, 1)
+      }
+      delete data1[0].year 
+      delete data2[0].year
       var chart_data = {
         labels,
         datasets: [
           {
             label: "Thairath",
             data: Object.values(data1[0]),
-            borderColor: "rgb(255, 99, 132)",
-            backgroundColor: "rgba(255, 99, 132, 0.5)",
+            borderColor: "#06B401",
+            backgroundColor: "#06B40150",
           },
           {
             label: "Dailynews",
             data: Object.values(data2[0]),
-            borderColor: "rgb(53, 162, 235)",
-            backgroundColor: "rgba(53, 162, 235, 0.5)",
+            borderColor: "#DA3E7B",
+            backgroundColor: "#DA3E7B50",
           },
         ],
       };
@@ -139,7 +147,7 @@ const RadarChart = ({ data }) => {
           />
         </div>
       ) : (
-        <Radar width={100} height={"100%"} data={chartData} options={options} />
+        <Radar style={{ height: "100%", width: "100%"}}  data={chartData} options={options} />
       )}
     </div>
   );

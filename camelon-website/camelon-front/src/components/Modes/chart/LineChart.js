@@ -15,6 +15,7 @@ import { ThreeDots } from "react-loader-spinner";
 import CamelonApi from "../../../api/CamelonApi";
 
 const LineChart = ({ data }) => {
+  console.log(data)
   const [data1, setData1] = useState([]);
   const [data2, setData2] = useState([]);
   const [chartData, setChartData] = useState([]);
@@ -29,13 +30,8 @@ const LineChart = ({ data }) => {
     setData2([]);
     if (Object.keys(data).length !== 0) {
       setIsFirstLoad(false);
-      CamelonApi.get("thairathNewsRecords", {
-        params: {
-          yearStart: data.startYear,
-          yearEnd: data.endYear,
-          crimeType: data.crimeType,
-        },
-      })
+      if (data.newsSource === 'Thairath') {
+        CamelonApi.get(`thairath_crimes_summary?yearStart=${data.startYear}&yearEnd=${data.endYear}`)
         .then((response) => {
           // console.log(response.data)
           setData1(response.data);
@@ -44,20 +40,21 @@ const LineChart = ({ data }) => {
           console.error(error);
         });
 
-      CamelonApi.get("dailyNewsRecords", {
-        params: {
-          yearStart: data.startYear,
-          yearEnd: data.endYear,
-          crimeType: data.crimeType,
-        },
-      })
+
+      } else {
+        CamelonApi.get(`dailynews_crimes_summary?yearStart=${data.startYear}&yearEnd=${data.endYear}`)
         .then((response) => {
           // console.log(response.data)
-          setData2(response.data);
+          setData1(response.data);
         })
         .catch((error) => {
           console.error(error);
         });
+
+      }
+      
+
+     
     }
   }, [data]);
 
@@ -78,27 +75,27 @@ const LineChart = ({ data }) => {
       },
     };
 
-    const labels = data1.map((data) => data.year);
+    const labels = ['มกราคม', 'กุมภาพันธ์', 'มีนาคม', 'เมษายน', 'พฤษภาคม', 'มิถุนายน', 'กรกฎาคม', 'สิงหาคม' , 'กันยายน', 'ตุลาคม', 'พฤศจิกายน', 'ธันวาคม']
     let chart_data = {
       labels,
       datasets: [
         {
-          label: "Thairath",
+          label: data.newsSource,
           data: data1.map((data) => data.Numbers),
           borderColor: "rgb(255, 99, 132)",
           backgroundColor: "rgba(255, 99, 132, 0.5)",
         },
-        {
-          label: "Dailynews",
-          data: data2.map((data) => data.Numbers),
-          borderColor: "rgb(53, 162, 235)",
-          backgroundColor: "rgba(53, 162, 235, 0.5)",
-        },
+        // {
+        //   label: "Dailynews",
+        //   data: data2.map((data) => data.Numbers),
+        //   borderColor: "rgb(53, 162, 235)",
+        //   backgroundColor: "rgba(53, 162, 235, 0.5)",
+        // },
       ],
     };
     setChartData(chart_data);
     setOptions(options);
-    if (data1.length !== 0 && data2.length !== 0) {
+    if (data1.length !== 0) {
       setIsLoading(false);
       // console.log(data1.length)
       // console.log(data2.length)
@@ -115,7 +112,7 @@ const LineChart = ({ data }) => {
       }}
     >
       {isFirstLoad ? (
-        <div style={{ color: "#9c9c9c", fontSize: 14, marginTop: "1%" }}>
+        <div style={{ color: "#9c9c9c", fontSize: 14, marginTop: "3%" }}>
           **โปรดเลือกปีเพื่อเเสดงข้อมูล
         </div>
       ) : isLoading ? (

@@ -15,13 +15,13 @@ export default function Overview() {
   const [lineChartData, setLineChartData] = useState({});
   const [yearList, setYearList] = useState([
     2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021,
-    2022,
   ]);
   const [isPageLoading, setIsPageLoading] = useState(false);
   const [specificYear, setSpecificYear] = useState("");
   const [raderChartData, setRadarChartData] = useState({});
 
   const [yearBarChart, setYearBarChart] = useState("");
+  const [newsSource, setNewsSource] = useState("thairath")
 
   useEffect(() => {
     if (startYear > endYear) {
@@ -37,6 +37,7 @@ export default function Overview() {
       startYear: startYear,
       endYear: endYear,
       crimeType: crimeType,
+      newsSource: newsSource
     };
 
     setLineChartData(data);
@@ -66,26 +67,30 @@ export default function Overview() {
   const handleSpecificYearChange = (e) => {
     setSpecificYear(e.target.value);
   };
-  function getCrimeTypeName(crimeTypeMetadata) {
-    switch (crimeTypeMetadata) {
-      case "SexualAbuse":
-        return "การล่วงละเมิด";
-      case "Murder":
-        return "ฆาตกรรม";
-      case "Gambling":
-        return "การพนัน";
-      case "Accident":
-        return "อุบัติเหตุ";
-      case "Theft_Burglary":
-        return "ลักทรัพย์";
-      case "Battery_Assault":
-        return "ทำร้ายร่างกาย";
-      case "Drug":
-        return "ยาเสพติด";
-      default:
-        return "อื่นๆ";
-    }
-  }
+
+  const handleNewsSourceChange = (e) => {
+    setNewsSource(e.target.value);
+  };
+  // function getCrimeTypeName(crimeTypeMetadata) {
+  //   switch (crimeTypeMetadata) {
+  //     case "SexualAbuse":
+  //       return "การล่วงละเมิด";
+  //     case "Murder":
+  //       return "ฆาตกรรม";
+  //     case "Gambling":
+  //       return "การพนัน";
+  //     case "Accident":
+  //       return "อุบัติเหตุ";
+  //     case "Theft_Burglary":
+  //       return "ลักทรัพย์";
+  //     case "Battery_Assault":
+  //       return "ทำร้ายร่างกาย";
+  //     case "Drug":
+  //       return "ยาเสพติด";
+  //     default:
+  //       return "อื่นๆ";
+  //   }
+  // }
 
   return (
     <div
@@ -139,18 +144,20 @@ export default function Overview() {
                       </div>
                     </Col>
                     <Col>
-                      <Form.Label>กรุณาเลือกเดือน</Form.Label>
+                      <Form.Label>กรุณาเลือกแหล่งข่าว</Form.Label>
                       <div className="d-flex">
                         <Form.Control
                           as="select"
-                          value={startYear}
-                          onChange={null}
+                          value={newsSource}
+                          onChange={handleNewsSourceChange}
                         >
-                          <option value="">เดือน</option>
+                          <option value="" disabled>แหล่งข่าว</option>
+                          <option value="Thairath" selected>ไทยรัฐ</option>
+                          <option value="Dailynews">เดลินิวส์</option>
                         </Form.Control>
                       </div>
                     </Col>
-                    <Col>
+                    {/* <Col>
                       <Form.Label>กรุณาเลือกประเภท</Form.Label>
                       <Form.Control
                         as="select"
@@ -166,7 +173,7 @@ export default function Overview() {
                         <option value="Sexual Abuse">การล่วงละเมิด</option>
                         <option value="Theft/Burglary">ลักทรัพย์</option>
                       </Form.Control>
-                    </Col>
+                    </Col> */}
                   </Row>
                 </Form.Group>
               </Form>
@@ -209,15 +216,15 @@ export default function Overview() {
               </Row>
               <Col>
                 <Row>
-                  <Col>
+                  {/* <Col>
                     <BarChart
                       style={{ width: "100%", height: "100%" }}
                       data={raderChartData}
                     />
-                  </Col>
+                  </Col> */}
                   <Col>
                     <RadarChart
-                      style={{ width: "100%", height: "100%" }}
+                      style={{}}
                       data={raderChartData}
                     />
                   </Col>
@@ -225,8 +232,6 @@ export default function Overview() {
               </Col>
             </Col>
           </Row>
-
-          <div style={{ marginBottom: "2%" }}></div>
         </Container>
       )}
     </div>

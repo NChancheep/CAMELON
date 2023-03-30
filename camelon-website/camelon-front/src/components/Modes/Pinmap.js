@@ -128,7 +128,7 @@ export default function Pinmap() {
     // let earliestStartDate = null;
     // let latestStartDate = null;
     // console.log(selectedMonths)
-    
+
     // for (let i = 0; i < selectedMonths.length; i++) {
     //   const month = selectedMonths[i];
     //   if (month.isSelected === true) {
@@ -182,31 +182,48 @@ export default function Pinmap() {
     // }
     // // console.log(earliestStartDate, latestStartDate)
     // setDateRange([earliestStartDate, latestStartDate]);
-    let date_range = []
+    let date_range = [];
     let earliestSelectedMonth = null;
     let latestSelectedMonth = null;
     let earliestStartDate = null;
     let latestStartDate = null;
     if (selectedYear === "") {
-      earliestStartDate = new Date(1970, 1, 1)
-      latestStartDate = new Date(3000, 12, 31)
-      date_range.push(earliestStartDate)
-      date_range.push(latestStartDate)
-      setDateRange(date_range)
-    } else {
-    for (let i = 0; i < selectedMonths.length; i++) {
-      if(selectedMonths[i].isSelected) {
-        earliestStartDate = new Date(selectedYear, selectedMonths[i].number - 1, 1)
-        latestStartDate = new Date(selectedYear, selectedMonths[i].number - 1, 31)
-        date_range.push(earliestStartDate)
-        date_range.push(latestStartDate)
+      let year_list = [
+        2018 ,2020, 2021,
+  
+      ];
+      for (let i = 0; i < year_list.length; i++) {
+        for (let j = 0; j < selectedMonths.length; j++) {
+          if (selectedMonths[j].isSelected) {
+            earliestStartDate = new Date(year_list[i], selectedMonths[j].number, 1);
+            latestStartDate = new Date(year_list[i], selectedMonths[j].number, 31);
+            date_range.push(earliestStartDate);
+            date_range.push(latestStartDate);
+          }
+        }
       }
+      // console.log(date_range)
+      setDateRange(date_range);
+    } else {
+      for (let i = 0; i < selectedMonths.length; i++) {
+        if (selectedMonths[i].isSelected) {
+          earliestStartDate = new Date(
+            selectedYear,
+            selectedMonths[i].number - 1,
+            1
+          );
+          latestStartDate = new Date(
+            selectedYear,
+            selectedMonths[i].number - 1,
+            31
+          );
+          date_range.push(earliestStartDate);
+          date_range.push(latestStartDate);
+        }
+      }
+      setDateRange(date_range);
     }
-    setDateRange(date_range)
-  }
     // console.log(date_range)
-    
-
   }, [selectedMonths, selectedYear]);
 
   const dispatch = useDispatch();
@@ -225,15 +242,13 @@ export default function Pinmap() {
   }
 
   function isWithinOneMonthRange(datetime) {
-   
     for (let i = 0; i < dateRange.length; i += 2) {
       const startDate = dateRange[i];
       const endDate = dateRange[i + 1];
       if (
         Date.parse(datetime) >= Date.parse(startDate) &&
-        Date.parse(datetime) <= Date.parse(endDate) 
+        Date.parse(datetime) <= Date.parse(endDate)
       ) {
-        
         return true;
       }
     }
@@ -345,8 +360,15 @@ export default function Pinmap() {
                 <div style={fontSize}>
                   {" "}
                   <span style={titleStyle}>ข่าววันที่: </span>{" "}
-                  {trimString(news_datetime)
-                    ? trimString(news_datetime)
+                  {trimString(news_datetime).split(" ")[0]
+                    ? trimString(news_datetime).split(" ")[0]
+                    : "ไม่มีข้อมูล"}{" "}
+                </div>
+                <div style={fontSize}>
+                  {" "}
+                  <span style={titleStyle}>เวลา: </span>{" "}
+                  {trimString(news_datetime).split(" ")[1]
+                    ? trimString(news_datetime).split(" ")[1]+" นาฬิกา"
                     : "ไม่มีข้อมูล"}{" "}
                 </div>
                 <div style={fontSize}>
