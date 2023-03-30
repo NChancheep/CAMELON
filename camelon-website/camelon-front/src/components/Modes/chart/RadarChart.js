@@ -60,7 +60,7 @@ const RadarChart = ({ data }) => {
     // console.log(data2)
     const options = {
       maintainAspectRatio: false,
-      responsive: true,
+      //responsive: true,
       plugins: {
         legend: {
           position: "top",
@@ -118,8 +118,8 @@ const RadarChart = ({ data }) => {
           {
             label: "จำนวนข่าวอาชญากรรมเเต่ละประเภท",
             data: Object.values(data1[0]),
-            borderColor: "rgb(255, 99, 132)",
-            backgroundColor: "rgba(255, 99, 132, 0.5)",
+            borderColor: "#06B401",
+            backgroundColor: "#06B40150",
           },
         ],
       };

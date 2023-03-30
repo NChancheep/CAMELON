@@ -161,7 +161,7 @@ export default function Overview() {
                         </Form.Control>
                       </div>
                     </Col>
-                    <Col sm>
+                    <Col>
                       <Form.Label>กรุณาเลือกประเภท</Form.Label>
                       <Form.Control
                         as="select"
@@ -179,8 +179,8 @@ export default function Overview() {
                         <option value="Theft/Burglary">ลักทรัพย์</option>
                       </Form.Control>
                     </Col>
-                    <Col sm>
-                      <Row style={{ marginTop: "10.5%" }}>
+                    <Col>
+                      <Row style={{marginTop:"1.5%"}}>
                         <Button
                           type="submit"
                           variant="success"
@@ -211,7 +211,10 @@ export default function Overview() {
                   <Col>
                     <Row>
                       <Col>
-                        <RadarChart data={lineChartData} />
+                        <RadarChart
+                          style={{ width: "100%", height: "100%" }}
+                          data={lineChartData}
+                        />
                       </Col>
                     </Row>
                   </Col>
@@ -259,6 +262,8 @@ export default function Overview() {
               </Col>
             </Col> */}
           </Row>
+
+          <div style={{ marginBottom: "2%" }}></div>
         </Container>
       )}
     </div>
