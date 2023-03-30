@@ -2,11 +2,11 @@ import React, { useState, useEffect } from "react";
 import BarChart from "./chart/BarChart";
 import RadarChart from "./chart/RadarChart";
 import LineChart from "./chart/LineChart";
+import PieChart from "./chart/PieChart";
+
 import "react-datepicker/dist/react-datepicker.css";
 import { Form, Button, Container, Row, Col } from "react-bootstrap";
-import CamelonApi from "../../api/CamelonApi";
 import { ThreeDots } from "react-loader-spinner";
-import Card from "react-bootstrap/Card";
 
 export default function Overview() {
   const [startYear, setStartYear] = useState(2016);
@@ -21,7 +21,9 @@ export default function Overview() {
   const [raderChartData, setRadarChartData] = useState({});
 
   const [yearBarChart, setYearBarChart] = useState("");
-  const [newsSource, setNewsSource] = useState("thairath")
+  const [newsSource, setNewsSource] = useState("thairath");
+
+  const [mode, setMode] = useState("lineChart");
 
   useEffect(() => {
     if (startYear > endYear) {
@@ -37,7 +39,7 @@ export default function Overview() {
       startYear: startYear,
       endYear: endYear,
       crimeType: crimeType,
-      newsSource: newsSource
+      newsSource: newsSource,
     };
 
     setLineChartData(data);
@@ -68,8 +70,8 @@ export default function Overview() {
     setSpecificYear(e.target.value);
   };
 
-  const handleNewsSourceChange = (e) => {
-    setNewsSource(e.target.value);
+  const handleMode = (e) => {
+    setMode(e.target.value);
   };
   // function getCrimeTypeName(crimeTypeMetadata) {
   //   switch (crimeTypeMetadata) {
@@ -113,7 +115,7 @@ export default function Overview() {
               <Form>
                 <Form.Group>
                   <Row>
-                    <Col sm={6}>
+                    <Col sm={4}>
                       <Form.Label>กรุณาเลือกระยะเวลาของปี</Form.Label>
                       <div className="d-flex">
                         <Form.Control
@@ -143,26 +145,29 @@ export default function Overview() {
                         </Form.Control>
                       </div>
                     </Col>
-                    <Col>
-                      <Form.Label>กรุณาเลือกแหล่งข่าว</Form.Label>
+                    <Col sm={2}>
+                      <Form.Label>ประเภทแผนภูมิ</Form.Label>
                       <div className="d-flex">
                         <Form.Control
                           as="select"
-                          value={newsSource}
-                          onChange={handleNewsSourceChange}
+                          value={mode}
+                          onChange={handleMode}
                         >
-                          <option value="" disabled>แหล่งข่าว</option>
-                          <option value="Thairath" selected>ไทยรัฐ</option>
-                          <option value="Dailynews">เดลินิวส์</option>
+                          <option value="" disabled>
+                            กรุณาเลือกประเภทแผนภูมิ
+                          </option>
+                          <option value="lineChart">แผนภูมิเส้น</option>
+                          <option value="barChart">แผนภูมิแท่ง</option>
                         </Form.Control>
                       </div>
                     </Col>
-                    <Col>
+                    <Col sm>
                       <Form.Label>กรุณาเลือกประเภท</Form.Label>
                       <Form.Control
                         as="select"
                         value={crimeType}
                         onChange={handleCrimeTypeChange}
+                        // disabled={mode === "lineChart" ? true : false}
                       >
                         <option value="">ทุกประเภท</option>
                         <option value="Accident">อุบัติเหตุ</option>
@@ -174,18 +179,46 @@ export default function Overview() {
                         <option value="Theft/Burglary">ลักทรัพย์</option>
                       </Form.Control>
                     </Col>
+                    <Col sm>
+                      <Row style={{ marginTop: "10.5%" }}>
+                        <Button
+                          type="submit"
+                          variant="success"
+                          onClick={handleSubmit}
+                        >
+                          ตกลง
+                        </Button>
+                      </Row>
+                    </Col>
                   </Row>
                 </Form.Group>
               </Form>
-
-              <Row style={{ marginLeft: 1, marginRight: 1, marginTop: "3%" }}>
-                <Button type="submit" variant="success" onClick={handleSubmit}>
-                  ตกลง
-                </Button>
+              <Row>
+                <Col>
+                  {mode === "barChart" ? (
+                    <Col>
+                      <BarChart data={lineChartData} />
+                    </Col>
+                  ) : mode === "lineChart" ? (
+                    <Col>
+                      <LineChart data={lineChartData} />
+                    </Col>
+                  ) : (
+                    <div></div>
+                  )}
+                </Col>
+                <Col>
+                  <Col>
+                    <Row>
+                      <Col>
+                        <RadarChart data={lineChartData} />
+                      </Col>
+                    </Row>
+                  </Col>
+                </Col>
               </Row>
-              <LineChart data={lineChartData} />
             </Col>
-            <Col xs className="justify-content-center">
+            {/* <Col xs className="justify-content-center">
               <Form>
                 <Form.Group>
                   <Form.Label>
@@ -216,24 +249,16 @@ export default function Overview() {
               </Row>
               <Col>
                 <Row>
-                  {/* <Col>
-                    <BarChart
-                      style={{ width: "100%", height: "100%" }}
-                      data={raderChartData}
-                    />
-                  </Col> */}
                   <Col>
                     <RadarChart
                       style={{ width: "100%", height: "100%" }}
-                      data={raderChartData}
+                      data={lineChartData}
                     />
                   </Col>
                 </Row>
               </Col>
-            </Col>
+            </Col> */}
           </Row>
-
-          <div style={{ marginBottom: "2%" }}></div>
         </Container>
       )}
     </div>

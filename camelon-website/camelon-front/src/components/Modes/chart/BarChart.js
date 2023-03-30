@@ -30,43 +30,29 @@ const BarChart = ({ data }) => {
 
  
 
-  // console.log(data)
+  console.log(data)
   useEffect(() => {
     setIsLoading(true);
     setData1([]);
     setData2([]);
     if (Object.keys(data).length !== 0) {
       setIsFirstLoad(false);
-      CamelonApi.get("thairathCrimesCount", {
-        params: {
-          year: data.year,
-        },
-      })
+      CamelonApi.get(`news_crime_statistics?yearStart=${data.startYear}&yearEnd=${data.endYear}&crimeType=${data.crimeType}`)
         .then((response) => {
-          // console.log(response.data)
+          console.log(response.data)
           setData1(response.data);
         })
         .catch((error) => {
           console.error(error);
         });
 
-      CamelonApi.get("dailynewsCrimesCount", {
-        params: {
-          year: data.year,
-        },
-      })
-        .then((response) => {
-          // console.log(response.data)
-          setData2(response.data);
-        })
-        .catch((error) => {
-          console.error(error);
-        });
+      
     }
   }, [data]);
 
   useEffect(() => {
     const options = {
+      maintainAspectRatio: false,
       responsive: true,
       plugins: {
         legend: {
@@ -75,44 +61,24 @@ const BarChart = ({ data }) => {
         title: {
           display: true,
           text:
-            data.year === ""
-              ? `Monthly Crime News Report (ทุกปี)`
-              : `Monthly Crime News Report (${data.year})`,
+            data.crimeType === ""
+              ? `Frequency of Crime news (${data.startYear} to ${data.endYear})`
+              : `Frequency of ${data.crimeType} Crime news (${data.startYear} to ${data.endYear})`,
         },
       },
     };
     let labels = null;
-    if (data1.length !== 0 && data2.length !== 0) {
-      const newData_thairath = [];
-      for (let i = 1; i <= 12; i++) {
-        const monthData = data1.find((d) => d.month === i);
-        newData_thairath.push(monthData ? monthData.Numbers : 0);
-      }
-
-      const newData_dailyNews = [];
-      for (let i = 1; i <= 12; i++) {
-        const monthData = data2.find((d) => d.month === i);
-        newData_dailyNews.push(monthData ? monthData.Numbers : 0);
-      }
-
-      // console.log(newData);
-      // console.log(data1);
-      labels = Object.values(months);
-
+    if (data1.length !== 0) {
+     
+      labels = data1.map(data => data.year)
       var chart_data = {
         labels,
         datasets: [
           {
-            label: "Thairath",
-            data: newData_thairath,
+            label: "จำนวนข่าวอาชญากรรมต่อปี",
+            data: data1.map(data => data.Numbers),
             borderColor: "rgb(255, 99, 132)",
             backgroundColor: "rgba(255, 99, 132, 0.5)",
-          },
-          {
-            label: "Dailynews",
-            data: newData_dailyNews,
-            borderColor: "rgb(53, 162, 235)",
-            backgroundColor: "rgba(53, 162, 235, 0.5)",
           },
         ],
       };
@@ -120,7 +86,7 @@ const BarChart = ({ data }) => {
 
     setChartData(chart_data);
     setOptions(options);
-    if (data1.length !== 0 && data2.length !== 0) {
+    if (data1.length !== 0 ) {
       setIsLoading(false);
       // console.log(data1.length)
       // console.log(data2.length)
@@ -152,7 +118,7 @@ const BarChart = ({ data }) => {
           />
         </div>
       ) : (
-        <Bar width={"100%"} data={chartData} options={options} />
+        <Bar style={{width:"100%",height:"100%"}} data={chartData} options={options} />
       )}
     </div>
   );
