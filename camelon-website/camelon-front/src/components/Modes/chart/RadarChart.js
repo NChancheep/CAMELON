@@ -38,37 +38,26 @@ const RadarChart = ({ data }) => {
     setData2([]);
     if (Object.keys(data).length !== 0) {
       setIsFirstLoad(false);
-      CamelonApi.get("thairath_crimes_statistics", {
+      CamelonApi.get("news_crimes_statistics_per_year", {
         params: {
-          year: data.year,
+          yearStart: data.startYear,
+          yearEnd: data.endYear
         },
       })
         .then((response) => {
-          // console.log(response.data)
+          console.log(response.data)
           setData1(response.data);
         })
         .catch((error) => {
           console.error(error);
         });
 
-      CamelonApi.get("dailynews_crimes_statistics", {
-        params: {
-          year: data.year,
-        },
-      })
-        .then((response) => {
-          // console.log(response.data)
-          setData2(response.data);
-        })
-        .catch((error) => {
-          console.error(error);
-        });
     }
   }, [data]);
 
   useEffect(() => {
-    console.log(data1)
-    console.log(data2)
+    // console.log(data1)
+    // console.log(data2)
     const options = {
       maintainAspectRatio: false,
       //responsive: true,
@@ -80,47 +69,71 @@ const RadarChart = ({ data }) => {
           display: true,
           text:
             data.year === ""
-              ? `การเปรียบเทียบอัตราประจำปีของอาชญากรรมประเภทต่างๆ (ทุกปี)`
-              : `การเปรียบเทียบอัตราประจำปีของอาชญากรรมประเภทต่างๆ (${data.year})`,
+              ? `การเปรียบเทียบอาชญากรรมประเภทต่างๆ (ทุกปี)`
+              : `การเปรียบเทียบอาชญากรรมประเภทต่างๆ (${data.startYear} - ${data.endYear})`,
         },
       },
     };
-    let labels;
-    if (data1.length !== 0 && data2.length !== 0) {
-      labels = Object.keys(data1[0]);
+
+
+    let labels = data;
+    
+    if (data1.length !== 0) {
+      // let datasets = []
+      // let years = []
+      // years = data1.map(data => data.year)
+      // for (let i = 0; i < years.length; i++) {
+      //   let data_result = []
+      //   for(let j = 0; j < data1.length ; j++) {
+      //     if(data1[j].year === years[i]) {
+      //       delete data1[j].year
+      //       data_result = Object.values(data1[j])
+      //   }}
+
+      //   let data_input = {
+      //     label: years[i],
+      //     data: data_result,
+      //     borderColor: ['#1f77b450', '#ff7f0e50', '#2ca02c50', '#d6272870', '#9467bd70', '#8c564b', '#e377c2', '#7f7f7f', '#bcbd22', '#17becf', '#f6c7b6'],
+      //     backgroundColor: ['#1f77b450', '#ff7f0e50', '#2ca02c50', '#d6272870', '#9467bd70', '#8c564b', '#e377c2', '#7f7f7f', '#bcbd22', '#17becf', '#f6c7b6'],
+      //   }
+      //   datasets.push(data_input)
+      // }
+
+      // let chart_data = {
+      //   labels: ['Gambling', 'Murder', 'Sexual Abuse', 'Theft/Burglary', 'Drug', 'Battery/Assualt', 'Accident'],
+      //   datasets: datasets,
+      // };
+
+      
+      labels = data1.map(data => data.year)
       const index = labels.indexOf('year')
       if (index > -1) {
         labels.splice(index, 1)
       }
       delete data1[0].year 
-      delete data2[0].year
+      console.log(data1)
       var chart_data = {
-        labels,
+        labels: Object.keys(data1[0]),
         datasets: [
           {
-            label: "Thairath",
+            label: "จำนวนข่าวอาชญากรรมเเต่ละประเภท",
             data: Object.values(data1[0]),
             borderColor: "#06B401",
             backgroundColor: "#06B40150",
           },
-          {
-            label: "Dailynews",
-            data: Object.values(data2[0]),
-            borderColor: "#DA3E7B",
-            backgroundColor: "#DA3E7B50",
-          },
         ],
       };
-    }
+    
+
 
     setChartData(chart_data);
     setOptions(options);
-    if (data1.length !== 0 && data2.length !== 0) {
+    if (data1.length !== 0) {
       setIsLoading(false);
       // console.log(data1.length)
       // console.log(data2.length)
     }
-  }, [data1, data2]);
+  }}, [data1, data2]);
 
   return (
     <div
@@ -147,7 +160,7 @@ const RadarChart = ({ data }) => {
           />
         </div>
       ) : (
-        <Radar style={{ height: "100%", width: "100%"}}  data={chartData} options={options} />
+        <Radar style={{width:"100%",height:"100%"}} data={chartData} options={options} />
       )}
     </div>
   );

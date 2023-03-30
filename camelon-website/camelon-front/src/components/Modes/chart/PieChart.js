@@ -10,11 +10,13 @@ import {
   Legend,
 } from "chart.js";
 import { Line } from "react-chartjs-2";
+import { Pie } from 'react-chartjs-2';
+
 import { ThreeDots } from "react-loader-spinner";
 
 import CamelonApi from "../../../api/CamelonApi";
 
-const LineChart = ({ data }) => {
+const PieChart = ({ data }) => {
   // console.log(data)
   const [data1, setData1] = useState([]);
   const [data2, setData2] = useState([]);
@@ -31,7 +33,7 @@ const LineChart = ({ data }) => {
     if (Object.keys(data).length !== 0) {
       setIsFirstLoad(false);
       
-        CamelonApi.get(`news_crimes_summary?yearStart=${data.startYear}&yearEnd=${data.endYear}&crimeType=${data.crimeType}`)
+        CamelonApi.get(`news_crimes_summary?yearStart=${data.startYear}&yearEnd=${data.endYear}`)
         .then((response) => {
           console.log(response.data)
           setData1(response.data);
@@ -39,21 +41,6 @@ const LineChart = ({ data }) => {
         .catch((error) => {
           console.error(error);
         });
-
-
-        // CamelonApi.get(`dailynews_crimes_summary?yearStart=${data.startYear}&yearEnd=${data.endYear}`)
-        // .then((response) => {
-        //   // console.log(response.data)
-        //   setData1(response.data);
-        // })
-        // .catch((error) => {
-        //   console.error(error);
-        // });
-
-      
-      
-
-     
     }
   }, [data]);
 
@@ -96,7 +83,7 @@ const LineChart = ({ data }) => {
         data: data_result,
         pointRadius: 0,
         borderColor: ['#1f77b4', '#ff7f0e', '#2ca02c', '#d62728', '#9467bd', '#8c564b', '#e377c2', '#7f7f7f', '#bcbd22', '#17becf', '#f6c7b6'],
-        backgroundColor: ['#1f77b4', '#ff7f0e', '#2ca02c', '#d62728', '#9467bd', '#8c564b', '#e377c2', '#7f7f7f', '#bcbd22', '#17becf', '#f6c7b6'],
+        backgroundColor:['#ff6384', '#36a2eb', '#cc65fe', '#ffce56', '#63ed7a', '#ffa07a', '#add8e6', '#f08080', '#e6e6fa', '#9acd32', '#ba55d3'],
       }
       datasets.push(data_input)
     
@@ -141,10 +128,10 @@ const LineChart = ({ data }) => {
           />
         </div>
       ) : (
-        <Line data={chartData} options={options} />
+        <Pie data={chartData} options={options} />
       )}
     </div>
   );
 };
 
-export default LineChart;
+export default PieChart;
