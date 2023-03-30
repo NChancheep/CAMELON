@@ -143,9 +143,13 @@ export default function MenuController() {
                 <Card>
                   <Filtter></Filtter>
                 </Card>
-                <Card style={{marginTop:"1%"}}>
-                  <ColorType></ColorType>
-                </Card>
+                {state.mode === "pin_map" ? (
+                  <Card style={{ marginTop: "1%" }}>
+                    <ColorType></ColorType>
+                  </Card>
+                ) : (
+                  <div></div>
+                )}
               </div>
             )}
           </Col>

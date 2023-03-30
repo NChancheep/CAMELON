@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { Col, Card, Row } from "react-bootstrap";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
@@ -8,6 +8,7 @@ import { change_selected_year } from "../store/Reducer";
 function TimeSelecter() {
   const { selectedMonths } = useSelector((state) => state.data);
   const { selectedYear } = useSelector((state) => state.data);
+  const [isSelectedAll, setIsSelectAll] = useState(true);
 
   const { news } = useSelector((state) => state.data);
   function count(year, month) {
@@ -33,15 +34,21 @@ function TimeSelecter() {
     return count;
   }
 
-  // useEffect(() => {
-  //   if (selectedYear === "") {
-  //     let newMonths = [...selectedMonths];
-  //     newMonths.forEach((month, index) => {
-  //       newMonths[index] = { ...month, isSelected: true };
-  //     });
-  //     dispatch(change_selected_months(newMonths));
-  //   }
-  // }, [selectedYear]);
+  useEffect(() => {
+    if (isSelectedAll) {
+      let newMonths = [...selectedMonths];
+      newMonths.forEach((month, index) => {
+        newMonths[index] = { ...month, isSelected: true };
+      });
+      dispatch(change_selected_months(newMonths));
+    } else {
+      let newMonths = [...selectedMonths];
+      newMonths.forEach((month, index) => {
+        newMonths[index] = { ...month, isSelected: false };
+      });
+      dispatch(change_selected_months(newMonths));
+    }
+  }, [isSelectedAll]);
 
   const dispatch = useDispatch();
 
@@ -56,28 +63,43 @@ function TimeSelecter() {
     dispatch(change_selected_months(newMonths));
   }
 
+  function handleCheckBox() {
+    let newMonths = [...selectedMonths];
+    newMonths.forEach((month, index) => {
+      if (month.isSelected === true) {
+        newMonths.forEach((month, index) => {
+          newMonths[index] = { ...month, isSelected: false };
+        });
+      } else {
+        newMonths.forEach((month, index) => {
+          newMonths[index] = { ...month, isSelected: true };
+        });
+      }
+    });
+    dispatch(change_selected_months(newMonths));
+  }
+
   return (
     <Card style={{ marginTop: "2%", fontFamily: "Kanit" }}>
       <Row xs>
-        <Col sm style={{ margin: "1%" }}>
-          <label>
-            กรุณาเลือกปีที่ต้องการจะทราบข้อมูล:
-            <select
-              value={selectedYear}
-              onChange={(e) => dispatch(change_selected_year(e.target.value))}
-            >
-              <option disabled>เลือกปี</option>
-              <option value="" selected>
-                เลือกทุกปี
-              </option>
-              <option value="2018">2018</option>
-              <option value="2020">2020</option>
-              <option value="2021">2021</option>
-            </select>
-          </label>
+        <Col sm style={{ marginTop: "1%", marginLeft: "1%" }}>
+          กรุณาเลือกปีที่ต้องการจะทราบข้อมูล:
+          <select
+            value={selectedYear}
+            onChange={(e) => dispatch(change_selected_year(e.target.value))}
+          >
+            <option disabled>เลือกปี</option>
+            <option value="" selected>
+              เลือกทุกปี
+            </option>
+            <option value="2018">2018</option>
+            <option value="2020">2020</option>
+            <option value="2021">2021</option>
+          </select>
         </Col>
-        <Col sm style={{ margin: "1%" }}>
-          <label>*สามารถเลือกเดือนที่ต้องการจะทราบว่ามีเหตุการณ์ใดเกินขึ้นได้บางจากการกดที่เดือนที่ต้องการ</label>
+
+        <Col sm={6} style={{ marginTop: "1%" }}>
+          *สามารถเลือกเดือนที่ต้องการจะทราบว่ามีเหตุการณ์ใดเกินขึ้นได้บางจากการกดที่เดือนที่ต้องการ
         </Col>
       </Row>
       <Row xs style={{ padding: 10 }}>
@@ -85,13 +107,6 @@ function TimeSelecter() {
           <Col sm key={month.number}>
             {month.isSelected ? (
               <button
-                // disabled={(() => {
-                //   if (selectedYear === "") {
-                //     return true;
-                //   } else {
-                //     return false;
-                //   }
-                // })()}
                 style={{ width: "100%", marginBottom: "10%" }}
                 className=""
                 type="submit"
@@ -123,6 +138,17 @@ function TimeSelecter() {
             )}
           </Col>
         ))}
+      </Row>
+      <Row>
+        <Col sm style={{ marginLeft: "1%" }} >
+          <input
+            className="mr-2"
+            type="checkbox"
+            checked={isSelectedAll}
+            onClick={() => setIsSelectAll(!isSelectedAll)}
+          ></input>
+          คลิกเพื่อเลือกหรือไม่เลือกทั้งหมด
+        </Col>
       </Row>
     </Card>
   );

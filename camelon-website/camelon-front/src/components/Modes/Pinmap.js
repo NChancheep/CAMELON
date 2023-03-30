@@ -2,6 +2,15 @@
 /* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from "react";
 import L from "leaflet";
+import {
+  Accident,
+  Battery_Assault,
+  Drug,
+  Gambling,
+  Murder,
+  SexualAbuse,
+  Theft_Burglary,
+} from "../../store/data/contact.js";
 
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
@@ -28,7 +37,6 @@ import {
 
 import MarkerClusterGroup from "react-leaflet-cluster";
 
-import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
 import { useSelector } from "react-redux";
@@ -188,15 +196,20 @@ export default function Pinmap() {
     let earliestStartDate = null;
     let latestStartDate = null;
     if (selectedYear === "") {
-      let year_list = [
-        2018 ,2020, 2021,
-  
-      ];
+      let year_list = [2018, 2020, 2021];
       for (let i = 0; i < year_list.length; i++) {
         for (let j = 0; j < selectedMonths.length; j++) {
           if (selectedMonths[j].isSelected) {
-            earliestStartDate = new Date(year_list[i], selectedMonths[j].number, 1);
-            latestStartDate = new Date(year_list[i], selectedMonths[j].number, 31);
+            earliestStartDate = new Date(
+              year_list[i],
+              selectedMonths[j].number,
+              1
+            );
+            latestStartDate = new Date(
+              year_list[i],
+              selectedMonths[j].number,
+              31
+            );
             date_range.push(earliestStartDate);
             date_range.push(latestStartDate);
           }
@@ -368,7 +381,7 @@ export default function Pinmap() {
                   {" "}
                   <span style={titleStyle}>เวลา: </span>{" "}
                   {trimString(news_datetime).split(" ")[1]
-                    ? trimString(news_datetime).split(" ")[1]+" นาฬิกา"
+                    ? trimString(news_datetime).split(" ")[1] + " นาฬิกา"
                     : "ไม่มีข้อมูล"}{" "}
                 </div>
                 <div style={fontSize}>
@@ -377,6 +390,128 @@ export default function Pinmap() {
                   {trimString(news_data.location)
                     ? trimString(news_data.location)
                     : "ไม่มีข้อมูล"}{" "}
+                </div>
+                <div style={fontSize}>
+                  {" "}
+                  <span style={titleStyle}>เบอร์ติดต่อหากเกิดเหตุการณ์ประเภทนี้: </span>{" "}
+                  {trimString(news_data.crime_type) === "Accident" ? (
+                    Accident.map((data) => (
+                      <span
+                        key={data.id}
+                        style={{
+                          display: "inline",
+                        }}
+                      >
+                        <a
+                          href={"tel:" + data.callNum}
+                          style={{ color: "#000000" }}
+                        >
+                          {data.callNum}
+                        </a>{" "}
+                      </span>
+                    ))
+                  ) : trimString(news_data.crime_type) === "Battery_Assault" ? (
+                    Battery_Assault.map((data) => (
+                      <span
+                        key={data.id}
+                        style={{
+                          display: "inline",
+                        }}
+                      >
+                        <a
+                          href={"tel:" + data.callNum}
+                          style={{ color: "#000000" }}
+                        >
+                          {data.callNum}
+                        </a>{" "}
+                      </span>
+                    ))
+                  ) : trimString(news_data.crime_type) === "Drug" ? (
+                    Drug.map((data) => (
+                      <span
+                        key={data.id}
+                        style={{
+                          display: "inline",
+                        }}
+                      >
+                        <a
+                          href={"tel:" + data.callNum}
+                          style={{ color: "#000000" }}
+                        >
+                          {data.callNum}
+                        </a>{" "}
+                      </span>
+                    ))
+                  ) : trimString(news_data.crime_type) === "Gambling" ? (
+                    Gambling.map((data) => (
+                      <span
+                        key={data.id}
+                        style={{
+                          display: "inline",
+                        }}
+                      >
+                        <a
+                          href={"tel:" + data.callNum}
+                          style={{ color: "#000000" }}
+                        >
+                          {data.callNum}
+                        </a>{" "}
+                      </span>
+                    ))
+                  ) : trimString(news_data.crime_type) === "Murder" ? (
+                    Murder.map((data) => (
+                      <span
+                        key={data.id}
+                        style={{
+                          display: "inline",
+                        }}
+                      >
+                        <a
+                          href={"tel:" + data.callNum}
+                          style={{ color: "#000000" }}
+                        >
+                          {data.callNum}
+                        </a>{" "}
+                      </span>
+                    ))
+                  ) : trimString(news_data.crime_type) === "SexualAbuse" ? (
+                    SexualAbuse.map((data) => (
+                      <span
+                        key={data.id}
+                        style={{
+                          display: "inline",
+                        }}
+                      >
+                        <a
+                          href={"tel:" + data.callNum}
+                          style={{ color: "#000000" }}
+                        >
+                          {data.callNum}
+                        </a>{" "}
+                      </span>
+                    ))
+                  ) : trimString(news_data.crime_type) === "Theft_Burglary" ? (
+                    Theft_Burglary.map((data) => (
+                      <span
+                        key={data.id}
+                        style={{
+                          display: "inline",
+                        }}
+                      >
+                        <a
+                          href={"tel:" + data.callNum}
+                          style={{ color: "#000000" }}
+                        >
+                          {data.callNum}
+                        </a>{" "}
+                      </span>
+                    ))
+                  ) : (
+                    <div></div>
+                  )}
+                  {/* {trimString(news_data.crime_type)
+                    ? trimString(news_data.crime_type)
+                    : "ไม่มีข้อมูล"} */}
                 </div>
               </div>
               <div className="popup-action">{button}</div>
