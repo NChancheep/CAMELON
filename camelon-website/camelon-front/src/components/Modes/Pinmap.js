@@ -487,7 +487,7 @@ export default function Pinmap() {
                           style={{ color: "#000000" }}
                         >
                           {data.callNum}
-                        </a>{" "}
+                        </a>
                       </span>
                     ))
                   ) : trimString(news_data.crime_type) === "Theft_Burglary" ? (

@@ -74,7 +74,8 @@ export function getThailandPopulation(provinceName) {
       "สงขลา": 1455087,
       "ปัตตานี": 671536,
       "ยะลา": 524129,
-      "นราธิวาส": 760195
+      "นราธิวาส": 760195,
+      "บึงกาฬ": 424091
     }
     return thailandPopulation[provinceName] || 0;
 
