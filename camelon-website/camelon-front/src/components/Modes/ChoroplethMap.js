@@ -7,6 +7,7 @@ import "../../css/setfont.css";
 import GaugeChart from "react-gauge-chart";
 import { polygon, point, booleanPointInPolygon } from "@turf/turf";
 import { getThailandPopulation } from "../../store/data/thailand_province_population.js";
+import CamelonApi from "../../api/CamelonApi";
 
 export default function ChoroplethMap() {
   const { thailandGeoJson } = useSelector((state) => state.data);
@@ -16,33 +17,58 @@ export default function ChoroplethMap() {
   const [selectedFeature, setSelectedFeature] = useState(null);
   const [data, setData] = useState(null);
   const [isShow, setIsShow] = useState(false);
+  const [provinceCrimes, setProvinceCrimes] = useState([]);
+
+  useEffect(() => {
+    CamelonApi.get(`provinces_statistics`)
+      .then((response) => {
+        setProvinceCrimes(response.data);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  }, []);
+
+  useEffect(() => {
+    if(provinceCrimes.length !== 0) {
+      const crimeRateData = addCrimeRate(features);
+      setData(crimeRateData);
+      setIsShow(true)
+
+    }
+  }, [provinceCrimes])
+
+  // useEffect(() => {
+  //   if (data) {
+  //     setIsShow(true)
+  //   }
+  // }, [data])
 
   function addCrimeRate(data) {
-    console.log(data);
     return data.map((item) => ({
       ...item,
       crime_rate: getCrimeRateAndMeter(
         item.geometry.coordinates[0],
-        item.properties.NAME_1
+        item.properties.NL_NAME_1
       ).crime_rate,
       crime_meter: getCrimeRateAndMeter(
         item.geometry.coordinates[0],
-        item.properties.NAME_1
+        item.properties.NL_NAME_1
       ).crime_meter,
     }));
   }
 
-  useEffect(() => {
-    const crimeRateData = addCrimeRate(features);
-    setData(crimeRateData);
-  }, [features]);
+  // useEffect(() => {
+  //   const crimeRateData = addCrimeRate(features);
+  //   setData(crimeRateData);
+  // }, [provinceCrimes]);
 
   // Show pin map once data is available
-  useEffect(() => {
-    if (data) {
-      setIsShow(true);
-    }
-  }, [data]);
+  // useEffect(() => {
+  //   if (data) {
+  //     setIsShow(true);
+  //   }
+  // }, [data]);
 
   function getCrimeWeight(crimeTypeMetadata) {
     switch (crimeTypeMetadata) {
@@ -66,33 +92,40 @@ export default function ChoroplethMap() {
   }
 
   function getCrimeRateAndMeter(coordinates, name) {
-    let total_crime = 0;
-    let crime_weight_sum = 0;
-    if (coordinates.length > 4) {
-      const poly = polygon([coordinates]);
-      locations.forEach((location) => {
-        const pt = point([location.longitude, location.latitude]);
-        if (booleanPointInPolygon(pt, poly)) {
-          let news_data = news_info.find(
-            (news) => news.info_id === location.info_id
-          );
-          crime_weight_sum += getCrimeWeight(news_data.crime_type);
-          total_crime += 1;
-        }
-      });
-    }
-    console.log("=========================================================");
-    console.log(name);
-    console.log(getThailandPopulation(name));
-    console.log("=========================================================");
-    console.log("จังหวัด: " + name);
-    console.log("total_crime: " + total_crime);
-    console.log("crime_weight_sum: " + crime_weight_sum);
-    console.log("Population: " + getThailandPopulation(name));
-    console.log(
-      "คำนวณ: " + (crime_weight_sum / getThailandPopulation(name)) * 1000000
-    );
+    
+    const province = provinceCrimes.filter(item => item.province === name);
+    console.log(province[0])
+    let total_crime = province[0].numbers;
+    let crime_weight_sum = province[0].crime_weights;
+    console.log(total_crime)
+    console.log(crime_weight_sum)
+
+    // if (coordinates.length > 4) {
+    //   const poly = polygon([coordinates]);
+    //   locations.forEach((location) => {
+    //     const pt = point([location.longitude, location.latitude]);
+    //     if (booleanPointInPolygon(pt, poly)) {
+    //       let news_data = news_info.find(
+    //         (news) => news.info_id === location.info_id
+    //       );
+    //       crime_weight_sum += getCrimeWeight(news_data.crime_type);
+    //       total_crime += 1;
+    //     }
+    //   });
+    // }
+    // console.log("=========================================================");
+    // console.log(name);
+    // console.log(getThailandPopulation(name));
+    // console.log("=========================================================");
+    // console.log("จังหวัด: " + name);
+    // console.log("total_crime: " + total_crime);
+    // console.log("crime_weight_sum: " + crime_weight_sum);
+    // console.log("Population: " + getThailandPopulation(name));
+    // console.log(
+    //   "คำนวณ: " + (crime_weight_sum / getThailandPopulation(name)) * 1000000
+    // );
     let crime_meter = (crime_weight_sum / getThailandPopulation(name)) * 10000;
+    console.log(crime_meter)
     return { crime_rate: total_crime, crime_meter: crime_meter };
   }
 
@@ -109,11 +142,15 @@ export default function ChoroplethMap() {
   };
 
   const style = (feature) => {
-    console.log("==========================feature.crime_meter==========================");
-    console.log(feature.crime_meter);
-    console.log("==========================feature.crime_meter==========================");
+    // console.log(
+    //   "==========================feature.crime_meter=========================="
+    // );
+    // console.log(feature.crime_meter);
+    // console.log(
+    //   "==========================feature.crime_meter=========================="
+    // );
     return {
-      fillColor: getColor(feature.crime_meter*100),
+      fillColor: getColor(feature.crime_meter * 100),
 
       weight: 2,
       opacity: 1,
@@ -222,7 +259,7 @@ export default function ChoroplethMap() {
             ) : (
               <div style={{ fontFamily: "Kanit" }}>
                 <strong>
-                  Crimino Meter 
+                  Crimino Meter
                   <br /> {selectedFeature.name_th}
                 </strong>{" "}
                 <br />
@@ -238,7 +275,11 @@ export default function ChoroplethMap() {
                     "#800026",
                   ]}
                   arcWidth={0.3}
-                  percent={selectedFeature.crime_meter>1?1:selectedFeature.crime_meter}
+                  percent={
+                    selectedFeature.crime_meter > 1
+                      ? 1
+                      : selectedFeature.crime_meter
+                  }
                   textColor={"black"}
                   // hideText={true} // If you want to hide the text
                 />
