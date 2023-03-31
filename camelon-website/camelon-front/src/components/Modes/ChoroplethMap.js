@@ -220,6 +220,7 @@ export default function ChoroplethMap() {
               <div style={{ fontFamily: "Kanit" }} className="">
                 <div>{selectedFeature.name_th}</div>
                 <div>จำนวนข่าวอาชญากรรม: {selectedFeature.crime_rate}</div>
+                <div>จำนวนประชากร {getThailandPopulation(selectedFeature.name_th)}</div>
               </div>
             )}
           </div>
