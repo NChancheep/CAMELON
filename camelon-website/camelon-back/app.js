@@ -567,7 +567,7 @@ app.get("/dailynews_crimes_statistics", (req, res) => {
 app.get("/provinces_statistics", (req, res) => {
 
     db.query(
-      `select * from news_statistics_by_province order by numbers
+      `select * from news_statistics_by_province order by numbers desc
   `,
       [req.query.year],
       (err, result) => {

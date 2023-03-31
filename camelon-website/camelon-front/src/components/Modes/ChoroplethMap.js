@@ -18,6 +18,19 @@ export default function ChoroplethMap() {
   const [data, setData] = useState(null);
   const [isShow, setIsShow] = useState(false);
   const [provinceCrimes, setProvinceCrimes] = useState([]);
+  // Add a state variable to keep track of whether the button has been clicked
+  const [showRank, setShowRank] = useState(false);
+
+  // Define a function to handle the button click event
+  const handleShowRank = () => {
+    // let string = "15 อันดับจังหวัดที่มีอาชญกรรมสูงสุด"
+    // provinceCrimes.slice(0, 15).map((province,index) => {
+    //   string += "\n" + parseInt(index +1) + " " + province.province
+    // }
+    // )
+    // alert(string);
+    setShowRank(!showRank);
+  };
 
   useEffect(() => {
     CamelonApi.get(`provinces_statistics`)
@@ -30,13 +43,12 @@ export default function ChoroplethMap() {
   }, []);
 
   useEffect(() => {
-    if(provinceCrimes.length !== 0) {
+    if (provinceCrimes.length !== 0) {
       const crimeRateData = addCrimeRate(features);
       setData(crimeRateData);
-      setIsShow(true)
-
+      setIsShow(true);
     }
-  }, [provinceCrimes])
+  }, [provinceCrimes]);
 
   // useEffect(() => {
   //   if (data) {
@@ -92,13 +104,12 @@ export default function ChoroplethMap() {
   }
 
   function getCrimeRateAndMeter(coordinates, name) {
-    
-    const province = provinceCrimes.filter(item => item.province === name);
-    console.log(province[0])
+    const province = provinceCrimes.filter((item) => item.province === name);
+    console.log(province[0]);
     let total_crime = province[0].numbers;
     let crime_weight_sum = province[0].crime_weights;
-    console.log(total_crime)
-    console.log(crime_weight_sum)
+    console.log(total_crime);
+    console.log(crime_weight_sum);
 
     // if (coordinates.length > 4) {
     //   const poly = polygon([coordinates]);
@@ -123,8 +134,8 @@ export default function ChoroplethMap() {
     );
     console.log("=========================================================");
 
-    let crime_meter = (crime_weight_sum/20/getThailandPopulation(name)) * 1000;
-    console.log(crime_meter)
+    let crime_meter = (crime_weight_sum / 20 / 657575) * 1000;
+    console.log(crime_meter);
     return { crime_rate: total_crime, crime_meter: crime_meter };
   }
 
@@ -225,8 +236,43 @@ export default function ChoroplethMap() {
           </div>
 
           {isShow && (
-            <GeoJSON data={data} style={style} onEachFeature={onEachFeature} />
+            <>
+              <GeoJSON
+                data={data}
+                style={style}
+                onEachFeature={onEachFeature}
+              />
+            </>
           )}
+          {showRank && (
+            <div
+              className="absolute top-24 left-10 bg-white p-4 rounded-md shadow-md w-70  text-base"
+              style={{ zIndex: 1500 }}
+            >
+              <div style={{ fontFamily: "Kanit" }}>
+                10 อันดับจังหวัดที่มีอาชญากรรมสูงสุด
+                {provinceCrimes &&
+                  provinceCrimes.slice(0, 10).map((province, index) => (
+                    <div>
+                      {index + 1}. {province.province}
+                    </div>
+                  ))}
+              </div>
+            </div>
+          )}
+          <div
+            className="absolute top-2 left-10  p-4 rounded-md shadow-md w-48  text-base"
+            style={{ zIndex: 999 }}
+          >
+            <div style={{ fontFamily: "Kanit" }}>
+              <button
+                class="bg-blue-500 hover:bg-blue-700 text-white text-xs font-bold py-2 px-4 rounded w-full"
+                onClick={handleShowRank}
+              >
+                คลิกเพื่อดูอันดับ
+              </button>
+            </div>
+          </div>
 
           <div
             className="absolute bottom-5 left-10 bg-white p-4 rounded-md shadow-md w-70  text-base"
