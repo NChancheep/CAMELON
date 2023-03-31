@@ -113,18 +113,17 @@ export default function ChoroplethMap() {
     //     }
     //   });
     // }
-    // console.log("=========================================================");
-    // console.log(name);
-    // console.log(getThailandPopulation(name));
-    // console.log("=========================================================");
-    // console.log("จังหวัด: " + name);
-    // console.log("total_crime: " + total_crime);
-    // console.log("crime_weight_sum: " + crime_weight_sum);
-    // console.log("Population: " + getThailandPopulation(name));
-    // console.log(
-    //   "คำนวณ: " + (crime_weight_sum / getThailandPopulation(name)) * 1000000
-    // );
-    let crime_meter = (crime_weight_sum / getThailandPopulation(name)) * 10000;
+    console.log("=========================================================");
+    console.log("จังหวัด: " + name);
+    console.log("total_crime: " + total_crime);
+    console.log("crime_weight_sum: " + crime_weight_sum);
+    console.log("Population: " + getThailandPopulation(name));
+    console.log(
+      "คำนวณ: " + (crime_weight_sum / getThailandPopulation(name)) * 10
+    );
+    console.log("=========================================================");
+
+    let crime_meter = (crime_weight_sum/20/getThailandPopulation(name)) * 1000;
     console.log(crime_meter)
     return { crime_rate: total_crime, crime_meter: crime_meter };
   }
