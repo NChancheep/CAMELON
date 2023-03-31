@@ -563,6 +563,26 @@ app.get("/dailynews_crimes_statistics", (req, res) => {
   }
 });
 
+
+app.get("/provinces_statistics", (req, res) => {
+
+    db.query(
+      `select * from news_statistics_by_province order by numbers
+  `,
+      [req.query.year],
+      (err, result) => {
+        if (err) {
+          console.log(err);
+          res.status(500).send(err);
+        } else {
+          res.send(result);
+          console.log(result);
+        }
+      }
+    );
+  
+});
+
 app.listen(3001, "0.0.0.0", function () {
   console.log("Listening to port:  " + 3001);
 });
