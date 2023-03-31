@@ -215,7 +215,7 @@ export default function ChoroplethMap() {
             attribution="Map tiles by Carto, under CC BY 3.0. Data by OpenStreetMap, under ODbL."
             url="https://cartodb-basemaps-{s}.global.ssl.fastly.net/dark_all/{z}/{x}/{y}.png"
           />
-          <div
+          {/* <div
             className="absolute top-10 right-10 bg-white p-4 rounded-md shadow-md w-60  text-base"
             style={{ zIndex: 999 }}
           >
@@ -229,12 +229,28 @@ export default function ChoroplethMap() {
             )}
             {selectedFeature && (
               <div style={{ fontFamily: "Kanit" }} className="">
-                <div>{selectedFeature.name_th}</div>
-                <div>จำนวนข่าวอาชญากรรม: {selectedFeature.crime_rate}</div>
+              <div>{selectedFeature.name_th}</div>
+              <div>จำนวนข่าวอาชญากรรม: {selectedFeature.crime_rate}</div>
+              <div>
+                จำนวนประชากร {getThailandPopulation(selectedFeature.name_th)}
               </div>
+            </div>
             )}
-          </div>
+          </div> */}
 
+          <div
+            className="absolute right-10 rounded-md shadow-md w-60  text-base"
+            style={{ zIndex: 999 }}
+          >
+            <div style={{ fontFamily: "Kanit", marginTop: 390 }}>
+              <button
+                class="bg-green-700 hover:bg-green-600 text-white text-xs font-bold py-2 px-4 rounded w-full"
+                onClick={handleShowRank}
+              >
+                คลิกเพื่อดูอันดับ
+              </button>
+            </div>
+          </div>
           {isShow && (
             <>
               <GeoJSON
@@ -246,11 +262,11 @@ export default function ChoroplethMap() {
           )}
           {showRank && (
             <div
-              className="absolute top-24 left-10 bg-white p-4 rounded-md shadow-md w-70  text-base"
-              style={{ zIndex: 1500 }}
+              className="absolute right-10 bg-white p-4 rounded-md shadow-md w-60 text-base"
+              style={{ zIndex: 999, marginTop: "3%" }}
             >
               <div style={{ fontFamily: "Kanit" }}>
-                10 อันดับจังหวัดที่มีอาชญากรรมสูงสุด
+                <h6 style={{color: "#479B5F",fontWeight:900}}>10 อันดับจังหวัดที่มีอาชญากรรมสูงสุด</h6>
                 {provinceCrimes &&
                   provinceCrimes.slice(0, 10).map((province, index) => (
                     <div>
@@ -260,22 +276,9 @@ export default function ChoroplethMap() {
               </div>
             </div>
           )}
-          <div
-            className="absolute top-2 left-10  p-4 rounded-md shadow-md w-48  text-base"
-            style={{ zIndex: 999 }}
-          >
-            <div style={{ fontFamily: "Kanit" }}>
-              <button
-                class="bg-blue-500 hover:bg-blue-700 text-white text-xs font-bold py-2 px-4 rounded w-full"
-                onClick={handleShowRank}
-              >
-                คลิกเพื่อดูอันดับ
-              </button>
-            </div>
-          </div>
 
           <div
-            className="absolute bottom-5 left-10 bg-white p-4 rounded-md shadow-md w-70  text-base"
+            className="absolute bottom-5 right-10 bg-white p-4 rounded-md shadow-md w-70 text-base"
             style={{ zIndex: 999 }}
           >
             <div style={{ fontFamily: "Kanit" }} className="legend">
@@ -291,7 +294,7 @@ export default function ChoroplethMap() {
             </div>
           </div>
           <div
-            className="absolute bottom-5 right-10 bg-white p-4 rounded-md w-60 shadow-md text-base"
+            className="absolute bottom-5 left-10 bg-white p-4 rounded-md w-60 shadow-md text-base"
             style={{ zIndex: 999 }}
           >
             {selectedFeature == null ? (
@@ -303,11 +306,17 @@ export default function ChoroplethMap() {
               </div>
             ) : (
               <div style={{ fontFamily: "Kanit" }}>
-                <strong>
+                <strong style={{color: "#479B5F",fontWeight:900}}>
                   Crimino Meter
-                  <br /> {selectedFeature.name_th}
-                </strong>{" "}
-                <br />
+                  <br />
+                </strong>
+                <div style={{ fontFamily: "Kanit" }} className="">
+                  <div>จังหวัด{selectedFeature.name_th}</div>
+                  <div>ข่าวอาชญากรรม {selectedFeature.crime_rate} ข่าว</div>
+                  <div>
+                    ประชากร {getThailandPopulation(selectedFeature.name_th)} คน
+                  </div>
+                </div>
                 <br />
                 <GaugeChart
                   id="gauge-chart3"
