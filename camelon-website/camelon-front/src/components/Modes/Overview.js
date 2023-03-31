@@ -193,7 +193,7 @@ export default function Overview() {
                   </Row>
                 </Form.Group>
               </Form>
-              <Row>
+              <Row style={{marginTop:"2.5%"}}>
                 <Col>
                   {mode === "barChart" ? (
                     <Col>
