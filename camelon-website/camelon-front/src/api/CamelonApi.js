@@ -1,5 +1,5 @@
 import axios from 'axios'
 
 export default axios.create({
-    baseURL: "https://camelon-app.herokuapp.com/"
+    baseURL: "https://shy-top-hat-clam.cyclic.app/"
 })
