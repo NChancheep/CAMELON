@@ -8,10 +8,10 @@ app.use(express.json());
 
 let PORT = process.env.PORT || 5000
 const db = mysql.createConnection({
-  user: "j2vv0mkcn0ujn3at",
+  user: "ytdhpvcgd1mtxiy2",
   host: "eyw6324oty5fsovx.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
-  password: "ttzoo9d1jn2jjjic",
-  database: "cl1uz2h55uu1wccg",
+  password: "zo21snwk0x02ml1v",
+  database: "u61oravo40gazio4",
 });
 
 db.connect((err) => {
