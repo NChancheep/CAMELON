@@ -6,11 +6,12 @@ const cors = require("cors");
 app.use(cors());
 app.use(express.json());
 
+let PORT = process.env.PORT || 5000
 const db = mysql.createConnection({
-  user: "root",
-  host: "localhost",
-  password: "1234",
-  database: "camelon",
+  user: "j2vv0mkcn0ujn3at",
+  host: "eyw6324oty5fsovx.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
+  password: "ttzoo9d1jn2jjjic",
+  database: "cl1uz2h55uu1wccg",
 });
 
 db.connect((err) => {
@@ -583,6 +584,6 @@ app.get("/provinces_statistics", (req, res) => {
   
 });
 
-app.listen(3001, "0.0.0.0", function () {
-  console.log("Listening to port:  " + 3001);
+app.listen(PORT, "0.0.0.0", function () {
+  console.log("Listening to port:  " + PORT);
 });
