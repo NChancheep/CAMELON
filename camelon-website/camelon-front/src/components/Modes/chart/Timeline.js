@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Chart from "chart.js/auto";
 import { Bar } from "react-chartjs-2";
+import Axios from "axios";
 import { ThreeDots } from "react-loader-spinner";
 import CamelonApi from "../../../api/CamelonApi";
 
@@ -19,7 +20,7 @@ const months = {
   12: "December",
 };
 
-const BarChart = ({ data }) => {
+const Timeline = ({ data }) => {
   const [data1, setData1] = useState([]);
   const [data2, setData2] = useState([]);
   const [chartData, setChartData] = useState([]);
@@ -27,25 +28,23 @@ const BarChart = ({ data }) => {
   const [isLoading, setIsLoading] = useState(false);
   const [isFirstLoad, setIsFirstLoad] = useState(true);
 
- 
-
-  console.log(data)
   useEffect(() => {
     setIsLoading(true);
     setData1([]);
     setData2([]);
     if (Object.keys(data).length !== 0) {
       setIsFirstLoad(false);
-      CamelonApi.get(`news_crime_statistics?yearStart=${data.startYear}&yearEnd=${data.endYear}&crimeType=${data.crimeType}`)
+
+      CamelonApi.get(
+        `news_crimes_summary?yearStart=${data.startYear}&yearEnd=${data.endYear}&crimeType=${data.crimeType}`
+      )
         .then((response) => {
-          console.log(response.data)
+          console.log(response.data);
           setData1(response.data);
         })
         .catch((error) => {
           console.error(error);
         });
-
-      
     }
   }, [data]);
 
@@ -61,21 +60,21 @@ const BarChart = ({ data }) => {
           display: true,
           text:
             data.crimeType === ""
-              ? `Frequency of Crime news (${data.startYear} to ${data.endYear})`
-              : `Frequency of ${data.crimeType} Crime news (${data.startYear} to ${data.endYear})`,
+              ? `Timeline Frequency of Crime news (${data.startYear} to ${data.endYear})`
+              : `Tineline Frequency of ${data.crimeType} Crime news (${data.startYear} to ${data.endYear})`,
         },
       },
     };
     let labels = null;
     if (data1.length !== 0) {
-     
-      labels = data1.map(data => data.year)
+      
+      labels = data1.map((data) => String(data.year + "-" +months[data.month]))
       var chart_data = {
         labels,
         datasets: [
           {
-            label: "จำนวนข่าวอาชญากรรมต่อปี",
-            data: data1.map(data => data.Numbers),
+            label: "จำนวนข่าวอาชญากรรมต่อเดือน",
+            data: data1.map((data) => data.Numbers),
             borderColor: "rgb(255, 99, 132)",
             backgroundColor: "rgba(255, 99, 132, 0.5)",
           },
@@ -85,7 +84,7 @@ const BarChart = ({ data }) => {
 
     setChartData(chart_data);
     setOptions(options);
-    if (data1.length !== 0 ) {
+    if (data1.length !== 0) {
       setIsLoading(false);
       // console.log(data1.length)
       // console.log(data2.length)
@@ -102,7 +101,7 @@ const BarChart = ({ data }) => {
       }}
     >
       {isFirstLoad ? (
-        <div style={{ color: "#9c9c9c", fontSize: 14, marginTop:"3%" }}>
+        <div style={{ color: "#9c9c9c", fontSize: 14, marginTop: "3%" }}>
           **โปรดเลือกปีเพื่อเเสดงข้อมูล
         </div>
       ) : isLoading ? (
@@ -117,10 +116,14 @@ const BarChart = ({ data }) => {
           />
         </div>
       ) : (
-        <Bar style={{width:"100%",height:"100%"}} data={chartData} options={options} />
+        <Bar
+          style={{ width: "100%", height: "100%" }}
+          data={chartData}
+          options={options}
+        />
       )}
     </div>
   );
 };
 
-export default BarChart;
+export default Timeline;
