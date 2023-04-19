@@ -279,7 +279,7 @@ export default function Overview() {
           <Row style={{ marginTop: "3%" }}>
             <Timeline data={lineChartData} />
           </Row>
-          <Row style={{ marginTop: "3%", color: "red", textAlign: "center" }}>
+          <Row className="justify-content-center" style={{ marginTop: "3%", color: "red", textAlign: "center" }}>
             ***รวบรวมข้อมูลข่าวตั้งเเต่ปี {yearList[0]} - {yearList.slice(-1)}
             ***
           </Row>
