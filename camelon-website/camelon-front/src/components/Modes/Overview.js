@@ -3,19 +3,20 @@ import BarChart from "./chart/BarChart";
 import RadarChart from "./chart/RadarChart";
 import LineChart from "./chart/LineChart";
 import PieChart from "./chart/PieChart";
+import Timeline from "./chart/Timeline";
 
 import "react-datepicker/dist/react-datepicker.css";
 import { Form, Button, Container, Row, Col } from "react-bootstrap";
 import { ThreeDots } from "react-loader-spinner";
+
+import CamelonApi from "../../api/CamelonApi";
 
 export default function Overview() {
   const [startYear, setStartYear] = useState(2016);
   const [endYear, setEndYear] = useState(2020);
   const [crimeType, setCrimeType] = useState("");
   const [lineChartData, setLineChartData] = useState({});
-  const [yearList, setYearList] = useState([
-    2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021,
-  ]);
+  const [yearList, setYearList] = useState([]);
   const [isPageLoading, setIsPageLoading] = useState(false);
   const [specificYear, setSpecificYear] = useState("");
   const [raderChartData, setRadarChartData] = useState({});
@@ -24,6 +25,19 @@ export default function Overview() {
   const [newsSource, setNewsSource] = useState("thairath");
 
   const [mode, setMode] = useState("lineChart");
+
+  useEffect(() => {
+    CamelonApi.get(`years`)
+      .then((response) => {
+        let year_list = response.data.map((data) => data.year);
+        year_list = year_list.filter((year) => year >= 2010);
+        console.log(year_list);
+        setYearList(year_list);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  }, []);
 
   useEffect(() => {
     if (startYear > endYear) {
@@ -180,7 +194,7 @@ export default function Overview() {
                       </Form.Control>
                     </Col>
                     <Col>
-                      <Row style={{marginTop:"10.5%"}}>
+                      <Row style={{ marginTop: "10.5%" }}>
                         <Button
                           type="submit"
                           variant="success"
@@ -193,7 +207,7 @@ export default function Overview() {
                   </Row>
                 </Form.Group>
               </Form>
-              <Row style={{marginTop:"2.5%"}}>
+              <Row style={{ marginTop: "2.5%" }}>
                 <Col>
                   {mode === "barChart" ? (
                     <Col>
@@ -261,6 +275,13 @@ export default function Overview() {
                 </Row>
               </Col>
             </Col> */}
+          </Row>
+          <Row style={{ marginTop: "3%" }}>
+            <Timeline data={lineChartData} />
+          </Row>
+          <Row style={{ marginTop: "3%", color: "red", textAlign: "center" }}>
+            ***รวบรวมข้อมูลข่าวตั้งเเต่ปี {yearList[0]} - {yearList.slice(-1)}
+            ***
           </Row>
 
           <div style={{ marginBottom: "2%" }}></div>

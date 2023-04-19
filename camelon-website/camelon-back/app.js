@@ -24,7 +24,7 @@ db.connect((err) => {
 
 app.get("/years", (req, res) => {
   db.query(
-    `SELECT YEAR(date) as Year from Thairath_Metadata GROUP BY Year ORDER BY Year
+    `SELECT  year  FROM news_summary_table_monthly_all_year group by year;
       `,
     (err, result) => {
       if (err) {
