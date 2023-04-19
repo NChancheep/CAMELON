@@ -328,6 +328,9 @@ export default function ChoroplethMap() {
                     "#BD0026",
                     "#800026",
                   ]}
+                  cornerRadius={3}
+                  needleBaseColor="black"
+                  needleColor="red"
                   arcWidth={0.3}
                   percent={
                     selectedFeature.crime_meter > 1
